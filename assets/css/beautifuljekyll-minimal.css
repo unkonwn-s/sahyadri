@@ -17,6 +17,6 @@
   /* Align the header section specifically */
   .intro-header .page-heading, .intro-header .post-heading {
     text-align: left !important;
-    margin-left: 20px !important;
+    margin-left: 5px !important;
   }
 </style>
