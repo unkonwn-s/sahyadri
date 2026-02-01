@@ -1,22 +1,20 @@
 <style>
-  /* Reduce heading sizes */
-  h1 { font-size: 28px !important; }
-  h2 { font-size: 22px !important; }
-  h3 { font-size: 18px !important; }
-
-  /* Reduce margins and force left alignment */
-  .container, .main-content {
-    margin-left: 20px !important;
-    margin-right: 20px !important;
+  /* Remove all space from the left side of the screen */
+  body, 
+  .container, 
+  .main-content, 
+  .intro-header,
+  header.intro-header {
+    margin-left: 0 !important;
     padding-left: 0 !important;
-    padding-right: 0 !important;
-    max-width: 95% !important; /* Ensures it uses the available width */
+    left: 0 !important;
+    max-width: 100% !important;
     text-align: left !important;
   }
 
-  /* Align the header section specifically */
-  .intro-header .page-heading, .intro-header .post-heading {
-    text-align: left !important;
-    margin-left: 5px !important;
+  /* Specifically target the headings and paragraphs to ensure they align to the edge */
+  h1, h2, h3, p, ul, li {
+    margin-left: 0 !important;
+    padding-left: 10px !important; /* Adding 10px just so it doesn't touch the literal glass of the screen, change to 0 if you want it absolute zero */
   }
 </style>
