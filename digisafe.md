@@ -13,7 +13,7 @@ subtitle: Digital Safety Workshops conducted by Sayntan Sen (Founder Digital Saf
   }
   .intro-header .page-subheading {
     text-align: left !important;
-    font-size: 14px !important;
+    font-size: 22px !important;
     margin-left: 0 !important;
   }
   .container, .main-content {
