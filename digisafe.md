@@ -68,7 +68,7 @@ Students will get a [worksheet](https://docs.google.com/document/d/1pAhGzPqI43eQ
 
 Students will get a [Family sheet](https://drive.google.com/file/d/1fjmZ_eIvBRm7l_lpvVI0vx0vOOJLw2Em/view?usp=drive_link){:target="_blank"} with tips to limit screen time during their Diwali vacation. 
 
-## Digital Footprint
+## Digital Footprint (Classses 10, 11, 12)
 
 As students transition from high school to higher education and the workforce, their online presence can have a profound impact on their future.
 
