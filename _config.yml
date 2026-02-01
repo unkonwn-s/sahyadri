@@ -22,7 +22,8 @@ author: Sahyadri
 navbar-links:
   Digital Safety: "digisafe"
   Krishnamurthy: "krishnamurthy"
-  Info: "info"
+  Info:
+    - Communication: "comms"
   Newsletter: "posts"
   Resources:
     - Photos: "photos"
