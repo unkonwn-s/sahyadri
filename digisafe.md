@@ -36,6 +36,9 @@ Analysed how well they know the people they interact with online. Identified the
 Used the Feelings & Options thinking routine to analyse and respond to a situation involving a red flag feeling.
  
 Revision Materials
-Step 1: Review the ppt here
+Step 1: Review the ppt here 
+
 Step 2: Catch the videos here
+
 Step 3: Check the family tech planner sheet here 
+
