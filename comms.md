@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Digital Safety Workshop
-subtitle: Digital Safety Workshops conducted by Sayntan Sen (Founder Digital Safety India, Parent of Sahyadri School) on week ending Sep 22
+title: Communication
+subtitle: 
 ---
 
 <style>
@@ -24,14 +24,6 @@ subtitle: Digital Safety Workshops conducted by Sayntan Sen (Founder Digital Saf
   }
 </style>
 
-## Chatting Safely (Classes 6,7)
-
-This is where I share my thoughts on coding and life.  
-Feel free to look around!
-
----
-
-### Communication & Contacts
 
 **Student Affairs (Leave, Student issues, Medical, Parcels)**
 
@@ -41,9 +33,16 @@ Feel free to look around!
 * Senior School - [ss@sahyadrischool.org](mailto:ss@sahyadrischool.org){:target="_blank"}
 
 **Guest House booking / Transport (Parents, Students Pickup / Drop)** [administration@sahyadrischool.org](mailto:administration@sahyadrischool.org){:target="_blank"}
+**Others (Admissions / New Hire)** [office@sahyadrischool.org](mailto:office@sahyadrischool.org){:target="_blank"}
+
+**Finance-related** [accounts@sahyadrischool.org](mailto:accounts@sahyadrischool.org){:target="_blank"}
+
+**Escalations** [principal@sahyadrischool.org](mailto:principal@sahyadrischool.org){:target="_blank"}
+
+**Study Centre** [studycentre@sahyadrischool.org](mailto:studycentre@sahyadrischool.org){:target="_blank"}
 
 ---
 
-<p style="font-size: 12px; color: gray;">
-This website was built using <strong>Jekyll</strong> and hosted on <strong>GitHub Pages</strong>.
-</p>
+### Don'ts
+
+* Send emails or WhatsApp messages directly to teachers or house parents.
