@@ -83,9 +83,3 @@ subtitle:
     </div>
   </div>
 </div>
-
----
-
-<p style="font-size: 12px; color: gray;">
-This website was built using <strong>Jekyll</strong> and hosted on <strong>GitHub Pages</strong>.
-</p>
