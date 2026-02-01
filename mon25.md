@@ -15,8 +15,6 @@ title: Monsoon 2025-26 - Weekly Excerpts
   .video-caption a { color: #008aff; text-decoration: underline; }
 </style>
 
-## Monsoon 2025-26 - Weekly Excerpts
-
 <div class="row">
   <div class="col-sm-6 video-container">
     <iframe width="100%" height="315" src="https://www.youtube.com/embed/nS_YJ9m4XGg" frameborder="0" allowfullscreen></iframe>
@@ -53,9 +51,3 @@ title: Monsoon 2025-26 - Weekly Excerpts
     </div>
   </div>
 </div>
-
----
-
-<p style="font-size: 12px; color: gray;">
-This website was built using <strong>Jekyll</strong> and hosted on <strong>GitHub Pages</strong>.
-</p>
