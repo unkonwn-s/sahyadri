@@ -5,20 +5,26 @@ subtitle: Digital Safety Workshops conducted by Sayntan Sen (Founder Digital Saf
 ---
 
 <style>
-  /* Force the header section to the left and make it smaller */
-  .intro-header .page-heading {
+  /* 1. Force everything to the left edge */
+  .container, .main-content, .intro-header .page-heading, .intro-header .page-subheading {
     text-align: left !important;
-    font-size: 36px !important; /* Smaller Main Title */
     margin-left: 0 !important;
+    padding-left: 0 !important;
+    max-width: 100% !important;
+  }
+
+  /* 2. Shrink the massive Title and Subtitle */
+  .intro-header .page-heading {
+    font-size: 32px !important;
   }
   .intro-header .page-subheading {
-    text-align: left !important;
-    font-size: 18px !important; /* Smaller Subtitle */
-    margin-left: 0 !important;
+    font-size: 18px !important;
   }
-  .container, .main-content {
-    margin-left: 0 !important;
-    max-width: 100% !important;
+
+  /* 3. Shrink the page headings (H2) */
+  h2 {
+    font-size: 22px !important;
+    margin-top: 20px !important;
   }
 </style>
 
