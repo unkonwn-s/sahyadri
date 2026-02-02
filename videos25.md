@@ -3,10 +3,6 @@ layout: page
 title: Videos
 ---
 
-## Videos
-
----
-
 <div class="video-container">
   <iframe width="100%" height="450" src="https://www.youtube.com/embed/S2C1mFj8k7k" frameborder="0" allowfullscreen></iframe>
   <div class="video-caption">
