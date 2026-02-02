@@ -3,17 +3,6 @@ layout: page
 title: Videos
 ---
 
-<style>
-  /* Pins headers and content to the left */
-  .intro-header .page-heading, .intro-header .page-subheading, .container, .main-content, h2, h3, p {
-    text-align: left !important;
-    margin-left: 0 !important;
-    max-width: 100% !important;
-  }
-  .video-container { margin-bottom: 40px; text-align: center; }
-  .video-caption { font-size: 16px; margin-top: 10px; color: #333; }
-</style>
-
 ## Videos
 
 ---
