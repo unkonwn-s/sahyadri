@@ -4,7 +4,7 @@ title: Digital Safety Workshop
 subtitle: Digital Safety Workshops conducted by Sayntan Sen (Founder Digital Safety India, Parent of Sahyadri School) on week ending Sep 22
 ---
 
-## Chatting Safely (Classes 6,7)
+## Chatting Safely (Classes 6 & 7)
 Children play multiplayer online games, and in the course of the game, they speak, type and communicate with each other. This exposes them to strangers online.
 33% of parents report their children have been approached by strangers online — A study (by CRY & CNLU) found that about one-third of parents surveyed said their children were approached by strangers through online platforms soliciting friendships, personal/family info, or discussions of a sexual nature. [source](https://economictimes.indiatimes.com/news/india/33-pc-parents-say-their-children-approached-by-strangers-via-online-platforms-finds-study/articleshow/97115107.cms?from=mdr){:target="_blank"}
 
