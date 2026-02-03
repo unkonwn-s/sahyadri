@@ -4,26 +4,6 @@ title: Communication
 subtitle: 
 ---
 
-<style>
-  /* Moves Title and Subtitle to the left and shrinks them */
-  .intro-header .page-heading {
-    text-align: left !important;
-    font-size: 28px !important;
-    margin-left: 0 !important;
-  }
-  .intro-header .page-subheading {
-    text-align: left !important;
-    font-size: 16px !important;
-    margin-left: 0 !important;
-  }
-  /* Removes all left margins for the main content */
-  .container, .main-content {
-    margin-left: 0 !important;
-    padding-left: 0 !important;
-    max-width: 100% !important;
-  }
-</style>
-
 
 **Student Affairs (Leave, Student issues, Medical, Parcels)**
 
