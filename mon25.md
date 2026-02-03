@@ -4,11 +4,6 @@ title: Monsoon 2025-26 - Weekly Excerpts
 ---
 
 <style>
-  /* Pins content to the left */
-  .intro-header .page-heading, .container, .main-content, h2, p {
-    text-align: left !important;
-    margin-left: 0 !important;
-  }
   .video-caption { font-size: 14px; margin-top: 10px; margin-bottom: 40px; text-align: center; color: #333; }
   .video-container { margin-bottom: 20px; }
   /* Custom link color for the captions */
