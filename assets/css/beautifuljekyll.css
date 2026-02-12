@@ -1125,7 +1125,10 @@ pre {
   }
   
 }
-/* 1. Expand the main container */
+/* DIAGNOSTIC: If you see a red border at the top of your site, the CSS is loading */
+body { border-top: 5px solid red !important; }
+
+/* 1. Expand the main containers */
 .container, 
 .container-md, 
 .container-lg, 
@@ -1134,9 +1137,13 @@ pre {
     max-width: 85% !important;
 }
 
-/* 2. Expand the columns inside the row to fill that 85% */
+/* 2. Expand the specific 'Beautiful Jekyll' columns */
+/* The theme defaults to 8/12 width; this forces them to 100% of the new 85% container */
 .col-lg-8, 
-.col-md-10 {
+.col-md-10, 
+.col-lg-offset-2, 
+.col-md-offset-1 {
     flex: 0 0 100% !important;
     max-width: 100% !important;
+    margin-left: 0 !important;
 }
