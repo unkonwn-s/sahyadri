@@ -26,7 +26,7 @@ subtitle:
 **Study Centre** [studycentre@sahyadrischool.org](mailto:studycentre@sahyadrischool.org){:target="_blank"}
 
 
-### Don'ts
+### Don'ts     
 
 
 * Send emails or WhatsApp messages directly to teachers or house parents.
