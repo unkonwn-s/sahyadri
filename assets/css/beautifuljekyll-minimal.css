@@ -18,3 +18,23 @@
     padding-left: 10px !important; /* Adding 10px just so it doesn't touch the literal glass of the screen, change to 0 if you want it absolute zero */
   }
 </style>
+<style>
+  /* Force everything to 85% width */
+  body, 
+  .container, 
+  .main-content, 
+  .intro-header,
+  header.intro-header {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 85% !important;
+    width: 85% !important;
+  }
+
+  /* Force the internal columns to stop shrinking the text */
+  .col-lg-8, .col-md-10, .col-lg-offset-2 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+  }
+</style>
