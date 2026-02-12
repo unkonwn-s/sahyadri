@@ -1125,8 +1125,18 @@ pre {
   }
   
 }
-/* Custom override to set page width to 85% */
-.container, .container-fluid, .container-md, .container-lg, .container-xl {
+/* Force the main container to 85% width */
+.container, 
+.container-md, 
+.container-lg, 
+.container-xl, 
+.container-xxl {
+  width: 85% !important;
   max-width: 85% !important;
-  width: 85%;
+}
+
+/* Ensure the header/banner also expands to match */
+.intro-header .container {
+  width: 85% !important;
+  max-width: 85% !important;
 }
