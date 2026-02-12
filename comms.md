@@ -27,5 +27,5 @@ subtitle:
 
 
 ### Don'ts
-&nbsp
+&nbsp;
 * Send emails or WhatsApp messages directly to teachers or house parents.
