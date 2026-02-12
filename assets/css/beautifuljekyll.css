@@ -1123,4 +1123,10 @@ pre {
   #nav-search-text {
     display: inline-block;
   }
+  
+}
+/* Custom override to set page width to 85% */
+.container, .container-fluid, .container-md, .container-lg, .container-xl {
+  max-width: 85% !important;
+  width: 85%;
 }
