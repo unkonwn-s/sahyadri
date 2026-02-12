@@ -1,24 +1,4 @@
 <style>
-  /* Remove all space from the left side of the screen */
-  body, 
-  .container, 
-  .main-content, 
-  .intro-header,
-  header.intro-header {
-    margin-left: 0 !important;
-    padding-left: 0 !important;
-    left: 0 !important;
-    max-width: 100% !important;
-    text-align: left !important;
-  }
-
-  /* Specifically target the headings and paragraphs to ensure they align to the edge */
-  h1, h2, h3, p, ul, li {
-    margin-left: 0 !important;
-    padding-left: 10px !important; /* Adding 10px just so it doesn't touch the literal glass of the screen, change to 0 if you want it absolute zero */
-  }
-</style>
-<style>
   /* Force everything to 85% width */
   body, 
   .container, 
