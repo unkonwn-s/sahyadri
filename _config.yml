@@ -1,6 +1,4 @@
-url: "https://Sahyadri.Cnnect.github.io" # Change to your URL
-baseurl: "/sahyadri"             # Change to your repo name
-excerpt_separator: "" # This lets you control the "preview" text
+ # This lets you control the "preview" text
 
 # Name of website
 title: Sahyadri Connect
