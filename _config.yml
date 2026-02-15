@@ -1,6 +1,5 @@
- # This lets you control the "preview" text
-
-# Name of website
+url: "https://unkonwn-s.github.io"
+baseurl: "/sahyadri/posts"
 title: Sahyadri Connect
 
 # Your name to show in the footer
