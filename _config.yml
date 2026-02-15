@@ -1,5 +1,5 @@
 url: "https://unkonwn-s.github.io"
-baseurl: "/sahyadri/posts"
+baseurl: "/sahyadri"
 title: Sahyadri Connect
 
 # Your name to show in the footer
@@ -16,7 +16,7 @@ navbar-links:
     - Spring Term 2025-26: "spr25"
   Information:
     - Communication: "comms"
-  Newsletter: "posts"
+  Newsletter: ""
   Resources:
     - Photos: "photos25"
     - Videos: "videos25"
