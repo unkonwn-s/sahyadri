@@ -4,7 +4,7 @@ title: Newsletter
 permalink: /posts/
 ---
 
-Welcome to the **Sahyadri Connect** Newsletter. Below you will find our latest updates, announcements, and resources.
+Welcome to the **Sahyadri School Newsletter.** 
 
 ---
 
