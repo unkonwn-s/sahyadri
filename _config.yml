@@ -296,7 +296,7 @@ plugins:
   - jekyll-paginate
   - jekyll-sitemap
 paginate: 15
-paginate_path: "/Newsletter/page:num/"
+paginate_path: "/posts/page:num/"
 # Beautiful Jekyll / Dean Attali
 # 2fc73a3a967e97599c9763d05e564189
 
