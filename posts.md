@@ -2,6 +2,7 @@
 layout: page
 title: Newsletter
 permalink: /posts/
+paginate: true
 ---
 
 <div class="posts-list">
@@ -11,9 +12,12 @@ permalink: /posts/
         <h2 class="post-title">{{ post.title }}</h2>
       </a>
       <p class="post-meta">Posted on {{ post.date | date: site.date_format }}</p>
+      
       <div class="post-entry">
         {{ post.excerpt | strip_html | truncatewords: 75 }}
       </div>
+      
+      <a href="{{ post.url | relative_url }}" class="read-more">Read More</a>
     </article>
     <hr>
   {% endfor %}
@@ -30,5 +34,3 @@ permalink: /posts/
     <a href="{{ paginator.next_page_path | relative_url }}">Older Posts &raquo;</a>
   {% endif %}
 </div>
-
-
