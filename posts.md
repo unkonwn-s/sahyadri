@@ -4,41 +4,29 @@ title: Newsletter
 permalink: /posts/
 ---
 
-Welcome to the **Sahyadri School Newsletter.** 
-
----
-
 <div class="posts-list">
-  {% for post in site.posts %}
+  {% for post in paginator.posts %}
     <article class="post-preview">
       <a href="{{ post.url | relative_url }}">
         <h2 class="post-title">{{ post.title }}</h2>
-        {% if post.subtitle %}
-          <h3 class="post-subtitle">{{ post.subtitle }}</h3>
-        {% endif %}
       </a>
-
-      <p class="post-meta">
-        Posted on {{ post.date | date: site.date_format }}
-      </p>
-
-      <div class="post-entry-container">
-        {% if post.image %}
-          <div class="post-image">
-            <a href="{{ post.url | relative_url }}">
-              <img src="{{ post.image | relative_url }}" alt="{{ post.title }}">
-            </a>
-          </div>
-        {% endif %}
-        
-        <div class="post-entry">
-          {{ post.excerpt | strip_html | truncatewords: 50 }}
-          <a href="{{ post.url | relative_url }}" class="post-read-more">[Read&nbsp;More]</a>
-        </div>
+      <p class="post-meta">Posted on {{ post.date | date: site.date_format }}</p>
+      <div class="post-entry">
+        {{ post.excerpt | strip_html | truncatewords: 50 }}
       </div>
     </article>
     <hr>
-  {% else %}
-    <p>No posts found. Check back soon!</p>
   {% endfor %}
+</div>
+
+<div class="pagination">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path | relative_url }}">&laquo; Newer Posts</a>
+  {% endif %}
+
+  <span>Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | relative_url }}">Older Posts &raquo;</a>
+  {% endif %}
 </div>
