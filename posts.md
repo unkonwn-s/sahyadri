@@ -4,6 +4,19 @@ title: Newsletter
 permalink: /posts/
 ---
 
+<style>
+  .post-read-more {
+    color: #404040; /* Same as your text-col in _config.yml */
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .post-read-more:hover {
+    color: #008AFF; /* Same as your link-col in _config.yml */
+    text-decoration: underline;
+  }
+</style>
+
 Welcome to the **Sahyadri School Newsletter.**
 
 <div class="posts-list">
@@ -11,15 +24,13 @@ Welcome to the **Sahyadri School Newsletter.**
 
   {% for group in grouped_posts %}
     <div class="term-section" style="margin-top: 50px;">
-      {% comment %} --- Category Heading (Larger) --- {% endcomment %}
-      <h2 class="term-title" style="font-size: 2.5em; border-bottom: 2px solid #008AFF; padding-bottom: 10px; margin-bottom: 25px; color: #404040;">
+      <h2 class="term-title" style="font-size: 2.5em; border-bottom: 2px solid #DDDDDD; padding-bottom: 10px; margin-bottom: 25px; color: #404040;">
         {{ group.name | default: "General Updates" }}
       </h2>
 
       {% for post in group.items %}
         <article class="post-preview" style="margin-bottom: 40px;">
           <a href="{{ post.url | relative_url }}">
-            {% comment %} --- Article Title (Smaller than Category) --- {% endcomment %}
             <h3 class="post-title" style="font-size: 1.8em; margin-bottom: 5px;">{{ post.title }}</h3>
             {% if post.subtitle %}
               <h4 class="post-subtitle" style="font-weight: normal; color: #777; font-size: 1.1em;">{{ post.subtitle }}</h4>
@@ -39,12 +50,13 @@ Welcome to the **Sahyadri School Newsletter.**
               </div>
             {% endif %}
             
-            <div class="post-entry">
+            <div class="post-entry" style="color: #404040;">
               {{ post.excerpt | strip_html | truncatewords: 30 }}
-              <a href="{{ post.url | relative_url }}" class="post-read-more" style="color: #008AFF; font-weight: bold;">[Read&nbsp;More]</a>
+              <a href="{{ post.url | relative_url }}" class="post-read-more">[Read&nbsp;More]</a>
             </div>
           </div>
         </article>
+        <hr style="border: 0; border-top: 1px solid #EEEEEE; margin: 20px 0;">
       {% endfor %}
     </div>
   {% else %}
