@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Newsletter
+title: Sahyadri School Newsletter
 permalink: /posts/
 ---
 
@@ -16,8 +16,6 @@ permalink: /posts/
     text-decoration: underline;
   }
 </style>
-
-##Welcome to the **Sahyadri School Newsletter.**
 
 <div class="posts-list">
   {% assign grouped_posts = site.posts | group_by: "category" %}
