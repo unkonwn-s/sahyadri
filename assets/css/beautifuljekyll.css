@@ -1,7 +1,7 @@
 ---
 layout: null
 ---
-
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 @import url("pygment_highlights.css");
 
 :root {
@@ -19,8 +19,8 @@ layout: null
   --footer-hover-col: {{ site.footer-hover-col | default: "#0085A1" }};
 
   /* common CSS variables */
-  --body-font: 'Lora', 'Times New Roman', serif;
-  --header-font: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --body-font: 'Indie Flower', 'Indie Flower';
+  --header-font: 'Indie Flower', 'Indie Flower';
   --mid-col: #808080;
 }
 
