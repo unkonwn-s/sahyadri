@@ -3,7 +3,6 @@ layout: page
 title:
 permalink: /posts/
 ---
-## Sahyadri School Newsletter
 <style>
   .post-read-more {
     color: #404040; /* Same as your text-col in _config.yml */
@@ -16,6 +15,8 @@ permalink: /posts/
     text-decoration: underline;
   }
 </style>
+
+### Sahyadri School Newsletter
 
 <div class="posts-list">
   {% assign grouped_posts = site.posts | group_by: "category" %}
