@@ -1139,8 +1139,8 @@ body { border-top: 5px solid red !important; }
 
 /* Force the container to 85% */
 .container, .container-xl, .container-lg {
-    max-width: 85% !important;
-    width: 85% !important;
+    max-width: 100% !important;
+    width: 100% !important;
     padding-left: 0 !important;
     padding-right: 0 !important;
 }
