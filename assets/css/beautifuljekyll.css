@@ -1126,33 +1126,4 @@ pre {
   #nav-search-text {
     display: inline-block;
   }
-  
-}
-/* DIAGNOSTIC: If you see a red border at the top of your site, the CSS is loading */
-body { border-top: 5px solid red !important; }
-
-/* Target the specific Beautiful Jekyll grid structure */
-.container .row .col-lg-8, 
-.container .row .col-md-10 {
-    flex: 0 0 100% !important;
-    max-width: 100% !important;
-    margin-left: 0 !important;
-}
-
-/* Force the container to 85% */
-.container, .container-xl, .container-lg {
-    max-width: 100% !important;
-    width: 100% !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-}
-
-/* Target the specific column classes to take up 100% of the wide container */
-.container .row .col-lg-8, 
-.container .row .col-md-10,
-.container .row .col-12 {
-    flex: 0 0 100% !important;
-    max-width: 100% !important;
-    margin-left: 0 !important;
-    text-align: center; /* Keeps your title centered in the wider space */
 }
