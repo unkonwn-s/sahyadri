@@ -1,6 +1,7 @@
 ---
 layout: null
 ---
+@import url('https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 @import url("pygment_highlights.css");
 
@@ -20,7 +21,7 @@ layout: null
 
   /* common CSS variables */
   --body-font: 'Indie Flower', cursive;
-  --header-font: 'Indie Flower', cursive;
+  --header-font: 'Hachi Maru Pop', cursive;
   --mid-col: #808080;
 }
 
