@@ -1,9 +1,9 @@
 ---
 layout: page
-title: Sahyadri School Newsletter
+title:
 permalink: /posts/
 ---
-
+## Sahyadri School Newsletter
 <style>
   .post-read-more {
     color: #404040; /* Same as your text-col in _config.yml */
