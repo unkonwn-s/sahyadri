@@ -54,7 +54,7 @@ permalink: /posts/
             </div>
           </div>
         </article>
-        <hr style="border: 0; border-top: 1px solid #EEEEEE; margin: 20px 0;">
+        <hr style="border: 0; border-top: 1px solid #735362; margin: 20px 0;">
       {% endfor %}
     </div>
   {% else %}
