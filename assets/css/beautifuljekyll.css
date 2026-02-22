@@ -6,7 +6,7 @@ layout: null
 @import url("pygment_highlights.css");
 /* This targets the main content area */
 .main-content, .wrapper, .container {
-    max-width: 90% !important; /* Increases width from the default (usually 640px or 800px) */
+    max-width:1000% !important; /* Increases width from the default (usually 640px or 800px) */
     margin: 0 auto;            /* Keeps it centered */
     padding: 2rem;             /* Ensures it doesn't touch the very edge of the screen */
 }
