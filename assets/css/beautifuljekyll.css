@@ -19,8 +19,8 @@ layout: null
   --footer-hover-col: {{ site.footer-hover-col | default: "#0085A1" }};
 
   /* common CSS variables */
-  --body-font: 'Indie Flower', 'Indie Flower';
-  --header-font: 'Indie Flower', 'Indie Flower';
+  --body-font: 'Indie Flower', cursive;
+  --header-font: 'Indie Flower', cursive;
   --mid-col: #808080;
 }
 
