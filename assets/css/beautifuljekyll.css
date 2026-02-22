@@ -1144,3 +1144,13 @@ body { border-top: 5px solid red !important; }
     padding-left: 0 !important;
     padding-right: 0 !important;
 }
+
+/* Target the specific column classes to take up 100% of the wide container */
+.container .row .col-lg-8, 
+.container .row .col-md-10,
+.container .row .col-12 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    text-align: center; /* Keeps your title centered in the wider space */
+}
