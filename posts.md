@@ -4,15 +4,27 @@ title: Newsletter
 permalink: /posts/
 ---
 <style>
+  /* Your existing styles */
   .post-read-more {
-    color: #404040; /* Same as your text-col in _config.yml */
+    color: #404040;
     font-weight: none;
     text-decoration: none;
     transition: color 0.2s ease;
   }
   .post-read-more:hover {
-    color: #008AFF; /* Same as your link-col in _config.yml */
+    color: #008AFF;
     text-decoration: underline;
+  }
+
+  /* Add this to force all horizontal lines to your color */
+  hr {
+    border: 0;
+    border-top: 1px solid #735362 !important;
+  }
+
+  /* This ensures the category underlines match */
+  .term-title {
+    border-bottom: 2px solid #735362 !important;
   }
 </style>
 
