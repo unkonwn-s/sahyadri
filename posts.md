@@ -16,16 +16,6 @@ permalink: /posts/
     text-decoration: underline;
   }
 
-  /* Add this to force all horizontal lines to your color */
-  hr {
-    border: 0;
-    border-top: 1px solid #735362 !important;
-  }
-
-  /* This ensures the category underlines match */
-  .term-title {
-    border-bottom: 2px solid #735362 !important;
-  }
 </style>
 
 <div class="posts-list">
@@ -65,7 +55,7 @@ permalink: /posts/
             </div>
           </div>
         </article>
-        <hr style="border: 0; border-top: 1px solid #735362; margin: 20px 0;">
+        
       {% endfor %}
     </div>
   {% else %}
