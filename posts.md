@@ -26,7 +26,7 @@ permalink: /posts/
       </p>
 
       {% for post in group.items %}
-        <article class="post-preview" style="margin-bottom: 40px; border-bottom: 1px solid #735362; padding-bottom: 40px;">
+        <article class="post-preview" style="margin-bottom: 40px; border-bottom: 2px solid #735362; padding-bottom: 40px;">
           <a href="{{ post.url | relative_url }}">
             <h3 class="post-title" style="font-size: 1.8em; margin-bottom: 5px;">{{ post.title }}</h3>
             {% if post.subtitle %}
