@@ -96,7 +96,7 @@ hr.small {
   max-width: 6.25rem;
   margin: 1rem auto;
   border-width: 0.25rem;
-  border-color: inherit;
+  border-color: "#735362";
   border-radius: 0.1875rem;
 }
 
@@ -1005,7 +1005,7 @@ pre {
   max-width: 25%;
   border-width: 0.25rem;
   border-radius: 0.1875rem;
-  border-color: var(--mid-col);
+  border-color: "#735362";
 }
 
 .blog-post blockquote {
