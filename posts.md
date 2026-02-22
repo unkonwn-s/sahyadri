@@ -21,9 +21,9 @@ permalink: /posts/
 
   {% for group in grouped_posts %}
     <div class="term-section" style="margin-top: 50px;">
-      <p class="term-title" style="font-size: 2.5em; border-bottom: 2px solid #735362; padding-bottom: 10px; margin-bottom: 25px; color: #404040;">
+      <h5 class="term-title" style="font-size: 2.5em; border-bottom: 2px solid #735362; padding-bottom: 10px; margin-bottom: 25px; color: #404040;">
         {{ group.name | default: "General Updates" }}
-      </p>
+      </h5>
 
       {% for post in group.items %}
         <article class="post-preview" style="margin-bottom: 40px;">
