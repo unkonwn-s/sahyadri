@@ -55,6 +55,8 @@ permalink: /posts/
             </div>
           </div>
         </article>
+
+        <div class="post-divider" style="border-bottom: 1px solid #735362; margin-top: 20px; margin-bottom: 40px; opacity: 0.5;"></div>
         
       {% endfor %}
     </div>
