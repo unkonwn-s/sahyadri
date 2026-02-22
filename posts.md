@@ -29,7 +29,7 @@ permalink: /posts/
       {% for post in group.items %}
         <article class="post-preview" style="margin-bottom: 40px;">
           <a href="{{ post.url | relative_url }}">
-            <h3 class="post-title" style="font-size: 1.8em; margin-bottom: 5px;">{{ post.title }}</h3>
+            <p class="post-title" style="font-size: 1.8em; margin-bottom: 5px;">{{ post.title }}</p>
             {% if post.subtitle %}
               <h4 class="post-subtitle" style="font-weight: normal; color: #777; font-size: 1.1em;">{{ post.subtitle }}</h4>
             {% endif %}
