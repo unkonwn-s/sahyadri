@@ -21,14 +21,14 @@ permalink: /posts/
 
   {% for group in grouped_posts %}
     <div class="term-section" style="margin-top: 50px;">
-      <h5 class="term-title" style="font-size: 2.5em; border-bottom: 2px solid #735362; padding-bottom: 10px; margin-bottom: 25px; color: #404040;">
+      <p class="term-title" style="font-size: 2.5em; border-bottom: 2px solid #735362; padding-bottom: 10px; margin-bottom: 25px; color: #404040;">
         {{ group.name | default: "General Updates" }}
-      </h5>
+      </p>
 
       {% for post in group.items %}
         <article class="post-preview" style="margin-bottom: 40px;">
           <a href="{{ post.url | relative_url }}">
-            <p class="post-title" style="font-size: 1.8em; margin-bottom: 5px;">{{ post.title }}</p>
+            <h3 class="post-title" style="font-size: 1.8em; margin-bottom: 5px;">{{ post.title }}</h3>
             {% if post.subtitle %}
               <h4 class="post-subtitle" style="font-weight: normal; color: #777; font-size: 1.1em;">{{ post.subtitle }}</h4>
             {% endif %}
