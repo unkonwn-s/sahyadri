@@ -4,7 +4,6 @@ title: Newsletter
 permalink: /posts/
 ---
 <style>
-  /* Your existing styles */
   .post-read-more {
     color: #404040;
     font-weight: none;
@@ -15,7 +14,6 @@ permalink: /posts/
     color: #008AFF;
     text-decoration: underline;
   }
-
 </style>
 
 <div class="posts-list">
@@ -28,7 +26,7 @@ permalink: /posts/
       </p>
 
       {% for post in group.items %}
-        <article class="post-preview">
+        <article class="post-preview" style="margin-bottom: 40px; border-bottom: 1px solid #735362; padding-bottom: 40px;">
           <a href="{{ post.url | relative_url }}">
             <h3 class="post-title" style="font-size: 1.8em; margin-bottom: 5px;">{{ post.title }}</h3>
             {% if post.subtitle %}
@@ -55,7 +53,8 @@ permalink: /posts/
             </div>
           </div>
         </article>
-
+      {% endfor %}
+    </div>
   {% else %}
     <p>No newsletters found. Check back soon!</p>
   {% endfor %}
