@@ -7,7 +7,7 @@ permalink: /posts/
 <style>
   .post-read-more {
     color: #404040; /* Same as your text-col in _config.yml */
-    font-weight: bold;
+    font-weight: none;
     text-decoration: none;
     transition: color 0.2s ease;
   }
@@ -22,9 +22,9 @@ permalink: /posts/
 
   {% for group in grouped_posts %}
     <div class="term-section" style="margin-top: 50px;">
-      <h2 class="term-title" style="font-size: 2.5em; border-bottom: 2px solid #DDDDDD; padding-bottom: 10px; margin-bottom: 25px; color: #404040;">
+      <p class="term-title" style="font-size: 2.5em; border-bottom: 2px solid #DDDDDD; padding-bottom: 10px; margin-bottom: 25px; color: #404040;">
         {{ group.name | default: "General Updates" }}
-      </h2>
+      </p>
 
       {% for post in group.items %}
         <article class="post-preview" style="margin-bottom: 40px;">
