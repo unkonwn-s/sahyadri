@@ -4,17 +4,6 @@ layout: null
 @import url('https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 @import url("pygment_highlights.css");
-/* This targets the main content area */
-.main-content, .wrapper, .container {
-    max-width:1000% !important; /* Increases width from the default (usually 640px or 800px) */
-    margin: 0 auto;            /* Keeps it centered */
-    padding: 2rem;             /* Ensures it doesn't touch the very edge of the screen */
-}
-
-/* Specifically ensuring the header isn't constricted */
-header, .site-header {
-    max-width: 100% !important;
-}
 
 :root {
   /* config file CSS variables */
