@@ -44,6 +44,7 @@ main .col-lg-10 {
 /* Apply it to the whole body or specific elements */
 body, p, div {
     font-family: 'Julia Sans One' !important;
+    text-transform: uppercase;
 }
 
 /* Specifically for the Category/Post Meta as you asked earlier */
