@@ -15,4 +15,17 @@ main .col-lg-10 {
     margin-right: auto !important;
     margin-left: auto !important;
 }
+/* Reduce the width of the main body content only */
+main.container-md {
+    max-width: 50% !important; /* Change this % to make it narrower */
+    width: 50% !important;
+    margin: 0 auto !important; /* Keeps the narrow body centered */
+}
 
+/* Ensure the text inside the body fills the new 75% width */
+main .col-xl-8, 
+main .col-lg-10 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+}
