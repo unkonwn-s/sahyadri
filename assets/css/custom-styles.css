@@ -1,20 +1,13 @@
-/* 1. Target only the content container, NOT the header */
-main .container-md, 
-main .container-lg, 
-main .container {
-    max-width: 95% !important;
-    width: 80% !important;
+/* 1. Reset the Bootstrap columns to be full-width of their parent */
+main .col-xl-8, 
+main .col-lg-10 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
 }
 
-/* 2. Apply Verdana font to the entire site */
-html, body, p, div, h1, h2, h3, h4, h5, h6, .site-heading, .post-heading, .navbar-brand {
-    font-family: 'Verdana', Geneva, sans-serif !important;
-}
-
-/* 3. Mobile adjustment: allow more width on small screens so text isn't too narrow */
-@media (max-width: 768px) {
-    main .container-md, main .container {
-        max-width: 95% !important;
-        width: 95% !important;
-    }
+/* 2. Set the main container to exactly 75% */
+main .container-md {
+    max-width: 75% !important;
+    width: 75% !important;
 }
