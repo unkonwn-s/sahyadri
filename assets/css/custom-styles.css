@@ -11,8 +11,10 @@ main .col-lg-10 {
 .intro-header .container-lg, 
 .intro-header .container {
     max-width: 110% !important;
-    width: 90% !important;
+    width: 100% !important;
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 /* Reduce the width of the main body content only */
 main.container-md {
