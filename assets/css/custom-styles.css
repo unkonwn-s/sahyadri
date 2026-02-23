@@ -29,3 +29,12 @@ main .col-lg-10 {
     max-width: 100% !important;
     margin-left: 0 !important;
 }
+/* Change the font specifically for the Category / Tags labels */
+.blog-tags, 
+.post-categories, 
+.blog-tags a, 
+.post-meta {
+    font-family: 'Julis sans', Geneva, sans-serif !important;
+    font-weight: bold; /* Optional: makes it stand out */
+    text-transform: uppercase; /* Optional: matches many blog styles */
+}
