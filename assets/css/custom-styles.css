@@ -34,7 +34,7 @@ main .col-lg-10 {
 .post-categories, 
 .blog-tags a, 
 .post-meta {
-    font-family: 'Julis sans', Geneva, sans-serif !important;
+    font-family: 'Julis sans one' !important;
     font-weight: bold; /* Optional: makes it stand out */
     text-transform: uppercase; /* Optional: matches many blog styles */
 }
