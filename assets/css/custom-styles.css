@@ -15,8 +15,8 @@ main .container-md {
 .intro-header .container-md, 
 .intro-header .container-lg, 
 .intro-header .container {
-    max-width: 75% !important;
-    width: 75% !important;
+    max-width: 95% !important;
+    width: 95% !important;
     margin-right: auto !important;
     margin-left: auto !important;
 }
