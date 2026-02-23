@@ -1,5 +1,5 @@
 <style>
-  /* Force everything to 85% width */
+  /** Force everything to 85% width 
   body, 
   .container, 
   .main-content, 
@@ -11,7 +11,7 @@
     width: 85% !important;
   }
 
-  /* Force the internal columns to stop shrinking the text */
+ Force the internal columns to stop shrinking the text **/
   .col-lg-8, .col-md-10, .col-lg-offset-2 {
     flex: 0 0 100% !important;
     max-width: 100% !important;
