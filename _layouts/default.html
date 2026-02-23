@@ -23,3 +23,14 @@ layout: base
     </div>
   {% endif %}
 </main>
+
+.container-md, .container-lg, .container-xl {
+    max-width: 75% !important;
+}
+
+/* Ensure it still looks good on mobile phones */
+@media (max-width: 768px) {
+    .container-md {
+        max-width: 95% !important;
+    }
+}
