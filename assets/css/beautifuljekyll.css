@@ -20,7 +20,7 @@ layout: null
   --footer-hover-col: {{ site.footer-hover-col | default: "#0085A1" }};
 
   /* common CSS variables */
-  --body-font: 'Indie Flower', cursive;
+  --body-font: 'Verdana','Geneva', 'sans-serif';
   --header-font: 'Hachi Maru Pop', cursive;
   --mid-col: #808080;
 }
