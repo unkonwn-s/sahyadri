@@ -38,3 +38,15 @@ main .col-lg-10 {
     font-weight: bold; /* Optional: makes it stand out */
     text-transform: uppercase; /* Optional: matches many blog styles */
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Julia+Sans+One&display=swap');
+
+/* Apply it to the whole body or specific elements */
+body, p, div {
+    font-family: 'Julia Sans One', sans-serif !important;
+}
+
+/* Specifically for the Category/Post Meta as you asked earlier */
+.blog-tags, .post-categories, .post-meta {
+    font-family: 'Julia Sans One', sans-serif !important;
+}
