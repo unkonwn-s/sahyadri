@@ -1,20 +1,11 @@
-<style>
-  /** Force everything to 85% width 
-  body, 
-  .container, 
-  .main-content, 
-  .intro-header,
-  header.intro-header {
+/* Force the main content area to 75% width */
+main.container-md, 
+main.container-lg, 
+.container, 
+.container-fluid {
+    max-width: 75% !important;
+    width: 75% !important;
     margin-left: auto !important;
     margin-right: auto !important;
-    max-width: 85% !important;
-    width: 85% !important;
-  }
-
- Force the internal columns to stop shrinking the text **/
-  .col-lg-8, .col-md-10, .col-lg-offset-2 {
-    flex: 0 0 100% !important;
-    max-width: 100% !important;
-    margin-left: 0 !important;
-  }
-</style>
+    display: block !important;
+}
