@@ -26,7 +26,7 @@ subtitle:
 **Finance-related** - [accounts@sahyadrischool.org](mailto:accounts@sahyadrischool.org){:target="_blank"}
 
 
-<br>
+<br><br>
 **Escalations** - [principal@sahyadrischool.org](mailto:principal@sahyadrischool.org){:target="_blank"}
 
 
