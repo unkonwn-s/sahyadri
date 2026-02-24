@@ -24,10 +24,10 @@ main.container-md {
 }
 
 h1 {
-  /* 10vw means the font size is 10% of the browser's width */
-  font-size: 75vw; 
-  white-space: nowrap; /* Prevents text from breaking into two lines */
-  display: block;
+  /* clamp(minimum, preferred, maximum) */
+  font-size: clamp(2rem, 8vw, 6rem); 
+  white-space: nowrap;
+  text-align: center;
 }
 
 h1, h2 {
