@@ -22,6 +22,9 @@ main.container-md {
     width: 75% !important;
     margin: 0 auto !important; /* Keeps the narrow body centered */
 }
+h1 {
+    font-size: 2rem;
+}
 
 h1, h2 {
   font-family: 'Amatic SC', sans-serif;
