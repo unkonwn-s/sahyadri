@@ -32,10 +32,13 @@ h1, h2 {
 /* Change the font specifically for the Category / Tags labels */
 .blog-tags, 
 .post-categories, 
-.blog-tags a, 
-.post-meta {
+.blog-tags a {
     font-family: 'Vibes' !important;
     text-transform: uppercase; /* Optional: matches many blog styles */
+}
+
+.post-meta{
+    font-family: 'Vibes';
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Julia+Sans+One&display=swap');
