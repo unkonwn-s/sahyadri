@@ -11,7 +11,7 @@ main .col-lg-10 {
 .intro-header .container-lg, 
 .intro-header .container {
     max-width: 1200px !important;
-    width: 150% !important;
+    width: 100% !important;
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
@@ -21,14 +21,6 @@ main.container-md {
     max-width: 75% !important; /* Change this % to make it narrower */
     width: 75% !important;
     margin: 0 auto !important; /* Keeps the narrow body centered */
-}
-
-h1 {
-  /* clamp(minimum, preferred, maximum) */
-  font-size: clamp(2rem, 8vw, 6rem); 
-  white-space: nowrap;
-  text-align: center;
-  margin: 0 0 20px 0;
 }
 
 h1, h2 {
