@@ -23,7 +23,7 @@ main.container-md {
     margin: 0 auto !important; /* Keeps the narrow body centered */
 }
 h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 h1, h2 {
