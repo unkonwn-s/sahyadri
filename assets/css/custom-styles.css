@@ -10,7 +10,7 @@ main .col-lg-10 {
 .intro-header .container-md, 
 .intro-header .container-lg, 
 .intro-header .container {
-    max-width: 110% !important;
+    max-width: 1200px !important;
     width: 100% !important;
     justify-content: center;
     margin-left: auto;
@@ -18,24 +18,17 @@ main .col-lg-10 {
 }
 /* Reduce the width of the main body content only */
 main.container-md {
-    max-width: 55% !important; /* Change this % to make it narrower */
-    width: 55% !important;
+    max-width: 75% !important; /* Change this % to make it narrower */
+    width: 75% !important;
     margin: 0 auto !important; /* Keeps the narrow body centered */
 }
 
-/* Ensure the text inside the body fills the new 75% width */
-main .col-xl-8, 
-main .col-lg-10 {
-    flex: 0 0 100% !important;
-    max-width: 100% !important;
-    margin-left: 0 !important;
-}
 /* Change the font specifically for the Category / Tags labels */
 .blog-tags, 
 .post-categories, 
 .blog-tags a, 
 .post-meta {
-    font-family: 'Julis sans one' !important;
+    font-family: 'Julis Sans One' !important;
     font-weight: bold; /* Optional: makes it stand out */
     text-transform: uppercase; /* Optional: matches many blog styles */
 }
