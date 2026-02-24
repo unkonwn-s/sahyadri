@@ -23,6 +23,13 @@ main.container-md {
     margin: 0 auto !important; /* Keeps the narrow body centered */
 }
 
+h1 {
+  /* 10vw means the font size is 10% of the browser's width */
+  font-size: 75vw; 
+  white-space: nowrap; /* Prevents text from breaking into two lines */
+  display: block;
+}
+
 h1, h2 {
   font-family: 'Amatic SC', sans-serif;
   font-weight: bold;
