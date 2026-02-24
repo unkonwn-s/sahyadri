@@ -28,6 +28,7 @@ h1 {
   font-size: clamp(2rem, 8vw, 6rem); 
   white-space: nowrap;
   text-align: center;
+  margin: 0 0 20px 0;
 }
 
 h1, h2 {
