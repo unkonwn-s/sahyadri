@@ -26,13 +26,13 @@ subtitle:
 **Finance-related** - [accounts@sahyadrischool.org](mailto:accounts@sahyadrischool.org){:target="_blank"}
 
 
-<br><br>
+<br>
 **Escalations** - [principal@sahyadrischool.org](mailto:principal@sahyadrischool.org){:target="_blank"}
 
 
 <br>
 **Study Centre** - [studycentre@sahyadrischool.org](mailto:studycentre@sahyadrischool.org){:target="_blank"}
-<br>
+<br><br><br>
 ### Don'ts
 
 * Send emails or WhatsApp messages directly to teachers or house parents
