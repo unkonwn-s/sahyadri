@@ -11,7 +11,7 @@ main .col-lg-10 {
 .intro-header .container-lg, 
 .intro-header .container {
     max-width: 1200px !important;
-    width: 100% !important;
+    width: 120% !important;
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
