@@ -46,7 +46,7 @@ h1, h2, .term-title {
 }
 
 .post-meta, h3{
-    font-family: 'Vibes' !important;
+    font-family: 'Vibes', cursive !important;
     font-weight: bold !important;
     font-size: 1.25rem !important;
 }
