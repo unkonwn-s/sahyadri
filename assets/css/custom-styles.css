@@ -83,8 +83,17 @@ body, p, div {
     font-family: 'Vibes', cursive;
     font-size: 0.85rem;
     font-transform: uppercase;
+    font-colour: "#E8F3DF";
+    font-hover: "#FFFFFF";
 }
 
 .navabar-brand {
     font-family: 'Amatic SC', sans serif;
+    font-colour: "#E8F3DF";
+    font-hover: "#FFFFFF";
+}
+
+.copyright text-muted {
+    font-family: 'Vibes', cursive;
+    text-transform: uppercase;
 }
