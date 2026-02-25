@@ -23,8 +23,8 @@ main .col-lg-10 {
 }
 /* Reduce the width of the main body content only */
 main.container-md {
-    max-width: 75% !important; /* Change this % to make it narrower */
-    width: 75% !important;
+    max-width: 65% !important; /* Change this % to make it narrower */
+    width: 65% !important;
     margin: 0 auto !important; /* Keeps the narrow body centered */
 }
 h1 {
