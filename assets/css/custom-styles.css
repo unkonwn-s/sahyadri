@@ -74,5 +74,7 @@ body, p, div {
     
 }
 .navbar .nav-link {
-  font-size: 0.85rem;
+    font-family: 'Vibes', cursive;
+    font-size: 0.85rem;
+    font-transform: uppercase;
 }
