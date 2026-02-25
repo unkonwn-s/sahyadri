@@ -60,7 +60,7 @@ h1, h2, .term-title {
 body, p, div {
     font-family: 'Montserrat' !important;
     font-weight: 300 !important;
-    font-size: 1.0rem;
+    font-size: 0.85rem;
 }
 
 /* Specifically for the Category/Post Meta as you asked earlier */
