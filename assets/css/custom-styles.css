@@ -78,3 +78,7 @@ body, p, div {
     font-size: 0.85rem;
     font-transform: uppercase;
 }
+
+.navabar-brand {
+    font-family: 'Amatic SC', sans serif;
+}
