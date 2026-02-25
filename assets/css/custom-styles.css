@@ -31,14 +31,14 @@ h1 {
     font-size: 1.5rem;
 }
 
-h1, h2 {
+h1, h2, .term-title {
   font-family: 'Amatic SC', sans-serif;
   font-weight: bold;
   text-transform: uppercase;
 }
 
 
-.post-meta{
+.post-meta, h3 {
     font-family: 'Vibes';
     font-weight: bold;
 }
@@ -48,6 +48,7 @@ h1, h2 {
 body, p, div {
     font-family: 'Montserrat' !important;
     font-weight: 300;
+    font-size: 0.75rem;
 }
 
 /* Specifically for the Category/Post Meta as you asked earlier */
