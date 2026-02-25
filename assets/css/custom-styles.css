@@ -51,7 +51,7 @@ body, p, div {
 }
 
 /* Specifically for the Category/Post Meta as you asked earlier */
-.blog-tags, .post-categories, .blog-tags {
+.blog-tags, .post-categories, .blog-tags, .page-subheading {
     font-family: 'Amatic SC' !important;
 }
 .navbar .nav-link {
