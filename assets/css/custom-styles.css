@@ -37,6 +37,10 @@ h1, h2, .term-title {
   text-transform: uppercase !important;
 }
 
+.term-title {
+    font-size: 1.5rem !important;
+}
+
 
 .post-meta, h3 {
     font-family: 'Vibes' !important;
