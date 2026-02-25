@@ -37,13 +37,6 @@ h1, h2 {
   text-transform: uppercase;
 }
 
-/* Change the font specifically for the Category / Tags labels */
-
-.post-categories, 
-.blog-tags a {
-    font-family: 'Vibes' !important;
-    text-transform: uppercase; /* Optional: matches many blog styles */
-}
 
 .post-meta{
     font-family: 'Vibes';
