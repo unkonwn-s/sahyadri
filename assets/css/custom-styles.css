@@ -45,11 +45,17 @@ h1, h2, .term-title {
     font-size: 0.85rem;
 }
 
-.post-meta, h3{
+h3 {
     font-family: 'Vibes', cursive !important;
     font-weight: bold !important;
     font-size: 1.25rem !important;
 }
+.post-meta {
+    font-family: 'Vibes', cursive !important;
+    font-weight: bold !important;
+    font-size: 1.0rem !important;
+}
+    
 
 .post-title {
     font-family: 'Vibes' !important;
