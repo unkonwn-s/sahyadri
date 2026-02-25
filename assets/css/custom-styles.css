@@ -1,4 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Julia+Sans+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Great+Vibes&family=Montserrat:wght@400;700&display=swap');
+
+
 /* 1. Reset the Bootstrap columns to be full-width of their parent */
+
 main .col-xl-8, 
 main .col-lg-10 {
     flex: 0 0 100% !important;
@@ -45,7 +50,6 @@ h1, h2 {
     font-weight: bold;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Julia+Sans+One&display=swap');
 
 /* Apply it to the whole body or specific elements */
 body, p, div {
