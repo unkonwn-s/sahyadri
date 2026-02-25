@@ -52,13 +52,13 @@ h1, h2 {
 
 
 /* Apply it to the whole body or specific elements */
-body, p, div {
+body, p {
     font-family: 'Montserrat' !important;
     font-weight: 300;
 }
 
 /* Specifically for the Category/Post Meta as you asked earlier */
-.blog-tags, .post-categories {
+.blog-tags, .post-categories, div {
     font-family: 'Amatic SC' !important;
 }
 .navbar .nav-link {
