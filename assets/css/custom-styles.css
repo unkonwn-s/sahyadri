@@ -38,7 +38,7 @@ h1, h2 {
 }
 
 /* Change the font specifically for the Category / Tags labels */
-.blog-tags, 
+
 .post-categories, 
 .blog-tags a {
     font-family: 'Vibes' !important;
@@ -52,13 +52,13 @@ h1, h2 {
 
 
 /* Apply it to the whole body or specific elements */
-body, p {
+body, p, div {
     font-family: 'Montserrat' !important;
     font-weight: 300;
 }
 
 /* Specifically for the Category/Post Meta as you asked earlier */
-.blog-tags, .post-categories, div {
+.blog-tags, .post-categories, .blog-tags {
     font-family: 'Amatic SC' !important;
 }
 .navbar .nav-link {
