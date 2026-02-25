@@ -54,6 +54,9 @@ body, p, div {
 .blog-tags, .post-categories, .blog-tags, .page-subheading {
     font-family: 'Amatic SC' !important;
     font-weight: bold;
+    font-size: 1.25rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
     
 }
 .navbar .nav-link {
