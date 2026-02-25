@@ -41,6 +41,9 @@ h1, h2, .term-title {
     font-size: 2.5rem !important;
 }
 
+.poet-entry {
+    font-size: 0.85rem;
+}
 
 .post-meta, h3{
     font-family: 'Vibes' !important;
