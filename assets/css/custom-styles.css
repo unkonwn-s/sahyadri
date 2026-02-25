@@ -49,14 +49,14 @@ h1, h2, .term-title {
 body, p, div {
     font-family: 'Montserrat' !important;
     font-weight: 300 !important;
-    font-size: 1.25rem;
+    font-size: 1.0rem;
 }
 
 /* Specifically for the Category/Post Meta as you asked earlier */
 .blog-tags, .post-categories, .blog-tags, .page-subheading {
     font-family: 'Amatic SC' !important;
     font-weight: bold;
-    font-size: 1.0rem;
+    font-size: 1.25rem;
     margin-top: 10px;
     margin-bottom: 10px;
     
