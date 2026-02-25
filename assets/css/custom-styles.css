@@ -80,20 +80,20 @@ body, p, div {
     
 }
 .navbar .nav-link {
-    font-family: 'Vibes', cursive;
+    font-family: 'Vibes', cursive !important;
     font-size: 0.85rem;
-    font-transform: uppercase;
-    font-colour: "#E8F3DF";
-    font-hover: "#FFFFFF";
+    font-transform: uppercase ;
+    font-colour: "#E8F3DF" !important;
+    font-hover: "#FFFFFF" !important;
 }
 
 .navabar-brand {
-    font-family: 'Amatic SC', sans serif;
-    font-colour: "#E8F3DF";
-    font-hover: "#FFFFFF";
+    font-family: 'Amatic SC', sans serif !important;
+    font-colour: "#E8F3DF" !important;
+    font-hover: "#FFFFFF" !important;
 }
 
 .copyright text-muted {
-    font-family: 'Vibes', cursive;
-    text-transform: uppercase;
+    font-family: 'Vibes', cursive !important;
+    text-transform: uppercase !important;
 }
