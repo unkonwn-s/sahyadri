@@ -21,7 +21,7 @@ title: Monsoon 2025-26 - Weekly Excerpts
   </div>
   
   <div class="col-sm-6 video-container">
-    <iframe width="100%" height="315" src="https://www.youtube.com/embed/SOf-hVre2C0" frameborder="0" allowfullscreen></iframe>
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/fHEZXF6uR1U" frameborder="0" allowfullscreen></iframe>
     <div class="video-caption">
       Excerpt - <a href="https://www.youtube.com/watch?v=SOf-hVre2C0" target="_blank">On Ambition</a><br>
       Published on - Aug 30, 2025
