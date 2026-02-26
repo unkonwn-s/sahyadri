@@ -42,7 +42,7 @@ h1, h2, .term-title {
 }
 
 .poet-entry {
-    font-size: clamp(1rem, 0.89rem + 0.55vw, 2rem) !important;
+    font-size: clamp(1rem, 0.69rem + 0.55vw, 2rem) !important;
 }
 
 h3 {
