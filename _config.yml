@@ -19,7 +19,7 @@ navbar-links:
   Newsletter: "posts"
   Resources:
     - Photos: "photos"
-    - Videos: "videos25"
+    - Videos: "videos"
 
   # _config.yml
 ################
