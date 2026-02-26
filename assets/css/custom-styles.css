@@ -146,3 +146,85 @@ body, p, div {
         flex: 0 1 100%;
     }
 }
+
+.video-grid {
+    display: flex;
+    flex-wrap: wrap-reverse; /* Your preferred reverse ordering */
+    justify-content: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 50px auto;
+}
+
+.video-item {
+    flex: 0 1 calc(50% - 20px);
+    margin: 0;
+}
+
+/* The 16:9 Aspect Ratio Box */
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    background-color: #000;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* Thumbnail and Iframe positioning */
+.video-wrapper img, 
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* The Play Button (Centered Circle) */
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px;
+    height: 70px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 3px solid #fff;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    z-index: 2;
+}
+
+/* The Play Button Triangle */
+.play-button::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    border-style: solid;
+    border-width: 15px 0 15px 25px;
+    border-color: transparent transparent transparent #fff;
+}
+
+.video-wrapper:hover .play-button {
+    background-color: #ff0000; /* YouTube Red on hover */
+    border-color: #ff0000;
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.video-item figcaption {
+    margin-top: 15px;
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .video-item { flex: 0 1 100%; }
+}
