@@ -98,42 +98,41 @@ body, p, div {
     text-transform: uppercase !important;
 }
 
-/* Container for the 2-column grid */
 .album-grid {
-    display: grid;
-    /* This creates exactly 2 columns of equal width */
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px; /* Space between rows and columns */
+    display: flex;
+    /* This wraps items and puts the first ones at the bottom */
+    flex-wrap: wrap-reverse; 
+    /* This ensures we keep the 2-column look (50% width minus the gap) */
+    justify-content: center;
+    gap: 30px; 
     max-width: 1000px;
     margin: 50px auto;
     padding: 0 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', sans-serif;
 }
 
-/* Individual album container */
 .album-item {
+    /* (100% / 2) - half of the gap = ~48% */
+    flex: 0 1 calc(50% - 15px); 
     margin: 0;
     text-align: center;
 }
 
-/* Styling the clickable image */
+/* Keep your existing .album-item img and figcaption styles as they were */
 .album-item img {
     width: 100%;
     height: auto;
-    aspect-ratio: 1 / 1; /* Forces a square "album cover" look */
-    object-fit: cover;    /* Ensures photo fills square without stretching */
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     transition: transform 0.2s ease-in-out;
 }
 
-/* Zoom effect when hovering over the album */
 .album-item a:hover img {
     transform: scale(1.03);
-    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
 }
 
-/* Styling the caption below the image */
 .album-item figcaption {
     margin-top: 15px;
     font-size: 18px;
@@ -141,9 +140,9 @@ body, p, div {
     color: #444;
 }
 
-/* Responsive: Switch to 1 column on mobile phones */
+/* Mobile Responsive: 1 column */
 @media (max-width: 600px) {
-    .album-grid {
-        grid-template-columns: 1fr;
+    .album-item {
+        flex: 0 1 100%;
     }
 }
