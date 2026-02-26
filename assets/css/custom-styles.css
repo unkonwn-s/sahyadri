@@ -67,7 +67,7 @@ h3 {
 body, p, div {
     font-family: 'Montserrat' !important;
     font-weight: 300 !important;
-    font-size: clamp(1rem, 0.86rem + 0.68vw, 2.5rem);
+    font-size: clamp(1rem, 0.5rem + 0.68vw, 2.5rem);
 }
 
 /* Specifically for the Category/Post Meta as you asked earlier */
