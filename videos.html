@@ -2,37 +2,50 @@
 layout: page
 title: Videos
 ---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Gallery</title>
+    <link rel="stylesheet" href="custom-styles.css">
+</head>
+<body>
 
-<div class="video-grid">
-    <figure class="video-item">
-        <div class="video-wrapper" onclick="loadVideo(this)" data-video="VIDEO_ID_1">
-            <img src="https://img.youtube.com/vi/VIDEO_ID_1/maxresdefault.jpg" class="thumbnail" alt="Video Thumbnail">
-            <div class="play-button"></div>
-        </div>
-        <figcaption>Project Alpha Demo</figcaption>
-    </figure>
+    <div class="video-grid">
+        <figure class="video-item">
+            <div class="video-wrapper" onclick="loadVideo(this)" data-video="VIDEO_ID_1">
+                <img src="https://img.youtube.com/vi/VIDEO_ID_1/maxresdefault.jpg" class="thumbnail" alt="Thumbnail 1">
+                <div class="play-button"></div>
+            </div>
+            <figcaption>Oldest Video</figcaption>
+        </figure>
 
-    <figure class="video-item">
-        <div class="video-wrapper" onclick="loadVideo(this)" data-video="VIDEO_ID_2">
-            <img src="https://img.youtube.com/vi/VIDEO_ID_2/maxresdefault.jpg" class="thumbnail" alt="Video Thumbnail">
-            <div class="play-button"></div>
-        </div>
-        <figcaption>Project Beta Demo</figcaption>
-    </figure>
-</div>
+        <figure class="video-item">
+            <div class="video-wrapper" onclick="loadVideo(this)" data-video="VIDEO_ID_2">
+                <img src="https://img.youtube.com/vi/VIDEO_ID_2/maxresdefault.jpg" class="thumbnail" alt="Thumbnail 2">
+                <div class="play-button"></div>
+            </div>
+            <figcaption>Newest Video</figcaption>
+        </figure>
+    </div>
 
-<script>
-function loadVideo(container) {
-    const videoId = container.getAttribute('data-video');
-    // Create the iframe with autoplay=1 and allowfullscreen
-    const iframe = document.createElement('iframe');
-    iframe.setAttribute('src', `https://www.youtube.com/embed/${videoId}?autoplay=1`);
-    iframe.setAttribute('frameborder', '0');
-    iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
-    iframe.setAttribute('allowfullscreen', 'true');
-    
-    // Clear the thumbnail/button and add the iframe
-    container.innerHTML = '';
-    container.appendChild(iframe);
-}
-</script>
+    <script>
+    function loadVideo(container) {
+        const videoId = container.getAttribute('data-video');
+        // autoplay=1 starts the video immediately after the click
+        // rel=0 prevents showing related videos from other channels
+        const iframe = document.createElement('iframe');
+        iframe.setAttribute('src', `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`);
+        iframe.setAttribute('frameborder', '0');
+        iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+        iframe.setAttribute('allowfullscreen', 'true'); // Enables the fullscreen button
+        
+        // Replace thumbnail and play button with the player
+        container.innerHTML = '';
+        container.appendChild(iframe);
+    }
+    </script>
+
+</body>
+</html>
