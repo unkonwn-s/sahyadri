@@ -28,7 +28,7 @@ main.container-md {
     margin: 0 auto !important; /* Keeps the narrow body centered */
 }
 h1 {
-    font-size: clamp(2.0rem, 5vw + 1.0rem, 4.5rem) !important;
+    font-size: clamp(2rem, 1.45rem + 2.73vw, 8rem) !important;
 }
 
 h1, h2, .term-title {
@@ -38,22 +38,22 @@ h1, h2, .term-title {
 }
 
 .term-title {
-    font-size: 2.5rem !important;
+    font-size: clamp(2rem, 1.45rem + 2.73vw, 8rem) !important;
 }
 
 .poet-entry {
-    font-size: 0.85rem;
+    font-size: clamp(1rem, 0.89rem + 0.55vw, 2rem) !important;
 }
 
 h3 {
     font-family: 'Vibes', cursive !important;
     font-weight: bold !important;
-    font-size: 1.25rem !important;
+    font-size: clamp(1.5rem, 1.18rem + 1.59vw, 5rem) !important;
 }
 .post-meta {
     font-family: 'Vibes', cursive !important;
     font-weight: bold !important;
-    font-size: 1.0rem !important;
+    font-size: clamp(1.125rem, 0.96rem + 0.82vw, 3rem) !important;
 }
     
 
@@ -67,7 +67,7 @@ h3 {
 body, p, div {
     font-family: 'Montserrat' !important;
     font-weight: 300 !important;
-    font-size: 0.85rem;
+    font-size: clamp(1rem, 0.86rem + 0.68vw, 2.5rem);
 }
 
 /* Specifically for the Category/Post Meta as you asked earlier */
