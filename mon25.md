@@ -12,7 +12,7 @@ title: Monsoon 2025-26 - Weekly Excerpts
 
 <div class="row">
   <div class="col-sm-6 video-container">
-    <iframe width="100%" height="315" src="[https://www.youtube.com/watch?v=wm0lN9K8GNc](https://www.youtube.com/embed/wm0lN9K8GNc)" frameborder="0" allowfullscreen></iframe>
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/wm0lN9K8GNc" frameborder="0" allowfullscreen></iframe>
     <div class="video-caption">
       Excerpt - <a href="https://www.youtube.com/watch?v=nS_YJ9m4XGg" target="_blank">Freedom & Authority</a>, 
       <a href="https://www.youtube.com/playlist?list=PL1n30s-LKus4_P_v-vP_W27G8XvB0U-fX" target="_blank">Playlist on Authority</a><br>
