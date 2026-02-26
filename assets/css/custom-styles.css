@@ -28,7 +28,7 @@ main.container-md {
     margin: 0 auto !important; /* Keeps the narrow body centered */
 }
 h1 {
-    font-size: clamp(2rem, 2.0rem + 2.73vw, 8rem) !important;
+    font-size: clamp(2.5rem, 2.5rem + 2.73vw, 8rem) !important;
 }
 
 h1, h2, .term-title {
