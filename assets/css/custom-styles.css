@@ -149,6 +149,7 @@ body, p, div {
 .video-grid {
     display: flex;
     flex-wrap: wrap-reverse; /* Your preferred reverse ordering */
+    flex-direction: row-reverse;
     justify-content: center;
     gap: 40px;
     max-width: 1200px;
