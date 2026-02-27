@@ -277,8 +277,8 @@ body, p, div {
     max-width: 65% !important; /* Matches your main.container-md */
     width: 65% !important;
     margin: 0 auto !important;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 /* Mobile Adjustment: Make footer wider on small screens */
