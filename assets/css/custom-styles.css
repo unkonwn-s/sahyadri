@@ -228,3 +228,7 @@ body, p, div {
 @media (max-width: 768px) {
     .video-item { flex: 0 1 100%; }
 }
+
+.page-subheading {
+    font-weight: bold;
+}
