@@ -120,7 +120,7 @@ body, p, div {
 
 /* Keep your existing .album-item img and figcaption styles as they were */
 .album-item img {
-    width: 100%;
+    width: 120%;
     height: auto;
     aspect-ratio: 1 / 1;
     object-fit: cover;
