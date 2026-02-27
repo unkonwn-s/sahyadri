@@ -1,30 +1,52 @@
 <footer>
   <div class="container-md beautiful-jekyll-footer">
-    <div class="row">
+    <div class="row contact-info-section text-center text-md-left mb-4">
+      <div class="col-md-4 mb-3">
+        <h3 class="footer-heading">Mail Us</h3>
+        <p><strong>Address:</strong><br>
+        Sahyadri School<br>
+        Krishnamurti Foundation India<br>
+        Post : Tiwai Hill, Tal : Rajgurunagar (Khed),<br>
+        Dist : Pune, Pin – 410513, Maharashtra, India</p>
+      </div>
+
+      <div class="col-md-5 mb-3">
+        <h3 class="footer-heading">Call Us</h3>
+        <p><strong>Telephone:</strong><br>
+        +91 9422304265 / +91 9422304267<br>
+        +91 9422304276 / +91 9422308583<br>
+        +91 8208799149 / +91 8208773449<br>
+        +91 8999109237 / +91 8080695295</p>
+      </div>
+
+      <div class="col-md-3 mb-3">
+        <h3 class="footer-heading">Email Us</h3>
+        <p><strong>Email:</strong><br>
+        <a href="mailto:office@sahyadrischool.org">office@sahyadrischool.org</a></p>
+      </div>
+    </div>
+    <hr> <div class="row">
       <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
-      {% include social-networks-links.html %}
-      {% if page.footer-extra %}
-        <div class="footer-custom-content">
-          {% for file in page.footer-extra %}
-            {% include {{ file }} %}
-          {% endfor %}
-        </div>
-      {% endif %}
-      <p class="copyright text-muted">
-      {% if site.author %}
-        {{ site.author }}
-        &nbsp;&bull;&nbsp;
-      {% endif %}
-      {{ site.time | date: '%Y' }}
+        {% include social-networks-links.html %}
+        
+        {% if page.footer-extra %}
+          <div class="footer-custom-content">
+            {% for file in page.footer-extra %}
+              {% include {{ file }} %}
+            {% endfor %}
+          </div>
+        {% endif %}
 
-      {% if site.url-pretty %}
-        &nbsp;&bull;&nbsp;
-        <span class="author-site">
-          <a href="{% if site.url-canonical %}{{ site.url-canonical }}{% else %}{{ '/' | absolute_url }}{% endif %}">{{ site.url-pretty }}</a>
-        </span>
-      {% endif %}
-
-    
+        <p class="copyright text-muted">
+          {% if site.author %}{{ site.author }} &nbsp;&bull;&nbsp; {% endif %}
+          {{ site.time | date: '%Y' }}
+          {% if site.url-pretty %}
+            &nbsp;&bull;&nbsp;
+            <span class="author-site">
+              <a href="{% if site.url-canonical %}{{ site.url-canonical }}{% else %}{{ '/' | absolute_url }}{% endif %}">{{ site.url-pretty }}</a>
+            </span>
+          {% endif %}
+        </p>
       </div>
     </div>
   </div>
