@@ -29,21 +29,36 @@ title: Videos
 </div>
 
     
-<script>
+ <script>
+
     function loadVideo(container) {
-    const videoUrl = container.getAttribute('data-video'); // This gets the full URL
-    const iframe = document.createElement('iframe');
-    
-    // Use the full URL directly and just append the parameters
-    iframe.setAttribute('src', `${videoUrl}?autoplay=1&rel=0`);
-    
-    iframe.setAttribute('frameborder', '0');
-    iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
-    iframe.setAttribute('allowfullscreen', 'true');
-    
-    container.innerHTML = '';
-    container.appendChild(iframe);
-}
-</script>
+
+        const videoId = container.getAttribute('data-video');
+
+        // autoplay=1 starts the video immediately after the click
+
+        // rel=0 prevents showing related videos from other channels
+
+        const iframe = document.createElement('iframe');
+
+        iframe.setAttribute('src', `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`);
+
+        iframe.setAttribute('frameborder', '0');
+
+        iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+
+        iframe.setAttribute('allowfullscreen', 'true'); // Enables the fullscreen button
+
+        
+
+        // Replace thumbnail and play button with the player
+
+        container.innerHTML = '';
+
+        container.appendChild(iframe);
+
+    }
+
+    </script>
 </body>
 </html>
