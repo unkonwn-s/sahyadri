@@ -100,9 +100,8 @@ body, p, div {
 
 .album-grid {
     display: flex;
-    /* This wraps items and puts the first ones at the bottom */
-    flex-wrap: wrap-reverse; 
-    /* This ensures we keep the 2-column look (50% width minus the gap) */
+    flex-direction: row-reverse; 
+    flex-wrap: wrap;
     justify-content: center;
     gap: 30px; 
     max-width: 1000px;
