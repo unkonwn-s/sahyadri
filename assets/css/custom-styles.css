@@ -101,7 +101,7 @@ body, p, div {
 .album-grid {
     display: flex;
     flex-direction: row-reverse; 
-    flex-wrap: wrap;
+    flex-wrap: wrap-reverse;
     justify-content: center;
     gap: 30px; 
     max-width: 1000px;
