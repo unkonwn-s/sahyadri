@@ -232,3 +232,59 @@ body, p, div {
 .page-subheading {
     font-weight: bold;
 }
+
+/* 1. Fluid Typography for Footer Headings (Mail Us, Call Us, etc.) */
+.beautiful-jekyll-footer h3 {
+    font-family: 'Vibes', cursive !important;
+    font-weight: bold !important;
+    /* Using your existing h3 clamp for consistency */
+    font-size: clamp(1.5rem, 1.0rem + 1.0vw, 5rem) !important;
+    margin-bottom: 1rem;
+}
+
+/* 2. Fluid Typography for Footer Body Text (Address, Phone numbers) */
+.beautiful-jekyll-footer p, 
+.beautiful-jekyll-footer div {
+    font-family: 'Montserrat' !important;
+    font-weight: 300 !important;
+    /* Using your existing body clamp */
+    font-size: clamp(1rem, 0.5rem + 0.68vw, 2.5rem) !important;
+    line-height: 1.5;
+}
+
+/* 3. Fluid Typography for Copyright Section */
+.copyright.text-muted {
+    font-family: 'Vibes', cursive !important;
+    text-transform: uppercase !important;
+    /* Slightly smaller fluid scale for the legal line */
+    font-size: clamp(0.9rem, 0.7rem + 0.5vw, 1.8rem) !important;
+    margin-top: 20px;
+}
+
+/* 4. Fluidity for the Footer Links (Email) */
+.beautiful-jekyll-footer a {
+    color: inherit;
+    text-decoration: underline;
+    transition: opacity 0.2s;
+}
+
+.beautiful-jekyll-footer a:hover {
+    opacity: 0.8;
+}
+
+/* 5. Ensure the footer container matches your main content width fluidity */
+.beautiful-jekyll-footer {
+    max-width: 65% !important; /* Matches your main.container-md */
+    width: 65% !important;
+    margin: 0 auto !important;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+/* Mobile Adjustment: Make footer wider on small screens */
+@media (max-width: 768px) {
+    .beautiful-jekyll-footer {
+        max-width: 90% !important;
+        width: 90% !important;
+    }
+}
