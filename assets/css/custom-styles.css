@@ -42,7 +42,7 @@ h1, h2, .term-title {
 }
 
 .post-entry {
-    font-size: clamp(1rem, 0.69rem + 0.55vw, 2rem) !important;
+    font-size: clamp(0.75rem, 0.5rem + 0.6vw, 2rem) !important;
 }
 
 h3 {
