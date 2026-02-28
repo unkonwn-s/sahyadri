@@ -85,4 +85,13 @@ layout: base
       {% include comments.html %}
     </div>
   </div>
+
+  <div class="sidebar-toc">
+  <h4>Table of Contents</h4>
+  {% include toc.html html=content h_min=2 h_max=3 %}
+</div>
+
+<div class="post-content">
+  {{ content }}
+</div>
 </main>
