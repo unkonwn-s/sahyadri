@@ -300,10 +300,9 @@ main.container-md,
     margin: 0 auto !important;
 }
 
-/* 2. TABLE OF CONTENTS (MATCHING FOOTER BACKGROUND) */
+/* 2. TABLE OF CONTENTS (NEW BACKGROUND & BLACK TEXT) */
 .toc-card {
-    /* Based on your header/footer, this sage green fits perfectly */
-    background-color: #87a38d !important; 
+    background-color: #BBC4B4 !important; /* Updated background */
     padding: 25px;
     border-radius: 8px;
     border: none;
@@ -316,9 +315,8 @@ main.container-md,
     text-transform: uppercase !important;
     font-size: clamp(1.8rem, 1.2rem + 1.5vw, 4rem) !important;
     margin-top: 0;
-    /* Off-white text for contrast against green background */
-    color: #E8F3DF !important; 
-    border-bottom: 2px solid #E8F3DF;
+    color: #000000 !important; /* Changed to Black */
+    border-bottom: 2px solid #000000; /* Matching border */
     padding-bottom: 10px;
 }
 
@@ -330,21 +328,21 @@ main.container-md,
     font-family: 'Vibes', cursive !important;
     font-weight: bold !important;
     font-size: clamp(1.2rem, 0.8rem + 1vw, 2.8rem) !important;
-    color: #E8F3DF !important;
+    color: #000000 !important; /* Changed to Black */
     text-decoration: none;
     transition: all 0.3s ease;
     display: inline-block;
 }
 
 .toc-list a:hover {
-    color: #FFFFFF !important;
+    color: #404040 !important; /* Subtle dark grey on hover */
     transform: translateX(8px);
 }
 
 /* 3. POST IMAGES (LARGER & FLEXIBLE) */
 .post-entry-container {
     display: flex;
-    flex-direction: column; /* Stacked on small screens */
+    flex-direction: column;
     gap: 30px;
     align-items: flex-start;
 }
@@ -369,11 +367,11 @@ main.container-md,
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        gap: 5%; /* Adds breathing room */
+        gap: 5%;
     }
 
     .toc-sidebar {
-        flex: 0 0 20%; /* TOC takes 20% of the 90% width */
+        flex: 0 0 20%;
         position: sticky;
         top: 40px;
         max-height: calc(100vh - 80px);
@@ -381,15 +379,15 @@ main.container-md,
     }
 
     .posts-list {
-        flex: 0 0 75%; /* Main content takes 75% */
+        flex: 0 0 75%;
     }
 
     .post-entry-container {
-        flex-direction: row; /* Side-by-side on desktop */
+        flex-direction: row;
     }
 
     .post-image {
-        flex: 0 0 40%; /* Image takes nearly half the post width */
+        flex: 0 0 40%;
     }
 }
 
