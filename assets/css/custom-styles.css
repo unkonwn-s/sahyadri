@@ -419,3 +419,5 @@ html {
     color: #735362;
     text-decoration: none;
 }
+
+.video-caption a { color: #008aff; text-decoration: underline; }
