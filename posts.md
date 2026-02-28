@@ -3,59 +3,67 @@ layout: page
 title: Newsletter
 permalink: /posts/
 ---
-<style>
-  .post-read-more {
-    color: #404040;
-    font-weight: none;
-    text-decoration: none;
-    transition: color 0.2s ease;
-  }
-  .post-read-more:hover {
-    color: #008AFF;
-    text-decoration: underline;
-  }
-</style>
 
-<div class="posts-list">
-  {% assign grouped_posts = site.posts | group_by: "category" %}
+<div class="newsletter-container">
+  
+  <aside class="toc-sidebar">
+    <nav class="toc-card">
+      <h2 class="toc-title">Categories</h2>
+      <ul class="toc-list">
+        {% assign grouped_posts = site.posts | group_by: "category" %}
+        {% for group in grouped_posts %}
+          {% assign category_id = group.name | slugify | default: "general-updates" %}
+          <li><a href="#{{ category_id }}">{{ group.name | default: "General Updates" }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </aside>
 
-  {% for group in grouped_posts %}
-    <div class="term-section" style="margin-top: 50px;">
-      <p class="term-title" style="font-size: 2.5em; border-bottom: 2px solid #735362; padding-bottom: 10px; margin-bottom: 25px; color: #404040;">
-        {{ group.name | default: "General Updates" }}
-      </p>
+  <div class="posts-list">
+    {% for group in grouped_posts %}
+      {% assign category_id = group.name | slugify | default: "general-updates" %}
+      
+      <section class="term-section" id="{{ category_id }}">
+        <h2 class="category-heading">
+          {{ group.name | default: "General Updates" }}
+        </h2>
 
-      {% for post in group.items %}
-        <article class="post-preview" style="margin-bottom: 40px; border-bottom: 2px solid #735362; padding-bottom: 40px;">
-          <a href="{{ post.url | relative_url }}">
-            <h3 class="post-title" style="font-size: 1.8em; margin-bottom: 5px;">{{ post.title }}</h3>
-            {% if post.subtitle %}
-              <h4 class="post-subtitle" style="font-weight: normal; color: #777; font-size: 1.1em;">{{ post.subtitle }}</h4>
-            {% endif %}
-          </a>
+        {% for post in group.items %}
+          <article class="post-preview">
+            <a href="{{ post.url | relative_url }}">
+              <h3 class="post-title">{{ post.title }}</h3>
+              {% if post.subtitle %}
+                <h4 class="post-subtitle">{{ post.subtitle }}</h4>
+              {% endif %}
+            </a>
 
-          <p class="post-meta" style="font-size: 0.9em; color: #999; margin-bottom: 15px;">
-            Posted on {{ post.date | date: site.date_format }}
-          </p>
+            <p class="post-meta">
+              Posted on {{ post.date | date: site.date_format }}
+            </p>
 
-          <div class="post-entry-container" style="display: flex; gap: 20px; align-items: flex-start;">
-            {% if post.image %}
-              <div class="post-image" style="flex: 0 0 200px;">
-                <a href="{{ post.url | relative_url }}">
-                  <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" style="width: 100%; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                </a>
+            <div class="post-entry-container">
+              {% if post.image %}
+                <div class="post-image">
+                  <a href="{{ post.url | relative_url }}">
+                    <img src="{{ post.image | relative_url }}" alt="{{ post.title }}">
+                  </a>
+                </div>
+              {% endif %}
+              
+              <div class="post-entry">
+                {{ post.excerpt | strip_html | truncatewords: 30 }}
+                <a href="{{ post.url | relative_url }}" class="post-read-more">[Read&nbsp;More]</a>
               </div>
-            {% endif %}
-            
-            <div class="post-entry" style="color: #404040;">
-              {{ post.excerpt | strip_html | truncatewords: 30 }}
-              <a href="{{ post.url | relative_url }}" class="post-read-more">[Read&nbsp;More]</a>
             </div>
-          </div>
-        </article>
-      {% endfor %}
-    </div>
-  {% else %}
-    <p>No newsletters found. Check back soon!</p>
-  {% endfor %}
+          </article>
+        {% endfor %}
+        
+        <div class="back-to-top">
+           <a href="#top">↑ Back to top</a>
+        </div>
+      </section>
+    {% else %}
+      <p>No newsletters found. Check back soon!</p>
+    {% endfor %}
+  </div>
 </div>
