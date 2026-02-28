@@ -304,24 +304,27 @@ main.container-md,
     margin: 0 auto !important;
 }
 
-/* 2. TABLE OF CONTENTS (NEW BACKGROUND & BLACK TEXT) */
+/* --- 3. TABLE OF CONTENTS (STYLING) --- */
 .toc-card {
-    background-color: #97ACA0 !important; /* Updated background */
+    background-color: #668571 !important; /* Your requested color */
     padding: 25px;
     border-radius: 8px;
     border: none;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
 .toc-title {
-    font-family: 'Amatic SC', sans-serif !important;
-    font-weight: bold !important;
-    text-transform: uppercase !important;
-    font-size: clamp(1.8rem, 1.2rem + 1.5vw, 4rem) !important;
     margin-top: 0;
-    color: #000000 !important; /* Changed to Black */
-    border-bottom: 2px solid #000000; /* Matching border */
+    color: #000000 !important; /* Black text */
+    border-bottom: 2px solid #000000;
     padding-bottom: 10px;
+    font-size: clamp(1.8rem, 1.2rem + 1.5vw, 4rem) !important;
+}
+
+.toc-list {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 0 0;
 }
 
 .toc-list li {
@@ -332,18 +335,16 @@ main.container-md,
     font-family: 'Amatic SC', sans-serif !important;
     font-weight: bold !important;
     font-size: clamp(1.2rem, 0.8rem + 1vw, 2.8rem) !important;
-    color: #000000 !important; 
+    color: #000000 !important; /* Black text */
     text-decoration: none;
     transition: all 0.3s ease;
     display: inline-block;
 }
 
 .toc-list a:hover {
-    color: #404040 !important; /* subtle grey on hover */
+    color: #ffffff !important; /* Switches to white on hover for visibility */
     transform: translateX(8px);
-}
-
-/* 3. POST IMAGES (LARGER & FLEXIBLE) */
+}/* 3. POST IMAGES (LARGER & FLEXIBLE) */
 .post-entry-container {
     display: flex;
     flex-direction: column;
