@@ -32,7 +32,7 @@ h1 {
 }
 
 h1 {
-    font-size: clamp(1.5rem, 1.5rem + 2.73vw, 5rem) !important;
+    font-size: clamp(1rem, 0.75rem + 2.73vw, 4rem) !important;
 }
 
 h1, h2, .term-title {
