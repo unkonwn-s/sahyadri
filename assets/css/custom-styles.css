@@ -302,7 +302,7 @@ main.container-md,
 
 /* 2. TABLE OF CONTENTS (NEW BACKGROUND & BLACK TEXT) */
 .toc-card {
-    background-color: #BBC4B4 !important; /* Updated background */
+    background-color: #849D8D !important; /* Updated background */
     padding: 25px;
     border-radius: 8px;
     border: none;
@@ -325,7 +325,7 @@ main.container-md,
 }
 
 .toc-list a {
-    font-family: 'Vibes', cursive !important;
+    font-family: 'Amatic SC', sans-serif !important;
     font-weight: bold !important;
     font-size: clamp(1.2rem, 0.8rem + 1vw, 2.8rem) !important;
     color: #000000 !important; /* Changed to Black */
