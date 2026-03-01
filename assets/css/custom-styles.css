@@ -243,7 +243,7 @@ body, p, div {
     font-family: 'Vibes', cursive !important;
     font-weight: bold !important;
     /* Using your existing h3 clamp for consistency */
-    font-size: clamp(1.25rem, 0.75rem + 1.0vw, 3rem) !important;
+    font-size: clamp(1.25rem, 0.65rem + 1.0vw, 3rem) !important;
     margin-bottom: 1rem;
 }
 
