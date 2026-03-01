@@ -1,8 +1,8 @@
 ---
 layout: post
 title: New Year's Eve
-subtitle: By Avishi Chaudhary and Ira Akode (Grade 8)
 date: 2026-03-01
+subtitle: By Avishi Chaudhary and Ira Akode (Grade 8)
 category: December 2025 
 ---
 
