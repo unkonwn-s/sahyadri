@@ -5,10 +5,7 @@ subtitle: Click on thumbnail to open the album
 ---
 
 <div class="album-grid" id="album-container">
-  {% comment %} 
-    'reverse' ensures the newest albums (2026) appear first, 
-    fixing the order issues seen in your screenshot.
-  {% endcomment %}
+  {% comment %} 'reverse' ensures 2026/2025 albums come first {% endcomment %}
   {% assign sorted_albums = site.albums | reverse %}
   
   {% for album in sorted_albums %}
@@ -18,21 +15,20 @@ subtitle: Click on thumbnail to open the album
         </a>
         <figcaption>
           <strong>{{ album.title }}</strong><br>
-          {{ album.date }}
+          {% comment %} No date filter needed if you used quotes in the front matter {% endcomment %}
+          {{ album.date }} 
         </figcaption>
     </figure>
   {% endfor %}
 </div>
 
 <div style="text-align: center; margin: 50px 0;">
-    <button id="loadMore" class="btn-load-more">
-        Load More Albums
-    </button>
+    <button id="loadMore" class="btn-load-more">Load More Albums</button>
 </div>
 
 <script>
   document.addEventListener("DOMContentLoaded", function() {
-    const itemsPerPage = 10; // Reduced because items are now 2x larger
+    const itemsPerPage = 10; 
     const items = Array.from(document.querySelectorAll('.album-item'));
     const loadMoreBtn = document.getElementById('loadMore');
     let currentIndex = 0;
@@ -41,10 +37,7 @@ subtitle: Click on thumbnail to open the album
       const nextSet = items.slice(currentIndex, currentIndex + itemsPerPage);
       nextSet.forEach(item => item.style.display = 'flex');
       currentIndex += itemsPerPage;
-
-      if (currentIndex >= items.length) {
-        loadMoreBtn.style.display = 'none';
-      }
+      if (currentIndex >= items.length) { loadMoreBtn.style.display = 'none'; }
     }
 
     showNextItems();
