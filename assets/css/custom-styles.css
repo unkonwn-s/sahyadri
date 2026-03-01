@@ -110,18 +110,36 @@ body, p, div {
 
 .album-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
-  margin-top: 20px;
+  /* This creates the columns */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+  gap: 25px;
+  /* This ensures rows don't overlap if text length varies */
+  align-items: start; 
+}
+
+.album-item {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .album-item img {
   width: 100%;
-  height: auto;
+  /* Set a fixed height for the "box" */
+  height: 200px; 
+  /* This is the secret: it crops the image to fill the box without stretching */
+  object-fit: cover; 
   border-radius: 8px;
-  transition: transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
+.album-item figcaption {
+  margin-top: 10px;
+  font-size: 1rem;
+  line-height: 1.2;
+  /* Optional: center the text */
+  text-align: left; 
+}
 .album-item img:hover {
   transform: scale(1.03);
 }
