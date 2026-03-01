@@ -108,60 +108,59 @@ body, p, div {
     text-transform: uppercase !important;
 }
 
+/* --- Album Grid Container --- */
 .album-grid {
   display: grid;
-  /* This creates the columns */
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
-  gap: 25px;
-  /* This ensures rows don't overlap if text length varies */
-  align-items: start; 
+  /* Doubled size: increased from ~250px to 450px+ per item */
+  /* auto-fill creates a responsive layout that fits as many large items as possible */
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr)); 
+  gap: 40px; /* Increased spacing to match larger item size */
+  align-items: start;
+  margin-top: 30px;
 }
 
+/* --- Individual Album Item --- */
 .album-item {
   margin: 0;
   display: flex;
   flex-direction: column;
+  /* Ensures items remain hidden until the 'Load More' script triggers */
+  display: none; 
 }
 
+/* --- Thumbnail Images --- */
 .album-item img {
   width: 100%;
-  /* Set a fixed height for the "box" */
-  height: 200px; 
-  /* This is the secret: it crops the image to fill the box without stretching */
+  /* Fixed height ensures a uniform grid (doubled from previous 200px) */
+  height: 400px; 
+  /* This prevents the "jigsaw" look by cropping the image to fill the box without stretching */
   object-fit: cover; 
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.album-item figcaption {
-  margin-top: 10px;
-  font-size: 1rem;
-  line-height: 1.2;
-  /* Optional: center the text */
-  text-align: left; 
-}
+/* Hover effect for a professional feel */
 .album-item img:hover {
-  transform: scale(1.03);
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
-#loadMore {
-  cursor: pointer;
-  background-color: #556b2f; /* Matching your theme */
-  border: none;
-  color: white;
-  border-radius: 5px;
+/* --- Captions --- */
+.album-item figcaption {
+  margin-top: 15px;
+  /* Using the theme's Amatic SC font for a cohesive look */
+  font-family: 'Amatic SC', cursive; 
+  font-size: 1.8rem; 
+  color: #2e3b1e; /* Darker olive shade */
+  line-height: 1.2;
+  text-align: left;
 }
 
-#loadMore:hover {
-  background-color: #6b8e23;
-}
-
-/* Mobile Responsive: 1 column */
-@media (max-width: 600px) {
-    .album-item {
-        flex: 0 1 100%;
-    }
-}
+.album-item figcaption strong {
+  display: block;
+  font-size:
+      }
 
 .video-grid {
     display: flex;
