@@ -110,59 +110,53 @@ body, p, div {
 
 /* --- Original Album Grid --- */
 .album-grid {
-  display: grid;
-  /* Adjusts based on screen width: items will be roughly 300px wide */
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
-  gap: 30px; 
-  padding: 20px 0;
-  align-items: start;
+  display: flex;
+    flex-direction: row-reverse; 
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+    gap: 30px; 
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 0 20px;
+    font-family: 'Segoe UI', sans-serif;
 }
 
 /* --- Individual Album Container --- */
 .album-item {
-  margin: 0;
-  display: flex;
-  flex-direction: column;
+    /* (100% / 2) - half of the gap = ~48% */
+    flex: 0 1 calc(50% - 15px); 
+    margin: 0;
+    text-align: center;
 }
 
 /* --- Thumbnail Images --- */
 .album-item img {
-  width: 100%;
-  /* Fixed height ensures a clean row even if photos are different shapes */
-  height: 250px; 
-  /* This is the magic property that prevents the "jigsaw" distortion */
-  object-fit: cover; 
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+    width: 100%;
+    height: auto;
+    /* Changed from 1/1 to 16/9 */
+    aspect-ratio: 16 / 9; 
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: transform 0.2s ease-in-out;
 }
 
 /* Simple hover effect */
-.album-item img:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  .album-item a:hover img {
+    transform: scale(1.03);
 }
 
 /* --- Captions --- */
 .album-item figcaption {
-  margin-top: 12px;
-  font-family: 'Amatic SC', cursive; /* Matches your Sahyadri Connect header */
-  font-size: 1.5rem;
-  color: #333;
-  line-height: 1.2;
-  text-align: left;
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #444;
 }
 
 /* --- Mobile Fix for Phones --- */
-@media (max-width: 600px) {
-  .album-grid {
-    grid-template-columns: 1fr; /* Stack albums in a single column */
-    gap: 25px;
-  }
-  .album-item img {
-    height: 220px; /* Slightly shorter images on mobile */
-  }
-}
+/* Mobile Responsive: 1 column */
+@media (max-width: 600px) {    .album-item {
 
 .video-grid {
     display: flex;
