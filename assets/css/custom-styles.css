@@ -29,6 +29,7 @@ main.container-md {
 }
 h1 {
     font-size: clamp(2.5rem, 2.5rem + 2.73vw, 8rem) !important;
+    margin-bottom: 15px;
 }
 
 h2 {
