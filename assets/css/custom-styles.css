@@ -29,11 +29,12 @@ main.container-md {
 }
 h1 {
     font-size: clamp(2.5rem, 2.5rem + 2.73vw, 8rem) !important;
-    margin-bottom: 15px;
+    margin-bottom: 20px !important;
 }
 
 h2 {
     font-size: clamp(1rem, 0.75rem + 2.25vw, 4rem) !important;
+    margin-bottom: 15px !important;
 }
 
 h1, h2, .term-title {
