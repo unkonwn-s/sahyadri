@@ -69,7 +69,7 @@ The aim was to help students navigate the complex relationship between who they 
  
 ### Revision Materials
 
-Step 1: Revist the ppt [here](https://docs.google.com/presentation/d/1rN34AAZiNsveirzdPqWdvxQyNaPXS1XuRMBR_TwBroU/edit?usp=drive_link){:target="_blank"}
+Step 1: Revisit the ppt [here](https://docs.google.com/presentation/d/1rN34AAZiNsveirzdPqWdvxQyNaPXS1XuRMBR_TwBroU/edit?usp=drive_link){:target="_blank"}
 
 Step 2: Catch the videos [here](https://drive.google.com/drive/folders/1VBTTj1EIxnXbw9IWmNsCvgv3PWiHHRAi?usp=drive_link){:target="_blank"}. See the pics from the workshop [here](https://drive.google.com/drive/folders/16Kxkb93_-cuvKWfC__n4YgI3wTti3AIe?usp=drive_link){:target="_blank"}
 
