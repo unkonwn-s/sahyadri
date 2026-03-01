@@ -4,7 +4,6 @@ title: New Year's Eve
 subtitle: By Avishi Chaudhary and Ira Akode (Grade 8)
 date: 2026-03-01
 category: December 2025 
-image: /assets/img/Newsletter/image-1.jpg
 ---
 
 This year, the students of grade 8 organised the New Year’s Eve dinner. The theme for the event was ‘vintage’ and the decor was to be minimalistic yet elegant. We also designed a range of games
