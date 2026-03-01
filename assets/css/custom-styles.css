@@ -111,35 +111,26 @@ body, p, div {
 /* --- Album Grid Container --- */
 .album-grid {
   display: grid;
-  /* Doubled size: increased from ~250px to 450px+ per item */
-  /* auto-fill creates a responsive layout that fits as many large items as possible */
   grid-template-columns: repeat(auto-fill, minmax(450px, 1fr)); 
-  gap: 40px; /* Increased spacing to match larger item size */
+  gap: 40px; 
   align-items: start;
-  margin-top: 30px;
 }
 
-/* --- Individual Album Item --- */
-.album-item {
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  /* Ensures items remain hidden until the 'Load More' script triggers */
-  display: none; 
-}
-
-/* --- Thumbnail Images --- */
 .album-item img {
   width: 100%;
-  /* Fixed height ensures a uniform grid (doubled from previous 200px) */
-  height: 400px; 
-  /* This prevents the "jigsaw" look by cropping the image to fill the box without stretching */
-  object-fit: cover; 
+  height: 400px; /* Large uniform size */
+  object-fit: cover; /* Fixes the "jigsaw" look */
   border-radius: 12px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 
+.album-item figcaption {
+  margin-top: 15px;
+  font-family: 'Amatic SC', cursive;
+  color: #333;
+  text-align: left;
+  line-height: 1.1;
+}
 /* Hover effect for a professional feel */
 .album-item img:hover {
   transform: translateY(-8px);
