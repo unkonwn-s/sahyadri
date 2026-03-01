@@ -261,7 +261,6 @@ date_format: "%B %-d, %Y"
 #markdown: kramdown
 #highlighter: rouge
 #permalink: /:year-:month-:day-:title/
-#paginate: 5
 
 kramdown:
   input: GFM
@@ -296,6 +295,9 @@ exclude:
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
-
+  
+collections:
+  albums:
+    output: false # We don't need individual pages for each album, just the list
 # Beautiful Jekyll / Dean Attali
 # 2fc73a3a967e97599c9763d05e564189
