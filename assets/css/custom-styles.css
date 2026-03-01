@@ -108,55 +108,59 @@ body, p, div {
     text-transform: uppercase !important;
 }
 
-/* --- Original Album Grid --- */
+/* --- Updated Album Grid (Matches Video Grid) --- */
 .album-grid {
-  display: flex;
+    display: flex;
     flex-direction: row-reverse; 
     flex-wrap: wrap-reverse;
     justify-content: center;
-    gap: 30px; 
-    max-width: 1000px;
+    gap: 40px; /* Increased from 30px to match video-grid gap */
+    max-width: 1200px; /* Increased from 1000px to match video-grid */
     margin: 50px auto;
     padding: 0 20px;
-    font-family: 'Segoe UI', sans-serif;
 }
 
 /* --- Individual Album Container --- */
 .album-item {
-    /* (100% / 2) - half of the gap = ~48% */
-    flex: 0 1 calc(50% - 15px); 
+    /* Matches video-item: 50% width minus half the gap */
+    flex: 0 1 calc(50% - 20px); 
     margin: 0;
     text-align: center;
 }
 
-/* --- Thumbnail Images --- */
+/* --- Thumbnail Images (Styled like Video Wrapper) --- */
 .album-item img {
     width: 100%;
     height: auto;
-    /* Changed from 1/1 to 16/9 */
     aspect-ratio: 16 / 9; 
     object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    transition: transform 0.2s ease-in-out;
+    border-radius: 12px; /* Increased from 8px to match .video-wrapper */
+    /* Updated shadow to match the heavier .video-wrapper shadow */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3); 
+    transition: transform 0.3s ease-in-out;
 }
 
 /* Simple hover effect */
-  .album-item a:hover img {
+.album-item a:hover img {
     transform: scale(1.03);
 }
 
 /* --- Captions --- */
 .album-item figcaption {
     margin-top: 15px;
+    font-family: sans-serif; /* Matches video-item figcaption */
+    font-weight: bold;       /* Matches video-item figcaption */
     font-size: 18px;
-    font-weight: 500;
     color: #444;
 }
 
-/* --- Mobile Fix for Phones --- */
-/* Mobile Responsive: 1 column */
-@media (max-width: 600px) {    .album-item {
+/* --- Mobile Fix for Phones (Matches Video Grid) --- */
+@media (max-width: 768px) {
+    .album-item {
+        flex: 0 1 100%;
+    }
+}
+
 
 .video-grid {
     display: flex;
