@@ -108,50 +108,61 @@ body, p, div {
     text-transform: uppercase !important;
 }
 
-/* --- Album Grid Container --- */
+/* --- Original Album Grid --- */
 .album-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr)); 
-  gap: 40px; 
+  /* Adjusts based on screen width: items will be roughly 300px wide */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+  gap: 30px; 
+  padding: 20px 0;
   align-items: start;
 }
 
-.album-item img {
-  width: 100%;
-  height: 400px; /* Large uniform size */
-  object-fit: cover; /* Fixes the "jigsaw" look */
-  border-radius: 12px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+/* --- Individual Album Container --- */
+.album-item {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 
-.album-item figcaption {
-  margin-top: 15px;
-  font-family: 'Amatic SC', cursive;
-  color: #333;
-  text-align: left;
-  line-height: 1.1;
+/* --- Thumbnail Images --- */
+.album-item img {
+  width: 100%;
+  /* Fixed height ensures a clean row even if photos are different shapes */
+  height: 250px; 
+  /* This is the magic property that prevents the "jigsaw" distortion */
+  object-fit: cover; 
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
-/* Hover effect for a professional feel */
+
+/* Simple hover effect */
 .album-item img:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* --- Captions --- */
 .album-item figcaption {
-  margin-top: 15px;
-  /* Using the theme's Amatic SC font for a cohesive look */
-  font-family: 'Amatic SC', cursive; 
-  font-size: 1.8rem; 
-  color: #2e3b1e; /* Darker olive shade */
+  margin-top: 12px;
+  font-family: 'Amatic SC', cursive; /* Matches your Sahyadri Connect header */
+  font-size: 1.5rem;
+  color: #333;
   line-height: 1.2;
   text-align: left;
 }
 
-.album-item figcaption strong {
-  display: block;
-  font-size:
-      }
+/* --- Mobile Fix for Phones --- */
+@media (max-width: 600px) {
+  .album-grid {
+    grid-template-columns: 1fr; /* Stack albums in a single column */
+    gap: 25px;
+  }
+  .album-item img {
+    height: 220px; /* Slightly shorter images on mobile */
+  }
+}
 
 .video-grid {
     display: flex;
