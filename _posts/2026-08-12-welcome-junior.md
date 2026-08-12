@@ -1,7 +1,7 @@
 ---
 layout: post
 title: WELCOME BACK TO THE SCHOOL - Junior School
-subtitle: Zara (Class 6)
+subtitle: Zara Srikrishnan (Class 6)
 category: August 2026
 date: 2026-08-12
 ---
