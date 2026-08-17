@@ -170,7 +170,6 @@ defaults:
 # -----------------------------------------------------------------------------
 exclude:
   - CHANGELOG.md
-  - CNAME
   - Gemfile
   - Gemfile.lock
   - LICENSE
@@ -186,7 +185,6 @@ exclude:
 # Plugins
 # -----------------------------------------------------------------------------
 plugins:
-  - jekyll-paginate
   - jekyll-sitemap
 
 
