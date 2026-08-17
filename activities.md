@@ -346,7 +346,7 @@ title: "Activities"
                     {% if post.image %}
                       <div class="post-image">
                         <a href="{{ post.url | relative_url }}">
-                          <img src="{{ post.image | relative_url }}" alt="{{ post.title }}">
+                          <img src="https://lh3.googleusercontent.com/d/{{ post.image }}?sz=9999" alt="{{ post.title }}">
                         </a>
                       </div>
                     {% endif %}
