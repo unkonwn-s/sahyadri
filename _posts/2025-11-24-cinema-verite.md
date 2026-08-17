@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Cinéma Vérité: Film Club (For grades 10-12)"
-date: 2025-09-25
+date: 2025-11-24
 subtitle: "Kayea Gautam (Grade 10)"
 category: November 2025
 image: "1fSk5xqUB5RRN4TwnQsqUd0zAJos-gJxq"
