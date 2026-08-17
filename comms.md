@@ -13,7 +13,7 @@ Guest House booking / Transport (Parents, Students Pickup / Drop) - [administrat
 
 Finance-related - [accounts@sahyadrischool.org](mailto:accounts@sahyadrischool.org){:target="_blank"}
 
-Escalations - [principal@sahyadrischool.org](mailto:pricipal@sahyadrischool.org){:target="_blank"}
+Escalations - [principal@sahyadrischool.org](mailto:principal@sahyadrischool.org){:target="_blank"}
 
 Study Centre - [studycentre@sahyadrischool.org](mailto:studycentre@sahyadrischool.org){:target="_blank"}
 <br><br><br>
