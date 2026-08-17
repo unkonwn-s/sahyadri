@@ -20,7 +20,7 @@ After much discussion, we worked together to come up with a solution that would:
 * Prevent tuck from becoming a source of social division, and
 * Stay true to Sahyadri’s values and vision.
 
-### TUCK SHOP
+#### TUCK SHOP
 
 * The frequency of getting tuck has been increased to once a week, the budget being 75 rupees for grades 4-8, and 100 rupees for grades 9-12, per week.
 * There has been an introduction of new items like Oreo and Bourbon. These items will change every two weeks, or sometimes even a month. The reason for fixing a hamper was to ease the burden on the accountants.
@@ -28,7 +28,7 @@ After much discussion, we worked together to come up with a solution that would:
 * Students from grades 4-8 may inform their matrons if they want to opt out of either fruit or tuck, or both at least one week prior to the next stock coming in. Students from grades 9-12 may inform either their matrons or dorm representatives as assigned by the student council in the recent past.
 * We are open to any suggestions regarding eatables to be introduced in the tuck shop.
 
-### TIWAI TAWA
+#### TIWAI TAWA
 
 * The frequency of Favourites like potato and banana chips has been increased.
 * More ‘masaledaar’ items have been added.
