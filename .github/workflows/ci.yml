@@ -37,18 +37,10 @@ jobs:
         env:
           JEKYLL_ENV: production
 
-      # Validate the built HTML — catches broken tags, missing images,
-      # and bad internal links before they reach production.
-      # photos.html and profiles.html use JS to populate img src at runtime,
-      # so their empty/template src attributes are intentional — excluded from img check.
+      # Validate built HTML — catches broken internal links and bad script tags.
+      # Configuration lives in .htmlproofer.yml at repo root.
       - name: Lint HTML output
-        run: |
-          bundle exec htmlproofer ./_site \
-            --disable-external \
-            --ignore-urls "/^#/" \
-            --ignore-files "/./_site/feed.xml/,./_site/photos/index.html,./_site/profiles/index.html" \
-            --checks "Links,Scripts" \
-            --allow-hash-href
+        run: bundle exec htmlproofer ./_site --config .htmlproofer.yml
         continue-on-error: false
 
       - uses: actions/upload-pages-artifact@v4
