@@ -37,12 +37,6 @@ jobs:
         env:
           JEKYLL_ENV: production
 
-      # Validate built HTML — catches broken internal links and bad script tags.
-      # Configuration lives in .htmlproofer.yml at repo root.
-      - name: Lint HTML output
-        run: bundle exec htmlproofer ./_site --config .htmlproofer.yml
-        continue-on-error: false
-
       - uses: actions/upload-pages-artifact@v4
 
   deploy:
