@@ -38,3 +38,4 @@ gem "wdm", "~> 0.1", platforms: [:mingw, :x64_mingw, :mswin]
 # (useful when developing Beautiful Jekyll as a gem or theme plugin).
 # ------------------------------------------------------------------------------
 gemspec
+gem "html-proofer", "~> 5.0", group: :development
