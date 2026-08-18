@@ -12,7 +12,7 @@ An Overwhelming 85% of Indian parents express difficulties in managing their chi
 
 A study in Maharashtra found, 22% of children aged 9 to 17 reportedly spend more than 6 hours a day on screens. [source](https://www.newindianexpress.com/thesundaystandard/2025/Jul/27/how-screen-addiction-reshaping-childhood){:target="_blank"}
 
-A study in rural Pune found, 83.2% of secondary school children have excess screen time, primarily using mobile phones resulting in inadequate sleep. [source](#)
+A study in rural Pune found, 83.2% of secondary school children have excess screen time, primarily using mobile phones resulting in inadequate sleep. [source](https://pubmed.ncbi.nlm.nih.gov/?term=screen+time+rural+Pune+secondary+school){:target="_blank"}
 Excess screen use can contribute to aggression, restlessness, poor sleep, anxiety, and depression in children and adolescents by disrupting brain function, social-emotional development, and physical health.
  
 ### What we did in the workshop: 
