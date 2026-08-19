@@ -393,7 +393,7 @@ html { scroll-behavior: smooth; }
 
 
 .toc-card {
-    background-color: #BDCDC0;
+    background-color: #BDCDC0 !important;
     padding: 25px;
     border-radius: 12px;
     border: none;
