@@ -102,7 +102,7 @@ main .col-lg-10 {
 
 .navbar-brand {
     font-family: 'Amatic SC', sans-serif !important;
-    font-size: clamp(0.88rem, 0.28vw + 0.83rem, 1.15rem) !important;
+    font-size: clamp(0.88rem, 0.28vw + 0.75rem, 1.2rem) !important;
     font-weight: 500;
     color: #E8F3DF !important;
 }
