@@ -100,13 +100,17 @@ main .col-lg-10 {
    on .navbar-custom .navbar-brand and .navbar-nav .nav-link.
    ============================================================ */
 
-.navbar-brand {
+/* Higher specificity to beat _navbar.scss which sets font-size: 1.25rem */
+.navbar-custom .navbar-brand,
+.navbar-expand-xl .navbar-brand,
+a.navbar-brand {
     font-family: 'Amatic SC', sans-serif !important;
     font-size: 1.3rem !important;
-    font-weight: 500;
+    font-weight: bold !important;
     color: #E8F3DF !important;
 }
-.navbar-brand:hover {
+.navbar-custom .navbar-brand:hover,
+a.navbar-brand:hover {
     color: #FFFFFF !important;
 }
 
