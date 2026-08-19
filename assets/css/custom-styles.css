@@ -143,6 +143,14 @@ a.navbar-brand:hover {
     font-weight: bold !important;
 }
 
+/* Ensure navbar items stay on one line */
+.navbar-custom .navbar-nav {
+    flex-wrap: nowrap !important;
+}
+.navbar-custom .navbar-nav .nav-item {
+    white-space: nowrap !important;
+}
+
 /* Dropdown item word-wrap */
 .dropdown-item {
     white-space: normal !important;
@@ -368,14 +376,6 @@ html { scroll-behavior: smooth; }
    No upstream conflicts — no !important needed.
    ============================================================ */
 
-.toc-sidebar {
-    flex: 0 0 280px;
-    position: sticky;
-    top: 100px;
-    background-color: transparent;
-    padding: 0;
-    box-shadow: none;
-}
 
 .toc-card {
     background-color: #BDCDC0;
