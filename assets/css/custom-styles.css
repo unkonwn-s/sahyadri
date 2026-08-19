@@ -112,8 +112,10 @@ body, p, div {
 .navbar .nav-link {
     font-family: 'Poiret One', system-ui, sans-serif !important;
     text-transform: uppercase;
-    font-colour: "#E8F3DF" !important;
-    font-hover: "#FFFFFF" !important;
+    color: #E8F3DF !important;
+}
+.navbar .nav-link:hover {
+    color: #FFFFFF !important;
 }
 
 .navbar-brand {
