@@ -105,8 +105,8 @@ main .col-lg-10 {
 .navbar-expand-xl .navbar-brand,
 a.navbar-brand {
     font-family: 'Amatic SC', sans-serif !important;
-    font-size: 1.8rem !important;
-    font-weight: bold !important;
+    font-size: 2rem !important;
+    font-weight: 900 !important;
     color: #E8F3DF !important;
 }
 .navbar-custom .navbar-brand:hover,
