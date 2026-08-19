@@ -143,12 +143,27 @@ a.navbar-brand:hover {
     font-weight: bold !important;
 }
 
-/* Ensure navbar items stay on one line */
+/* Ensure navbar items stay on one line and perfectly aligned */
 .navbar-custom .navbar-nav {
     flex-wrap: nowrap !important;
+    align-items: center !important;
+    display: flex !important;
 }
 .navbar-custom .navbar-nav .nav-item {
     white-space: nowrap !important;
+    display: flex !important;
+    align-items: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.navbar-custom .navbar-nav .nav-link {
+    padding: 0.5rem 0.75rem !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+}
+.navbar-custom .navbar-nav .dropdown-toggle::after {
+    margin-left: 0.5rem;
 }
 
 /* Dropdown item word-wrap */
