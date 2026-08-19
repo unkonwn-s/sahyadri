@@ -19,7 +19,7 @@ main .col-lg-10 {
 }
 
 .post-entry {
-    font-family: 'Montserrat', sans serif !important;
+    font-family: 'Montserrat', sans-serif !important;
 }
 
 /* Target only the container inside the header */
@@ -32,12 +32,7 @@ main .col-lg-10 {
     margin-left: auto;
     margin-right: auto;
 }
-/* Reduce the width of the main body content only */
-main.container-md {
-    max-width: 65% !important; /* Change this % to make it narrower */
-    width: 65% !important;
-    margin: 0 auto !important; /* Keeps the narrow body centered */
-}
+/* main.container-md width controlled by the layout expansion block below */
 h1 {
     font-size: clamp(2.5rem, 2.5rem + 2.73vw, 8rem) !important;
     margin-bottom: 20px !important;
@@ -116,15 +111,17 @@ body, p, div {
 }
 .navbar .nav-link {
     font-family: 'Poiret One', system-ui, sans-serif !important;
-    font-transform: uppercase ;
+    text-transform: uppercase;
     font-colour: "#E8F3DF" !important;
     font-hover: "#FFFFFF" !important;
 }
 
-.navabar-brand {
-    font-family: 'Amatic SC', sans serif !important;
-    font-colour: "#E8F3DF" !important;
-    font-hover: "#FFFFFF" !important;
+.navbar-brand {
+    font-family: 'Amatic SC', sans-serif !important;
+    color: #E8F3DF !important;
+}
+.navbar-brand:hover {
+    color: #FFFFFF !important;
 }
 
 /* --- Updated Album Grid (Matches Video Grid) --- */
@@ -371,22 +368,7 @@ body, p, div {
     opacity: 0.8;
 }
 
-/* 5. Ensure the footer container matches your main content width fluidity */
-.beautiful-jekyll-footer {
-    max-width: 65% !important; /* Matches your main.container-md */
-    width: 65% !important;
-    margin: 0 auto !important;
-    padding-top: 2px !important;
-    padding-bottom: 2px !important;
-}
-
-/* Mobile Adjustment: Make footer wider on small screens */
-@media (max-width: 768px) {
-    .beautiful-jekyll-footer {
-        max-width: 90% !important;
-        width: 90% !important;
-    }
-}
+/* .beautiful-jekyll-footer width controlled by the layout expansion block below */
 
 /* 1. LAYOUT EXPANSION: FORCE 90% WIDTH */
 main.container-md, 
@@ -540,11 +522,11 @@ html {
     padding-bottom: 10px;
 }
 
- .navbar-custom . nav-link dropdown-toggle  {
-     font-size: clamp(0.9rem, 0.25vw + 0.75rem, 1.15rem) !important;
+.navbar-custom .nav-link.dropdown-toggle {
+    font-size: clamp(0.9rem, 0.25vw + 0.75rem, 1.15rem) !important;
     padding-top: 10px;
-    padding-bottom: 10px
- }
+    padding-bottom: 10px;
+}
 
 /* 3. Dropdown Toggle Alignment (The arrows next to text) */
 .dropdown-toggle::after {
