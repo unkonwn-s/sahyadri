@@ -322,7 +322,7 @@ a.navbar-brand:hover {
    No upstream conflicts — no !important needed.
    ============================================================ */
 
-html { scroll-behavior: auto; }
+html { /* scroll-behavior removed to prevent unwanted auto-scroll on page load */ }
 
 .post-entry-container {
     display: flex;
@@ -353,7 +353,7 @@ html { scroll-behavior: auto; }
     padding-bottom: 10px;
     margin-bottom: 25px;
     color: #404040;
-    scroll-margin-top: 80px;
+    /* scroll-margin-top: 80px; */ /* removed to fix auto-scroll */
 }
 
 .back-to-top a {
