@@ -272,8 +272,10 @@ title: "Weekly Excerpts"
       }
     }
     
-    // Smooth scroll page back to the top anchor tag
-    document.getElementById("top").scrollIntoView({ behavior: 'smooth' });
+    // Smooth scroll back to top anchor only on user-initiated tab clicks (not on initial page load)
+    if (evt) {
+      document.getElementById("top").scrollIntoView({ behavior: 'smooth' });
+    }
   }
 
   // Initialize the gallery with default active year once DOM content loads
