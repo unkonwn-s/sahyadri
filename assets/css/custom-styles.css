@@ -322,7 +322,7 @@ a.navbar-brand:hover {
    No upstream conflicts — no !important needed.
    ============================================================ */
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: auto; }
 
 .post-entry-container {
     display: flex;
