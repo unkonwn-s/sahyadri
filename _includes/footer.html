@@ -2,8 +2,9 @@
 <footer class="beautiful-jekyll-footer-wrapper">
   <div class="container-md beautiful-jekyll-footer">
     
-    <!-- Contact Information Section: 3-column layout for desktop, responsive stacking for mobile -->
-    <div class="row contact-info-section text-center text-md-left mb-4">
+    <!-- Contact Information Section: 3-column layout for desktop, stacked on mobile -->
+    <!-- FIX 7: Consistent text-center alignment on both mobile and desktop -->
+    <div class="row contact-info-section text-center mb-4">
       
       <!-- Column 1: Physical Postal Address -->
       <div class="col-md-4 mb-4">
@@ -16,6 +17,7 @@
           Dist: Pune, Pin – 410513, Maharashtra, India
         </p>
       </div>
+
       <!-- Column 2: Phone Contact Numbers -->
       <div class="col-md-4 mb-4">
         <h3 class="footer-heading">Call Us</h3>
@@ -25,32 +27,37 @@
           +91 9422304276 / +91 9422308583
         </p>
       </div>
-      <!-- Column 3: Direct Email Links & Student IT Committee Acknowledgements -->
+
+      <!-- Column 3: Direct Email Links -->
+      <!-- FIX 1: Use standard mailto: links instead of Gmail compose URLs -->
       <div class="col-md-4 mb-4">
         <h3 class="footer-heading">Email Us</h3>
         <p class="footer-body">
           <strong>Email:</strong><br>
-          <!-- Direct Gmail composer link for office email -->
-          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=office@sahyadrischool.org" target="_blank" class="footer-link">
+          <a href="mailto:office@sahyadrischool.org" class="footer-link">
             office@sahyadrischool.org
           </a><br>
-          <!-- Direct Gmail composer link for archives email -->
-          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=archives@sahyadrischool.org" target="_blank" class="footer-link">
+          <a href="mailto:archives@sahyadrischool.org" class="footer-link">
             archives@sahyadrischool.org
           </a>
         </p>
-        <!-- Credit Box for Student Developers -->
-        <div class="student-credit-box mt-3">
-          <p class="footer-note">
-            <strong>Note:</strong><br>
-            This site was created by Class 11 students (2025–26) while serving on the Student Council's IT Committee along with Bhau Sir, IT Department.
-          </p>
-        </div>
+      </div>
+
+    </div>
+
+    <!-- FIX 3: Student credit note moved to its own full-width row, balanced below columns -->
+    <div class="row">
+      <div class="col-12 text-center mb-4">
+        <p class="footer-note">
+          This site was created by Class 11 students (2025–26) while serving on the Student Council's IT Committee along with Bhau Sir, IT Department.
+        </p>
       </div>
     </div>
+
     <!-- Section Divider Line -->
     <hr class="footer-divider">
-    <!-- Bottom Footer Row: Social Links, Dynamic Front Matter Extras, Copyright & Designer Credits -->
+
+    <!-- Bottom Footer Row: Social Links, Dynamic Front Matter Extras, Copyright & Credits -->
     <div class="row">
       <div class="col-12 text-center">
         
@@ -58,6 +65,7 @@
         <div class="social-links-container mb-3">
           {% include social-networks-links.html %}
         </div>
+
         <!-- Optional Page-Specific Footer Extras defined in YAML Front Matter -->
         {% if page.footer-extra -%}
           <div class="footer-custom-content">
@@ -66,7 +74,8 @@
             {% endfor %}
           </div>
         {% endif %}
-        <!-- Copyright Line with Dynamic Current Year and Pretty Site URL -->
+
+        <!-- Copyright Line with Dynamic Current Year -->
         <p class="copyright text-muted">
           SAHYADRI&nbsp;&bull;&nbsp;{{ site.time | date: '%Y' }}
           {%- if site.url-pretty %}
@@ -78,11 +87,14 @@
             </span>
           {%- endif %}
         </p>
+
         <!-- Developer / Designer Attribution -->
         <p class="design-credits text-muted">
           Made by Sailesh Mucheli
         </p>
+
       </div>
     </div>
+
   </div>
 </footer>
