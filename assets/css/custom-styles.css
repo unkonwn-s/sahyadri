@@ -363,7 +363,7 @@ html { /* scroll-behavior removed to prevent unwanted auto-scroll on page load *
     text-decoration: none;
 }
 
-.back-navigation { margin-top: 100px; }
+.back-navigation { margin-top: 20px; margin-bottom: 10px; }
 
 @media (min-width: 992px) {
     .newsletter-container {
