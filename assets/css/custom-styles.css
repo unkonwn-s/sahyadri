@@ -368,18 +368,11 @@ html { /* scroll-behavior removed to prevent unwanted auto-scroll on page load *
     margin-bottom: 10px;
 }
 .back-navigation {
-    display: block !important;
-    visibility: visible !important;
-    position: relative !important;
+    margin-top: 110px !important;
 }
 .back-navigation a {
-    display: inline-block !important;
-    color: #735362 !important;
-    text-decoration: none !important;
-    font-size: 1rem !important;
-    font-family: 'Poiret One', sans-serif !important;
-    padding-top: 10px !important;
-    visibility: visible !important;
+    color: #735362;
+    text-decoration: none;
 }
 
 @media (min-width: 992px) {
