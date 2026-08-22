@@ -42,19 +42,12 @@ layout: base
       <div class="profile-header row align-items-center mb-4">
         
         <div class="col-6 col-md-3 text-center text-md-start">
-          {% if page.profile-image %}
-            <img
-              src="https://lh3.googleusercontent.com/d/{{ page.profile-image }}"
-              alt="{{ page.title }}"
-              class="img-fluid rounded-circle profile-pic"
-            >
-          {% else %}
-            <img
-              src="/assets/img/default-avatar.png"
-              alt="Default Avatar"
-              class="img-fluid rounded-circle profile-pic"
-            >
-          {% endif %}
+          {% assign profile_img_id = page.profile-image | default: "15F3zvUZKOGAhxKUJhJIhqU4Ve_BGUDnG" %}
+          <img
+            src="https://lh3.googleusercontent.com/d/{{ profile_img_id }}"
+            alt="{{ page.title }}"
+            class="img-fluid rounded-circle profile-pic"
+          >
         </div>
 
         <div class="col-8 col-md-9">
