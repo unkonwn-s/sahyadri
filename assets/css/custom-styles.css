@@ -1,20 +1,4 @@
 
-/* Hide Beautiful Jekyll's built-in documentation pseudo-elements */
-main::before,
-body::before,
-.intro-header::before,
-*::before {
-    content: "" !important;
-    display: none !important;
-}
-
-main::after,
-body::after,
-*::after {
-    content: "" !important;
-    display: none !important;
-}
-
 /*
  * CUSTOM STYLES — SAHYADRI CONNECT
  * File: assets/css/custom-styles.css
