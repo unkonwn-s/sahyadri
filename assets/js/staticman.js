@@ -1,4 +1,7 @@
 ---
+# FILE: assets/js/staticman.js
+# PURPOSE: jQuery handler for the Staticman comment form submission (AJAX POST + UI feedback).
+# NOTE: layout: null lets Jekyll process the {% %} Liquid tags below without wrapping in a layout.
 layout: null
 ---
 
