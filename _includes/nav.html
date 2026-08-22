@@ -116,29 +116,34 @@
   {% endif %}
 </nav>
 
-<!-- Dark Mode Toggle Logic — persists across pages via localStorage -->
+<!-- Dark Mode Toggle Logic — persists across pages via localStorage.
+     Restoration on page load happens earlier in head.html (before render, on <html>);
+     this script only wires up the click handler and syncs the icon on load. -->
 <script>
   (function() {
     var STORAGE_KEY = 'sahyadri-dark-mode';
 
-    function applyDarkMode(isDark) {
-      document.body.classList.toggle('dark-mode', isDark);
+    function setIcon(isDark) {
       var icon = document.getElementById('dark-mode-icon');
       if (icon) {
         icon.innerHTML = isDark ? '&#9788;' : '&#9789;';
       }
     }
 
-    // Restore saved preference on every page load
-    var saved = localStorage.getItem(STORAGE_KEY);
-    applyDarkMode(saved === 'true');
+    // Sync icon with whatever head.html already applied to <html>
+    setIcon(document.documentElement.classList.contains('dark-mode'));
 
     var toggleBtn = document.getElementById('dark-mode-toggle');
     if (toggleBtn) {
       toggleBtn.addEventListener('click', function() {
-        var isDark = !document.body.classList.contains('dark-mode');
-        applyDarkMode(isDark);
-        localStorage.setItem(STORAGE_KEY, isDark);
+        var isDark = !document.documentElement.classList.contains('dark-mode');
+        document.documentElement.classList.toggle('dark-mode', isDark);
+        setIcon(isDark);
+        try {
+          localStorage.setItem(STORAGE_KEY, isDark);
+        } catch (e) {
+          // localStorage unavailable — dark mode will still work for this page view
+        }
       });
     }
   })();
