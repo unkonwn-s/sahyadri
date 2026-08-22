@@ -536,7 +536,7 @@ subtitle: Select a profile to view more details
            data-name="{{ profile.title | escape }}"
            data-url="{{ profile.url | relative_url }}"
            data-role="{{ profile.subtitle | escape }}"
-           data-image="{% if profile.profile-image %}https://lh3.googleusercontent.com/d/{{ profile.profile-image }}{% else %}/assets/img/default-avatar.png{% endif %}">
+           data-image="https://lh3.googleusercontent.com/d/{{ profile.profile-image | default: "15F3zvUZKOGAhxKUJhJIhqU4Ve_BGUDnG" }}">
       </div>
 
     {% endfor %}
