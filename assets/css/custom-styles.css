@@ -992,6 +992,22 @@ html { /* scroll-behavior removed to prevent unwanted auto-scroll on page load *
 .dark-mode .navbar-custom {
     background-color: #1f2a1f !important;
 }
+
+/* Navbar dropdown menus (RESOURCES, INFORMATION) in dark mode */
+.dark-mode .dropdown-menu {
+    background-color: #22281f !important;
+    border: 1px solid #3a4536 !important;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.5);
+}
+.dark-mode .dropdown-item {
+    background-color: transparent !important;
+    color: #cfd8cc !important;
+}
+.dark-mode .dropdown-item:hover,
+.dark-mode .dropdown-item:focus {
+    background-color: #34402f !important;
+    color: #ffffff !important;
+}
 .dark-mode a {
     color: #9fd4a3;
 }
