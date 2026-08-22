@@ -959,6 +959,25 @@ html { /* scroll-behavior removed to prevent unwanted auto-scroll on page load *
 .dark-mode .toc-card {
     background-color: #2a2f28 !important;
     color: #e0e0e0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+.dark-mode .toc-title,
+.dark-mode .toc-card h2.toc-title {
+    color: #e8f3df !important;
+    border-bottom-color: #5a6a56;
+}
+.dark-mode .toc-list li {
+    color: #cfd8cc;
+}
+.dark-mode .toc-list li:hover,
+.dark-mode .toc-list li.active {
+    color: #ffffff;
+}
+.dark-mode .toc-list a {
+    color: #cfd8cc !important;
+}
+.dark-mode .toc-list a:hover {
+    color: #ffffff !important;
 }
 .dark-mode .post-preview-card,
 .dark-mode .ninad-card {
