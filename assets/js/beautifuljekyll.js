@@ -1,3 +1,7 @@
+// FILE: assets/js/beautifuljekyll.js
+// SOURCE: Third-party vendor script from the Beautiful Jekyll theme (Dean Attali).
+// PURPOSE: Handles background image rotation/switching for page headers.
+// NOTE: Do not hand-edit — update via the theme gem/source if changes are needed.
 // Dean Attali / Beautiful Jekyll 2023
 
 let BeautifulJekyllJS = {
