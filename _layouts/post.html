@@ -97,14 +97,22 @@ layout: base
       {% if page.image4 %}{% assign images = images | push: page.image4 %}{% endif %}
       {% if page.image5 %}{% assign images = images | push: page.image5 %}{% endif %}
 
+      {% assign image_alts = '' | split: '' %}
+      {% if page.image_alt  %}{% assign image_alts = image_alts | push: page.image_alt  %}{% else %}{% assign image_alts = image_alts | push: page.title %}{% endif %}
+      {% if page.image2_alt %}{% assign image_alts = image_alts | push: page.image2_alt %}{% else %}{% assign image_alts = image_alts | push: page.title %}{% endif %}
+      {% if page.image3_alt %}{% assign image_alts = image_alts | push: page.image3_alt %}{% else %}{% assign image_alts = image_alts | push: page.title %}{% endif %}
+      {% if page.image4_alt %}{% assign image_alts = image_alts | push: page.image4_alt %}{% else %}{% assign image_alts = image_alts | push: page.title %}{% endif %}
+      {% if page.image5_alt %}{% assign image_alts = image_alts | push: page.image5_alt %}{% else %}{% assign image_alts = image_alts | push: page.title %}{% endif %}
+
       {% if images.size > 0 %}
         <div class="post-image-gallery gallery-{{ images.size }}">
           {% for img in images %}
             <div class="post-image-cell">
               <img
                 src="https://lh3.googleusercontent.com/d/{{ img }}?sz=9999"
-                alt="{{ page.title }}"
+                alt="{{ image_alts[forloop.index0] }}"
                 class="post-img"
+                {% if forloop.index0 > 0 %}loading="lazy"{% endif %}
               >
             </div>
           {% endfor %}
