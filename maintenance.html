@@ -1,0 +1,80 @@
+---
+layout: null
+title: "Site Maintenance"
+permalink: /maintenance/
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Under Maintenance | Sahyadri Connect</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Poiret+One&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      height: 100%;
+      background-color: #f7faf8;
+      color: #404040;
+      font-family: 'Poiret One', system-ui, sans-serif;
+    }
+    .maintenance-wrapper {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .maintenance-icon {
+      font-size: 4rem;
+      margin-bottom: 20px;
+    }
+    h1 {
+      font-family: 'Amatic SC', cursive, sans-serif;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: clamp(2.5rem, 2rem + 3vw, 5rem);
+      color: #404040;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: clamp(1rem, 0.9rem + 0.3vw, 1.4rem);
+      color: #5f745f;
+      max-width: 600px;
+      margin: 0 auto 8px auto;
+      line-height: 1.6;
+    }
+    .site-name {
+      margin-top: 40px;
+      font-family: 'Amatic SC', cursive, sans-serif;
+      font-size: 1.8rem;
+      color: #5f745f;
+    }
+    .contact-line {
+      margin-top: 30px;
+      font-size: 0.95rem;
+      color: #777;
+    }
+    .contact-line a {
+      color: #5f745f;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="maintenance-wrapper">
+    <div class="maintenance-icon">🌱</div>
+    <h1>We'll be right back</h1>
+    <p>Sahyadri Connect is currently undergoing scheduled maintenance.</p>
+    <p>Please check back again shortly — thank you for your patience.</p>
+    <div class="site-name">Sahyadri Connect</div>
+    <div class="contact-line">
+      Questions? Reach us at <a href="mailto:office@sahyadrischool.org">office@sahyadrischool.org</a>
+    </div>
+  </div>
+</body>
+</html>
