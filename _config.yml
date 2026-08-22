@@ -19,8 +19,18 @@ description: "A window into life at Sahyadri School — newsletters, activities,
 # When true, every page on the site immediately redirects to /maintenance/
 # (see maintenance.html at the repo root). Set back to false to restore
 # normal site access.
+#
+# To preview the live site while maintenance mode is on, visit:
+#   https://connect.sahyadrischool.org/?bypass=<maintenance-bypass-key below>
+# Visiting that link once unlocks normal browsing for the rest of that
+# browser tab's session (uses sessionStorage -- closes when the tab closes).
+# Change the key below any time to invalidate old bypass links.
+# NOTE: this repo is public, so this key is not a real secret -- it only
+# prevents casual visitors from stumbling onto the bypass, not a
+# determined person reading the source.
 # -----------------------------------------------------------------------------
 maintenance-mode: false
+maintenance-bypass-key: "sahyadri-preview-2026"
 
 # -----------------------------------------------------------------------------
 # Navigation Bar
