@@ -1,3 +1,4 @@
+<!-- FILE: _includes/ext-css.html — Loops through common-ext-css / page-ext-css front matter to load external stylesheets (with optional SRI hashes). -->
 {% if include.css.sri %}
   <!-- Include CSS with Subresource Integrity (SRI) hashing and CORS security attributes -->
   <link href="{{ include.css.href }}" rel="stylesheet" integrity="{{ include.css.sri }}" crossorigin="anonymous">
