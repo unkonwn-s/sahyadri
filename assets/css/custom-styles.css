@@ -926,7 +926,8 @@ html { /* scroll-behavior removed to prevent unwanted auto-scroll on page load *
    Activated by adding class="dark-mode" to <body> via JS toggle.
    ============================================================ */
 
-.dark-mode {
+.dark-mode,
+.dark-mode body {
     background-color: #1a1a1a;
     color: #e0e0e0;
 }
