@@ -9,24 +9,10 @@
 layout: base
 ---
 
-<!-- Visual spacing or hero image header container -->
 <div class="intro-header"></div>
 
-<!-- 
-  Main Content Container:
-  Dynamically switches layout width based on the page's YAML configuration:
-  - If page.full-width is true: Uses Bootstrap's 'container-fluid' (full viewport width)
-  - Default: Uses Bootstrap's 'container-md' (responsive medium width)
-  An inline override forces a maximum width of 85% for custom page proportions.
--->
 <main class="{% if page.full-width %}container-fluid{% else %}container-md{% endif %}" style="max-width: 85% !important;">
 
-  <!-- 
-    Before Content Inclusion Block:
-    Checks if 'before-content' is defined in the page's YAML front matter.
-    Iterates through the list of partial file paths provided and includes them 
-    dynamically prior to rendering the main page body.
-  -->
   {% if page.before-content %}
     <div class="before-content">
       {% for file in page.before-content %}
@@ -38,12 +24,6 @@ layout: base
   
   {{ content }}
 
-  <!-- 
-    After Content Inclusion Block:
-    Checks if 'after-content' is defined in the page's YAML front matter.
-    Iterates through the list of partial file paths provided and includes them 
-    dynamically following the main page body (e.g., comment sections, related posts).
-  -->
   {% if page.after-content %}
     <div class="after-content">
       {% for file in page.after-content %}
