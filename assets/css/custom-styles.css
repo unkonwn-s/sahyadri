@@ -987,3 +987,46 @@ html { /* scroll-behavior removed to prevent unwanted auto-scroll on page load *
     color: inherit;
     margin-left: 12px;
 }
+
+
+/* ============================================================
+   18. COMMENTBOX.IO WIDGET — LIGHT & DARK MODE STYLING
+   Best-effort overrides for the CommentBox.io embed (renders
+   directly into the DOM, not an iframe, so CSS can reach it).
+   ============================================================ */
+
+.commentbox {
+    margin-top: 20px;
+}
+
+/* Comment input field — light mode: match site's soft, rounded aesthetic */
+.commentbox input[type="text"],
+.commentbox textarea {
+    background-color: #f7faf8 !important;
+    color: #404040 !important;
+    border: 1px solid #d0d8d0 !important;
+    border-radius: 8px !important;
+}
+
+/* Dark mode overrides for the comment widget */
+.dark-mode .commentbox {
+    color: #e0e0e0;
+}
+.dark-mode .commentbox input[type="text"],
+.dark-mode .commentbox textarea {
+    background-color: #242424 !important;
+    color: #e0e0e0 !important;
+    border: 1px solid #444 !important;
+}
+.dark-mode .commentbox input[type="text"]::placeholder,
+.dark-mode .commentbox textarea::placeholder {
+    color: #888 !important;
+}
+.dark-mode .commentbox,
+.dark-mode .commentbox * {
+    color: #e0e0e0;
+}
+.dark-mode .commentbox button {
+    background-color: #3a5a3a !important;
+    color: #e8f3df !important;
+}
