@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WORLD CUP FINAL"
-date: 2025-08-22
+date: 2026-08-22
 subtitle: "SHAIL, CLASS 11"
 category: August 2026
 ---
