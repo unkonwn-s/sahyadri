@@ -979,6 +979,17 @@ html { /* scroll-behavior removed to prevent unwanted auto-scroll on page load *
 .dark-mode .toc-list a:hover {
     color: #ffffff !important;
 }
+
+/* Profiles page TOC uses <button> elements instead of <a> links —
+   these need their own color override since buttons don't inherit
+   text color the way inline text does. */
+.dark-mode .toc-list button {
+    color: #cfd8cc !important;
+}
+.dark-mode .toc-list button:hover,
+.dark-mode .toc-list button.active {
+    color: #ffffff !important;
+}
 .dark-mode .post-preview-card,
 .dark-mode .ninad-card {
     background-color: #242424;
