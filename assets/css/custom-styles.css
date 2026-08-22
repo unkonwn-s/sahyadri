@@ -1104,3 +1104,20 @@ html { /* scroll-behavior removed to prevent unwanted auto-scroll on page load *
     color: #666666 !important;
     border-color: #333333 !important;
 }
+
+
+/* ============================================================
+   20. AUTHOR BYLINE LINK — DARK MODE BRIGHTNESS
+   Overrides the muted olive-green author link color (set inline
+   in posts.md / activities.md and in post.html's post-subheading)
+   with a brighter tone for readability against dark backgrounds.
+   ============================================================ */
+
+.dark-mode .post-subtitle a,
+.dark-mode .post-subheading a {
+    color: #a3c99a !important;
+}
+.dark-mode .post-subtitle a:hover,
+.dark-mode .post-subheading a:hover {
+    color: #c5e0bc !important;
+}
