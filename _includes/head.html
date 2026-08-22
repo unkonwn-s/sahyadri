@@ -125,6 +125,8 @@
   {%- capture img -%}
     {%- if page.share-img -%}
       {{ page.share-img }}
+    {%- elsif page.image -%}
+      https://lh3.googleusercontent.com/d/{{ page.image }}?sz=9999
     {%- elsif page.cover-img -%}
       {%- if page.cover-img.first -%}
         {{ page.cover-img[0].first.first }}
