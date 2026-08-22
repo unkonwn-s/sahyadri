@@ -1076,3 +1076,55 @@ html { /* scroll-behavior removed to prevent unwanted auto-scroll on page load *
     background-color: #3a5a3a !important;
     color: #e8f3df !important;
 }
+
+
+/* ============================================================
+   19. PAGINATION BUTTONS (Previous Post / Next Post)
+   ============================================================ */
+
+.blog-pager .page-link,
+.main-pager .page-link {
+    font-family: 'Poiret One', system-ui, sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background-color: #f7faf8;
+    color: #404040;
+    border: 1px solid #d0d8d0;
+    border-radius: 8px;
+    padding: 10px 20px;
+    transition: all 0.2s ease;
+}
+.blog-pager .page-link:hover,
+.main-pager .page-link:hover {
+    background-color: #BDCDC0;
+    color: #ffffff;
+    border-color: #BDCDC0;
+}
+.blog-pager .page-item.disabled .page-link,
+.main-pager .page-item.disabled .page-link {
+    background-color: #f7faf8;
+    color: #b0b0b0;
+    border-color: #e5e5e5;
+    opacity: 0.7;
+}
+
+/* Dark mode pagination */
+.dark-mode .blog-pager .page-link,
+.dark-mode .main-pager .page-link {
+    background-color: #242424 !important;
+    color: #cfd8cc !important;
+    border-color: #3a3a3a !important;
+}
+.dark-mode .blog-pager .page-link:hover,
+.dark-mode .main-pager .page-link:hover {
+    background-color: #3a5a3a !important;
+    color: #ffffff !important;
+    border-color: #3a5a3a !important;
+}
+.dark-mode .blog-pager .page-item.disabled .page-link,
+.dark-mode .main-pager .page-item.disabled .page-link {
+    background-color: #1c1c1c !important;
+    color: #666666 !important;
+    border-color: #333333 !important;
+}
