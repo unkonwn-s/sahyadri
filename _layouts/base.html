@@ -1,4 +1,4 @@
----
+
 # ==============================================================================
 # BEAUTIFUL JEKYLL - BASE LAYOUT ASSET CONFIGURATION
 # Theme Version: 6.0.1
@@ -46,49 +46,36 @@ common-js:
 ---
 
 <!DOCTYPE html>
-<!-- 
   Language Fallback Cascade:
   1. page.language (defined in page front matter)
   2. site.language (defined in _config.yml)
   3. 'en' (default fallback)
--->
 <html lang="{{ page.language | default: site.language | default: 'en' }}">
 
-  <!-- Beautiful Jekyll 6.0.1 -->
   
-  <!-- 
     Head Inclusion:
     Injects HTML head tags (<title>, <meta>, favicons) and compiles the CSS arrays
     defined in the YAML front matter above.
-  -->
   {% include head.html %}
 
   <body>
 
-    <!-- Web Analytics: Injects tracking snippets (e.g., Google Analytics 4) -->
     {% include analytics.html %}
 
-    <!-- Google Tag Manager (Body): Fallback noscript iframe for GTM -->
     {% include gtm_body.html %}
 
-    <!-- Main Navigation Bar: Header navbar with logo and links -->
     {% include nav.html %}
 
-    <!-- 
       Page Content Slot:
       Jekyll injects the rendered Markdown/HTML content of any page 
       using this layout directly into this Liquid template tag.
-    -->
     {{ content }}
 
-    <!-- Footer: Displays footer sections, social media icons, and extra links -->
     {% include footer.html %}
 
-    <!-- 
       Footer Scripts: 
       Injects external and local JavaScript files defined in front matter 
       at the end of <body> to improve visual load performance.
-    -->
     {% include footer-scripts.html %}
 
   </body>
