@@ -1,4 +1,7 @@
 ---
+# FILE: posts.md
+# PURPOSE: Newsletter listing page. Custom tabbed-by-year template (inline <style> block)
+# with TOC sidebar. Pulls from _posts collection, grouped by 'category' front matter.
 # Jekyll Front Matter Configuration
 layout: page
 title: "Newsletter"
