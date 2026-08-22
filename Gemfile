@@ -33,8 +33,13 @@ end
 gem "wdm", "~> 0.1", platforms: [:mingw, :x64_mingw, :mswin]
 
 # ------------------------------------------------------------------------------
-# Local Gem Specification
-# Includes additional dependencies defined in the repository's .gemspec file 
-# (useful when developing Beautiful Jekyll as a gem or theme plugin).
+# NOTE: The 'gemspec' directive (which pulled dependencies from
+# beautiful-jekyll-theme.gemspec) has been intentionally removed.
+# That gemspec declares its own runtime versions of jekyll, kramdown,
+# jekyll-sitemap, and jekyll-paginate — which conflict with the exact
+# versions pinned by the 'github-pages' gem above, causing Bundler
+# dependency resolution to fail ("github-pages gem can't satisfy
+# your Gemfile's dependencies"). This site consumes Beautiful Jekyll's
+# files directly (not as a published gem), so the gemspec is not needed
+# here — only relevant if this repo is repackaged as a distributable theme.
 # ------------------------------------------------------------------------------
-gemspec
