@@ -20,7 +20,7 @@ description: "A window into life at Sahyadri School — newsletters, activities,
 # (see maintenance.html at the repo root). Set back to false to restore
 # normal site access.
 # -----------------------------------------------------------------------------
-maintenance-mode: false
+maintenance-mode: true
 
 # -----------------------------------------------------------------------------
 # Navigation Bar
