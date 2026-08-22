@@ -205,3 +205,6 @@ collections:
     permalink: /profiles/:title/
 
 # Rebuilt: 2026-08-20T09:48:06.035326
+
+# Favicon
+favicon: /favicon.ico
