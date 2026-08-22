@@ -91,7 +91,7 @@
       <!-- Dark Mode Toggle Button -->
       <li class="nav-item d-flex align-items-center">
         <button class="dark-mode-toggle" id="dark-mode-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">
-          <span id="dark-mode-icon">&#9789;</span>
+          <i class="fas fa-moon" id="dark-mode-icon"></i>
         </button>
       </li>
     </ul>
@@ -126,7 +126,8 @@
     function setIcon(isDark) {
       var icon = document.getElementById('dark-mode-icon');
       if (icon) {
-        icon.innerHTML = isDark ? '&#9788;' : '&#9789;';
+        icon.classList.toggle('fa-sun', isDark);
+        icon.classList.toggle('fa-moon', !isDark);
       }
     }
 
