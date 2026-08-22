@@ -31,31 +31,14 @@ common-ext-js:
 ---
 
 <!DOCTYPE html>
-<!-- 
-  Language Fallback Cascade:
-  1. page.language (defined in page front matter)
-  2. site.language (defined in _config.yml)
-  3. 'en' (default fallback)
--->
 <html lang="{{ page.language | default: site.language | default: 'en' }}">
 
-  <!-- Injects HTML head elements (<title>, <meta>, favicons) and loads stylesheet arrays -->
   {% include head.html %}
 
   <body>
 
-    <!-- 
-      Main Content Area:
-      Dynamically sets width via Bootstrap container classes:
-      - 'container-fluid' if 'page.full-width' is true
-      - 'container-md' by default
-    -->
     <main class="{% if page.full-width %}container-fluid{% else %}container-md{% endif %} main-content">
 
-      <!-- 
-        Before Content Inclusions:
-        Iterates through and renders any partial files listed in 'page.before-content'
-      -->
       {% if page.before-content %}
         <div class="before-content">
           {% for file in page.before-content %}
@@ -64,13 +47,8 @@ common-ext-js:
         </div>
       {% endif %}
 
-      <!-- Core Page Body Slot -->
       {{ content }}
 
-      <!-- 
-        After Content Inclusions:
-        Iterates through and renders any partial files listed in 'page.after-content'
-      -->
       {% if page.after-content %}
         <div class="after-content">
           {% for file in page.after-content %}
@@ -81,7 +59,6 @@ common-ext-js:
 
     </main>
 
-    <!-- Injects minimal footer template and deferred JavaScript files -->
     {% include footer-minimal.html %}
     {% include footer-scripts.html %}
 
