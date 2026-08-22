@@ -4,7 +4,6 @@ title: "Rhugved Salunke"
 subtitle: "Student (Class 12)"
 date: 2026-07-07
 academic-year: "2026-27"
-profile-image: "15F3zvUZKOGAhxKUJhJIhqU4Ve_BGUDnG"
 ---
 
 I joined Sahyadri School in 9th.
