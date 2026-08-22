@@ -1,4 +1,17 @@
 <head>
+  <!-- Dark Mode Early Restore — runs before any CSS/content renders to prevent flash -->
+  <script>
+    (function() {
+      try {
+        if (localStorage.getItem('sahyadri-dark-mode') === 'true') {
+          document.documentElement.classList.add('dark-mode');
+        }
+      } catch (e) {
+        // localStorage unavailable (private browsing, blocked storage, etc.) — fail silently
+      }
+    })();
+  </script>
+
   <!-- Google Fonts Preconnecting & Stylesheet Loading -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
