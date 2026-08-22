@@ -930,7 +930,31 @@ body.dark-mode {
     background-color: #1a1a1a;
     color: #e0e0e0;
 }
-body.dark-mode .beautiful-jekyll-footer,
+
+/* Footer: darken BOTH the outer wrapper and inner container */
+body.dark-mode .beautiful-jekyll-footer-wrapper {
+    background-color: #141713 !important;
+}
+body.dark-mode .beautiful-jekyll-footer {
+    background-color: #141713 !important;
+    color: #d5d5d5;
+}
+body.dark-mode .beautiful-jekyll-footer a {
+    color: #9fd4a3;
+}
+body.dark-mode .beautiful-jekyll-footer h3 {
+    color: #e8f3df;
+}
+/* Bootstrap's .text-muted is unreadable on dark backgrounds — override it */
+body.dark-mode .beautiful-jekyll-footer .text-muted,
+body.dark-mode .copyright.text-muted,
+body.dark-mode .design-credits.text-muted {
+    color: #9a9a9a !important;
+}
+body.dark-mode .student-credit-box .footer-note {
+    color: #b5b5b5;
+}
+
 body.dark-mode .toc-card {
     background-color: #2a2f28 !important;
     color: #e0e0e0;
