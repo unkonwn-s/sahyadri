@@ -926,53 +926,53 @@ html { /* scroll-behavior removed to prevent unwanted auto-scroll on page load *
    Activated by adding class="dark-mode" to <body> via JS toggle.
    ============================================================ */
 
-body.dark-mode {
+.dark-mode {
     background-color: #1a1a1a;
     color: #e0e0e0;
 }
 
 /* Footer: darken BOTH the outer wrapper and inner container */
-body.dark-mode .beautiful-jekyll-footer-wrapper {
+.dark-mode .beautiful-jekyll-footer-wrapper {
     background-color: #141713 !important;
 }
-body.dark-mode .beautiful-jekyll-footer {
+.dark-mode .beautiful-jekyll-footer {
     background-color: #141713 !important;
     color: #d5d5d5;
 }
-body.dark-mode .beautiful-jekyll-footer a {
+.dark-mode .beautiful-jekyll-footer a {
     color: #9fd4a3;
 }
-body.dark-mode .beautiful-jekyll-footer h3 {
+.dark-mode .beautiful-jekyll-footer h3 {
     color: #e8f3df;
 }
 /* Bootstrap's .text-muted is unreadable on dark backgrounds — override it */
-body.dark-mode .beautiful-jekyll-footer .text-muted,
-body.dark-mode .copyright.text-muted,
-body.dark-mode .design-credits.text-muted {
+.dark-mode .beautiful-jekyll-footer .text-muted,
+.dark-mode .copyright.text-muted,
+.dark-mode .design-credits.text-muted {
     color: #9a9a9a !important;
 }
-body.dark-mode .student-credit-box .footer-note {
+.dark-mode .student-credit-box .footer-note {
     color: #b5b5b5;
 }
 
-body.dark-mode .toc-card {
+.dark-mode .toc-card {
     background-color: #2a2f28 !important;
     color: #e0e0e0;
 }
-body.dark-mode .post-preview-card,
-body.dark-mode .ninad-card {
+.dark-mode .post-preview-card,
+.dark-mode .ninad-card {
     background-color: #242424;
     border-color: #3a3a3a;
     color: #e0e0e0;
 }
-body.dark-mode h1, body.dark-mode h2, body.dark-mode h3,
-body.dark-mode p, body.dark-mode div, body.dark-mode span {
+.dark-mode h1, .dark-mode h2, .dark-mode h3,
+.dark-mode p, .dark-mode div, .dark-mode span {
     color: #e0e0e0;
 }
-body.dark-mode .navbar-custom {
+.dark-mode .navbar-custom {
     background-color: #1f2a1f !important;
 }
-body.dark-mode a {
+.dark-mode a {
     color: #9fd4a3;
 }
 
