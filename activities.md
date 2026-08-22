@@ -102,6 +102,17 @@ title: "Activities"
     text-decoration: underline;
   }
 
+  /* CRITICAL: Global image display rules — caps any oversized source image
+     (e.g. a large native-resolution Google Drive photo) so it can never
+     overflow the layout, whether portrait or landscape. */
+  img {
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    max-width: 100%;
+    height: auto;
+  }
+
   /* Flex row: optional thumbnail on the left, excerpt text on the right */
   .post-entry-container {
     display: flex;
@@ -110,9 +121,29 @@ title: "Activities"
     margin-top: 1rem;
   }
 
-  .post-image img {
+  /* Thumbnail container: fixed size + fixed aspect ratio so every card
+     looks uniform regardless of whether the source photo is portrait,
+     landscape, or square. */
+  .post-image {
+    flex-shrink: 0;
+    width: 220px;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
     border-radius: 6px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  /* object-fit: cover crops the image to fill the box proportionally
+     (no stretching/distortion); object-position: center keeps the
+     visual center of the photo in frame for both portrait and
+     landscape sources. */
+  .post-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 6px;
+    box-shadow: none;
   }
 
   /* "Read More" link appended inline after the truncated excerpt */
@@ -170,9 +201,21 @@ title: "Activities"
       gap: 1rem;
     }
 
+    /* On mobile the thumbnail becomes a full-width banner above the
+       excerpt text; a fixed aspect ratio (instead of the desktop's
+       220px box) keeps it proportional at any screen width while still
+       capping tall portrait photos via object-fit: cover. */
+    .post-image {
+      width: 85% !important;
+      aspect-ratio: 16 / 9;
+      margin: 0 auto;
+    }
+
     .post-image img {
       width: 100%;
-      height: auto;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
     }
   }
 </style>
