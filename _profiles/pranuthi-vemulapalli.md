@@ -4,7 +4,6 @@ title: "Pranuthi Vemulapalli"
 subtitle: "Student (Class 11)"
 date: 2026-07-15
 academic-year: "2026-27"
-profile-image: "15F3zvUZKOGAhxKUJhJIhqU4Ve_BGUDnG"
 ---
 
 I joined Sahyadri School in since 5th grade.
