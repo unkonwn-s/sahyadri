@@ -16,26 +16,6 @@
 layout: base
 ---
 
-<style>
-  /* Forces profile avatar images to maintain a square 1:1 aspect ratio with centered cropping */
-  .profile-pic {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    max-width: 100%;
-  }
-
-  /* Profile header typography styles */
-  .post-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-
-  .post-subtitle {
-    font-size: 1.25rem;
-  }
-</style>
-
 <main class="{% if page.full-width %}container-fluid{% else %}container-md{% endif %}">
   <div class="row">
     <div class="{% if page.full-width %}col{% else %}col-xl-8 offset-xl-2 col-lg-10 offset-lg-1{% endif %}">
