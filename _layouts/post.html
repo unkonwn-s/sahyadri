@@ -1,36 +1,3 @@
-<!--
-  FILE: _layouts/post.html
-
-  PURPOSE: Template for blog posts and article content
-  
-  FEATURES:
-  - Post title (h1)
-  - Author byline with profile links
-  - Post date and category
-  - Featured image from Google Drive
-  - Post content
-  - Related navigation (back to posts link)
-  - Comments section (Giscus)
-  
-  FRONT MATTER:
-  - title: Post title
-  - date: YYYY-MM-DD
-  - subtitle: Author name (generates profile link)
-  - subtitle2: Co-author (optional)
-  - category: Category/year (e.g., "August 2025")
-  - image: Google Drive File ID for featured image
-  
-  STYLING:
-  - Custom typography from custom-styles.css
-  - Responsive image handling
-  - SEO-friendly semantic HTML
-  
-  JAVASCRIPT:
-  - Dynamic author profile link generation from subtitle slug
-  
-  MAINTAINED BY: Sahyadri Archives Team
-  
--->
 
 ---
 # ==============================================================================
@@ -48,11 +15,6 @@
 layout: base
 ---
 
-<!-- 
-  Internal Layout Styles
-  Controls post image responsiveness, header offset spacing, custom author typography,
-  and image container alignment. Gallery columns are now dynamic based on image count.
--->
 <style>
   /* Gallery grid: single column on phones */
   .post-image-gallery {
@@ -137,18 +99,10 @@ layout: base
   }
 </style>
 
-<!-- 
-  Main Article Container
-  Dynamically applies full-width or centered grid layout based on 'page.full-width' front matter.
--->
 <main class="{% if page.full-width %}container-fluid{% else %}container-md{% endif %} post-container">
   <div class="row">
     <div class="{% if page.full-width %}col{% else %}col-xl-8 offset-xl-2 col-lg-10 offset-lg-1{% endif %}">
 
-      <!-- ====================================================================
-           1. BACK NAVIGATION LINK
-           Triggers the inline JavaScript handleBackNavigation() function.
-           ==================================================================== -->
       <div class="back-navigation">
         <a href="/posts" id="back-button" onclick="return handleBackNavigation();">
           <i class="fas fa-chevron-left"></i>
@@ -156,19 +110,13 @@ layout: base
         </a>
       </div>
 
-      <!-- ====================================================================
-           2. POST HEADER (TITLE, DATE, AUTHOR PROFILES)
-           ==================================================================== -->
       <div class="post-heading">
-        <!-- Post Main Title -->
         <h1>{{ page.title }}</h1>
 
-        <!-- Publication Date -->
         <span class="post-meta">
           Posted on {{ page.date | date: "%B %-d, %Y" }}
         </span>
 
-        <!-- Primary Author & Optional Co-Author Section -->
         {% if page.subtitle %}
           {% comment %}
             Primary Author URL Determination:
@@ -195,7 +143,6 @@ layout: base
           <h2 class="post-subheading">
             by <a href="{{ author1_url }}" {% if author1_target %}target="{{ author1_target }}" rel="{{ author1_rel }}"{% endif %}>{{ page.subtitle }}</a>
             
-            <!-- Optional Co-Author Section -->
             {% if page.subtitle2 %}
               {% comment %} Same URL/slug determination logic for co-author in 'page.subtitle2' {% endcomment %}
               
@@ -223,11 +170,6 @@ layout: base
         <hr class="small">
       </div>
 
-      <!-- ====================================================================
-           3. MULTI-IMAGE GALLERY (GOOGLE DRIVE EMBEDS)
-           Dynamic columns: 1 image = 1 col, 2 images = 2 cols, 3-5 images = 3 cols
-           Phone: always single column. Tablet+: responsive based on count.
-           ==================================================================== -->
       {% assign images = '' | split: '' %}
       {% if page.image  %}{% assign images = images | push: page.image  %}{% endif %}
       {% if page.image2 %}{% assign images = images | push: page.image2 %}{% endif %}
@@ -249,10 +191,6 @@ layout: base
         </div>
       {% endif %}
 
-      <!-- ====================================================================
-           4. GITHUB REPOSITORY BADGES
-           Renders official GitHub iframes (stars, watch, fork, follow) if configured.
-           ==================================================================== -->
       {% if page.gh-repo %}
         {% assign gh_split = page.gh-repo | split: '/' %}
         {% assign gh_user = gh_split[0] %}
@@ -276,16 +214,10 @@ layout: base
         </div>
       {% endif %}
 
-      <!-- ====================================================================
-           5. MAIN POST BODY CONTENT
-           ==================================================================== -->
       <div class="blog-post">
         {{ content }}
       </div>
 
-      <!-- ====================================================================
-           6. ARTICLE TAGS LIST
-           ==================================================================== -->
       {% if page.tags.size > 0 %}
         <div class="blog-tags">
           <span>Tags:</span>
@@ -295,9 +227,6 @@ layout: base
         </div>
       {% endif %}
 
-      <!-- ====================================================================
-           7. POST PAGINATION (PREVIOUS / NEXT POST LINKS)
-           ==================================================================== -->
       <ul class="pagination blog-pager">
         {% if page.previous.url %}
           <li class="page-item previous">
@@ -317,19 +246,11 @@ layout: base
         {% endif %}
       </ul>
 
-      <!-- ====================================================================
-           8. COMMENTS SECTION INCLUSION
-           ==================================================================== -->
       {% include comments.html %}
 
     </div>
   </div>
 
-  <!-- ======================================================================
-       9. SMART BACK-NAVIGATION SCRIPT
-       Determines browser referrer history to route the user gracefully back to
-       the central /posts feed or trigger a history back call.
-       ====================================================================== -->
   <script>
     /**
      * Handles back navigation clicks intelligently.
