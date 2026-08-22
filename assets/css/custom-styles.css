@@ -880,3 +880,85 @@ html { /* scroll-behavior removed to prevent unwanted auto-scroll on page load *
     box-shadow: 0 6px 16px rgba(0,0,0,0.1);
     transform: translateY(-2px);
 }
+
+
+/* ============================================================
+   15. BREADCRUMBS (post.html, events.html, profile.html)
+   ============================================================ */
+
+.breadcrumbs {
+    font-family: 'Poiret One', system-ui, sans-serif;
+    font-size: 0.9rem;
+    color: #6d6d6d;
+    margin: 4px 0 12px 0;
+}
+.breadcrumbs a {
+    color: #5f745f;
+    text-decoration: none;
+}
+.breadcrumbs a:hover {
+    text-decoration: underline;
+}
+.breadcrumb-sep {
+    margin: 0 6px;
+    color: #b0b0b0;
+}
+.breadcrumb-current {
+    color: #404040;
+    font-weight: 500;
+}
+
+/* ============================================================
+   16. SEARCH NO-RESULTS MESSAGE
+   ============================================================ */
+
+.search-no-results {
+    font-family: 'Amatic SC', cursive !important;
+    font-size: 1.4rem !important;
+    color: #BDCDC0 !important;
+    text-align: center;
+    list-style: none;
+    padding: 20px 0;
+}
+
+/* ============================================================
+   17. DARK MODE TOGGLE
+   Activated by adding class="dark-mode" to <body> via JS toggle.
+   ============================================================ */
+
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+body.dark-mode .beautiful-jekyll-footer,
+body.dark-mode .toc-card {
+    background-color: #2a2f28 !important;
+    color: #e0e0e0;
+}
+body.dark-mode .post-preview-card,
+body.dark-mode .ninad-card {
+    background-color: #242424;
+    border-color: #3a3a3a;
+    color: #e0e0e0;
+}
+body.dark-mode h1, body.dark-mode h2, body.dark-mode h3,
+body.dark-mode p, body.dark-mode div, body.dark-mode span {
+    color: #e0e0e0;
+}
+body.dark-mode .navbar-custom {
+    background-color: #1f2a1f !important;
+}
+body.dark-mode a {
+    color: #9fd4a3;
+}
+
+.dark-mode-toggle {
+    background: none;
+    border: 1px solid currentColor;
+    border-radius: 20px;
+    padding: 4px 14px;
+    cursor: pointer;
+    font-family: 'Poiret One', system-ui, sans-serif;
+    color: inherit;
+    margin-left: 12px;
+}
