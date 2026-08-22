@@ -1045,36 +1045,69 @@ html { /* scroll-behavior removed to prevent unwanted auto-scroll on page load *
     margin-top: 20px;
 }
 
-/* Comment input field — light mode: match site's soft, rounded aesthetic */
+/* Comment text box (input, textarea, or contenteditable div) — light mode */
 .commentbox input[type="text"],
-.commentbox textarea {
+.commentbox textarea,
+.commentbox [contenteditable="true"],
+.commentbox div[role="textbox"] {
     background-color: #f7faf8 !important;
     color: #404040 !important;
     border: 1px solid #d0d8d0 !important;
     border-radius: 8px !important;
 }
+.commentbox input[type="text"]::placeholder,
+.commentbox textarea::placeholder,
+.commentbox [contenteditable="true"]:empty::before {
+    color: #9a9a9a !important;
+}
+
+/* Action buttons (Sign In, Post, Reply, etc.) — match site's sage-green theme */
+.commentbox button,
+.commentbox a[role="button"],
+.commentbox [class*="btn"],
+.commentbox [class*="button"] {
+    background-color: #5f745f !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 6px !important;
+}
+.commentbox button:hover,
+.commentbox a[role="button"]:hover,
+.commentbox [class*="btn"]:hover,
+.commentbox [class*="button"]:hover {
+    background-color: #4a5c4a !important;
+}
 
 /* Dark mode overrides for the comment widget */
-.dark-mode .commentbox {
+.dark-mode .commentbox,
+.dark-mode .commentbox * {
     color: #e0e0e0;
 }
 .dark-mode .commentbox input[type="text"],
-.dark-mode .commentbox textarea {
+.dark-mode .commentbox textarea,
+.dark-mode .commentbox [contenteditable="true"],
+.dark-mode .commentbox div[role="textbox"] {
     background-color: #242424 !important;
     color: #e0e0e0 !important;
     border: 1px solid #444 !important;
 }
 .dark-mode .commentbox input[type="text"]::placeholder,
-.dark-mode .commentbox textarea::placeholder {
+.dark-mode .commentbox textarea::placeholder,
+.dark-mode .commentbox [contenteditable="true"]:empty::before {
     color: #888 !important;
 }
-.dark-mode .commentbox,
-.dark-mode .commentbox * {
-    color: #e0e0e0;
-}
-.dark-mode .commentbox button {
+.dark-mode .commentbox button,
+.dark-mode .commentbox a[role="button"],
+.dark-mode .commentbox [class*="btn"],
+.dark-mode .commentbox [class*="button"] {
     background-color: #3a5a3a !important;
     color: #e8f3df !important;
+}
+.dark-mode .commentbox button:hover,
+.dark-mode .commentbox a[role="button"]:hover,
+.dark-mode .commentbox [class*="btn"]:hover,
+.dark-mode .commentbox [class*="button"]:hover {
+    background-color: #4a6e4a !important;
 }
 
 
