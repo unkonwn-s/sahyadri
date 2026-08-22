@@ -1,3 +1,4 @@
+<!-- FILE: _includes/ext-js.html — Loops through common-ext-js / page-ext-js front matter to load external scripts (with optional SRI hashes). -->
 {% if include.js.sri %}
   <!-- Load script with Subresource Integrity (SRI) and cross-origin security attributes -->
   <script src="{{ include.js.href }}" integrity="{{ include.js.sri }}" crossorigin="anonymous"></script>
