@@ -1,4 +1,6 @@
 ---
+# FILE: index.md
+# PURPOSE: Homepage. Uses 'home' layout — hero section + post feed listing.
 layout: page
 title: Sahyadri Connect
 subtitle: 
