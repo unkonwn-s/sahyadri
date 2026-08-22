@@ -1,3 +1,39 @@
+<!-- 
+  FILE: _includes/nav.html
+  PURPOSE: Main navigation bar included in all pages
+  
+  STRUCTURE:
+  - Navbar brand (site title) with logo link
+  - Responsive navigation menu
+  - Dropdown menus for multi-level navigation
+  
+  KEY ELEMENTS:
+  - .navbar-custom - Custom navbar styling
+  - .navbar-brand - Site title/logo
+  - .navbar-nav - Navigation menu items
+  - .dropdown - Submenu items (e.g., RESOURCES, INFORMATION dropdowns)
+  
+  STYLING:
+  - Custom font: Poiret One for nav items, Amatic SC for brand
+  - Custom colors from _config.yml (navbar-text-col, navbar-bg-col)
+  - Flex layout for horizontal menu items (no wrap)
+  
+  JAVASCRIPT:
+  - Bootstrap dropdown functionality for mobile/desktop menu toggle
+  - Custom hover effects for desktop dropdowns (defined in custom-styles.css)
+  
+  NAVIGATION LINKS:
+  - ACTIVITIES: /activities/
+  - KRISHNAMURTI: /krishnamurti/
+  - NEWSLETTER: /posts/
+  - PROFILES: /profiles/
+  - RESOURCES: (dropdown menu)
+  - INFORMATION: (dropdown menu)
+  
+  MAINTAINED BY: Sahyadri Archives Team
+  LAST UPDATED: 2026
+-->
+
 <nav class="navbar navbar-expand-xl navbar-light fixed-top navbar-custom {% if page.nav-short %}top-nav-short-permanent{% else %}top-nav-regular{% endif %}">
   
   <!-- Site Brand Link: Prefers logo image if configured, otherwise falls back to text title -->
