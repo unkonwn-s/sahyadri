@@ -764,3 +764,119 @@ html { /* scroll-behavior removed to prevent unwanted auto-scroll on page load *
    ============================================================ */
 
 .hidden-item { display: none !important; }
+
+
+/* ============================================================
+   14. LAYOUT-SPECIFIC STYLES (moved from inline <style> blocks
+   in post.html, events.html, profile.html for consistency)
+   ============================================================ */
+
+/* --- Post/Activity image gallery (post.html) --- */
+.post-image-gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin: 25px auto 35px auto;
+    width: 100%;
+}
+@media (min-width: 800px) {
+    .post-image-gallery.gallery-1 { grid-template-columns: 1fr; }
+    .post-image-gallery.gallery-2 { grid-template-columns: repeat(2, 1fr); }
+    .post-image-gallery.gallery-3,
+    .post-image-gallery.gallery-4,
+    .post-image-gallery.gallery-5 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1200px) {
+    .post-image-gallery.gallery-3,
+    .post-image-gallery.gallery-4,
+    .post-image-gallery.gallery-5 { grid-template-columns: repeat(3, 1fr); }
+}
+.post-image-cell { text-align: center; }
+.post-img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    display: block;
+    object-fit: cover;
+}
+
+/* --- Post/Activity container spacing --- */
+.post-container {
+    padding-top: 40px;
+    position: relative;
+}
+.back-navigation {
+    margin-bottom: 0.15rem;
+    display: block !important;
+}
+.post-subheading,
+.post-subtitle,
+.post-subtitle2 {
+    font-family: 'Amatic SC', cursive, sans-serif;
+}
+.post-subheading a {
+    font-family: inherit;
+    color: #5f745f;
+    text-decoration: none;
+}
+.post-subheading a:hover {
+    text-decoration: underline;
+}
+
+/* --- Activity single-image wrapper (events.html) --- */
+.post-image-wrapper {
+    display: block;
+    width: 100%;
+    margin: 25px auto 35px auto;
+    text-align: center;
+    clear: both;
+}
+.activity-image {
+    max-width: 75%;
+    height: auto;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+/* --- Profile page avatar (profile.html) --- */
+.profile-pic {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    max-width: 100%;
+    border: 3px solid #BDCDC0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+}
+.profile-pic:hover {
+    transform: scale(1.03);
+}
+.profile-header .post-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.profile-header .post-subtitle {
+    font-size: 1.25rem;
+}
+
+/* --- Default layout empty header accent (default.html) --- */
+.default-header-accent {
+    height: 6px;
+    background: linear-gradient(90deg, #5d6d5a, #BDCDC0);
+}
+
+/* --- Post preview cards (home.html) --- */
+.post-preview-card {
+    background-color: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    padding: 20px 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+    list-style: none;
+}
+.post-preview-card:hover {
+    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+}
