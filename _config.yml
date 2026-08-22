@@ -12,6 +12,7 @@ baseurl: ""
 title: "Sahyadri Connect"
 author: "Sahyadri"
 title-on-all-pages: true   # Appends site title to every page's <title> tag
+description: "A window into life at Sahyadri School — newsletters, activities, and reflections from students, teachers, and the wider Krishnamurti Foundation India community."
 
 # -----------------------------------------------------------------------------
 # Navigation Bar
