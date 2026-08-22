@@ -1,4 +1,7 @@
 ---
+# FILE: geeth-gunjan.md
+# PURPOSE: Geeth Gunjan document listing page. NOTE: known issue — two cards share the same
+# Google Drive thumbnail ID; needs the correct second document ID from the site owner.
 layout: page
 title: Geet Gunjan
 subtitle: Click thumbnail to download Geeth Gunjan
