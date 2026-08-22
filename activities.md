@@ -1,4 +1,7 @@
 ---
+# FILE: activities.md
+# PURPOSE: Activities listing page. Custom tabbed-by-year template (inline <style> block)
+# similar to posts.md/kfi.html. Pulls from _activities collection.
 layout: page
 title: "Activities"
 ---
