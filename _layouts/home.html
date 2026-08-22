@@ -1,27 +1,3 @@
-<!--
-  FILE: _layouts/home.html
-
-  PURPOSE: Homepage layout with featured content
-  
-  FEATURES:
-  - Hero section with title and description
-  - Featured image (background)
-  - Post feed/listing with pagination
-  - Dynamic category filtering (if configured)
-  - SEO optimization
-  
-  FRONT MATTER:
-  - title: Homepage title
-  - subtitle: Homepage subtitle
-  - image: Hero image (Google Drive ID)
-  
-  JAVASCRIPT:
-  - Post filtering by category
-  - Load more functionality
-  
-  MAINTAINED BY: Sahyadri Archives Team
-  
--->
 
 ---
 # ==============================================================================
@@ -34,28 +10,16 @@
 layout: page
 ---
 
-<!-- Render any leading Markdown or HTML page content defined prior to the post feed -->
 {{ content }}
 
-<!-- Assign paginated posts array if available; fall back to all site posts -->
 {% assign posts = paginator.posts | default: site.posts %}
 
-<!-- ==========================================================================
-     POSTS LIST CONTAINER
-     Note: role="list" explicitly preserves list semantics for screen readers in 
-     Safari when CSS applies `list-style: none`.
-     ========================================================================== -->
 <ul class="posts-list list-unstyled" role="list">
 
   {% for post in posts %}
     <li class="post-preview">
       <article>
 
-        <!-- --------------------------------------------------------------------
-             1. THUMBNAIL CAPTURE & FALLBACK LOGIC
-             Attempts to capture thumbnail-img first; falls back to cover-img 
-             (handling string or array structures); defaults to empty string.
-             -------------------------------------------------------------------- -->
         {%- capture thumbnail -%}
           {% if post.thumbnail-img %}
             {{ post.thumbnail-img }}
@@ -70,10 +34,6 @@ layout: page
         {% endcapture %}
         {% assign thumbnail = thumbnail | strip %}
 
-        <!-- --------------------------------------------------------------------
-             2. NORMAL VIEW THUMBNAIL
-             Rendered above titles when excerpts are disabled globally.
-             -------------------------------------------------------------------- -->
         {% if site.feed_show_excerpt == false %}
           {% if thumbnail != "" %}
             <div class="post-image post-image-normal">
@@ -84,9 +44,6 @@ layout: page
           {% endif %}
         {% endif %}
 
-        <!-- --------------------------------------------------------------------
-             3. POST TITLE & SUBTITLE
-             -------------------------------------------------------------------- -->
         <a href="{{ post.url | absolute_url }}">
           <h2 class="post-title">
             {{ post.title | strip_html }}
@@ -98,26 +55,15 @@ layout: page
           {% endif %}
         </a>
 
-        <!-- --------------------------------------------------------------------
-             4. POST AUTHOR METADATA
-             -------------------------------------------------------------------- -->
         {% if post.author %}
           <span>by <strong>{{ post.author | strip_html }}</strong></span>
         {% endif %}
 
-        <!-- --------------------------------------------------------------------
-             5. PUBLICATION DATE METADATA
-             Formats date using site configuration parameter or default format string.
-             -------------------------------------------------------------------- -->
         <p class="post-meta">
           {% assign date_format = site.date_format | default: "%B %-d, %Y" %}
           Posted on {{ post.date | date: date_format }}
         </p>
 
-        <!-- --------------------------------------------------------------------
-             6. SMALL VIEW THUMBNAIL
-             Alternative responsive thumbnail placement for intermediate viewports.
-             -------------------------------------------------------------------- -->
         {% if thumbnail != "" %}
           <div class="post-image post-image-small">
             <a href="{{ post.url | absolute_url }}" aria-label="Thumbnail">
@@ -126,11 +72,6 @@ layout: page
           </div>
         {% endif %}
 
-        <!-- --------------------------------------------------------------------
-             7. POST EXCERPT & READ MORE LINK
-             Truncates post text to word limit configured in site settings and
-             appends a [Read More] link if the body extends beyond the excerpt.
-             -------------------------------------------------------------------- -->
         {% unless site.feed_show_excerpt == false %}
           {% if thumbnail != "" %}
             <div class="post-image post-image-short">
@@ -150,14 +91,9 @@ layout: page
           </div>
         {% endunless %}
 
-        <!-- --------------------------------------------------------------------
-             8. POST TAGS LIST
-             Renders list items linking to tag collection anchors.
-             -------------------------------------------------------------------- -->
         {% if site.feed_show_tags != false and post.tags.size > 0 %}
           <div class="blog-tags">
             <span>Tags:</span>
-            <!-- role="list" preserves semantics for Safari list rendering -->
             <ul class="d-inline list-inline" role="list">
               {% for tag in post.tags %}
                 <li class="list-inline-item">
@@ -176,14 +112,9 @@ layout: page
 
 </ul>
 
-<!-- ==========================================================================
-     PAGINATION CONTROL BUTTONS
-     Renders 'Newer Posts' and 'Older Posts' links across multi-page feeds.
-     ========================================================================== -->
 {% if paginator.total_pages > 1 %}
   <ul class="pagination main-pager">
 
-    <!-- Newer / Previous Page Link -->
     {% if paginator.previous_page %}
       <li class="page-item previous">
         <a class="page-link" href="{{ paginator.previous_page_path | absolute_url }}">
@@ -193,7 +124,6 @@ layout: page
       </li>
     {% endif %}
 
-    <!-- Older / Next Page Link -->
     {% if paginator.next_page %}
       <li class="page-item next">
         <a class="page-link" href="{{ paginator.next_page_path | absolute_url }}">
