@@ -1,28 +1,3 @@
-<!--
-  FILE: _layouts/events.html
-
-  PURPOSE: Template for event/activity listing pages
-  
-  FEATURES:
-  - Activity cards with images and descriptions
-  - Category/year filtering
-  - Responsive grid layout
-  - Load more functionality
-  
-  FRONT MATTER:
-  - title: Page title
-  - subtitle: Optional subtitle
-  
-  JAVASCRIPT:
-  - filterContentByYear() - Filter activities by year
-  - switchTab() - Handle tab switching
-  
-  DATA SOURCE:
-  - Events from _activities folder
-  
-  MAINTAINED BY: Sahyadri Archives Team
-  
--->
 
 ---
 # ==============================================================================
@@ -35,11 +10,6 @@
 layout: base
 ---
 
-<!-- 
-  Internal Layout Component Styles
-  Custom CSS overrides tailored specifically for post header elements, typography,
-  back-navigation placement, and Google Drive hero image presentation.
--->
 <style>
   /* Fix content tracking behavior so it respects the fixed top navbar height */
   .post-container {
@@ -81,18 +51,10 @@ layout: base
   }
 </style>
 
-<!-- 
-  Main Article Container
-  Dynamically applies full-width or centered grid layout based on 'page.full-width' front matter.
--->
 <main class="{% if page.full-width %}container-fluid{% else %}container-md{% endif %} post-container">
   <div class="row">
     <div class="{% if page.full-width %}col{% else %}col-xl-8 offset-xl-2 col-lg-10 offset-lg-1{% endif %}">
 
-      <!-- ====================================================================
-           1. BACK NAVIGATION LINK
-           Triggers the inline JavaScript handleBackNavigation() function.
-           ==================================================================== -->
       <div class="back-navigation">
         <a href="/activities" id="back-button" onclick="return handleBackNavigation();">
           <i class="fas fa-chevron-left"></i>
@@ -100,19 +62,13 @@ layout: base
         </a>
       </div>
 
-      <!-- ====================================================================
-           2. POST HEADER (TITLE, DATE, AUTHOR PROFILES)
-           ==================================================================== -->
       <div class="post-heading">
-        <!-- Post Main Title -->
         <h1>{{ page.title }}</h1>
 
-        <!-- Publication Date -->
         <span class="post-meta">
           Posted on {{ page.date | date: "%B %-d, %Y" }}
         </span>
 
-        <!-- Primary Author & Optional Co-Author Links -->
         {% if page.subtitle %}
           {% comment %}
             Generates a URL slug from the primary author's name in 'page.subtitle':
@@ -128,7 +84,6 @@ layout: base
           <h2 class="post-subheading">
             By <a href="{{ '/profiles/' | relative_url }}{{ author1_slug }}/">{{ page.subtitle }}</a>
             
-            <!-- Optional Co-Author -->
             {% if page.subtitle2 %}
               {% comment %} Generates the URL slug for the co-author in 'page.subtitle2' {% endcomment %}
               {% assign author2_parts = page.subtitle2 | split: ' ' %}
@@ -145,10 +100,6 @@ layout: base
         <hr class="small">
       </div>
 
-      <!-- ====================================================================
-           3. FEATURED HERO IMAGE (GOOGLE DRIVE EMBED)
-           Calculates image ID and formats direct stream link from Google Drive.
-           ==================================================================== -->
       {% assign current_image = page.image_id | default: page.image %}
       {% if current_image %}
         <div class="post-image-wrapper">
@@ -160,10 +111,6 @@ layout: base
         </div>
       {% endif %}
 
-      <!-- ====================================================================
-           4. GITHUB REPOSITORY BADGES
-           Renders official GitHub iframes (stars, watch, fork, follow) if configured.
-           ==================================================================== -->
       {% if page.gh-repo %}
         {% assign gh_split = page.gh-repo | split: '/' %}
         {% assign gh_user = gh_split[0] %}
@@ -211,16 +158,10 @@ layout: base
         </div>
       {% endif %}
 
-      <!-- ====================================================================
-           5. MAIN POST BODY CONTENT
-           ==================================================================== -->
       <div class="blog-post">
         {{ content }}
       </div>
 
-      <!-- ====================================================================
-           6. ARTICLE TAGS LIST
-           ==================================================================== -->
       {% if page.tags.size > 0 %}
         <div class="blog-tags">
           <span>Tags:</span>
@@ -230,9 +171,6 @@ layout: base
         </div>
       {% endif %}
 
-      <!-- ====================================================================
-           7. POST PAGINATION (PREVIOUS / NEXT POST LINKS)
-           ==================================================================== -->
       <ul class="pagination blog-pager">
         {% if page.previous.url %}
           <li class="page-item previous">
@@ -264,19 +202,11 @@ layout: base
         {% endif %}
       </ul>
 
-      <!-- ====================================================================
-           8. COMMENTS SECTION INCLUSION
-           ==================================================================== -->
       {% include comments.html %}
 
     </div>
   </div>
 
-  <!-- ======================================================================
-       9. SMART BACK-NAVIGATION SCRIPT
-       Determines browser history state to route the user gracefully back to
-       the activities directory or previous page.
-       ====================================================================== -->
   <script>
     /**
      * Handles back navigation clicks intelligently.
