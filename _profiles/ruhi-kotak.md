@@ -4,7 +4,6 @@ title: "Ruhi Kalpa Kotak"
 subtitle: "Student (Class 11)"
 date: 2026-07-06
 academic-year: "2026-27"
-profile-image: "15F3zvUZKOGAhxKUJhJIhqU4Ve_BGUDnG"
 ---
 
 I joined Sahyadri School in iI have been here since 7th grade.
