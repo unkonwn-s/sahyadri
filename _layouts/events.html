@@ -30,6 +30,7 @@ layout: base
         <span class="post-meta">
           Posted on {{ page.date | date: "%B %-d, %Y" }}
         </span>
+        {% include readtime.html %}
 
         {% if page.subtitle %}
           {% comment %}
