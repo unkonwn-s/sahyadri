@@ -1,4 +1,6 @@
 ---
+# FILE: comms.md
+# PURPOSE: 'Communications' info page — do's/don'ts for contacting school staff by email.
 layout: page
 title: Communication
 subtitle: 
