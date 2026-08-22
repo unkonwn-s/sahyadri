@@ -1,29 +1,3 @@
-<!--
-  FILE: _layouts/profile.html
-
-  PURPOSE: Template for student/staff profile pages
-  
-  FEATURES:
-  - Profile image (circular, from Google Drive)
-  - Name and title/grade
-  - Last updated date
-  - Profile bio/description
-  - Back button navigation
-  
-  FRONT MATTER:
-  - title: Person's name
-  - subtitle: Grade/position (e.g., "STUDENT (CLASS 12)")
-  - image: Profile photo (Google Drive ID)
-  - date: Last updated date (YYYY-MM-DD)
-  
-  STYLING:
-  - Responsive layout with centered image on mobile
-  - Side-by-side layout on desktop
-  - Back button with proper spacing (140px margin-top)
-  
-  MAINTAINED BY: Sahyadri Archives Team
-  
--->
 
 ---
 # ==============================================================================
@@ -39,10 +13,6 @@
 layout: base
 ---
 
-<!-- 
-  Internal Layout Styles
-  Handles avatar sizing, cropping, and title typography scaling.
--->
 <style>
   /* Forces profile avatar images to maintain a square 1:1 aspect ratio with centered cropping */
   .profile-pic {
@@ -63,19 +33,10 @@ layout: base
   }
 </style>
 
-<!-- 
-  Main Profile Container
-  Dynamically sets grid width via Bootstrap layout classes based on 'page.full-width'.
--->
 <main class="{% if page.full-width %}container-fluid{% else %}container-md{% endif %}">
   <div class="row">
     <div class="{% if page.full-width %}col{% else %}col-xl-8 offset-xl-2 col-lg-10 offset-lg-1{% endif %}">
 
-      <!-- ====================================================================
-           1. BACK NAVIGATION LINK
-           Checks document.referrer to safely trigger browser history back,
-           otherwise falls back to the default '/profiles' directory path.
-           ==================================================================== -->
       <div class="back-navigation mb-4">
         <a
           href="/profiles"
@@ -87,12 +48,8 @@ layout: base
         </a>
       </div>
 
-      <!-- ====================================================================
-           2. PROFILE HEADER SECTION (AVATAR + META INFO)
-           ==================================================================== -->
       <div class="profile-header row align-items-center mb-4">
         
-        <!-- Avatar Column: Checks for Google Drive ID in front matter, else loads default asset -->
         <div class="col-4 col-md-3 text-center text-md-start">
           {% if page.profile-image %}
             <img
@@ -109,21 +66,17 @@ layout: base
           {% endif %}
         </div>
 
-        <!-- Meta Info Column: Renders Name/Title, Role/Subtitle, and Last Updated Date -->
         <div class="col-8 col-md-9">
-          <!-- Profile Name / Primary Title -->
           <h3 class="post-title mb-1">
             {{ page.title }}
           </h3>
 
-          <!-- Subtitle / Role Designation -->
           {% if page.subtitle %}
             <h4 class="post-subtitle text-muted fw-normal mb-2">
               {{ page.subtitle }}
             </h4>
           {% endif %}
 
-          <!-- Last Revision Date -->
           <span class="profile-meta text-muted small">
             Last updated on {{ page.date | date: "%B %-d, %Y" }}
           </span>
@@ -132,10 +85,6 @@ layout: base
 
       <hr class="my-4">
 
-      <!-- ====================================================================
-           3. MAIN PROFILE BODY / BIO CONTENT
-           Jekyll renders the Markdown or HTML bio content here.
-           ==================================================================== -->
       <div class="profile-content">
         {{ content }}
       </div>
