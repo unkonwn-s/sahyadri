@@ -29,6 +29,14 @@ layout: base
         </a>
       </div>
 
+      <nav class="breadcrumbs" aria-label="breadcrumb">
+        <a href="{{ '/' | relative_url }}">Home</a>
+        <span class="breadcrumb-sep">/</span>
+        <a href="{{ '/posts' | relative_url }}">Newsletter</a>
+        <span class="breadcrumb-sep">/</span>
+        <span class="breadcrumb-current">{{ page.title }}</span>
+      </nav>
+
       <div class="post-heading">
         <h1>{{ page.title }}</h1>
 
