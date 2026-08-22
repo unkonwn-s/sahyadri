@@ -1,61 +1,27 @@
-
-# ==============================================================================
-# BEAUTIFUL JEKYLL - BASE LAYOUT ASSET CONFIGURATION
-# Theme Version: 6.0.1
-# ==============================================================================
-# This YAML front matter defines the central stylesheet (CSS) and JavaScript (JS)
-# dependencies loaded across all pages utilizing this template layout.
-
-# Local theme stylesheets
+---
 common-css:
-  - "/assets/css/bootstrap-social.css" # Social media button styling (Bootstrap extension)
-  - "/assets/css/beautifuljekyll.css"   # Primary theme stylesheet and custom overrides
-
-# External CSS libraries loaded via CDNs
+  - "/assets/css/bootstrap-social.css"
+  - "/assets/css/beautifuljekyll.css"
 common-ext-css:
-  # Bootstrap 4.4.1 core CSS grid and components (includes Subresource Integrity check)
   - href: "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     sri: "sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-  
-  # Font Awesome 6.5.2 for UI and social media icons
   - "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-  
-  # Google Fonts: Lora (Serif font used for body typography)
   - "https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic"
-  
-  # Google Fonts: Open Sans (Sans-serif font used for titles, nav, and UI components)
   - "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
-
-# External JavaScript libraries loaded via CDNs (placed before local scripts)
 common-ext-js:
-  # jQuery 3.5.1 Slim (required for Bootstrap 4 interactive components)
   - href: "https://code.jquery.com/jquery-3.5.1.slim.min.js"
     sri: "sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
-  
-  # Popper.js 1.16.0 (handles dynamic positioning for tooltips, popovers, and dropdowns)
   - href: "https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
     sri: "sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-  
-  # Bootstrap 4.4.1 JS bundle (enables modal, nav-collapse, and dropdown functionality)
   - href: "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     sri: "sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-
-# Local theme JavaScript files
 common-js:
-  - "/assets/js/beautifuljekyll.js" # Custom JS for UI behaviors (e.g., responsive menus, search)
+  - "/assets/js/beautifuljekyll.js"
 ---
 
 <!DOCTYPE html>
-  Language Fallback Cascade:
-  1. page.language (defined in page front matter)
-  2. site.language (defined in _config.yml)
-  3. 'en' (default fallback)
 <html lang="{{ page.language | default: site.language | default: 'en' }}">
 
-  
-    Head Inclusion:
-    Injects HTML head tags (<title>, <meta>, favicons) and compiles the CSS arrays
-    defined in the YAML front matter above.
   {% include head.html %}
 
   <body>
@@ -66,16 +32,10 @@ common-js:
 
     {% include nav.html %}
 
-      Page Content Slot:
-      Jekyll injects the rendered Markdown/HTML content of any page 
-      using this layout directly into this Liquid template tag.
     {{ content }}
 
     {% include footer.html %}
 
-      Footer Scripts: 
-      Injects external and local JavaScript files defined in front matter 
-      at the end of <body> to improve visual load performance.
     {% include footer-scripts.html %}
 
   </body>
