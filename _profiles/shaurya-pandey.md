@@ -4,7 +4,6 @@ title: "Shaurya Pandey"
 subtitle: "Student (Class 11)"
 date: 2026-07-11
 academic-year: "2026-27"
-profile-image: "15F3zvUZKOGAhxKUJhJIhqU4Ve_BGUDnG"
 ---
 
 I initially joined Sahyadri School in the 6th grade, drawn by the fact that my sister was already studying here and by the exciting prospect of living atop a beautiful hill for eight months a year. Over time, Sahyadri completely transformed for me; it ceased to be just a school and became a place I constantly longed to return to—a home woven together by my favorite memories and the constant opportunity to create new, cherished ones.
