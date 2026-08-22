@@ -69,7 +69,7 @@ permalink: /posts/
 
   .post-subtitle a {
     font-family: inherit;
-    color: #5f745f;
+    color: #7a9670;
     text-decoration: none;
   }
 
