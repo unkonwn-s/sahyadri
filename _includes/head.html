@@ -1,9 +1,27 @@
 <!-- FILE: _includes/head.html — Builds the full <head> tag: meta tags, Open Graph/Twitter cards, favicons, stylesheets, and JSON-LD. -->
 <head>
   {%- if site.maintenance-mode and page.url != "/maintenance/" -%}
-  <!-- Maintenance Mode Redirect — fires before any content renders if site.maintenance-mode is true in _config.yml -->
+  <!-- Maintenance Mode Redirect — fires before any content renders if site.maintenance-mode is true in _config.yml.
+       Skips the redirect if a valid ?bypass= key is present in the URL or was previously
+       remembered for this browser tab session (see maintenance-bypass-key in _config.yml). -->
   <script>
-    window.location.replace("{{ '/maintenance/' | relative_url }}");
+    (function() {
+      var BYPASS_STORAGE_KEY = 'sahyadri-maintenance-bypass';
+      var VALID_KEY = "{{ site.maintenance-bypass-key | default: '' }}";
+      var params = new URLSearchParams(window.location.search);
+      var suppliedKey = params.get('bypass');
+
+      if (VALID_KEY && suppliedKey === VALID_KEY) {
+        try { sessionStorage.setItem(BYPASS_STORAGE_KEY, 'true'); } catch (e) {}
+      }
+
+      var hasBypass = false;
+      try { hasBypass = sessionStorage.getItem(BYPASS_STORAGE_KEY) === 'true'; } catch (e) {}
+
+      if (!hasBypass) {
+        window.location.replace("{{ '/maintenance/' | relative_url }}");
+      }
+    })();
   </script>
   {%- endif -%}
 
