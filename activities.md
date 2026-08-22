@@ -91,7 +91,7 @@ title: "Activities"
   /* Author link inside subtitle — inherits Amatic SC via font-family: inherit */
   .post-subtitle a {
     font-family: inherit;
-    color: #5f745f;
+    color: #7a9670;
     text-decoration: none;
   }
 
