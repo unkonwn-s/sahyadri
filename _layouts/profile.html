@@ -31,6 +31,14 @@ layout: base
         </a>
       </div>
 
+      <nav class="breadcrumbs mb-3" aria-label="breadcrumb">
+        <a href="{{ '/' | relative_url }}">Home</a>
+        <span class="breadcrumb-sep">/</span>
+        <a href="{{ '/profiles' | relative_url }}">Profiles</a>
+        <span class="breadcrumb-sep">/</span>
+        <span class="breadcrumb-current">{{ page.title }}</span>
+      </nav>
+
       <div class="profile-header row align-items-center mb-4">
         
         <div class="col-6 col-md-3 text-center text-md-start">
