@@ -88,14 +88,29 @@ permalink: /posts/
     margin-top: 1rem;
   }
 
+  /* Thumbnail container: fixed size + fixed aspect ratio so every card
+     looks uniform regardless of whether the source photo is portrait,
+     landscape, or square. */
   .post-image {
     flex-shrink: 0;
-    min-width: 200px;
-  }
-
-  .post-image img {
+    width: 220px;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
     border-radius: 6px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  /* object-fit: cover crops the image to fill the box proportionally
+     (no stretching/distortion); object-position: center keeps the
+     visual center of the photo in frame for both portrait and
+     landscape sources. */
+  .post-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 6px;
+    box-shadow: none;
   }
 
   .post-entry {
@@ -156,12 +171,17 @@ permalink: /posts/
       gap: 1rem;
     }
     
+    /* On mobile the thumbnail becomes a full-width banner above the
+       excerpt text; a fixed aspect ratio (instead of the desktop's
+       220px box) keeps it proportional at any screen width while still
+       capping tall portrait photos via object-fit: cover. */
     .post-image {
       flex-shrink: 0;
       width: 85% !important;
-      min-width: unset;
+      aspect-ratio: 16 / 9;
       padding: 0;
       margin: 0 auto;
+      overflow: hidden;
       display: block !important;
       visibility: visible !important;
       opacity: 1 !important;
@@ -175,8 +195,9 @@ permalink: /posts/
     
     .post-image img {
       width: 100%;
-      height: auto;
-      max-height: 400px;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
       display: block !important;
       visibility: visible !important;
       opacity: 1 !important;
