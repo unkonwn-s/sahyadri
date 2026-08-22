@@ -13,47 +13,6 @@
 layout: base
 ---
 
-<style>
-  /* Fix content tracking behavior so it respects the fixed top navbar height */
-  .post-container {
-    padding-top: 40px;
-    position: relative;
-  }
-
-  /* Style the back button cleanly without breaking layout flows */
-  .back-navigation {
-    margin-bottom: 0.15rem;
-    display: block !important;
-  }
-
-  /* Target author subheadings to use custom web font (Amatic SC) */
-  .post-subheading,
-  .post-subtitle,
-  .post-subtitle2 {
-    font-family: 'Amatic SC', cursive, sans-serif;
-  }
-
-  /* Ensure links within the subheading inherit the Amatic SC font styling and brand colors */
-  .post-subheading a {
-    font-family: inherit;
-    color: #5f745f;
-    text-decoration: none;
-  }
-
-  .post-subheading a:hover {
-    text-decoration: underline;
-  }
-
-  /* Clearfix layout container to force post images to stay safely below header boundaries */
-  .post-image-wrapper {
-    display: block;
-    width: 100%;
-    margin: 25px auto 35px auto;
-    text-align: center;
-    clear: both;
-  }
-</style>
-
 <main class="{% if page.full-width %}container-fluid{% else %}container-md{% endif %} post-container">
   <div class="row">
     <div class="{% if page.full-width %}col{% else %}col-xl-8 offset-xl-2 col-lg-10 offset-lg-1{% endif %}">
