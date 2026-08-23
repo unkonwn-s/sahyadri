@@ -10,8 +10,8 @@
   {% include utterances-comment.html %}
   <!-- Load Giscus GitHub Discussions-based comments -->
   {% include giscus-comment.html %}
-  <!-- Load CommentBox.io widget (only if a Project ID is configured) -->
-  {% if site.commentbox-id %}
-    {% include commentbox.html %}
+  <!-- Load Elfsight Comments widget (only if an App ID is configured) -->
+  {% if site.elfsight-app-id %}
+    {% include elfsight-comments.html %}
   {% endif %}
 {% endif %}
