@@ -1121,3 +1121,27 @@ html { /* scroll-behavior removed to prevent unwanted auto-scroll on page load *
 .dark-mode .post-subheading a:hover {
     color: #c5e0bc !important;
 }
+
+
+/* ============================================================
+   21. ELFSIGHT COMMENTS WIDGET — CONTAINER WIDTH
+   The widget's outer wrapper div is part of the host page's own
+   DOM (not sandboxed), so its width is safely controllable here.
+   Widened to 85% of the viewport, centered, to give the comment
+   panel more breathing room than the default post content width.
+   ============================================================ */
+
+.elfsight-app-2959381d-e116-43d1-ae7c-2499b54d5bec {
+    width: 85vw;
+    max-width: 85vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+}
+
+@media (max-width: 768px) {
+    .elfsight-app-2959381d-e116-43d1-ae7c-2499b54d5bec {
+        width: 95vw;
+        max-width: 95vw;
+    }
+}
