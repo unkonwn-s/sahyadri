@@ -1145,3 +1145,33 @@ html { /* scroll-behavior removed to prevent unwanted auto-scroll on page load *
         max-width: 95vw;
     }
 }
+
+
+/* ============================================================
+   22. ELFSIGHT COMMENTS WIDGET — DARK MODE SYNC
+   Elfsight's internal styling isn't directly reachable from our
+   site CSS (may render via iframe or an isolated stylesheet), so
+   instead of guessing internal class names we use a filter-based
+   color inversion on the whole widget. This works regardless of
+   the widget's internal implementation, and updates live/instantly
+   the moment the .dark-mode class toggles (pure CSS, no extra JS).
+
+   Trade-off: this is a visual approximation, not pixel-perfect
+   theming — colors get inverted then hue-rotated back toward
+   their original tone, which looks convincing for a white-card
+   widget like this but can slightly shift saturated colors.
+   ============================================================ */
+
+.dark-mode .elfsight-app-2959381d-e116-43d1-ae7c-2499b54d5bec {
+    filter: invert(0.92) hue-rotate(180deg);
+    border-radius: 10px;
+    transition: filter 0.2s ease;
+}
+
+/* Counter-invert any logos/icons/avatars inside the widget (e.g. the
+   Google/Facebook sign-in icons, profile photos) so they display with
+   their correct original colors instead of being inverted too. */
+.dark-mode .elfsight-app-2959381d-e116-43d1-ae7c-2499b54d5bec img,
+.dark-mode .elfsight-app-2959381d-e116-43d1-ae7c-2499b54d5bec svg {
+    filter: invert(1) hue-rotate(180deg);
+}
