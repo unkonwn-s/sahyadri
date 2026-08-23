@@ -142,12 +142,12 @@ kramdown:
 
 
 # -----------------------------------------------------------------------------
-# Comments (CommentBox.io)
-# Find your Project ID in the CommentBox dashboard → your project → Settings.
-# This value is referenced in layouts via {{ site.commentbox-id }}
-# Leave blank or remove to disable CommentBox sitewide.
+# Comments (Elfsight Comments widget)
+# App ID extracted from the embed class "elfsight-app-<ID>" in your
+# Elfsight dashboard. This value is referenced via {{ site.elfsight-app-id }}
+# Leave blank or remove to disable the comment widget sitewide.
 # -----------------------------------------------------------------------------
-commentbox-id: "5654231423909888-proj"   # e.g. "5678912345-proj-abc123"
+elfsight-app-id: "2959381d-e116-43d1-ae7c-2499b54d5bec"
 
 
 # -----------------------------------------------------------------------------
