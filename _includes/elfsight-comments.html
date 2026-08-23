@@ -1,0 +1,9 @@
+<!-- FILE: _includes/elfsight-comments.html — Elfsight Comments widget embed (Google/social sign-in, hosted, cross-platform). -->
+{% if site.elfsight-app-id %}
+  <!-- Elfsight Comments widget
+       App ID is set via elfsight-app-id in _config.yml.
+       page.comments is already checked by the parent comments.html include.
+  -->
+  <script src="https://elfsightcdn.com/platform.js" async></script>
+  <div class="elfsight-app-{{ site.elfsight-app-id }}" data-elfsight-app-lazy></div>
+{% endif %}
