@@ -1132,17 +1132,24 @@ html { /* scroll-behavior removed to prevent unwanted auto-scroll on page load *
    ============================================================ */
 
 .elfsight-app-2959381d-e116-43d1-ae7c-2499b54d5bec {
+    /* margin-left: 50% resolves against the PARENT container's width, not
+       the viewport — since this widget sits inside a narrower centered
+       column (.container-md / .col-lg-10), that approach only centered
+       it within that narrower box. Using vw-based negative margins here
+       instead, since vw units always reference the true viewport width
+       regardless of how deeply nested the element is. */
     width: 85vw;
     max-width: 85vw;
-    margin-left: 50%;
-    transform: translateX(-50%);
     position: relative;
+    left: 50%;
+    margin-left: -42.5vw;
 }
 
 @media (max-width: 768px) {
     .elfsight-app-2959381d-e116-43d1-ae7c-2499b54d5bec {
         width: 95vw;
         max-width: 95vw;
+        margin-left: -47.5vw;
     }
 }
 
