@@ -3,7 +3,7 @@ layout: post
 title: "Twelve Angry Jurors"
 date: 2025-07-26
 subtitle: "Nayantara Wakankar (Grade 11)"
-category: August 2025
+category: July 2025
 image: "1HIMJVtcxCU24W0djPx4D6mDTOUB17_00"
 ---
 
