@@ -3,7 +3,7 @@ layout: post
 title: "Book Tasting at Phoenix Club"
 date: 2025-09-25
 subtitle: "Aadya Tyagi (Grade 11)"
-category: November 2025
+category: September 2025
 ---
 
 Many, many years ago, Anjali Akka, our English teacher, started a Book-Tasting club. The club introduced people to a variety of books. It enabled the participants to pick up a book they loved, share about it, and read aloud an excerpt from it. This club was predominantly for the junior school. The aim was to help students discover books they would want to read and encourage them to read more. After a brief break, owing to the COVID lockdown, Anjali Akka passed on the torch to the very students that grew up with the club. So like a phoenix, it rose out of the ashes, and the club was renamed the Phoenix Club.
