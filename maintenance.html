@@ -6,6 +6,15 @@ permalink: /maintenance/
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  {%- unless site.maintenance-mode -%}
+  <!-- Reverse redirect: if maintenance mode is OFF but someone still lands on
+       /maintenance/ (e.g. an old bookmark, a shared link, or a search engine
+       result), send them straight to the homepage instead of showing a stale
+       "under maintenance" page. -->
+  <script>
+    window.location.replace("{{ '/' | relative_url }}");
+  </script>
+  {%- endunless -%}
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Under Maintenance | Sahyadri Connect</title>
