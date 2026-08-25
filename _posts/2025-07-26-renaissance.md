@@ -4,7 +4,7 @@ title: "All the World's a Stage: Renaissance Fair"
 date: 2025-07-26
 subtitle: "Samaira Shah"
 subtitle2: "Anvi Bharti (Grade 9)"
-category: August 2025
+category: July 2025
 ---
 
 On the 26th of July this year, the 9th batch held an assembly regarding Ancient Rome and the English Renaissance, titled “All the World’s a Stage”. 
