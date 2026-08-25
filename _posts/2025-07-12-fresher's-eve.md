@@ -3,7 +3,7 @@ layout: post
 title: "Fresher's Eve"
 date: 2025-07-12
 subtitle: "Swara Bathe (Grade 11)"
-category: August 2025
+category: July 2025
 ---
 
 Freshers’ Eve is known to be one of the most anticipated, fun-filled events of the new school year. All freshers look forward to showcasing their talents, either individually or with their friends. This year, Freshers’ Eve was held on 12th July, from 5:30 p.m. to 7:30 p.m.
