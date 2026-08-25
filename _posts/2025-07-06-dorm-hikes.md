@@ -3,7 +3,7 @@ layout: post
 title: "Dorm Hikes"
 date: 2025-07-06
 subtitle: "Dimpika Mittal (Grade 11)"
-category: August 2025
+category: July 2025
 image: "10mfr_b00RK5IlRW1ELHtNJGreGpXpw8l"
 ---
 
