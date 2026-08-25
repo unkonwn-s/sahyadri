@@ -3,7 +3,7 @@ layout: post
 title: "Open House (Whole School)"
 date: 2025-07-12
 subtitle: "Riddhim Inamke (Grade 11)"
-category: August 2025
+category: July 2025
 ---
 
 On the 12th of July, we held an Open House for the entire school on a pressing issue that the students and teachers had been facing for quite some time: the ‘stealing’ of umbrellas. In Sahyadri, a culture of picking up and using random umbrellas that might have belonged to someone else had been established for quite some time. 
