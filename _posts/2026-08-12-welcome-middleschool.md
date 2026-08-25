@@ -1,7 +1,8 @@
 ---
 layout: post
 title: WELCOME BACK TO THE SCHOOL - Middle School
-subtitle: Kahaan, Agastya (Class 8)
+subtitle: Kahaan Doshi (Class 8)
+subtitle2: Agasthya Timshina (Class 8)
 category: August 2026
 date: 2026-08-12
 ---
