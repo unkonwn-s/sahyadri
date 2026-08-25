@@ -3,7 +3,7 @@ layout: post
 title: "Grade 10 Dance Performance"
 date: 2025-08-12
 subtitle: "Aarna Gautam (Grade 10)"
-category: September 2025
+category: August 2025
 image: "1aA_nuonDIQfsxQb3KSsoJ8L5R-drKjRi"
 ---
 
