@@ -1182,3 +1182,18 @@ html { /* scroll-behavior removed to prevent unwanted auto-scroll on page load *
 .dark-mode .elfsight-app-2959381d-e116-43d1-ae7c-2499b54d5bec svg {
     filter: invert(1) hue-rotate(180deg);
 }
+
+
+/* ============================================================
+   23. "READ MORE" LINK — GLOBAL HOVER UNDERLINE
+   .post-read-more is used in posts.md, activities.md, and
+   _layouts/home.html. posts.md/activities.md already have their
+   own inline hover rules, but home.html's version had no styling
+   at all — this global rule guarantees the underline-on-hover
+   behavior applies everywhere the class is used, regardless of
+   which page-specific <style> block is or isn't present.
+   ============================================================ */
+
+.post-read-more:hover {
+    text-decoration: underline !important;
+}
