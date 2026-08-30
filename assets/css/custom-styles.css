@@ -732,6 +732,18 @@ html { /* scroll-behavior removed to prevent unwanted auto-scroll on page load *
     margin: 15px 0 0 0;
     order: 1;
     border-top: 1px solid #e0e0e0;
+    /* Cards with shorter one-line captions were leaving a visible gap
+       of empty card background below the banner, since flexbox
+       stretches sibling cards to equal height (matching whichever
+       card has the longer, wrapped caption text) but the banner
+       itself only took up its natural one-line height. flex-grow
+       makes the banner itself absorb that leftover space instead,
+       and the flex centering keeps the text vertically centered
+       within whatever height it ends up needing. */
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .ninad-card img {
