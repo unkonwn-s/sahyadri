@@ -1210,3 +1210,26 @@ html { /* scroll-behavior removed to prevent unwanted auto-scroll on page load *
 .dark-mode .album-item figcaption {
     color: #d5d5d5 !important;
 }
+
+
+/* ============================================================
+   25. NINAD/PDF CARD CAPTION BANNER — DARK MODE
+   .ninad-caption-banner (used on ninad.md and geeth-gunjan.md)
+   has a near-white background with dark text, matching light
+   mode but clashing sharply against the dark background when
+   dark mode is on. Also overrides the same class defined inline
+   in geeth-gunjan.md's <style> block (same selector, same
+   specificity — !important guarantees this wins regardless of
+   source order).
+   ============================================================ */
+
+.dark-mode .ninad-card {
+    background-color: #242424 !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3) !important;
+}
+
+.dark-mode .ninad-caption-banner {
+    background-color: #2a2f28 !important;
+    color: #e0e0e0 !important;
+    border-top: 1px solid #444 !important;
+}
