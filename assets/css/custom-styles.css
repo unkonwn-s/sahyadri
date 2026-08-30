@@ -1197,3 +1197,16 @@ html { /* scroll-behavior removed to prevent unwanted auto-scroll on page load *
 .post-read-more:hover {
     text-decoration: underline !important;
 }
+
+
+/* ============================================================
+   24. PHOTO ALBUM CAPTIONS — DARK MODE READABILITY
+   .album-item figcaption has no explicit color set, so it was
+   inheriting the site's default dark-gray text (#404040), which
+   reads as low-contrast, washed-out text against the dark mode
+   background. Brightened for dark mode specifically.
+   ============================================================ */
+
+.dark-mode .album-item figcaption {
+    color: #d5d5d5 !important;
+}
