@@ -99,6 +99,14 @@ title: "Activities"
       aria-label="Search activities within the selected academic year"
       oninput="filterYearSearch()"
     >
+    <button
+      type="button"
+      id="year-search-clear"
+      class="year-search-clear"
+      aria-label="Clear search"
+      onclick="clearYearSearch()"
+      style="display: none;"
+    >&times;</button>
   </div>
 {% endif %}
 
@@ -353,11 +361,24 @@ title: "Activities"
    * entire .term-section category blocks if every card within them
    * gets filtered out. Shows a "no results" message when nothing matches.
    */
+  function clearYearSearch() {
+    const input = document.getElementById('year-search-input');
+    if (!input) return;
+    input.value = '';
+    filterYearSearch();
+    input.focus();
+  }
+
   function filterYearSearch() {
     const input = document.getElementById('year-search-input');
     if (!input) return;
 
     const query = input.value.trim().toLowerCase();
+
+    const clearBtn = document.getElementById('year-search-clear');
+    if (clearBtn) {
+      clearBtn.style.display = query === '' ? 'none' : '';
+    }
     const activePanel = document.querySelector('.academic-panel.active');
     if (!activePanel) return;
 
