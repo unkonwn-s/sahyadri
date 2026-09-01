@@ -169,7 +169,7 @@ permalink: /posts/
                   <!-- Dynamic Author / Subtitle Attribution (Supports 1 or 2 Authors) -->
                   {% if post.subtitle %}
                     <h4 class="post-subtitle">
-                      By
+                      by
                       {% comment %} Author 1 Profile Link {% endcomment %}
                       {% if post.profile-link %}
                         <a href="{{ post.profile-link }}" target="_blank" rel="noopener noreferrer">{{ post.subtitle }}</a>
