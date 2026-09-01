@@ -1,15 +1,7 @@
-<!-- FILE: _includes/comments.html — Renders the configured comment system (Giscus/Disqus/etc per _config.yml). -->
+<!-- FILE: _includes/comments.html — Renders the configured comment system (currently Elfsight; Staticman available as a fallback). -->
 {% if page.comments %}
-  <!-- Load Disqus commenting system -->
-  {% include disqus.html %}
-  <!-- Load Facebook Comments plugin -->
-  {% include fb-comment.html %}
-  <!-- Load Staticman comment engine -->
+  <!-- Load Staticman comment engine (file-based, stored via GitHub PRs) -->
   {% include staticman-comments.html %}
-  <!-- Load Utterances GitHub issue-based comments -->
-  {% include utterances-comment.html %}
-  <!-- Load Giscus GitHub Discussions-based comments -->
-  {% include giscus-comment.html %}
   <!-- Load Elfsight Comments widget (only if an App ID is configured) -->
   {% if site.elfsight-app-id %}
     {% include elfsight-comments.html %}
