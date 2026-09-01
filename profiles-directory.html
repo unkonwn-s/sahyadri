@@ -1,6 +1,9 @@
 ---
 # FILE: profiles-directory.html
-# PURPOSE: Alternate/legacy profiles listing (verify vs profiles.html before editing either).
+# PURPOSE: Fallback page shown when an author byline links to a profile that
+# doesn't exist yet. post.html, posts.md, and activities.md all check
+# site.profiles at build time and route here (permalink /not_done_yet)
+# instead of generating a link that would 404.
 # Jekyll Front Matter Configuration
 layout: default
 title: Profile not made yet
@@ -30,7 +33,7 @@ permalink: /not_done_yet
 </div>
 
 <!-- Main Heading Message -->
-<h1 class="text-centre">Profile has not been made yet.</h1>
+<h1 class="text-center">Profile has not been made yet.</h1>
 
 <!-- Vertical Spacing -->
 <br/>
