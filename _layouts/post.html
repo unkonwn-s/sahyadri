@@ -1,20 +1,17 @@
 ---
 # FILE: _layouts/post.html
-# PURPOSE: Blog post/article template. Extends 'base'.
-# FEATURES: author profile links (subtitle/subtitle2), up to 5-image gallery,
-# GitHub badges, tag list, prev/next pagination, smart back-navigation to /posts.
-# ==============================================================================
-# ENHANCED POST / ARTICLE LAYOUT TEMPLATE
-# ==============================================================================
-# Extends the 'base' layout to render individual blog posts or articles.
-# Key Features:
-# - Custom external/internal profile link generation for authors and co-authors.
-# - Multi-image gallery loop supporting up to 5 embedded Google Drive images.
-# - Dynamic gallery columns based on image count (1, 2, 3, 4, or 5 images).
-# - GitHub repository badges (stars, watch, fork, follow).
-# - Article tags list, previous/next post pagination, and comments inclusion.
-# - Smart referrer-aware back-navigation routing to /posts feed.
-
+# PURPOSE: Unified article template used by BOTH the 'posts' and
+# 'activities' collections (merged from separate post.html/events.html
+# templates to eliminate duplicate maintenance).
+# FEATURES:
+# - Back-navigation link and JS redirect target adapt automatically based
+#   on page.collection ('posts' -> /posts, 'activities' -> /activities).
+# - Author profile links (subtitle/subtitle2), with optional profile-link /
+#   profile-link2 overrides for external/manual URLs.
+# - Multi-image gallery, up to 5 images via image/image2..image5 (falls
+#   back to the legacy 'image_id' field name for older activity posts),
+#   with optional per-image alt text via image_alt/image2_alt..image5_alt.
+# - GitHub repository badges, article tags, prev/next pagination, comments.
 layout: base
 ---
 
@@ -22,8 +19,13 @@ layout: base
   <div class="row">
     <div class="{% if page.full-width %}col{% else %}col-xl-8 offset-xl-2 col-lg-10 offset-lg-1{% endif %}">
 
+      {% assign back_url = '/posts' %}
+      {% if page.collection == 'activities' %}
+        {% assign back_url = '/activities' %}
+      {% endif %}
+
       <div class="back-navigation">
-        <a href="/posts" id="back-button" onclick="return handleBackNavigation();">
+        <a href="{{ back_url }}" id="back-button" onclick="return handleBackNavigation();">
           <i class="fas fa-chevron-left"></i>
           Back
         </a>
@@ -43,7 +45,7 @@ layout: base
             1. If 'page.profile-link' exists: Use manual URL, target='_blank', rel='noopener noreferrer'
             2. Otherwise: Generate slug from 'page.subtitle' (e.g., "Jane Doe" -> "/profiles/jane-doe/")
           {% endcomment %}
-          
+
           {% if page.profile-link %}
             {% assign author1_url = page.profile-link %}
             {% assign author1_target = '_blank' %}
@@ -62,10 +64,10 @@ layout: base
 
           <h2 class="post-subheading">
             by <a href="{{ author1_url }}" {% if author1_target %}target="{{ author1_target }}" rel="{{ author1_rel }}"{% endif %}>{{ page.subtitle }}</a>
-            
+
             {% if page.subtitle2 %}
               {% comment %} Same URL/slug determination logic for co-author in 'page.subtitle2' {% endcomment %}
-              
+
               {% if page.profile-link2 %}
                 {% assign author2_url = page.profile-link2 %}
                 {% assign author2_target = '_blank' %}
@@ -81,7 +83,7 @@ layout: base
                 {% assign author2_target = '' %}
                 {% assign author2_rel = '' %}
               {% endif %}
-              
+
               and <a href="{{ author2_url }}" {% if author2_target %}target="{{ author2_target }}" rel="{{ author2_rel }}"{% endif %}>{{ page.subtitle2 }}</a>
             {% endif %}
           </h2>
@@ -90,8 +92,9 @@ layout: base
         <hr class="small">
       </div>
 
+      {% assign primary_image = page.image | default: page.image_id %}
       {% assign images = '' | split: '' %}
-      {% if page.image  %}{% assign images = images | push: page.image  %}{% endif %}
+      {% if primary_image %}{% assign images = images | push: primary_image %}{% endif %}
       {% if page.image2 %}{% assign images = images | push: page.image2 %}{% endif %}
       {% if page.image3 %}{% assign images = images | push: page.image3 %}{% endif %}
       {% if page.image4 %}{% assign images = images | push: page.image4 %}{% endif %}
@@ -183,11 +186,14 @@ layout: base
     /**
      * Handles back navigation clicks intelligently.
      * Prevents back-and-forth bouncing between article pages by checking referrer history.
+     * back_url adapts to /posts or /activities depending on which collection this
+     * page belongs to (set via Liquid above and injected here as a literal string).
      */
     function handleBackNavigation() {
       const referrer = document.referrer;
+      const backUrl = "{{ back_url | relative_url }}";
 
-      // No referrer present (e.g., direct URL paste or new tab) -> default to /posts
+      // No referrer present (e.g., direct URL paste or new tab) -> default to backUrl
       if (!referrer) {
         return true;
       }
@@ -200,14 +206,14 @@ layout: base
         return true;
       }
 
-      // If navigation originated from the main posts feed, trigger browser back button
-      // to preserve feed scroll state. Otherwise, route directly to /posts feed.
-      if (referrerPath === '/posts' || referrerPath === '/posts/') {
+      // If navigation originated from the listing feed itself, trigger browser back button
+      // to preserve feed scroll state. Otherwise, route directly to the feed.
+      if (referrerPath === backUrl || referrerPath === backUrl + '/') {
         window.history.back();
         return false;
       }
 
-      window.location.href = "{{ '/posts' | relative_url }}";
+      window.location.href = backUrl;
       return false;
     }
   </script>
