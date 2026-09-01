@@ -219,11 +219,6 @@
   <meta name="twitter:image" content="{{ img | absolute_url }}">
   {% endif %}
 
-  <!-- Staticman Comments CSS Injection -->
-  {% if page.comments and site.staticman.repository and site.staticman.branch -%}
-  <link rel="stylesheet" href="{{ '/assets/css/staticman.css' | relative_url }}">
-  {% endif %}
-
   <!-- Favicon Icons -->
   <link rel="icon" type="image/png" href="{{ '/assets/img/favicon.png' | relative_url }}">
   <link rel="shortcut icon" type="image/x-icon" href="{{ '/assets/img/favicon.ico' | relative_url }}">
