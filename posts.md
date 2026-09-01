@@ -101,6 +101,14 @@ permalink: /posts/
 {% comment %} Group all Jekyll posts by category {% endcomment %}
 {% assign grouped_posts = site.posts | group_by: "category" %}
 
+{% comment %} Build a pipe-delimited list of every real profile slug that exists,
+     computed once here (not per-post) since this page loops over every post. {% endcomment %}
+{% assign known_profile_slugs = "" %}
+{% for profile in site.profiles %}
+  {% assign profile_slug = profile.path | split: "/" | last | remove: ".md" %}
+  {% assign known_profile_slugs = known_profile_slugs | append: "|" | append: profile_slug | append: "|" %}
+{% endfor %}
+
 {% comment %}
   -----------------------------------------------------------------------------
   STEP 2: Render Content Panels per Academic Year
@@ -176,7 +184,12 @@ permalink: /posts/
                       {% else %}
                         {% assign a1 = post.subtitle | split: " " %}
                         {% capture a1_slug %}{{ a1[0] | downcase }}-{{ a1[1] | downcase }}{% endcapture %}
-                        <a href="{{ '/profiles/' | append: a1_slug | append: '/' | relative_url }}">{{ post.subtitle }}</a>
+                        {% assign a1_needle = "|" | append: a1_slug | append: "|" %}
+                        {% if known_profile_slugs contains a1_needle %}
+                          <a href="{{ '/profiles/' | append: a1_slug | append: '/' | relative_url }}">{{ post.subtitle }}</a>
+                        {% else %}
+                          <a href="{{ '/not_done_yet' | relative_url }}">{{ post.subtitle }}</a>
+                        {% endif %}
                       {% endif %}
 
                       {% comment %} Author 2 Profile Link (Optional) {% endcomment %}
@@ -187,7 +200,12 @@ permalink: /posts/
                         {% else %}
                           {% assign a2 = post.subtitle2 | split: " " %}
                           {% capture a2_slug %}{{ a2[0] | downcase }}-{{ a2[1] | downcase }}{% endcapture %}
-                          <a href="{{ '/profiles/' | append: a2_slug | append: '/' | relative_url }}">{{ post.subtitle2 }}</a>
+                          {% assign a2_needle = "|" | append: a2_slug | append: "|" %}
+                          {% if known_profile_slugs contains a2_needle %}
+                            <a href="{{ '/profiles/' | append: a2_slug | append: '/' | relative_url }}">{{ post.subtitle2 }}</a>
+                          {% else %}
+                            <a href="{{ '/not_done_yet' | relative_url }}">{{ post.subtitle2 }}</a>
+                          {% endif %}
                         {% endif %}
                       {% endif %}
                     </h4>
