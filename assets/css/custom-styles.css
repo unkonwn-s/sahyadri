@@ -1437,3 +1437,63 @@ html { /* scroll-behavior removed to prevent unwanted auto-scroll on page load *
         padding: 0 1rem;
     }
 }
+
+
+/* ============================================================
+   27. YEAR-SCOPED SEARCH BOX (posts.md, activities.md)
+   Search input that filters cards within the currently active
+   .academic-panel only. Positioned directly below the year tabs.
+   ============================================================ */
+
+.year-search-container {
+    position: relative;
+    max-width: 420px;
+    margin: 1.5rem auto 0 auto;
+}
+
+.year-search-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #a0aec0;
+    font-size: 0.9rem;
+    pointer-events: none;
+}
+
+.year-search-input {
+    width: 100%;
+    padding: 10px 14px 10px 38px;
+    border: 1px solid #d0d8d0;
+    border-radius: 20px;
+    background-color: #f7faf8;
+    color: #404040;
+    font-family: 'Poiret One', system-ui, sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.year-search-input:focus {
+    border-color: #5f745f;
+    box-shadow: 0 0 0 3px rgba(95, 116, 95, 0.15);
+}
+
+.year-search-input::placeholder {
+    color: #a0aec0;
+}
+
+.dark-mode .year-search-input {
+    background-color: #242424;
+    color: #e0e0e0;
+    border-color: #444;
+}
+
+.dark-mode .year-search-input::placeholder {
+    color: #888;
+}
+
+.dark-mode .year-search-input:focus {
+    border-color: #7a9670;
+    box-shadow: 0 0 0 3px rgba(122, 150, 112, 0.2);
+}
