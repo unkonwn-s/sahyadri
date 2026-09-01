@@ -1504,3 +1504,104 @@ html { /* scroll-behavior removed to prevent unwanted auto-scroll on page load *
     border-color: #7a9670;
     box-shadow: 0 0 0 3px rgba(122, 150, 112, 0.2);
 }
+
+
+/* ============================================================
+   28. TAG INDEX PAGE (tags.html)
+   Previously had zero custom styling — tag pills used Bootstrap's
+   raw default blue (.btn-primary), clashing with the site's
+   sage-green theme even in light mode. Brought in line with the
+   rest of the site, with dark mode support added too.
+   ============================================================ */
+
+/* Tag pill buttons at the top, replacing Bootstrap's default blue */
+.tag-btn {
+    display: inline-block;
+    background-color: #5f745f !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 20px;
+    padding: 6px 16px;
+    margin: 4px 6px 4px 0;
+    font-family: 'Poiret One', system-ui, sans-serif;
+    font-size: 0.9rem;
+    text-decoration: none !important;
+    transition: background-color 0.2s ease;
+}
+
+.tag-btn:hover {
+    background-color: #4a5c4a !important;
+    color: #ffffff !important;
+}
+
+/* Section headings for each tag group, matching the site's category-heading style */
+.linked-section {
+    font-family: 'Amatic SC', cursive, sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: clamp(1.75rem, 1.25rem + 1.5vw, 3.5rem);
+    border-bottom: 2px solid #735362;
+    padding-bottom: 8px;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    color: #404040;
+    scroll-margin-top: 80px;
+}
+
+/* Individual post rows under each tag */
+.tag-entry {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 10px 0;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.tag-entry a {
+    color: #404040;
+    text-decoration: none;
+    font-family: 'Poiret One', system-ui, sans-serif;
+}
+
+.tag-entry a:hover {
+    color: #5f745f;
+    text-decoration: underline;
+}
+
+.entry-date {
+    flex-shrink: 0;
+    color: #a0aec0;
+    font-size: 0.85rem;
+    font-style: italic;
+}
+
+/* Dark mode */
+.dark-mode .tag-btn {
+    background-color: #3a5a3a !important;
+}
+
+.dark-mode .tag-btn:hover {
+    background-color: #4a6e4a !important;
+}
+
+.dark-mode .linked-section {
+    color: #e8f3df;
+    border-bottom-color: #8a6a78;
+}
+
+.dark-mode .tag-entry {
+    border-bottom-color: #444;
+}
+
+.dark-mode .tag-entry a {
+    color: #d5d5d5;
+}
+
+.dark-mode .tag-entry a:hover {
+    color: #a3c99a;
+}
+
+.dark-mode .entry-date {
+    color: #888;
+}
