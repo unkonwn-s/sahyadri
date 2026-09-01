@@ -1448,7 +1448,7 @@ html { /* scroll-behavior removed to prevent unwanted auto-scroll on page load *
 
 .year-search-input {
     width: 100%;
-    padding: 10px 14px 10px 38px;
+    padding: 10px 38px 10px 38px;
     border: 1px solid #d0d8d0;
     border-radius: 20px;
     background-color: #f7faf8;
@@ -1457,6 +1457,28 @@ html { /* scroll-behavior removed to prevent unwanted auto-scroll on page load *
     font-size: 0.95rem;
     outline: none;
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.year-search-clear {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #a0aec0;
+    font-size: 1.3rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.year-search-clear:hover {
+    color: #5f745f;
+}
+
+.dark-mode .year-search-clear:hover {
+    color: #7a9670;
 }
 
 .year-search-input:focus {
