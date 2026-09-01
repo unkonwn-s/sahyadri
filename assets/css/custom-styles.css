@@ -1082,24 +1082,26 @@ html { /* scroll-behavior removed to prevent unwanted auto-scroll on page load *
     opacity: 0.7;
 }
 
-/* Dark mode pagination */
+/* Dark mode pagination — no !important needed: 3-class specificity
+   (.dark-mode + .blog-pager + .page-link) already beats the 2-class
+   base rule regardless of source order. */
 .dark-mode .blog-pager .page-link,
 .dark-mode .main-pager .page-link {
-    background-color: #242424 !important;
-    color: #cfd8cc !important;
-    border-color: #3a3a3a !important;
+    background-color: #242424;
+    color: #cfd8cc;
+    border-color: #3a3a3a;
 }
 .dark-mode .blog-pager .page-link:hover,
 .dark-mode .main-pager .page-link:hover {
-    background-color: #3a5a3a !important;
-    color: #ffffff !important;
-    border-color: #3a5a3a !important;
+    background-color: #3a5a3a;
+    color: #ffffff;
+    border-color: #3a5a3a;
 }
 .dark-mode .blog-pager .page-item.disabled .page-link,
 .dark-mode .main-pager .page-item.disabled .page-link {
-    background-color: #1c1c1c !important;
-    color: #666666 !important;
-    border-color: #333333 !important;
+    background-color: #1c1c1c;
+    color: #666666;
+    border-color: #333333;
 }
 
 
@@ -1108,15 +1110,18 @@ html { /* scroll-behavior removed to prevent unwanted auto-scroll on page load *
    Overrides the muted olive-green author link color (set inline
    in posts.md / activities.md and in post.html's post-subheading)
    with a brighter tone for readability against dark backgrounds.
+   No !important needed: .dark-mode adds an extra class, giving
+   this higher specificity than the base rules regardless of
+   source order.
    ============================================================ */
 
 .dark-mode .post-subtitle a,
 .dark-mode .post-subheading a {
-    color: #a3c99a !important;
+    color: #a3c99a;
 }
 .dark-mode .post-subtitle a:hover,
 .dark-mode .post-subheading a:hover {
-    color: #c5e0bc !important;
+    color: #c5e0bc;
 }
 
 
@@ -1202,10 +1207,13 @@ html { /* scroll-behavior removed to prevent unwanted auto-scroll on page load *
    inheriting the site's default dark-gray text (#404040), which
    reads as low-contrast, washed-out text against the dark mode
    background. Brightened for dark mode specifically.
+   No !important needed: since there's no explicit competing rule
+   for this selector (only inherited color), any explicit rule
+   wins automatically.
    ============================================================ */
 
 .dark-mode .album-item figcaption {
-    color: #d5d5d5 !important;
+    color: #d5d5d5;
 }
 
 
