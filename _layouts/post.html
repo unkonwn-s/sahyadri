@@ -42,8 +42,17 @@ layout: base
           {% comment %}
             Primary Author URL Determination:
             1. If 'page.profile-link' exists: Use manual URL, target='_blank', rel='noopener noreferrer'
-            2. Otherwise: Generate slug from 'page.subtitle' (e.g., "Jane Doe" -> "/profiles/jane-doe/")
+            2. Otherwise: Generate slug from 'page.subtitle' (e.g., "Jane Doe" -> "/profiles/jane-doe/"),
+               then check whether a matching profile page actually exists in site.profiles.
+               If not, link to /not_done_yet instead of a URL that would 404.
           {% endcomment %}
+
+          {% comment %} Build a pipe-delimited list of every real profile slug that exists {% endcomment %}
+          {% assign known_profile_slugs = "" %}
+          {% for profile in site.profiles %}
+            {% assign profile_slug = profile.path | split: "/" | last | remove: ".md" %}
+            {% assign known_profile_slugs = known_profile_slugs | append: "|" | append: profile_slug | append: "|" %}
+          {% endfor %}
 
           {% if page.profile-link %}
             {% assign author1_url = page.profile-link %}
@@ -56,7 +65,12 @@ layout: base
             {% else %}
               {% capture author1_slug %}{{ author1_parts[0] | downcase }}{% endcapture %}
             {% endif %}
-            {% assign author1_url = '/profiles/' | relative_url | append: author1_slug | append: '/' %}
+            {% assign author1_needle = "|" | append: author1_slug | append: "|" %}
+            {% if known_profile_slugs contains author1_needle %}
+              {% assign author1_url = '/profiles/' | relative_url | append: author1_slug | append: '/' %}
+            {% else %}
+              {% assign author1_url = '/not_done_yet' | relative_url %}
+            {% endif %}
             {% assign author1_target = '' %}
             {% assign author1_rel = '' %}
           {% endif %}
@@ -78,7 +92,12 @@ layout: base
                 {% else %}
                   {% capture author2_slug %}{{ author2_parts[0] | downcase }}{% endcapture %}
                 {% endif %}
-                {% assign author2_url = '/profiles/' | relative_url | append: author2_slug | append: '/' %}
+                {% assign author2_needle = "|" | append: author2_slug | append: "|" %}
+                {% if known_profile_slugs contains author2_needle %}
+                  {% assign author2_url = '/profiles/' | relative_url | append: author2_slug | append: '/' %}
+                {% else %}
+                  {% assign author2_url = '/not_done_yet' | relative_url %}
+                {% endif %}
                 {% assign author2_target = '' %}
                 {% assign author2_rel = '' %}
               {% endif %}
