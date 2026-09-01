@@ -1323,17 +1323,6 @@ html { /* scroll-behavior removed to prevent unwanted auto-scroll on page load *
     text-decoration: underline;
 }
 
-/* CRITICAL: caps any oversized source image so it can never overflow
-   the layout, whether portrait or landscape. */
-.tabs-container ~ * img,
-.academic-panel img {
-    display: inline-block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    max-width: 100%;
-    height: auto;
-}
-
 .post-entry-container {
     display: flex;
     gap: 1.5rem;
