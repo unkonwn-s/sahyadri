@@ -835,21 +835,6 @@ html { /* scroll-behavior removed to prevent unwanted auto-scroll on page load *
     text-decoration: underline;
 }
 
-/* --- Activity single-image wrapper (events.html) --- */
-.post-image-wrapper {
-    display: block;
-    width: 100%;
-    margin: 25px auto 35px auto;
-    text-align: center;
-    clear: both;
-}
-.activity-image {
-    max-width: 75%;
-    height: auto;
-    border-radius: 4px;
-    display: inline-block;
-}
-
 /* --- Profile page avatar (profile.html) --- */
 .profile-pic {
     width: 100%;
