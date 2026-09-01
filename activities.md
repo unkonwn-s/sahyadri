@@ -110,6 +110,14 @@ title: "Activities"
 {% assign valid_activities = site.activities | where_exp: "item", "item.date != nil" %}
 {% assign grouped_posts    = valid_activities | group_by: "category" | sort: "name" %}
 
+{% comment %} Build a pipe-delimited list of every real profile slug that exists,
+     computed once here (not per-post) since this page loops over every activity. {% endcomment %}
+{% assign known_profile_slugs = "" %}
+{% for profile in site.profiles %}
+  {% assign profile_slug = profile.path | split: "/" | last | remove: ".md" %}
+  {% assign known_profile_slugs = known_profile_slugs | append: "|" | append: profile_slug | append: "|" %}
+{% endfor %}
+
 <!-- ── Year panels ── -->
 {% for current_year in year_blocks %}
 
@@ -217,10 +225,25 @@ title: "Activities"
                   {% if post.subtitle %}
                     {% assign author1_parts = post.subtitle | split: ' ' %}
                     {% capture author1_slug %}{{ author1_parts[0] | downcase }}-{{ author1_parts[1] | downcase }}{% endcapture %}
-                    {% assign profile1_url = '/profiles/' | append: author1_slug | append: '/' | relative_url %}
+                    {% assign author1_needle = "|" | append: author1_slug | append: "|" %}
+                    {% if known_profile_slugs contains author1_needle %}
+                      {% assign profile1_url = '/profiles/' | append: author1_slug | append: '/' | relative_url %}
+                    {% else %}
+                      {% assign profile1_url = '/not_done_yet' | relative_url %}
+                    {% endif %}
+
+                    {% assign profile2_url = '/not_done_yet' | relative_url %}
+                    {% if post.subtitle2 %}
+                      {% assign author2_parts = post.subtitle2 | split: ' ' %}
+                      {% capture author2_slug %}{{ author2_parts[0] | downcase }}-{{ author2_parts[1] | downcase }}{% endcapture %}
+                      {% assign author2_needle = "|" | append: author2_slug | append: "|" %}
+                      {% if known_profile_slugs contains author2_needle %}
+                        {% assign profile2_url = '/profiles/' | append: author2_slug | append: '/' | relative_url %}
+                      {% endif %}
+                    {% endif %}
 
                     <h4 class="post-subtitle">
-                      by <a href="{{ profile1_url }}">{{ post.subtitle }}</a>{% if post.subtitle2 %}{% assign author2_parts = post.subtitle2 | split: ' ' %}{% capture author2_slug %}{{ author2_parts[0] | downcase }}-{{ author2_parts[1] | downcase }}{% endcapture %}{% assign profile2_url = '/profiles/' | append: author2_slug | append: '/' | relative_url %} and <a href="{{ profile2_url }}">{{ post.subtitle2 }}</a>{% endif %}
+                      by <a href="{{ profile1_url }}">{{ post.subtitle }}</a>{% if post.subtitle2 %} and <a href="{{ profile2_url }}">{{ post.subtitle2 }}</a>{% endif %}
                     </h4>
                   {% endif %}
 
