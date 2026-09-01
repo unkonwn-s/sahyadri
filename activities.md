@@ -311,7 +311,63 @@ title: "Activities"
     document.getElementById(panelId).classList.add("active");
     evt.currentTarget.classList.add("active");
 
+    // Reset the year-scoped search box when switching tabs, since the search
+    // should only ever apply to whichever academic year is currently visible.
+    const searchInput = document.getElementById('year-search-input');
+    if (searchInput) {
+      searchInput.value = '';
+      filterYearSearch();
+    }
+
     // Scroll back to the top anchor smoothly
     document.getElementById("top").scrollIntoView({ behavior: 'smooth' });
+  }
+
+  /**
+   * filterYearSearch — filters activities within the currently active
+   * .academic-panel only, based on the year-search-input's value.
+   * Hides individual .post-preview cards that don't match, and hides
+   * entire .term-section category blocks if every card within them
+   * gets filtered out. Shows a "no results" message when nothing matches.
+   */
+  function filterYearSearch() {
+    const input = document.getElementById('year-search-input');
+    if (!input) return;
+
+    const query = input.value.trim().toLowerCase();
+    const activePanel = document.querySelector('.academic-panel.active');
+    if (!activePanel) return;
+
+    const sections = activePanel.querySelectorAll('.term-section');
+    let totalVisible = 0;
+
+    sections.forEach(function (section) {
+      const cards = section.querySelectorAll('.post-preview');
+      let sectionVisible = 0;
+
+      cards.forEach(function (card) {
+        const text = card.textContent.toLowerCase();
+        const matches = query === '' || text.indexOf(query) !== -1;
+        card.style.display = matches ? '' : 'none';
+        if (matches) sectionVisible++;
+      });
+
+      section.style.display = sectionVisible > 0 ? '' : 'none';
+      totalVisible += sectionVisible;
+    });
+
+    const postsList = activePanel.querySelector('.posts-list');
+    let noResultsMsg = activePanel.querySelector('.year-search-no-results');
+
+    if (postsList && !noResultsMsg) {
+      noResultsMsg = document.createElement('p');
+      noResultsMsg.className = 'no-posts-msg year-search-no-results';
+      noResultsMsg.textContent = 'No activities match your search within this academic year.';
+      postsList.appendChild(noResultsMsg);
+    }
+
+    if (noResultsMsg) {
+      noResultsMsg.style.display = (totalVisible === 0 && query !== '') ? '' : 'none';
+    }
   }
 </script>
