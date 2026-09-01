@@ -220,7 +220,7 @@ title: "Activities"
                     {% assign profile1_url = '/profiles/' | append: author1_slug | append: '/' | relative_url %}
 
                     <h4 class="post-subtitle">
-                      By <a href="{{ profile1_url }}">{{ post.subtitle }}</a>{% if post.subtitle2 %}{% assign author2_parts = post.subtitle2 | split: ' ' %}{% capture author2_slug %}{{ author2_parts[0] | downcase }}-{{ author2_parts[1] | downcase }}{% endcapture %}{% assign profile2_url = '/profiles/' | append: author2_slug | append: '/' | relative_url %} and <a href="{{ profile2_url }}">{{ post.subtitle2 }}</a>{% endif %}
+                      by <a href="{{ profile1_url }}">{{ post.subtitle }}</a>{% if post.subtitle2 %}{% assign author2_parts = post.subtitle2 | split: ' ' %}{% capture author2_slug %}{{ author2_parts[0] | downcase }}-{{ author2_parts[1] | downcase }}{% endcapture %}{% assign profile2_url = '/profiles/' | append: author2_slug | append: '/' | relative_url %} and <a href="{{ profile2_url }}">{{ post.subtitle2 }}</a>{% endif %}
                     </h4>
                   {% endif %}
 
