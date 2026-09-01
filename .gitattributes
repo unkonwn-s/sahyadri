@@ -69,7 +69,8 @@ Dockerfile   text eol=lf
 *.png        binary
 *.ico        binary
 *.webp       binary
-*.svg        text eol=lf  # Note: SVGs are XML text files, best treated as text
+# Note: SVGs are XML text files, best treated as text
+*.svg        text eol=lf
 
 # ------------------------------------------------------------------------------
 # Binary Fonts
