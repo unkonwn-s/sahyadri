@@ -1,5 +1,5 @@
 ---
-layout: events
+layout: post
 title: "Digital Footprint - Classes 10, 11 & 12"
 subtitle: Sayantan Sen (Founder Digital Safety India, Parent of Sahyadri School)
 date: 2026-02-22
