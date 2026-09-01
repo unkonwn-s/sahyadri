@@ -1,7 +1,5 @@
 <!-- FILE: _includes/comments.html — Renders the configured comment system (currently Elfsight; Staticman available as a fallback). -->
 {% if page.comments %}
-  <!-- Load Staticman comment engine (file-based, stored via GitHub PRs) -->
-  {% include staticman-comments.html %}
   <!-- Load Elfsight Comments widget (only if an App ID is configured) -->
   {% if site.elfsight-app-id %}
     {% include elfsight-comments.html %}
