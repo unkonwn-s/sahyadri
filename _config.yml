@@ -160,7 +160,6 @@ defaults:
     values:
       layout: "post"
       comments: true
-      social-share: true
 
   - scope:
       path: ""
@@ -168,7 +167,6 @@ defaults:
     values:
       layout: "events"
       comments: true
-      social-share: true
 
   - scope:
       path: ""
@@ -176,7 +174,6 @@ defaults:
     values:
       layout: "profile"
       comments: true
-      social-share: true
 
   - scope:
       path: ""          # Catch-all for pages not matched above
