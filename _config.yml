@@ -79,7 +79,7 @@ feed_show_tags: true     # Include tags in the RSS feed
 # -----------------------------------------------------------------------------
 # UI Behaviour
 # -----------------------------------------------------------------------------
-post_search: false          # Enable/disable post search
+post_search: true           # Enables the year-scoped search box on posts.md/activities.md ONLY (not a sitewide navbar search — see custom-styles.css section 27)
 edit_page_button: true      # Show "Edit this page" button on posts
 
 # Allow sub-menu items to be wider than top-level items.
