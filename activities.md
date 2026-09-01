@@ -85,6 +85,23 @@ title: "Activities"
   </div>
 </div>
 
+{% if site.post_search %}
+  <!-- Year-scoped search: filters activities within the currently active
+       academic year panel only. Resets whenever the user switches tabs (see
+       switchAcademicYear() below). Gated by site.post_search in _config.yml. -->
+  <div class="year-search-container">
+    <span class="year-search-icon" aria-hidden="true"><i class="fa fa-search"></i></span>
+    <input
+      type="text"
+      id="year-search-input"
+      class="year-search-input"
+      placeholder="Search within this academic year..."
+      aria-label="Search activities within the selected academic year"
+      oninput="filterYearSearch()"
+    >
+  </div>
+{% endif %}
+
 <!--
   Pre-process activities once, outside the year loop:
   - Exclude any activity without a date (prevents sort/filter errors)
