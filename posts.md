@@ -81,6 +81,23 @@ permalink: /posts/
   </div>
 </div>
 
+{% if site.post_search %}
+  <!-- Year-scoped search: filters posts within the currently active academic
+       year panel only. Resets whenever the user switches tabs (see
+       switchAcademicYear() below). Gated by site.post_search in _config.yml. -->
+  <div class="year-search-container">
+    <span class="year-search-icon" aria-hidden="true"><i class="fa fa-search"></i></span>
+    <input
+      type="text"
+      id="year-search-input"
+      class="year-search-input"
+      placeholder="Search within this academic year..."
+      aria-label="Search newsletters within the selected academic year"
+      oninput="filterYearSearch()"
+    >
+  </div>
+{% endif %}
+
 {% comment %} Group all Jekyll posts by category {% endcomment %}
 {% assign grouped_posts = site.posts | group_by: "category" %}
 
@@ -236,5 +253,61 @@ permalink: /posts/
     // Activate target panel and clicked tab
     document.getElementById(panelId).classList.add("active");
     evt.currentTarget.classList.add("active");
+
+    // Reset the year-scoped search box when switching tabs, since the search
+    // should only ever apply to whichever academic year is currently visible.
+    var searchInput = document.getElementById('year-search-input');
+    if (searchInput) {
+      searchInput.value = '';
+      filterYearSearch();
+    }
+  }
+
+  /**
+   * filterYearSearch — filters posts within the currently active
+   * .academic-panel only, based on the year-search-input's value.
+   * Hides individual .post-preview cards that don't match, and hides
+   * entire .term-section category blocks if every card within them
+   * gets filtered out. Shows a "no results" message when nothing matches.
+   */
+  function filterYearSearch() {
+    var input = document.getElementById('year-search-input');
+    if (!input) return;
+
+    var query = input.value.trim().toLowerCase();
+    var activePanel = document.querySelector('.academic-panel.active');
+    if (!activePanel) return;
+
+    var sections = activePanel.querySelectorAll('.term-section');
+    var totalVisible = 0;
+
+    sections.forEach(function (section) {
+      var cards = section.querySelectorAll('.post-preview');
+      var sectionVisible = 0;
+
+      cards.forEach(function (card) {
+        var text = card.textContent.toLowerCase();
+        var matches = query === '' || text.indexOf(query) !== -1;
+        card.style.display = matches ? '' : 'none';
+        if (matches) sectionVisible++;
+      });
+
+      section.style.display = sectionVisible > 0 ? '' : 'none';
+      totalVisible += sectionVisible;
+    });
+
+    var postsList = activePanel.querySelector('.posts-list');
+    var noResultsMsg = activePanel.querySelector('.year-search-no-results');
+
+    if (postsList && !noResultsMsg) {
+      noResultsMsg = document.createElement('p');
+      noResultsMsg.className = 'no-posts-msg year-search-no-results';
+      noResultsMsg.textContent = 'No newsletters match your search within this academic year.';
+      postsList.appendChild(noResultsMsg);
+    }
+
+    if (noResultsMsg) {
+      noResultsMsg.style.display = (totalVisible === 0 && query !== '') ? '' : 'none';
+    }
   }
 </script>
