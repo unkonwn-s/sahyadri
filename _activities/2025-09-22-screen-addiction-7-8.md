@@ -1,5 +1,5 @@
 ---
-layout: events
+layout: post
 title: "Screen Addiction - Classes 7 & 8"
 subtitle: Sayantan Sen (Founder Digital Safety India, Parent of Sahyadri School)
 date: 2025-09-22
