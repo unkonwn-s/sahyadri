@@ -95,6 +95,14 @@ permalink: /posts/
       aria-label="Search newsletters within the selected academic year"
       oninput="filterYearSearch()"
     >
+    <button
+      type="button"
+      id="year-search-clear"
+      class="year-search-clear"
+      aria-label="Clear search"
+      onclick="clearYearSearch()"
+      style="display: none;"
+    >&times;</button>
   </div>
 {% endif %}
 
@@ -288,11 +296,24 @@ permalink: /posts/
    * entire .term-section category blocks if every card within them
    * gets filtered out. Shows a "no results" message when nothing matches.
    */
+  function clearYearSearch() {
+    var input = document.getElementById('year-search-input');
+    if (!input) return;
+    input.value = '';
+    filterYearSearch();
+    input.focus();
+  }
+
   function filterYearSearch() {
     var input = document.getElementById('year-search-input');
     if (!input) return;
 
     var query = input.value.trim().toLowerCase();
+
+    var clearBtn = document.getElementById('year-search-clear');
+    if (clearBtn) {
+      clearBtn.style.display = query === '' ? 'none' : '';
+    }
     var activePanel = document.querySelector('.academic-panel.active');
     if (!activePanel) return;
 
