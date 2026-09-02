@@ -2,7 +2,7 @@
 layout: post
 title: "FIFA FEVER"
 date: 2026-08-22
-subtitle: "REYANSH GAMBHIR CLASS 11"
+subtitle: "Reyansh Gambhir (Class 11)"
 category: August 2026
 ---
 
