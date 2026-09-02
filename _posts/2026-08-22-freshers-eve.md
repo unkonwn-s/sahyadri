@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "FRESHER’S EVE"
-subtitle: "ADIL ALI"
+subtitle: "Adil Ali"
 subtitle2: "Puneeth Dasari (Class 11th)"
 category: August 2026
 date: 2026-08-22
