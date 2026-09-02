@@ -2,7 +2,7 @@
 layout: post
 title: "GURU PURNIMA"
 date: 2026-08-22
-subtitle: "SHOURYA NIKAM CLASS 6"
+subtitle: "Shourya Nikam (Class 6)"
 category: August 2026
 ---
 
