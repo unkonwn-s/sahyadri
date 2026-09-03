@@ -57,8 +57,17 @@ subtitle: Select a profile to view more details
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-
-    /* ============================================================
+  /* NOTE: All other page-specific CSS previously here has been moved to
+     assets/css/custom-styles.css (section: PROFILES PAGE — DYNAMIC UI),
+     with classes renamed to a profile- prefix to avoid colliding with
+     similarly-named classes used elsewhere (e.g. the newsletter TOC,
+     photos/videos sub-nav). The two rules below CANNOT be globalized:
+     they override the standard Bootstrap .container-md/.col-xl-8/.col-lg-10
+     classes that EVERY other page's layout wrapper also uses — moving
+     these to the global stylesheet would make every page on the site
+     full-width, since Jekyll has no per-page body class to scope them
+     to just this page. They must stay here, page-local. */
+/* ============================================================
        1. LAYOUT OVERRIDES — Beautiful Jekyll Theme Reset
        ============================================================
        The theme's .container-md and column offset classes restrict
@@ -77,321 +86,7 @@ subtitle: Select a profile to view more details
       margin-left: 0 !important;
       flex: 0 0 100% !important;
     }
-
-
-    /* ============================================================
-       2. PAGE WRAPPER
-       ============================================================
-       Outermost container for all page content. Kept display:block
-       to avoid accidental flex/grid conflicts with parent themes.
-    ============================================================ */
-    .profiles-page-container {
-      display: block !important;
-      width: 100% !important;
-      max-width: 100%;
-      margin: 0.5vw auto 30px auto;
-      padding: 0 !important;
-      box-sizing: border-box;
-    }
-
-
-    /* ============================================================
-       3. YEAR NAVIGATION BAR
-       ============================================================
-       Horizontal pill-style tab list rendered at the top of the
-       page. Each <li> represents one academic year pulled from
-       Jekyll profile front-matter. Active state is tracked via
-       the .active class toggled by filterAcademicYear().
-    ============================================================ */
-    .sub-nav-options {
-      display: block !important;
-      width: 100% !important;
-      margin: 0 auto 2rem auto !important;
-      padding-bottom: 1rem;
-      border-bottom: 1px solid #e2e8f0;
-      text-align: center;
-    }
-
-    .sub-nav-list {
-      display: flex !important;
-      justify-content: center !important;
-      align-items: center !important;
-      width: 100% !important;
-      gap: 2.5rem;
-      list-style: none !important;
-      padding: 0 !important;
-      margin: 0 !important;
-      flex-wrap: wrap; /* wraps gracefully on narrow viewports */
-    }
-
-    .sub-nav-list li {
-      font-family: 'Amatic SC', cursive !important;
-      font-size: 2rem !important;
-      color: #718096;
-      cursor: pointer;
-      transition: all 0.2s ease-in-out;
-      padding-bottom: 5px;
-      border-bottom: 3px solid transparent; /* placeholder so layout doesn't shift on active */
-    }
-
-    /* Hover and active states share the same green-grey accent colour */
-    .sub-nav-list li:hover,
-    .sub-nav-list li.active {
-      color: #5f745f !important;
-      border-bottom: 3px solid #5f745f;
-      font-weight: bold;
-    }
-
-
-    /* ============================================================
-       4. TWO-COLUMN LAYOUT
-       ============================================================
-       .profiles-layout-wrapper   — flex row: sidebar + content
-       .toc-sidebar               — sticky left column (240px)
-       .toc-card                  — white card housing the TOC
-       .profiles-content          — grows to fill remaining width
-    ============================================================ */
-    .profiles-layout-wrapper {
-      display: flex;
-      gap: 2rem;
-      width: 100%;
-      align-items: flex-start;
-      padding: 0 15px;
-      box-sizing: border-box;
-    }
-
-    /* Sidebar stays visible while user scrolls through cards */
-    .toc-sidebar {
-      width: 240px;
-      flex-shrink: 0;
-      position: sticky;
-      top: 20px;
-    }
-
-    .toc-card {
-      background: #fff;
-      border: 1px solid #e2e8f0;
-      border-radius: 8px;
-      padding: 1.5rem;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-    }
-
-    .toc-title {
-      font-size: 1.4rem;
-      font-weight: bold;
-      margin-top: 0;
-      margin-bottom: 1rem;
-      color: #2d3748;
-      border-bottom: 2px solid #5f745f;
-      padding-bottom: 0.5rem;
-    }
-
-    .toc-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .toc-list li {
-      margin-bottom: 0.5rem;
-    }
-
-    /*
-      Each TOC entry is a <button> (not a link) because clicking
-      it swaps the visible panel in-place rather than navigating.
-    */
-    .toc-list button {
-      background: none;
-      border: none;
-      font-size: 1.75rem;
-      cursor: pointer;
-      text-align: left;
-      width: 100%;
-      transition: all 0.2s ease;
-      outline: none;
-    }
-
-    /* Active/hovered TOC button highlights green-grey */
-    .toc-list button:hover,
-    .toc-list button.active {
-      color: #5f745f;
-      font-weight: bold;
-      text-decoration: underline;
-    }
-
-    /* The right-hand content area grows to fill remaining space */
-    .profiles-content {
-      flex-grow: 1;
-      width: 100%;
-    }
-
-
-    /* ============================================================
-       5. GRADE SECTION PANELS
-       ============================================================
-       Each category (e.g. "Grade 12", "Teachers") is rendered as
-       a .grade-section. Only the one with .active is visible at
-       any time. Switching is handled by switchGradePane().
-    ============================================================ */
-
-    /* All panels hidden by default; JS adds .active to show one */
-    .grade-section {
-      display: none;
-      margin-bottom: 3rem;
-      animation: paneFadeIn 0.35s ease; /* subtle fade-in on reveal */
-    }
-
-    .grade-section.active {
-      display: block;
-    }
-
-    /* Section heading (e.g. "Grade 12") displayed above the card grid */
-    .category-heading {
-      font-size: 2rem;
-      color: #2d3748;
-      border-bottom: 1px solid #e2e8f0;
-      padding-bottom: 0.5rem;
-      margin-bottom: 1.5rem;
-      text-transform: capitalize;
-    }
-
-    /* Fade-in keyframe used when a new panel becomes active */
-    @keyframes paneFadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(4px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-
-    /* ============================================================
-       6. PROFILE CARD GRID
-       ============================================================
-       Cards use flex-wrap so they reflow naturally across widths.
-       Each card links to the individual profile page.
-    ============================================================ */
-    .profile-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0 !important;
-      justify-content: flex-start;
-      width: 100%;
-    }
-
-    /*
-      Cards flex between 340px min and 480px max. This means:
-        - 1 card per row on narrow containers
-        - 2–3 cards per row on wider containers
-    */
-    .profile-card {
-      flex: 1 1 340px;
-      max-width: 480px !important;
-      margin: 0 !important;
-      padding: 30px 16px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-decoration: none !important; /* remove default link underline */
-      color: inherit !important;        /* inherit page text colour */
-      transition: transform 0.2s ease;
-      box-sizing: border-box;
-    }
-
-    /* Lift card slightly on hover to indicate clickability */
-    .profile-card:hover {
-      transform: translateY(-5px);
-    }
-
-    /* Circular image container — maintains 1:1 aspect ratio */
-    .profile-img-wrapper {
-      width: 85%;
-      max-width: 380px;
-      aspect-ratio: 1 / 1;
-      overflow: hidden;
-      border-radius: 50%;
-      border: 4px solid #c5d1c0;
-      margin-bottom: 18px;
-    }
-
-    .profile-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover; /* crops image to fill circle without distortion */
-    }
-
-    .profile-card .profile-name {
-      font-size: 1.7rem !important;
-      font-weight: bold;
-      text-align: center;
-      margin: 4px 0 2px 0;
-      white-space: normal;
-    }
-
-    .profile-card .profile-role {
-      font-size: 1.15rem !important;
-      text-align: center;
-      color: #707070;
-      white-space: normal;
-    }
-
-    /* Shown when a year has no profiles assigned to it */
-    .no-profiles-msg {
-      color: #718096;
-      font-style: italic;
-      padding: 2rem 0;
-      text-align: center;
-    }
-
-
-    /* ============================================================
-       7. RESPONSIVE BREAKPOINTS
-       ============================================================
-       ≤991px  — sidebar moves above the card grid (stacked layout)
-       ≤480px  — each card takes full width (single-column grid)
-    ============================================================ */
-    @media (max-width: 991px) {
-      .profiles-layout-wrapper {
-        flex-direction: column; /* stack sidebar above content */
-      }
-
-      .toc-sidebar {
-        width: 100%;
-        position: relative; /* un-stick: no room to stick beside stacked content */
-        top: 0;
-        margin-bottom: 2rem;
-      }
-
-      /* TOC buttons wrap horizontally on tablet/mobile */
-      .toc-list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-      }
-
-      .toc-list li {
-        margin-bottom: 0;
-      }
-
-      /* Buttons shrink to auto width when wrapping horizontally */
-      .toc-list button {
-        width: auto;
-      }
-    }
-
-    @media (max-width: 480px) {
-      /* Single-column card grid on small phones */
-      .profile-card {
-        flex: 0 0 100%;
-        max-width: 100% !important;
-        padding: 24px 12px;
-      }
-    }
-
-  </style>
+</style>
 </head>
 
 <body>
@@ -431,8 +126,8 @@ subtitle: Select a profile to view more details
       The most recent year gets class="active" on page load.
       onclick calls filterAcademicYear() to rebuild the grid.
     -->
-    <nav class="sub-nav-options">
-      <ul class="sub-nav-list" id="year-toc">
+    <nav class="profile-sub-nav-options">
+      <ul class="profile-sub-nav-list" id="year-toc">
         {% for yr in unique_years %}
           <li
             {% if yr == latest_year %}class="active"{% endif %}
@@ -452,10 +147,10 @@ subtitle: Select a profile to view more details
         The <ul> starts empty. filterAcademicYear() populates it
         with one <button> per category found in the selected year.
       -->
-      <aside class="toc-sidebar">
-        <nav class="toc-card">
-          <h2 class="toc-title">Categories</h2>
-          <ul class="toc-list" id="dynamic-toc-list">
+      <aside class="profile-toc-sidebar">
+        <nav class="profile-toc-card">
+          <h2 class="profile-toc-title">Categories</h2>
+          <ul class="profile-toc-list" id="dynamic-toc-list">
             <!-- Populated dynamically by filterAcademicYear() -->
           </ul>
         </nav>
@@ -607,7 +302,7 @@ subtitle: Select a profile to view more details
       currentYearFilter = year;
 
       /* Highlight the clicked year tab; deactivate all others */
-      document.querySelectorAll('.sub-nav-list li').forEach(li =>
+      document.querySelectorAll('.profile-sub-nav-list li').forEach(li =>
         li.classList.remove('active')
       );
       if (element) element.classList.add('active');
@@ -704,7 +399,7 @@ subtitle: Select a profile to view more details
 
         /* Category heading rendered above the card grid */
         const heading         = document.createElement('h2');
-        heading.className     = 'category-heading';
+        heading.className = 'profile-category-heading';
         heading.textContent   = group.name;
         section.appendChild(heading);
 
@@ -779,7 +474,7 @@ subtitle: Select a profile to view more details
       );
 
       /* Remove active styling from every TOC button */
-      document.querySelectorAll('.toc-list button').forEach(b =>
+      document.querySelectorAll('.profile-toc-list button').forEach(b =>
         b.classList.remove('active')
       );
 
@@ -806,7 +501,7 @@ subtitle: Select a profile to view more details
       ============================================================
     */
     document.addEventListener('DOMContentLoaded', function () {
-      const initialActiveTab = document.querySelector('.sub-nav-list li.active');
+      const initialActiveTab = document.querySelector('.profile-sub-nav-list li.active');
       filterAcademicYear(currentYearFilter, initialActiveTab);
     });
 
