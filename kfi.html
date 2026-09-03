@@ -162,83 +162,15 @@ permalink: /kfi/
 </div> 
 
 <!-- Component Stylesheet: Tab Layout, Grid Display, and Media Animations -->
-<style>
-  /* Outer bar holding the academic year tabs */
-  .tabs-container {
-    width: 100%;
-    margin: 2rem 0 3rem 0;
-    border-bottom: 1px solid #e2e8f0;
-  }
-
-  /* Flexbox list aligning tab buttons centered horizontally */
-  .academic-tabs {
-    display: flex;
-    justify-content: center;
-    gap: 2.5rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-  }
-
-  /* Default styling for tab buttons */
-  .tab-link {
-    background: none;
-    border: none;
-    outline: none;
-    padding: 0.75rem 0;
-    font-size: 1.15rem;
-    font-weight: 500;
-    font-family: inherit;
-    color: #718096;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-    border-bottom: 3px solid transparent;
-  }
-
-  /* Active and hover highlight state for selected tab */
-  .tab-link:hover, .tab-link.active {
-    color: #5f745f; 
-    border-bottom: 3px solid #5f745f;
-  }
-  
-  /* Hides items by default when filtering */
-  .video-item {
-    display: none;
-  }
-  
-  /* Class assigned by JS to reveal items matching active filter with fade animation */
-  .video-item.active-view {
-    display: block;
-    animation: fadeIn 0.4s ease;
-  }
-
-  /* Keyframe animation smooth opacity transition */
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(4px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  /* Responsive styles for mobile screens */
-  @media (max-width: 767px) {
-    .academic-tabs {
-      gap: 1rem;
-      justify-content: flex-start;
-      overflow-x: auto;
-      white-space: nowrap;
-      padding-bottom: 0.5rem;
-      -webkit-overflow-scrolling: touch;
-    }
-    
-    .tab-link {
-      font-size: 1rem;
-      padding: 0.5rem 0.25rem;
-    }
-
-    .tabs-container {
-      margin: 1rem 0 2rem 0;
-    }
-  }
-</style>
+<!-- Page-specific CSS previously here has been removed:
+     .tabs-container/.academic-tabs/.tab-link (including mobile media
+     query) and @keyframes fadeIn were byte-identical duplicates of the
+     shared newsletter tab styling in custom-styles.css (section 26/29).
+     .video-item's show/hide filter behavior (display:none by default,
+     .active-view reveals it) has been moved to custom-styles.css too
+     (section: KFI PAGE) — it layers on top of the shared .video-item
+     card styling (section 10) without renaming, since it targets a
+     different property (display) with no actual conflict. -->
 
 <!-- Client-side JavaScript for Tab Filtering and Dynamic YouTube Lazy-loading -->
 <script>
