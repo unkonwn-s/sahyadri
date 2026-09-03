@@ -2075,3 +2075,53 @@ html { /* scroll-behavior removed to prevent unwanted auto-scroll on page load *
         flex-basis: 160px;
     }
 }
+
+
+/* ============================================================
+   32. PHOTOS PAGE — ALBUM GRID (photos.html)
+   Moved from photos.html's own inline <style> block. Renamed
+   with a photos-album- prefix since the shared .album-grid/
+   .album-item classes (section 9) are used by regular posts
+   (e.g. photo.md) with slightly different sizing — giving this
+   page's version its own name avoids one silently overriding
+   the other based on source order (this collision was the
+   original bug reported: photos.html's incomplete last row of
+   photos wasn't centering, because the fix had been applied to
+   the wrong, non-active definition).
+   ============================================================ */
+
+.photos-album-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+}
+
+.photos-album-item {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 280px;
+    max-width: 340px;
+    margin: 0;
+}
+
+.photos-album-item img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.photos-album-item figcaption {
+    font-size: 1.1rem;
+    text-align: center;
+    margin-top: 8px;
+}
+
+@media (max-width: 992px) {
+    .photos-album-item {
+        flex-basis: 160px;
+    }
+}
