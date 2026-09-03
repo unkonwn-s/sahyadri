@@ -6,9 +6,15 @@ title: Photos
 subtitle: Click on thumbnail to open the album
 ---
 
-<!-- Page-specific Styles for Photos Gallery & Academic Year Navigation -->
+<!-- Page-specific CSS previously here has been moved to custom-styles.css:
+     .sub-nav-options/.sub-nav-list (section: shared sub-nav bar, also used
+     by videos.html), .photos-album-grid/.photos-album-item (section: PHOTOS
+     PAGE, renamed with a photos-album- prefix since the shared .album-grid/
+     .album-item classes are used elsewhere for a slightly different sizing),
+     and .load-more-container/.btn-load-more/.hidden-item (already existed
+     as shared utility classes). Only .photos-page-container remains here
+     since it's used by no other page. -->
 <style>
-    /* Main wrapper constraining max-width and centering layout */
     .photos-page-container {
         display: block;
         width: 100%;
@@ -16,122 +22,6 @@ subtitle: Click on thumbnail to open the album
         margin: 30px auto;
         padding: 0 20px;
         box-sizing: border-box;
-    }
-
-    /* Sub-navigation container for academic year selectors */
-    .sub-nav-options {
-        width: 100%;
-        margin: 0 auto 3rem auto;
-        padding-bottom: 1rem;
-        border-bottom: 1px solid #e2e8f0;
-        text-align: center;
-    }
-
-    /* Flexbox list for horizontal tab navigation */
-    .sub-nav-list {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 2.5rem;
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        flex-wrap: wrap;
-    }
-
-    /* Interactive style for each academic year navigation tab */
-    .sub-nav-list li {
-        font-family: 'Amatic SC', cursive;
-        font-size: 2rem;
-        color: #718096;
-        cursor: pointer;
-        transition: all 0.2s ease-in-out;
-        padding-bottom: 5px;
-        border-bottom: 3px solid transparent;
-    }
-
-    /* Hover and active states for academic year tabs */
-    .sub-nav-list li:hover,
-    .sub-nav-list li.active {
-        color: #5f745f;
-        border-bottom: 3px solid #5f745f;
-        font-weight: bold;
-    }
-
-    /* Flexbox layout for album cards (responsive columns).
-       Switched from CSS Grid: Grid's auto-fill tracks always
-       left-align an incomplete last row (e.g. a single leftover
-       photo sits at the far left instead of centered). Flexbox's
-       justify-content: center naturally centers any incomplete row. */
-    .album-grid {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 30px;
-        width: 100%;
-    }
-
-    /* Individual album card container */
-    .album-item {
-        display: flex;
-        flex-direction: column;
-        flex: 1 1 280px;
-        max-width: 340px;
-        margin: 0;
-    }
-
-    /* Enforces 3:2 aspect ratio on thumbnail images */
-    .album-item img {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 3 / 2;
-        object-fit: cover;
-        border-radius: 12px;
-    }
-
-    /* Caption styling under each thumbnail */
-    .album-item figcaption {
-        font-size: 1.1rem;
-        text-align: center;
-        margin-top: 8px;
-    }
-
-    /* Load More button layout container */
-    .load-more-container {
-        text-align: center;
-        margin-top: 3rem;
-        width: 100%;
-    }
-
-    /* Styling for the pagination 'Load More' button */
-    .btn-load-more {
-        background-color: #5f745f;
-        color: white;
-        border: none;
-        padding: 10px 24px;
-        border-radius: 6px;
-        font-size: 1.1rem;
-        cursor: pointer;
-        transition: background-color 0.2s ease;
-    }
-
-    .btn-load-more:hover {
-        background-color: #4a5b4a;
-    }
-
-    /* Utility class used by JS to hide albums not in view or active filter */
-    .hidden-item { display: none; }
-
-    /* Mobile adjustments for narrower screens */
-    @media (max-width: 992px) {
-        .sub-nav-list { gap: 1.5rem; }
-
-        .album-item {
-            flex-basis: 160px;
-        }
-        .album-grid {
-            gap: 15px;
-        }
     }
 </style>
 
@@ -144,7 +34,7 @@ subtitle: Click on thumbnail to open the album
     </nav>
 
     <!-- Main Album Grid Container -->
-    <div class="album-grid" id="main-grid">
+    <div class="photos-album-grid" id="main-grid">
 
         <!-- 
             HOW TO ADD AN ALBUM:
@@ -156,329 +46,329 @@ subtitle: Click on thumbnail to open the album
             3. Update alt and figcaption with the event name and date.
 
             TEMPLATE:
-            <figure class="album-item" data-img="FILE_ID_HERE">
+            <figure class="photos-album-item" data-img="FILE_ID_HERE">
                 <a href="GOOGLE_PHOTOS_LINK" target="_blank">
                     <img src="" alt="EVENT NAME">
                 </a>
                 <figcaption>Event Name, DDth Month YYYY</figcaption>
             </figure>
         -->
-        <figure class="album-item" data-img="1lQrl-V_0kfwrI3QZD2sfYwd_TKr2Hzx0">
+        <figure class="photos-album-item" data-img="1lQrl-V_0kfwrI3QZD2sfYwd_TKr2Hzx0">
             <a href="https://photos.app.goo.gl/ngnhkEp9B8ihmK5J6" target="_blank">
                 <img src="" alt="Independence day">
             </a>
             <figcaption>Independence day, 15th August 2026</figcaption>
         </figure>
         
-        <figure class="album-item" data-img="1xY2Q4y-wAz4-j3ltyTGSAD6MCiU8fasY">
+        <figure class="photos-album-item" data-img="1xY2Q4y-wAz4-j3ltyTGSAD6MCiU8fasY">
             <a href="https://photos.app.goo.gl/wfwxWDMcWAZeYz478" target="_blank">
                 <img src="" alt="Friendship day">
             </a>
             <figcaption>Friendship day, 2nd August 2026</figcaption>
         </figure>
         
-        <figure class="album-item" data-img="1R546fyHvw4HoUbw0L5viBj6QCMAdb2aN">
+        <figure class="photos-album-item" data-img="1R546fyHvw4HoUbw0L5viBj6QCMAdb2aN">
             <a href="https://photos.app.goo.gl/WXa132d8AqsUUpAJ7" target="_blank">
                 <img src="" alt="Class Hike">
             </a>
             <figcaption>Class Hike, 16th July 2026</figcaption>
         </figure>
         
-        <figure class="album-item" data-img="1PMxtsiONua9W5MBq10hEKHdSCNn2emS4">
+        <figure class="photos-album-item" data-img="1PMxtsiONua9W5MBq10hEKHdSCNn2emS4">
             <a href="https://photos.app.goo.gl/W81manjibAFGTrqm8" target="_blank">
                 <img src="" alt="Fresher's Hike">
             </a>
             <figcaption>Fresher's Hike, 28th June 2026</figcaption>
         </figure>
 
-        <figure class="album-item" data-img="1otqEB8mDcZMal0fKTouASQ1bdteN4xrc">
+        <figure class="photos-album-item" data-img="1otqEB8mDcZMal0fKTouASQ1bdteN4xrc">
             <a href="https://photos.app.goo.gl/PSWYNWKRqFPMzH2VA" target="_blank">
                 <img src="" alt="Class 11 Outing">
             </a>
             <figcaption>Class 11 Outing, 7-8th March 2026</figcaption>
         </figure>
 
-        <figure class="album-item" data-img="1HYj9hp-Jn-sgqGegdO2vnSHnQDs2mU7_">
+        <figure class="photos-album-item" data-img="1HYj9hp-Jn-sgqGegdO2vnSHnQDs2mU7_">
             <a href="https://photos.app.goo.gl/YhEDh6Us1ZTUtZvZ9" target="_blank">
                 <img src="" alt="Science Festival">
             </a>
             <figcaption>Science Festival, 28th February 2026</figcaption>
         </figure>
 
-        <figure class="album-item" data-img="1Zz_ySvcDxsvQBkIJtn-rxWF0PBZWA-LV">
+        <figure class="photos-album-item" data-img="1Zz_ySvcDxsvQBkIJtn-rxWF0PBZWA-LV">
             <a href="https://photos.app.goo.gl/1K4hNNmUzMSvca3b9" target="_blank">
                 <img src="" alt="Class 9 Excursion">
             </a>
             <figcaption>Class 9 Excursion, 20th - 28th February 2026</figcaption>
         </figure>
 
-        <figure class="album-item" data-img="1mTy3z5yRftuTfOURZBHSsu_FPMPsIDdg">
+        <figure class="photos-album-item" data-img="1mTy3z5yRftuTfOURZBHSsu_FPMPsIDdg">
             <a href="https://photos.app.goo.gl/G1BU5r2r9W7ok9WZ9" target="_blank">
                 <img src="" alt="Block Print Workshop">
             </a>
             <figcaption>Block Print Workshop, 19th February 2026</figcaption>
         </figure>
 
-        <figure class="album-item" data-img="171ISh6Aw2K7UgtaVtWghYinKMDte0hBO">
+        <figure class="photos-album-item" data-img="171ISh6Aw2K7UgtaVtWghYinKMDte0hBO">
             <a href="https://photos.app.goo.gl/ZSNu7ExswBp55ptx9" target="_blank">
                 <img src="" alt="Arvind Gupta Assembly">
             </a>
             <figcaption>Assembly by Arvind Gupta, 14th February 2026</figcaption>
         </figure>
 
-        <figure class="album-item" data-img="1LGNp2tw28snxY7hEBbPVrg-9_YeLPp3E">
+        <figure class="photos-album-item" data-img="1LGNp2tw28snxY7hEBbPVrg-9_YeLPp3E">
             <a href="https://photos.app.goo.gl/d4gcKSvQP32v4o5d9" target="_blank">
                 <img src="" alt="Class 7 Excursion">
             </a>
             <figcaption>Class 7 Excursion, 31st January - 4th February 2026</figcaption>
         </figure>
 
-        <figure class="album-item" data-img="1G59BdeLhBG-1RheJjWTIM8anQIyZw5DQ">
+        <figure class="photos-album-item" data-img="1G59BdeLhBG-1RheJjWTIM8anQIyZw5DQ">
             <a href="https://photos.app.goo.gl/pddu5WQFVjJthbsi8" target="_blank">
                 <img src="" alt="Class 5 Excursion">
             </a>
             <figcaption>Class 5 Excursion, 30th January - 3rd February 2026</figcaption>
         </figure>
 
-        <figure class="album-item" data-img="1ZgG5xMCJNe-bvss3-DVtI5zcc9WeTvou">
+        <figure class="photos-album-item" data-img="1ZgG5xMCJNe-bvss3-DVtI5zcc9WeTvou">
             <a href="https://photos.app.goo.gl/fSdwu28bXREiGtwA8" target="_blank">
                 <img src="" alt="Republic Day">
             </a>
             <figcaption>Republic Day, 26th January 2026</figcaption>
         </figure>
 
-        <figure class="album-item" data-img="1hNZTWCvmAMdZYNiHcZqkHQMJYJJEKSkm">
+        <figure class="photos-album-item" data-img="1hNZTWCvmAMdZYNiHcZqkHQMJYJJEKSkm">
             <a href="https://photos.app.goo.gl/WNwER6eE7QyhuiLk9" target="_blank">
                 <img src="" alt="Farewell">
             </a>
             <figcaption>Farewell, 10th January 2026</figcaption>
         </figure>
 
-        <figure class="album-item" data-img="13Yl1QgH6zNQzq-90dhoqokaEL3ItzLOd">
+        <figure class="photos-album-item" data-img="13Yl1QgH6zNQzq-90dhoqokaEL3ItzLOd">
             <a href="https://photos.app.goo.gl/aDzyTzR9bmJAMWXQ6" target="_blank">
                 <img src="" alt="Rock Climbing">
             </a>
             <figcaption>Rock Climbing, 3rd January 2026</figcaption>
         </figure>
 
-        <figure class="album-item" data-img="1bojacDer81RubZlv4wvuOu9Y4SeG8Xjl">
+        <figure class="photos-album-item" data-img="1bojacDer81RubZlv4wvuOu9Y4SeG8Xjl">
             <a href="https://photos.app.goo.gl/ZidC6WX7wPkuEpzs5" target="_blank">
                 <img src="" alt="New Year's Eve">
             </a>
             <figcaption>New Year's Eve, 31st December 2025</figcaption>
         </figure>
 
-        <figure class="album-item" data-img="1BDqc3dhfbOYhcrgw7T5Z24JidP7a4RY8">
+        <figure class="photos-album-item" data-img="1BDqc3dhfbOYhcrgw7T5Z24JidP7a4RY8">
             <a href="https://photos.app.goo.gl/wvkeU313o8RfR5ep9" target="_blank">
                 <img src="" alt="Cross Country">
             </a>
             <figcaption>Cross Country, 28th December 2025</figcaption>
         </figure>
 
-        <figure class="album-item" data-img="1Z29qT4BlPIbkA8fmRWw_4EltWCdQNn80">
+        <figure class="photos-album-item" data-img="1Z29qT4BlPIbkA8fmRWw_4EltWCdQNn80">
             <a href="https://photos.app.goo.gl/rxQrY2RppHsWNvfx7" target="_blank">
                 <img src="" alt="Christmas Eve">
             </a>
             <figcaption>Christmas Eve, 24th December 2025</figcaption>
         </figure>
 
-        <figure class="album-item" data-img="1e6m_UN0it34JDqlm_8hBlJkPsYmm0SiU">
+        <figure class="photos-album-item" data-img="1e6m_UN0it34JDqlm_8hBlJkPsYmm0SiU">
             <a href="https://photos.app.goo.gl/bwGBKG8qj5xrKZ9V7" target="_blank">
                 <img src="" alt="Alumni Meet">
             </a>
             <figcaption>Alumni Meet, 22nd December 2025</figcaption>
         </figure>
 
-        <figure class="album-item" data-img="12iL9ucuwor0r-pIL3uPkLBw3UyzNKxkj">
+        <figure class="photos-album-item" data-img="12iL9ucuwor0r-pIL3uPkLBw3UyzNKxkj">
             <a href="https://photos.app.goo.gl/1PjCH7Edh2fRZyrp6" target="_blank">
                 <img src="" alt="Sports Fest">
             </a>
             <figcaption>Sports Fest, 18th - 20th December 2025</figcaption>
         </figure>
 
-        <figure class="album-item" data-img="12wb-l7N-2bvFuJbe8iR5Kzy_9HzK4NEI">
+        <figure class="photos-album-item" data-img="12wb-l7N-2bvFuJbe8iR5Kzy_9HzK4NEI">
             <a href="https://photos.app.goo.gl/Wj8dzXwmCLQsmbxo6" target="_blank">
                 <img src="" alt="Vocals Assembly">
             </a>
             <figcaption>Vocals Assembly, 6th December 2025</figcaption>
         </figure>
 
-        <figure class="album-item" data-img="1okOZZbEcGBDfA220VIhEyDmvuwNYzLNU">
+        <figure class="photos-album-item" data-img="1okOZZbEcGBDfA220VIhEyDmvuwNYzLNU">
             <a href="https://photos.app.goo.gl/mvTzcAxGXeFKbpQe7" target="_blank">
                 <img src="" alt="Class Hikes">
             </a>
             <figcaption>Class Hikes, 29th November 2025</figcaption>
         </figure>
 
-        <figure class="album-item" data-img="11B8VCZi-_PPt-f071v1eRgQ1Xzj3DOdE">
+        <figure class="photos-album-item" data-img="11B8VCZi-_PPt-f071v1eRgQ1Xzj3DOdE">
             <a href="https://photos.app.goo.gl/tM94xk7S3ueJtgAQA" target="_blank">
                 <img src="" alt="Class 11 Excursion">
             </a>
             <figcaption>Class 11 Excursion, 6th - 16th October 2025</figcaption>
         </figure>
 
-        <figure class="album-item" data-img="1IJ75xC1P4wtomc-RH8bfCuVlJVXvJeyD">
+        <figure class="photos-album-item" data-img="1IJ75xC1P4wtomc-RH8bfCuVlJVXvJeyD">
             <a href="https://photos.app.goo.gl/8kw6udpDfTUadsTy7" target="_blank">
                 <img src="" alt="Musical Eve">
             </a>
             <figcaption>Musical Eve, 4th October 2025</figcaption>
         </figure>
 
-        <figure class="album-item" data-img="1NZVueIGNld7kwWorsV9zSW5U35O13T8k">
+        <figure class="photos-album-item" data-img="1NZVueIGNld7kwWorsV9zSW5U35O13T8k">
             <a href="https://photos.app.goo.gl/J6cd9JquxsreVfFXA" target="_blank">
                 <img src="" alt="Dasara Celebration">
             </a>
             <figcaption>Dasara Celebration, 30th September 2025</figcaption>
         </figure>
 
-        <figure class="album-item" data-img="1p4zoCPR60ZgBqNfRkkMFHfkiMYjjljLr">
+        <figure class="photos-album-item" data-img="1p4zoCPR60ZgBqNfRkkMFHfkiMYjjljLr">
             <a href="https://photos.app.goo.gl/gx5hmiHaqb8cW7Jc7" target="_blank">
                 <img src="" alt="Football Interschool">
             </a>
             <figcaption>Football Interschool, 21st September 2025</figcaption>
         </figure>
 
-        <figure class="album-item" data-img="1JMaswyjNoDx88alLtoyrbAwVTkkogtx5">
+        <figure class="photos-album-item" data-img="1JMaswyjNoDx88alLtoyrbAwVTkkogtx5">
             <a href="https://photos.app.goo.gl/idmaJcExwsYfCMHC7" target="_blank">
                 <img src="" alt="Mohiniyattam Performance">
             </a>
             <figcaption>Mohiniyattam Performance, 10th September 2025</figcaption>
         </figure>
 
-        <figure class="album-item" data-img="1UUo_B2XKhzxTe8_omyV61zBxnf3WgNuW">
+        <figure class="photos-album-item" data-img="1UUo_B2XKhzxTe8_omyV61zBxnf3WgNuW">
             <a href="https://photos.app.goo.gl/jG9yNydYFc53kjtn7" target="_blank">
                 <img src="" alt="Shambhu Hill Cleanup">
             </a>
             <figcaption>Shambhu Hill Cleanup, 7th September 2025</figcaption>
         </figure>
 
-        <figure class="album-item" data-img="1urmT_GNcsd6BWYj_hgIU7pe0HSsfOsYa">
+        <figure class="photos-album-item" data-img="1urmT_GNcsd6BWYj_hgIU7pe0HSsfOsYa">
             <a href="https://photos.app.goo.gl/9jKRdrguZ2XUfqw98" target="_blank">
                 <img src="" alt="Art-Lit Fest">
             </a>
             <figcaption>Art-Lit Fest, 15th August - 2nd September 2025</figcaption>
         </figure>
 
-        <figure class="album-item" data-img="1rTsJvZ-gpEjFDEVX7KZuV8LuGe2pCmky">
+        <figure class="photos-album-item" data-img="1rTsJvZ-gpEjFDEVX7KZuV8LuGe2pCmky">
             <a href="https://photos.app.goo.gl/rHX7XvHLkTFT7DpU9" target="_blank">
                 <img src="" alt="Class 10 Play">
             </a>
             <figcaption>Class 10 Play, 30th August 2025</figcaption>
         </figure>
 
-        <figure class="album-item" data-img="1o6XfgO-h7vur36F7FtVcMtzQt8OzGMlF">
+        <figure class="photos-album-item" data-img="1o6XfgO-h7vur36F7FtVcMtzQt8OzGMlF">
             <a href="https://photos.app.goo.gl/7mP9Gj1Vo1hL5wQj6" target="_blank">
                 <img src="" alt="Class 12 Sitar Performance">
             </a>
             <figcaption>Sitar Performance by Grade 12, 23rd August 2025</figcaption>
         </figure>
 
-        <figure class="album-item" data-img="1jeHvOmeZJWYBNfJeNURy7q7V_YewJ5TH">
+        <figure class="photos-album-item" data-img="1jeHvOmeZJWYBNfJeNURy7q7V_YewJ5TH">
             <a href="https://photos.app.goo.gl/KkaGCTUMH7G91h5U8" target="_blank">
                 <img src="" alt="Independence Day">
             </a>
             <figcaption>Independence Day, 15th August 2025</figcaption>
         </figure>
 
-        <figure class="album-item" data-img="15tKFbt9EPik6dzx1o3UkvD1W8wlTk9oK">
+        <figure class="photos-album-item" data-img="15tKFbt9EPik6dzx1o3UkvD1W8wlTk9oK">
             <a href="https://photos.app.goo.gl/qTY9YaWSbbtSQ53X8" target="_blank">
                 <img src="" alt="Football Tournament">
             </a>
             <figcaption>Football Tournament, 4th - 14th August 2025</figcaption>
         </figure>
 
-        <figure class="album-item" data-img="113XGgjNPTNOMa3581f7hYs1GQdFs1WXF">
+        <figure class="photos-album-item" data-img="113XGgjNPTNOMa3581f7hYs1GQdFs1WXF">
             <a href="https://photos.app.goo.gl/aPPp2vU2Bq3W7D8n6" target="_blank">
                 <img src="" alt="Classical Dance">
             </a>
             <figcaption>Classical Dance by Grade 10, 13th August 2025</figcaption>
         </figure>
 
-        <figure class="album-item" data-img="13E1W0ClQMevQHSLbhBYtojVGErbVnZJr">
+        <figure class="photos-album-item" data-img="13E1W0ClQMevQHSLbhBYtojVGErbVnZJr">
             <a href="https://photos.app.goo.gl/UuzNhJ5ozZnBNtkaA" target="_blank">
                 <img src="" alt="Jaltarang Performance">
             </a>
             <figcaption>Jaltarang Performance, 9th August 2025</figcaption>
         </figure>
 
-        <figure class="album-item" data-img="13GyjdActqCFUY_zhzkEFeKHI4HTT7cKE">
+        <figure class="photos-album-item" data-img="13GyjdActqCFUY_zhzkEFeKHI4HTT7cKE">
             <a href="https://photos.app.goo.gl/Zf19een2dJYSEU2G6" target="_blank">
                 <img src="" alt="Marathi Folk Assembly">
             </a>
             <figcaption>Marathi Folk Assembly, 5th August 2025</figcaption>
         </figure>
 
-        <figure class="album-item" data-img="114PFXKCsE9e08uNGnqKzCItWqzjhdoO3">
+        <figure class="photos-album-item" data-img="114PFXKCsE9e08uNGnqKzCItWqzjhdoO3">
             <a href="https://photos.app.goo.gl/9fimQ9ofu192VKsX6" target="_blank">
                 <img src="" alt="Friendship Day">
             </a>
             <figcaption>Friendship Day, 3rd August 2025</figcaption>
         </figure>
 
-        <figure class="album-item" data-img="1nDKrSTVWImwtesaR5JkbPfIhs_xtGWhB">
+        <figure class="photos-album-item" data-img="1nDKrSTVWImwtesaR5JkbPfIhs_xtGWhB">
             <a href="https://photos.app.goo.gl/7Ky62kou2pkiaNuB6" target="_blank">
                 <img src="" alt="Open House">
             </a>
             <figcaption>Open House, 2nd August 2025</figcaption>
         </figure>
 
-        <figure class="album-item" data-img="1ecHlfoNYtzST2aauf1UIBIEu7a1Q4j4a">
+        <figure class="photos-album-item" data-img="1ecHlfoNYtzST2aauf1UIBIEu7a1Q4j4a">
             <a href="https://photos.app.goo.gl/ZyAb9GaoMawP7nAV6" target="_blank">
                 <img src="" alt="Marathi Assembly">
             </a>
             <figcaption>Marathi Assembly, 31st July 2025</figcaption>
         </figure>
 
-        <figure class="album-item" data-img="1km5neTjYaAyB3LMsUmYNm8mGZVH7Jxab">
+        <figure class="photos-album-item" data-img="1km5neTjYaAyB3LMsUmYNm8mGZVH7Jxab">
             <a href="https://photos.app.goo.gl/R47DSbRJFRMW6Smp7" target="_blank">
                 <img src="" alt="English Literature Assembly">
             </a>
             <figcaption>English Literature Assembly, 26th July 2025</figcaption>
         </figure>
 
-        <figure class="album-item" data-img="1lwohLhNVMO62-_izDJ1xFrPzpmXi9Mos">
+        <figure class="photos-album-item" data-img="1lwohLhNVMO62-_izDJ1xFrPzpmXi9Mos">
             <a href="https://photos.app.goo.gl/LDTpzvieTjLrdBePA" target="_blank">
                 <img src="" alt="Class 11 Play">
             </a>
             <figcaption>Class 11 Play, 26th July 2025</figcaption>
         </figure>
 
-        <figure class="album-item" data-img="1k5XHahPucJnC1ywM9oqO9RJT2pjkCguu">
+        <figure class="photos-album-item" data-img="1k5XHahPucJnC1ywM9oqO9RJT2pjkCguu">
             <a href="https://photos.app.goo.gl/FAdcmM2EiDJKWkuN9" target="_blank">
                 <img src="" alt="Freshers Eve">
             </a>
             <figcaption>Freshers Eve, 12th July 2025</figcaption>
         </figure>
 
-        <figure class="album-item" data-img="1ZWX7E2dSd43AtRewR5OqWFvLka7sYeSS">
+        <figure class="photos-album-item" data-img="1ZWX7E2dSd43AtRewR5OqWFvLka7sYeSS">
             <a href="https://photos.app.goo.gl/4fRzVAUo91mMGa22A" target="_blank">
                 <img src="" alt="Dorm Hikes">
             </a>
             <figcaption>Dorm Hikes, 6th July 2025</figcaption>
         </figure>
 
-        <figure class="album-item" data-img="1R_s0wMDIHMtPrDes8eleK6hOJMw-6VnD">
+        <figure class="photos-album-item" data-img="1R_s0wMDIHMtPrDes8eleK6hOJMw-6VnD">
             <a href="https://photos.app.goo.gl/pGjGYDcSqCQ3YMtf9" target="_blank">
                 <img src="" alt="Freshers Hikes">
             </a>
             <figcaption>Freshers Hikes, 29th June 2025</figcaption>
         </figure>
 
-        <figure class="album-item" data-img="18LX9BmNb8TXVrnmeQEjORfotZdDNOX3P">
+        <figure class="photos-album-item" data-img="18LX9BmNb8TXVrnmeQEjORfotZdDNOX3P">
             <a href="https://photos.app.goo.gl/6Yko8iC9rHzwZH6q9" target="_blank">
                 <img src="" alt="Tansen Play">
             </a>
             <figcaption>Tansen Play, 28th June 2025</figcaption>
         </figure>
 
-        <figure class="album-item" data-img="1nC5YJJNLYBc4zxXzBq8k0ngQoDDxe-ab">
+        <figure class="photos-album-item" data-img="1nC5YJJNLYBc4zxXzBq8k0ngQoDDxe-ab">
             <a href="https://photos.app.goo.gl/RYUUcB9gw6FD3XEK8" target="_blank">
                 <img src="" alt="Book Festival">
             </a>
             <figcaption>Book Festival, 16th - 19th June 2025</figcaption>
         </figure>
 
-        <figure class="album-item" data-img="1sGuH_5CL_bcUcaHTs02IWHs8A-12qY2g">
+        <figure class="photos-album-item" data-img="1sGuH_5CL_bcUcaHTs02IWHs8A-12qY2g">
             <a href="https://photos.app.goo.gl/ESnz8wG8Lbm8x1qw5" target="_blank">
                 <img src="" alt="Environment Day">
             </a>
@@ -566,7 +456,7 @@ subtitle: Click on thumbnail to open the album
         activeEl?.classList.add('active');
 
         // Filter album items matching target academic year
-        const all = Array.from(document.querySelectorAll('.album-item'));
+        const all = Array.from(document.querySelectorAll('.photos-album-item'));
         const matched = all.filter(el => el.dataset.academicYear === year);
 
         // Hide all items, then reveal only the first chunk of matched items
@@ -581,7 +471,7 @@ subtitle: Click on thumbnail to open the album
      * Initializes thumbnails, parses academic years, creates navigation tabs, and loads default view.
      */
     function initPage() {
-        const items = Array.from(document.querySelectorAll('.album-item'));
+        const items = Array.from(document.querySelectorAll('.photos-album-item'));
         const nav = document.getElementById('year-toc');
         const years = new Set();
 
