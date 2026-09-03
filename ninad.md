@@ -6,61 +6,11 @@ title: Ninad
 subtitle: Click thumbnail to download ninad
 ---
 
-<!-- Page-specific styles for PDF Card Layout and Flexbox Reordering -->
-<style>
-  /* Flexbox grid wrapping container for document cards */
-  .pdf-grid-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
-    padding: 20px 0;
-  }
-
-  /* Individual card container styling */
-  .ninad-card {
-    display: flex;
-    flex-direction: column;
-    width: 220px;
-    background-color: white; /* Card background */
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease;
-    overflow: hidden; 
-  }
-
-  /* Interactive hover state for card lift effect */
-  .ninad-card:hover {
-    transform: translateY(-8px);
-  }
-
-  /* Caption banner layout & typography settings */
-  .ninad-caption-banner {
-    background-color: #f7fff7; /* Subtle greenish-white background */
-    color: #333; /* Dark text for visual contrast */
-    padding: 12px 5px;
-    text-align: center;
-    font-weight: 600;
-    font-size: 1rem;
-    margin: 0;
-    
-    /* 
-       Flexbox ordering: order: 1 moves the caption block below 
-       unassigned/default order: 0 elements (like the image link)
-    */
-    order: 1; 
-    margin-top: 15px; /* Spacing between thumbnail and text */
-    border-top: 1px solid #e0e0e0; /* Subtle divider line above caption */
-  }
-
-  /* Enforces fixed height and aspect ratio cropping for PDF thumbnails */
-  .ninad-card img {
-    width: 100%;
-    height: 300px; 
-    object-fit: cover;
-    display: block;
-  }
-</style>
+<!-- Page-specific CSS previously here (pdf-grid-container, ninad-card,
+     ninad-caption-banner) has been removed — it was a stale duplicate of
+     the shared definition in custom-styles.css (section 12), missing a
+     later flex-grow fix for caption banner height consistency. Using the
+     shared definition now avoids this drift happening again. -->
 
 <!-- Main Container for Ninad PDF Cards -->
 <div class="pdf-grid-container">
