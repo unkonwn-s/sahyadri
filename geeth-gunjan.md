@@ -7,52 +7,11 @@ title: Geet Gunjan
 subtitle: Click thumbnail to download Geeth Gunjan
 permalink: /geeth
 ---
-<!-- Embedded CSS Stylesheet for PDF Card Grid & Layout Styling -->
-<style>
-  /* Flexbox Grid Container to horizontally align and wrap document cards */
-  .pdf-grid-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
-    padding: 20px 0;
-  }
-  /* Structural Card Component for individual PDF downloads */
-  .ninad-card {
-    display: flex;
-    flex-direction: column;
-    width: 220px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease;
-    overflow: hidden; 
-  }
-  /* Interactive hover lift effect */
-  .ninad-card:hover {
-    transform: translateY(-8px);
-  }
-  /* Caption Banner styling displayed below the thumbnail */
-  .ninad-caption-banner {
-    background-color: #f7fff7; 
-    color: #333; 
-    padding: 12px 5px;
-    text-align: center;
-    font-weight: 600;
-    font-size: 1rem;
-    margin: 0;
-    order: 1; 
-    margin-top: 15px; 
-    border-top: 1px solid #e0e0e0; 
-  }
-  /* Forces uniform height and aspect-ratio cropping across all card thumbnails */
-  .ninad-card img {
-    width: 100%;
-    height: 300px; 
-    object-fit: cover;
-    display: block;
-  }
-</style>
+<!-- Page-specific CSS previously here (pdf-grid-container, ninad-card,
+     ninad-caption-banner) has been removed — it was a stale duplicate of
+     the shared definition in custom-styles.css (section 12), missing a
+     later flex-grow fix for caption banner height consistency. Using the
+     shared definition now avoids this drift happening again. -->
 <!-- Main Container holding the Geet Gunjan PDF items -->
 <div class="pdf-grid-container">
   <!-- Document Card 1: English Transliterated Version -->
