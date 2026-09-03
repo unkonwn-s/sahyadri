@@ -553,7 +553,12 @@ html { /* scroll-behavior removed to prevent unwanted auto-scroll on page load *
 }
 
 .album-item {
-    flex: 0 1 calc(50% - 20px);
+    /* flex-basis 300px matches the original grid's minmax(300px, 1fr)
+       minimum, with grow allowed up to a capped max-width so items
+       still fill space nicely across however many columns fit,
+       without a lone leftover item stretching to an oddly wide size. */
+    flex: 1 1 300px;
+    max-width: 360px;
     margin: 0;
     text-align: center;
 }
