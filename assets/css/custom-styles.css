@@ -2126,3 +2126,22 @@ html { /* scroll-behavior removed to prevent unwanted auto-scroll on page load *
         flex-basis: 160px;
     }
 }
+
+
+/* ============================================================
+   33. KFI PAGE — VIDEO/EXCERPT FILTER BEHAVIOR (kfi.html)
+   Moved from kfi.html's own inline <style> block. Layers on top
+   of the shared .video-item card styling (section 10) — no rename
+   needed since this only touches the display property for a
+   JS-driven show/hide filter, which doesn't conflict with the
+   shared class's flex/margin sizing properties.
+   ============================================================ */
+
+.video-item {
+    display: none;
+}
+
+.video-item.active-view {
+    display: block;
+    animation: fadeIn 0.4s ease;
+}
