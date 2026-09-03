@@ -925,9 +925,7 @@ html { /* scroll-behavior removed to prevent unwanted auto-scroll on page load *
 
 .dark-mode,
 .dark-mode body {
-    /* Slight greenish tint (green channel bumped a touch above neutral gray)
-       to echo the site's sage-green theme, rather than a flat neutral gray. */
-    background-color: #1f2420;
+    background-color: #1a1a1a;
     color: #e0e0e0;
 }
 
