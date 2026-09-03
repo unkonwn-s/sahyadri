@@ -1,139 +1,15 @@
 ---
 # FILE: videos.html
-# PURPOSE: Video gallery page — grid of embedded/thumbnail videos with play-button overlay.
+# PURPOSE: Video gallery page — grid of YouTube thumbnails that open a lightbox player on click.
 layout: page
 title: Videos
 subtitle: Click on the thumbnail to watch
 ---
 
-<!-- Styles for Page Layout, Navigation, Responsive Grid, and Controls -->
-<style>
-    /* Main page container setting max-width and centering layout */
-    .videos-page-container {
-        display: block;
-        width: 100%;
-        max-width: 1200px;
-        margin: 30px auto;
-        padding: 0 20px;
-        box-sizing: border-box;
-    }
-
-    /* Year Navigation Header Wrapper */
-    .sub-nav-options {
-        width: 100%;
-        margin: 0 auto 3rem auto;
-        padding-bottom: 1rem;
-        border-bottom: 1px solid #e2e8f0;
-        text-align: center;
-    }
-
-    /* Flexbox list for dynamic Academic Year filters */
-    .sub-nav-list {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 2.5rem;
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        flex-wrap: wrap;
-    }
-
-    /* Styling for individual year navigation items */
-    .sub-nav-list li {
-        font-family: 'Amatic SC', cursive;
-        font-size: 2rem;
-        color: #718096;
-        cursor: pointer;
-        transition: all 0.2s ease-in-out;
-        padding-bottom: 5px;
-        border-bottom: 3px solid transparent;
-    }
-
-    /* Active and Hover state indicators for selected academic year */
-    .sub-nav-list li:hover,
-    .sub-nav-list li.active {
-        color: #5f745f;
-        border-bottom: 3px solid #5f745f;
-        font-weight: bold;
-    }
-
-    /* CSS Grid layout for video thumbnails */
-    .video-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-        gap: 30px;
-        width: 100%;
-    }
-
-    /* Individual video card item */
-    .video-item {
-        display: flex;
-        flex-direction: column;
-        margin: 0;
-    }
-
-    /* Thumbnail aspect ratio wrapper and click target */
-    .video-wrapper {
-        display: block;
-        width: 100%;
-        aspect-ratio: 3 / 2;
-        overflow: hidden;
-        border-radius: 12px;
-        background: #000;
-        cursor: pointer;
-    }
-
-    /* Covers full size of the wrapper */
-    .video-wrapper img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    /* Video title and date caption */
-    .video-item figcaption {
-        font-size: 1.1rem;
-        text-align: center;
-        margin-top: 8px;
-    }
-
-    /* Load More Button Wrapper */
-    .load-more-container {
-        text-align: center;
-        margin-top: 3rem;
-        width: 100%;
-    }
-
-    /* Load More Action Button */
-    .btn-load-more {
-        background-color: #5f745f;
-        color: white;
-        border: none;
-        padding: 10px 24px;
-        border-radius: 6px;
-        font-size: 1.1rem;
-        cursor: pointer;
-        transition: background-color 0.2s ease;
-    }
-
-    .btn-load-more:hover {
-        background-color: #4a5b4a;
-    }
-
-    /* Utility class used by JS to hide videos not matching pagination/filters */
-    .hidden-item { display: none; }
-
-    /* Media query adjust grid and spacing on mobile viewports */
-    @media (max-width: 992px) {
-        .sub-nav-list { gap: 1.5rem; }
-
-        .video-grid {
-            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-            gap: 15px;
-        }
-    }
-</style>
+<!-- Page-specific CSS previously here has been moved to custom-styles.css
+     (section: VIDEOS PAGE), renamed with a videos-page- prefix to avoid
+     colliding with kfi.html's use of the shared .video-grid/.video-item/
+     .video-wrapper classes (which have a different visual design). -->
 
 <div class="videos-page-container">
 
@@ -143,157 +19,157 @@ subtitle: Click on the thumbnail to watch
     </nav>
 
     <!-- Grid Container holding all YouTube Video Items -->
-    <div class="video-grid" id="videoGrid">
+    <div class="videos-page-grid" id="videoGrid">
 
-        <figure class="video-item">
-            <div class="video-wrapper" onclick="loadVideo(this)" data-video="5f1D7itRH0Q">
+        <figure class="videos-page-item">
+            <div class="videos-page-wrapper" onclick="loadVideo(this)" data-video="5f1D7itRH0Q">
                 <img src="https://img.youtube.com/vi/5f1D7itRH0Q/hqdefault.jpg" alt="Class 11 Play">
             </div>
             <figcaption>Class 11 Play, 25th July 2026</figcaption>
         </figure>
 
-        <figure class="video-item">
-            <div class="video-wrapper" onclick="loadVideo(this)" data-video="u0xvy8fAF68">
+        <figure class="videos-page-item">
+            <div class="videos-page-wrapper" onclick="loadVideo(this)" data-video="u0xvy8fAF68">
                 <img src="https://img.youtube.com/vi/u0xvy8fAF68/hqdefault.jpg" alt="Assembly by Shirali Sir">
             </div>
             <figcaption>Assembly by Shirali Sir, 5th March 2026</figcaption>
         </figure>
 
-        <figure class="video-item">
-            <div class="video-wrapper" onclick="loadVideo(this)" data-video="B_DAFuXGtTU">
+        <figure class="videos-page-item">
+            <div class="videos-page-wrapper" onclick="loadVideo(this)" data-video="B_DAFuXGtTU">
                 <img src="https://img.youtube.com/vi/B_DAFuXGtTU/hqdefault.jpg" alt="Marathi Play by Class 6">
             </div>
             <figcaption>Marathi Play by Class 6, 29th January 2026</figcaption>
         </figure>
 
-        <figure class="video-item">
-            <div class="video-wrapper" onclick="loadVideo(this)" data-video="wDh2AIq0-hM">
+        <figure class="videos-page-item">
+            <div class="videos-page-wrapper" onclick="loadVideo(this)" data-video="wDh2AIq0-hM">
                 <img src="https://img.youtube.com/vi/wDh2AIq0-hM/hqdefault.jpg" alt="Lezim">
             </div>
             <figcaption>Lezim, 26th January 2026</figcaption>
         </figure>
 
-        <figure class="video-item">
-            <div class="video-wrapper" onclick="loadVideo(this)" data-video="SpNSMveVNds">
+        <figure class="videos-page-item">
+            <div class="videos-page-wrapper" onclick="loadVideo(this)" data-video="SpNSMveVNds">
                 <img src="https://img.youtube.com/vi/SpNSMveVNds/hqdefault.jpg" alt="Sitar Performance by Class 10">
             </div>
             <figcaption>Sitar Performance by Class 10, 24th January 2026</figcaption>
         </figure>
 
-        <figure class="video-item">
-            <div class="video-wrapper" onclick="loadVideo(this)" data-video="eU4VrkcdSvs">
+        <figure class="videos-page-item">
+            <div class="videos-page-wrapper" onclick="loadVideo(this)" data-video="eU4VrkcdSvs">
                 <img src="https://img.youtube.com/vi/eU4VrkcdSvs/hqdefault.jpg" alt="Bharatnatyam Performance">
             </div>
             <figcaption>Bharatnatyam Performance, 24th January 2026</figcaption>
         </figure>
 
-        <figure class="video-item">
-            <div class="video-wrapper" onclick="loadVideo(this)" data-video="Obl5Lb9q7XQ">
+        <figure class="videos-page-item">
+            <div class="videos-page-wrapper" onclick="loadVideo(this)" data-video="Obl5Lb9q7XQ">
                 <img src="https://img.youtube.com/vi/Obl5Lb9q7XQ/hqdefault.jpg" alt="Makar Sankranti Assembly by Class 7">
             </div>
             <figcaption>Makar Sankranti Assembly by Class 7, 14th January 2026</figcaption>
         </figure>
 
-        <figure class="video-item">
-            <div class="video-wrapper" onclick="loadVideo(this)" data-video="CnecjkzddkQ">
+        <figure class="videos-page-item">
+            <div class="videos-page-wrapper" onclick="loadVideo(this)" data-video="CnecjkzddkQ">
                 <img src="https://img.youtube.com/vi/CnecjkzddkQ/hqdefault.jpg" alt="Sitar Performance by Class 9">
             </div>
             <figcaption>Sitar Performance by Class 9, 9th January 2026</figcaption>
         </figure>
 
-        <figure class="video-item">
-            <div class="video-wrapper" onclick="loadVideo(this)" data-video="mHJ_fxARq4M">
+        <figure class="videos-page-item">
+            <div class="videos-page-wrapper" onclick="loadVideo(this)" data-video="mHJ_fxARq4M">
                 <img src="https://img.youtube.com/vi/mHJ_fxARq4M/hqdefault.jpg" alt="Marathi Play by Class 4">
             </div>
             <figcaption>Marathi Play by Class 4, 2nd January 2026</figcaption>
         </figure>
 
-        <figure class="video-item">
-            <div class="video-wrapper" onclick="loadVideo(this)" data-video="__tZje9ac2s">
+        <figure class="videos-page-item">
+            <div class="videos-page-wrapper" onclick="loadVideo(this)" data-video="__tZje9ac2s">
                 <img src="https://img.youtube.com/vi/__tZje9ac2s/hqdefault.jpg" alt="Music Assembly">
             </div>
             <figcaption>Music Assembly, 29th December 2025</figcaption>
         </figure>
 
-        <figure class="video-item">
-            <div class="video-wrapper" onclick="loadVideo(this)" data-video="yrDStgogQXU">
+        <figure class="videos-page-item">
+            <div class="videos-page-wrapper" onclick="loadVideo(this)" data-video="yrDStgogQXU">
                 <img src="https://img.youtube.com/vi/yrDStgogQXU/hqdefault.jpg" alt="Assembly by Vocal Student">
             </div>
             <figcaption>Assembly by Vocal Student, 6th December 2025</figcaption>
         </figure>
 
-        <figure class="video-item">
-            <div class="video-wrapper" onclick="loadVideo(this)" data-video="i1QVFCgJXNs">
+        <figure class="videos-page-item">
+            <div class="videos-page-wrapper" onclick="loadVideo(this)" data-video="i1QVFCgJXNs">
                 <img src="https://img.youtube.com/vi/i1QVFCgJXNs/hqdefault.jpg" alt="Class 10 Play O Captain My Captain">
             </div>
             <figcaption>Class 10 Play "O Captain, My Captain", 30th August 2025</figcaption>
         </figure>
 
-        <figure class="video-item">
-            <div class="video-wrapper" onclick="loadVideo(this)" data-video="cn3509apTVI">
+        <figure class="videos-page-item">
+            <div class="videos-page-wrapper" onclick="loadVideo(this)" data-video="cn3509apTVI">
                 <img src="https://img.youtube.com/vi/cn3509apTVI/hqdefault.jpg" alt="Sitar Performance by Class 12">
             </div>
             <figcaption>Sitar Performance by Class 12, 23rd August 2025</figcaption>
         </figure>
 
-        <figure class="video-item">
-            <div class="video-wrapper" onclick="loadVideo(this)" data-video="usXoO01skhs">
+        <figure class="videos-page-item">
+            <div class="videos-page-wrapper" onclick="loadVideo(this)" data-video="usXoO01skhs">
                 <img src="https://img.youtube.com/vi/usXoO01skhs/hqdefault.jpg" alt="Performing Art - Tabla">
             </div>
             <figcaption>Performing Art - Tabla, 21st August 2025</figcaption>
         </figure>
 
-        <figure class="video-item">
-            <div class="video-wrapper" onclick="loadVideo(this)" data-video="ygj32W4sj2E">
+        <figure class="videos-page-item">
+            <div class="videos-page-wrapper" onclick="loadVideo(this)" data-video="ygj32W4sj2E">
                 <img src="https://img.youtube.com/vi/ygj32W4sj2E/hqdefault.jpg" alt="Bharatanatyam and Kathak Dance Performance">
             </div>
             <figcaption>Bharatanatyam and Kathak Dance Performance, 13th August 2025</figcaption>
         </figure>
 
-        <figure class="video-item">
-            <div class="video-wrapper" onclick="loadVideo(this)" data-video="HD3EPAhiQV0">
+        <figure class="videos-page-item">
+            <div class="videos-page-wrapper" onclick="loadVideo(this)" data-video="HD3EPAhiQV0">
                 <img src="https://img.youtube.com/vi/HD3EPAhiQV0/hqdefault.jpg" alt="Cultural Event - Jaltarang by Pt Milind">
             </div>
             <figcaption>Cultural Event - Jaltarang by Pt Milind, 9th August 2025</figcaption>
         </figure>
 
-        <figure class="video-item">
-            <div class="video-wrapper" onclick="loadVideo(this)" data-video="2a8wG0gDRV8">
+        <figure class="videos-page-item">
+            <div class="videos-page-wrapper" onclick="loadVideo(this)" data-video="2a8wG0gDRV8">
                 <img src="https://img.youtube.com/vi/2a8wG0gDRV8/hqdefault.jpg" alt="Marathi Music Assembly by Classes 5 and 6">
             </div>
             <figcaption>Marathi Music Assembly by Classes 5 &amp; 6, 5th August 2025</figcaption>
         </figure>
 
-        <figure class="video-item">
-            <div class="video-wrapper" onclick="loadVideo(this)" data-video="AY7zaDn7RCo">
+        <figure class="videos-page-item">
+            <div class="videos-page-wrapper" onclick="loadVideo(this)" data-video="AY7zaDn7RCo">
                 <img src="https://img.youtube.com/vi/AY7zaDn7RCo/hqdefault.jpg" alt="Class 11 Play">
             </div>
             <figcaption>Class 11 Play, 26th July 2025</figcaption>
         </figure>
 
-        <figure class="video-item">
-            <div class="video-wrapper" onclick="loadVideo(this)" data-video="2ZmZCpq9y0M">
+        <figure class="videos-page-item">
+            <div class="videos-page-wrapper" onclick="loadVideo(this)" data-video="2ZmZCpq9y0M">
                 <img src="https://img.youtube.com/vi/2ZmZCpq9y0M/hqdefault.jpg" alt="Freshers Eve">
             </div>
             <figcaption>Freshers Eve, 12th July 2025</figcaption>
         </figure>
 
-        <figure class="video-item">
-            <div class="video-wrapper" onclick="loadVideo(this)" data-video="6rLuDnX8FDA">
+        <figure class="videos-page-item">
+            <div class="videos-page-wrapper" onclick="loadVideo(this)" data-video="6rLuDnX8FDA">
                 <img src="https://img.youtube.com/vi/6rLuDnX8FDA/hqdefault.jpg" alt="Miya Tansen">
             </div>
             <figcaption>Miya Tansen, 28th June 2025</figcaption>
         </figure>
 
-        <figure class="video-item">
-            <div class="video-wrapper" onclick="loadVideo(this)" data-video="xgelWzEUYPA">
+        <figure class="videos-page-item">
+            <div class="videos-page-wrapper" onclick="loadVideo(this)" data-video="xgelWzEUYPA">
                 <img src="https://img.youtube.com/vi/xgelWzEUYPA/hqdefault.jpg" alt="Assembly">
             </div>
             <figcaption>Assembly, 21st March 2025</figcaption>
         </figure>
 
-        <figure class="video-item">
-            <div class="video-wrapper" onclick="loadVideo(this)" data-video="-bvpjpW-FOo">
+        <figure class="videos-page-item">
+            <div class="videos-page-wrapper" onclick="loadVideo(this)" data-video="-bvpjpW-FOo">
                 <img src="https://img.youtube.com/vi/-bvpjpW-FOo/hqdefault.jpg" alt="Hindi Play">
             </div>
             <figcaption>Hindi Play, 15th March 2025</figcaption>
@@ -369,7 +245,7 @@ subtitle: Click on the thumbnail to watch
         document.querySelectorAll('.sub-nav-list li').forEach(li => li.classList.remove('active'));
         activeEl?.classList.add('active');
 
-        const all = Array.from(document.querySelectorAll('.video-item'));
+        const all = Array.from(document.querySelectorAll('.videos-page-item'));
         const matched = all.filter(el => el.dataset.academicYear === year);
 
         // Hide all items, then unhide the first page chunk of matched items
@@ -381,7 +257,7 @@ subtitle: Click on the thumbnail to watch
 
     /**
      * Replaces thumbnail container with autoplay YouTube iframe embed
-     * @param {HTMLElement} container - The clicked .video-wrapper element
+     * @param {HTMLElement} container - The clicked .videos-page-wrapper element
      */
     function loadVideo(container) {
         const videoId = container.dataset.video;
@@ -394,7 +270,7 @@ subtitle: Click on the thumbnail to watch
      * Scans videos, assigns metadata attributes, builds navigation, and initializes initial view
      */
     function initPage() {
-        const items = Array.from(document.querySelectorAll('.video-item'));
+        const items = Array.from(document.querySelectorAll('.videos-page-item'));
         const nav = document.getElementById('year-toc');
         const years = new Set();
 
