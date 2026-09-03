@@ -538,8 +538,15 @@ html { /* scroll-behavior removed to prevent unwanted auto-scroll on page load *
 }
 
 .album-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    /* Switched from CSS Grid to Flexbox: Grid's auto-fill tracks always
+       left-align an incomplete last row (e.g. a single leftover photo
+       sits at the far left instead of centered). Flexbox's
+       justify-content: center naturally centers any incomplete row,
+       and .album-item already had a flex-basis set below (previously
+       unused under Grid), confirming this was the original intent. */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 30px;
     max-width: 1200px;
     margin: 50px auto;
