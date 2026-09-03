@@ -1198,7 +1198,8 @@ html { /* scroll-behavior removed to prevent unwanted auto-scroll on page load *
    wins automatically.
    ============================================================ */
 
-.dark-mode .album-item figcaption {
+.dark-mode .album-item figcaption,
+.dark-mode .photos-album-item figcaption {
     color: #d5d5d5;
 }
 
