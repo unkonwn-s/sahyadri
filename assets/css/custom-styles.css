@@ -1959,3 +1959,119 @@ html { /* scroll-behavior removed to prevent unwanted auto-scroll on page load *
 .dark-mode .no-profiles-msg {
     color: #a0aec0;
 }
+
+
+/* ============================================================
+   30. YEAR/ALBUM SUB-NAVIGATION BAR (photos.html, videos.html)
+   Identical pill-tab design shared by both pages, moved from
+   their separate inline <style> blocks.
+   ============================================================ */
+
+.sub-nav-options {
+    width: 100%;
+    margin: 0 auto 3rem auto;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e2e8f0;
+    text-align: center;
+}
+
+.sub-nav-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+}
+
+.sub-nav-list li {
+    font-family: 'Amatic SC', cursive;
+    font-size: 2rem;
+    color: #718096;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    padding-bottom: 5px;
+    border-bottom: 3px solid transparent;
+}
+
+.sub-nav-list li:hover,
+.sub-nav-list li.active {
+    color: #5f745f;
+    border-bottom: 3px solid #5f745f;
+    font-weight: bold;
+}
+
+@media (max-width: 992px) {
+    .sub-nav-list { gap: 1.5rem; }
+}
+
+
+/* ============================================================
+   31. VIDEOS PAGE (videos.html)
+   Moved from videos.html's own inline <style> block. Renamed
+   with a videos-page- prefix since kfi.html separately uses the
+   plain .video-grid/.video-item/.video-wrapper classes (section
+   10) for a visually different design (padding-bottom aspect
+   ratio trick vs this page's modern aspect-ratio property) —
+   giving each its own name avoids one silently overriding the
+   other based on source order.
+   ============================================================ */
+
+.videos-page-container {
+    display: block;
+    width: 100%;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* Switched from CSS Grid to Flexbox: Grid's auto-fill tracks
+   always left-align an incomplete last row. Flexbox's
+   justify-content: center naturally centers any incomplete row
+   (same fix already applied to photos.html's album grid). */
+.videos-page-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+}
+
+.videos-page-item {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 280px;
+    max-width: 340px;
+    margin: 0;
+}
+
+.videos-page-wrapper {
+    display: block;
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #000;
+    cursor: pointer;
+}
+
+.videos-page-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.videos-page-item figcaption {
+    font-size: 1.1rem;
+    text-align: center;
+    margin-top: 8px;
+}
+
+@media (max-width: 992px) {
+    .videos-page-item {
+        flex-basis: 160px;
+    }
+}
