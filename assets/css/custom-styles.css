@@ -925,7 +925,7 @@ html { /* scroll-behavior removed to prevent unwanted auto-scroll on page load *
 
 .dark-mode,
 .dark-mode body {
-    background-color: #1a1a1a;
+    background-color: #222222;
     color: #e0e0e0;
 }
 
