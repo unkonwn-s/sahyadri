@@ -1599,3 +1599,363 @@ html { /* scroll-behavior removed to prevent unwanted auto-scroll on page load *
 .dark-mode .entry-date {
     color: #888;
 }
+
+
+/* ============================================================
+   29. PROFILES PAGE — DYNAMIC UI
+   Moved from profiles.html's own inline <style> block, which was
+   silently overriding the shared .toc-* dark-mode rules elsewhere
+   in this file (same class names, page's inline block loaded
+   later = always won). Renamed to a profile- prefix throughout
+   to prevent that collision from ever recurring. This is a
+   genuinely different TOC design from the newsletter/activities
+   one (button-based switching, not link navigation), so it's
+   correctly kept as its own separate set of rules, not merged.
+   ============================================================ */
+
+
+    /* ============================================================
+       2. PAGE WRAPPER
+       ============================================================
+       Outermost container for all page content. Kept display:block
+       to avoid accidental flex/grid conflicts with parent themes.
+    ============================================================ */
+    .profiles-page-container {
+      display: block !important;
+      width: 100% !important;
+      max-width: 100%;
+      margin: 0.5vw auto 30px auto;
+      padding: 0 !important;
+      box-sizing: border-box;
+    }
+
+
+    /* ============================================================
+       3. YEAR NAVIGATION BAR
+       ============================================================
+       Horizontal pill-style tab list rendered at the top of the
+       page. Each <li> represents one academic year pulled from
+       Jekyll profile front-matter. Active state is tracked via
+       the .active class toggled by filterAcademicYear().
+    ============================================================ */
+    .profile-sub-nav-options {
+      display: block !important;
+      width: 100% !important;
+      margin: 0 auto 2rem auto !important;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #e2e8f0;
+      text-align: center;
+    }
+
+    .profile-sub-nav-list {
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+      width: 100% !important;
+      gap: 2.5rem;
+      list-style: none !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      flex-wrap: wrap; /* wraps gracefully on narrow viewports */
+    }
+
+    .profile-sub-nav-list li {
+      font-family: 'Amatic SC', cursive !important;
+      font-size: 2rem !important;
+      color: #718096;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+      padding-bottom: 5px;
+      border-bottom: 3px solid transparent; /* placeholder so layout doesn't shift on active */
+    }
+
+    /* Hover and active states share the same green-grey accent colour */
+    .profile-sub-nav-list li:hover,
+    .profile-sub-nav-list li.active {
+      color: #5f745f !important;
+      border-bottom: 3px solid #5f745f;
+      font-weight: bold;
+    }
+
+
+    /* ============================================================
+       4. TWO-COLUMN LAYOUT
+       ============================================================
+       .profiles-layout-wrapper   — flex row: sidebar + content
+       .profile-toc-sidebar               — sticky left column (240px)
+       .profile-toc-card                  — white card housing the TOC
+       .profiles-content          — grows to fill remaining width
+    ============================================================ */
+    .profiles-layout-wrapper {
+      display: flex;
+      gap: 2rem;
+      width: 100%;
+      align-items: flex-start;
+      padding: 0 15px;
+      box-sizing: border-box;
+    }
+
+    /* Sidebar stays visible while user scrolls through cards */
+    .profile-toc-sidebar {
+      width: 240px;
+      flex-shrink: 0;
+      position: sticky;
+      top: 20px;
+    }
+
+    .profile-toc-card {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
+
+    .profile-toc-title {
+      font-size: 1.4rem;
+      font-weight: bold;
+      margin-top: 0;
+      margin-bottom: 1rem;
+      color: #2d3748;
+      border-bottom: 2px solid #5f745f;
+      padding-bottom: 0.5rem;
+    }
+
+    .profile-toc-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .profile-toc-list li {
+      margin-bottom: 0.5rem;
+    }
+
+    /*
+      Each TOC entry is a <button> (not a link) because clicking
+      it swaps the visible panel in-place rather than navigating.
+    */
+    .profile-toc-list button {
+      background: none;
+      border: none;
+      font-size: 1.75rem;
+      cursor: pointer;
+      text-align: left;
+      width: 100%;
+      transition: all 0.2s ease;
+      outline: none;
+    }
+
+    /* Active/hovered TOC button highlights green-grey */
+    .profile-toc-list button:hover,
+    .profile-toc-list button.active {
+      color: #5f745f;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+
+    /* The right-hand content area grows to fill remaining space */
+    .profiles-content {
+      flex-grow: 1;
+      width: 100%;
+    }
+
+
+    /* ============================================================
+       5. GRADE SECTION PANELS
+       ============================================================
+       Each category (e.g. "Grade 12", "Teachers") is rendered as
+       a .grade-section. Only the one with .active is visible at
+       any time. Switching is handled by switchGradePane().
+    ============================================================ */
+
+    /* All panels hidden by default; JS adds .active to show one */
+    .grade-section {
+      display: none;
+      margin-bottom: 3rem;
+      animation: paneFadeIn 0.35s ease; /* subtle fade-in on reveal */
+    }
+
+    .grade-section.active {
+      display: block;
+    }
+
+    /* Section heading (e.g. "Grade 12") displayed above the card grid */
+    .profile-category-heading {
+      font-size: 2rem;
+      color: #2d3748;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+      text-transform: capitalize;
+    }
+
+    /* Fade-in keyframe used when a new panel becomes active */
+    @keyframes paneFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(4px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+
+    /* ============================================================
+       6. PROFILE CARD GRID
+       ============================================================
+       Cards use flex-wrap so they reflow naturally across widths.
+       Each card links to the individual profile page.
+    ============================================================ */
+    .profile-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0 !important;
+      justify-content: flex-start;
+      width: 100%;
+    }
+
+    /*
+      Cards flex between 340px min and 480px max. This means:
+        - 1 card per row on narrow containers
+        - 2–3 cards per row on wider containers
+    */
+    .profile-card {
+      flex: 1 1 340px;
+      max-width: 480px !important;
+      margin: 0 !important;
+      padding: 30px 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none !important; /* remove default link underline */
+      color: inherit !important;        /* inherit page text colour */
+      transition: transform 0.2s ease;
+      box-sizing: border-box;
+    }
+
+    /* Lift card slightly on hover to indicate clickability */
+    .profile-card:hover {
+      transform: translateY(-5px);
+    }
+
+    /* Circular image container — maintains 1:1 aspect ratio */
+    .profile-img-wrapper {
+      width: 85%;
+      max-width: 380px;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      border-radius: 50%;
+      border: 4px solid #c5d1c0;
+      margin-bottom: 18px;
+    }
+
+    .profile-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* crops image to fill circle without distortion */
+    }
+
+    .profile-card .profile-name {
+      font-size: 1.7rem !important;
+      font-weight: bold;
+      text-align: center;
+      margin: 4px 0 2px 0;
+      white-space: normal;
+    }
+
+    .profile-card .profile-role {
+      font-size: 1.15rem !important;
+      text-align: center;
+      color: #707070;
+      white-space: normal;
+    }
+
+    /* Shown when a year has no profiles assigned to it */
+    .no-profiles-msg {
+      color: #718096;
+      font-style: italic;
+      padding: 2rem 0;
+      text-align: center;
+    }
+
+
+    /* ============================================================
+       7. RESPONSIVE BREAKPOINTS
+       ============================================================
+       ≤991px  — sidebar moves above the card grid (stacked layout)
+       ≤480px  — each card takes full width (single-column grid)
+    ============================================================ */
+    @media (max-width: 991px) {
+      .profiles-layout-wrapper {
+        flex-direction: column; /* stack sidebar above content */
+      }
+
+      .profile-toc-sidebar {
+        width: 100%;
+        position: relative; /* un-stick: no room to stick beside stacked content */
+        top: 0;
+        margin-bottom: 2rem;
+      }
+
+      /* TOC buttons wrap horizontally on tablet/mobile */
+      .profile-toc-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .profile-toc-list li {
+        margin-bottom: 0;
+      }
+
+      /* Buttons shrink to auto width when wrapping horizontally */
+      .profile-toc-list button {
+        width: auto;
+      }
+    }
+
+    @media (max-width: 480px) {
+      /* Single-column card grid on small phones */
+      .profile-card {
+        flex: 0 0 100%;
+        max-width: 100% !important;
+        padding: 24px 12px;
+      }
+    }
+
+/* Dark mode — this is the fix that was silently ineffective before,
+   since profiles.html's own inline .toc-card etc. was overriding it. */
+.dark-mode .profile-toc-card {
+    background: #2a2f28;
+    border-color: #444;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+.dark-mode .profile-toc-title {
+    color: #e8f3df;
+}
+.dark-mode .profile-toc-list button {
+    color: #cfd8cc;
+}
+.dark-mode .profile-toc-list button:hover,
+.dark-mode .profile-toc-list button.active {
+    color: #ffffff;
+}
+.dark-mode .profile-sub-nav-options {
+    border-bottom-color: #444;
+}
+.dark-mode .profile-sub-nav-list li {
+    color: #a0aec0;
+}
+.dark-mode .profile-category-heading {
+    color: #e8f3df;
+    border-bottom-color: #444;
+}
+.dark-mode .profile-card .profile-role {
+    color: #a0aec0;
+}
+.dark-mode .no-profiles-msg {
+    color: #a0aec0;
+}
