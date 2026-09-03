@@ -624,35 +624,6 @@ html { /* scroll-behavior removed to prevent unwanted auto-scroll on page load *
     object-fit: cover;
 }
 
-.play-button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 70px;
-    height: 70px;
-    background-color: rgba(0,0,0,0.7);
-    border: 3px solid #fff;
-    border-radius: 50%;
-    transition: all 0.3s ease;
-    z-index: 2;
-}
-.play-button::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 55%;
-    transform: translate(-50%, -50%);
-    border-style: solid;
-    border-width: 15px 0 15px 25px;
-    border-color: transparent transparent transparent #fff;
-}
-.video-wrapper:hover .play-button {
-    background-color: #ff0000;
-    border-color: #ff0000;
-    transform: translate(-50%, -50%) scale(1.1);
-}
-
 .video-item figcaption {
     margin-top: 15px;
     text-align: center;
