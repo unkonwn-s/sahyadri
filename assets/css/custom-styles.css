@@ -880,32 +880,6 @@ html { /* scroll-behavior removed to prevent unwanted auto-scroll on page load *
 
 
 /* ============================================================
-   15. BREADCRUMBS (post.html, events.html, profile.html)
-   ============================================================ */
-
-.breadcrumbs {
-    font-family: 'Poiret One', system-ui, sans-serif;
-    font-size: 0.9rem;
-    color: #6d6d6d;
-    margin: 4px 0 12px 0;
-}
-.breadcrumbs a {
-    color: #5f745f;
-    text-decoration: none;
-}
-.breadcrumbs a:hover {
-    text-decoration: underline;
-}
-.breadcrumb-sep {
-    margin: 0 6px;
-    color: #b0b0b0;
-}
-.breadcrumb-current {
-    color: #404040;
-    font-weight: 500;
-}
-
-/* ============================================================
    16. SEARCH NO-RESULTS MESSAGE
    ============================================================ */
 
