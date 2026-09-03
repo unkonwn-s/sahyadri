@@ -58,10 +58,15 @@ subtitle: Click on thumbnail to open the album
         font-weight: bold;
     }
 
-    /* CSS Grid layout for album cards (responsive columns) */
+    /* Flexbox layout for album cards (responsive columns).
+       Switched from CSS Grid: Grid's auto-fill tracks always
+       left-align an incomplete last row (e.g. a single leftover
+       photo sits at the far left instead of centered). Flexbox's
+       justify-content: center naturally centers any incomplete row. */
     .album-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         gap: 30px;
         width: 100%;
     }
@@ -70,6 +75,8 @@ subtitle: Click on thumbnail to open the album
     .album-item {
         display: flex;
         flex-direction: column;
+        flex: 1 1 280px;
+        max-width: 340px;
         margin: 0;
     }
 
@@ -119,8 +126,10 @@ subtitle: Click on thumbnail to open the album
     @media (max-width: 992px) {
         .sub-nav-list { gap: 1.5rem; }
 
+        .album-item {
+            flex-basis: 160px;
+        }
         .album-grid {
-            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
             gap: 15px;
         }
     }
