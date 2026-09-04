@@ -3,7 +3,7 @@ layout: post
 title: "INTERVIEW WITH VEERARAGHAV"
 date: 2026-09-04
 subtitle: "Swara (Class 12)"
-category: August 2026
+category: September 2026
 ---
 In June 2026, Riddhim and I had the opportunity to interview Mr. Veeraraghav, the Executive Editor at NDTV, a journalist who has spent multiple years reporting on politics and events across India. He has covered elections, conflicts, riots, and a wide range of such stories from across the country.
 Mr. Veeraraghav has a BA and MA in Economics; however, he wanted to work in a field that involved writing and communication. “I love exploring, travelling, and have an inclination towards understanding India’s politics,” he told us. Journalism gave him the chance to do all three. Through his work, he has travelled extensively across India and met people from various backgrounds.
