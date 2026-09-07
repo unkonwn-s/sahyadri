@@ -200,7 +200,11 @@ subtitle: Select a profile to view more details
       data-name      — profile title (escaped)
       data-url       — relative URL to the profile's detail page
       data-role      — profile subtitle/role (escaped)
-      data-image     — Google Drive CDN URL or default avatar path
+      data-image     — Google Drive CDN URL (real photo, or light-mode
+                       default avatar if none is set)
+      data-image-dark — same URL as data-image if a real photo is set,
+                       otherwise a DIFFERENT dark-mode-specific default
+                       avatar (toggled via CSS based on .dark-mode)
     ============================================================
   -->
   <div id="raw-profiles-data-store" style="display: none !important;">
@@ -231,7 +235,8 @@ subtitle: Select a profile to view more details
            data-name="{{ profile.title | escape }}"
            data-url="{{ profile.url | relative_url }}"
            data-role="{{ profile.subtitle | escape }}"
-           data-image="https://lh3.googleusercontent.com/d/{{ profile.profile-image | default: "15F3zvUZKOGAhxKUJhJIhqU4Ve_BGUDnG" }}">
+           data-image="https://lh3.googleusercontent.com/d/{{ profile.profile-image | default: "15F3zvUZKOGAhxKUJhJIhqU4Ve_BGUDnG" }}"
+           data-image-dark="https://lh3.googleusercontent.com/d/{{ profile.profile-image | default: "1NXUNmtv7oEJs0gj_V8hyu4XNnp6AQhOn" }}">
       </div>
 
     {% endfor %}
