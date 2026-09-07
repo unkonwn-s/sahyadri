@@ -3,6 +3,7 @@ layout: post
 title: "MEDICAL OUTREACH"
 date: 2026-09-04
 subtitle: "Reshma Shah"
+profile-link: "https://www.sahyadrischool.org/dr-reshma-shah/"
 category: September 2026
 ---
 Story telling and music listening for the baby in womb 
