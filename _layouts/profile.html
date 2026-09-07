@@ -34,11 +34,24 @@ layout: base
       <div class="profile-header row align-items-center mb-4">
         
         <div class="col-6 col-md-3 text-center text-md-start">
-          {% assign profile_img_id = page.profile-image | default: "15F3zvUZKOGAhxKUJhJIhqU4Ve_BGUDnG" %}
+          {% comment %}
+            When page.profile-image is set, both light/dark resolve to the
+            SAME real photo (shown regardless of theme). When it's not set,
+            they resolve to DIFFERENT fallback IDs, so the default avatar
+            itself changes to match light/dark mode — toggled via the CSS
+            classes below, same pattern as the rest of the site's dark mode.
+          {% endcomment %}
+          {% assign profile_img_id_light = page.profile-image | default: "15F3zvUZKOGAhxKUJhJIhqU4Ve_BGUDnG" %}
+          {% assign profile_img_id_dark = page.profile-image | default: "1NXUNmtv7oEJs0gj_V8hyu4XNnp6AQhOn" %}
           <img
-            src="https://lh3.googleusercontent.com/d/{{ profile_img_id }}"
+            src="https://lh3.googleusercontent.com/d/{{ profile_img_id_light }}"
             alt="{{ page.title }}"
-            class="img-fluid rounded-circle profile-pic"
+            class="img-fluid rounded-circle profile-pic profile-pic-light"
+          >
+          <img
+            src="https://lh3.googleusercontent.com/d/{{ profile_img_id_dark }}"
+            alt="{{ page.title }}"
+            class="img-fluid rounded-circle profile-pic profile-pic-dark"
           >
         </div>
 
