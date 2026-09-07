@@ -1813,8 +1813,11 @@ html { /* scroll-behavior removed to prevent unwanted auto-scroll on page load *
         - 2–3 cards per row on wider containers
     */
     .profile-card {
-      flex: 1 1 340px;
-      max-width: 480px !important;
+      /* Increased min-basis from 340px so fewer, larger cards fit per
+         row on average, which also enlarges the avatar circle inside
+         (sized as a percentage of the card's own width). */
+      flex: 1 1 420px;
+      max-width: 560px !important;
       margin: 0 !important;
       padding: 30px 16px;
       display: flex;
@@ -1833,8 +1836,8 @@ html { /* scroll-behavior removed to prevent unwanted auto-scroll on page load *
 
     /* Circular image container — maintains 1:1 aspect ratio */
     .profile-img-wrapper {
-      width: 85%;
-      max-width: 380px;
+      width: 90%;
+      max-width: 460px;
       aspect-ratio: 1 / 1;
       overflow: hidden;
       border-radius: 50%;
