@@ -322,7 +322,15 @@ a.navbar-brand:hover {
    No upstream conflicts — no !important needed.
    ============================================================ */
 
-html { /* scroll-behavior removed to prevent unwanted auto-scroll on page load */ }
+/* scroll-behavior: smooth — re-enabled sitewide. The earlier unwanted
+   auto-scroll-on-page-load bug was actually caused by a JS function
+   (kfi.html's switchAcademicYear) calling scrollIntoView()
+   unconditionally on DOMContentLoaded, not by this CSS property itself.
+   That JS call is now gated behind `if (evt)` so it only fires on real
+   user clicks — safe to restore smooth scrolling for all anchor-link
+   navigation (TOC category links, back-to-top links, tag links, etc.)
+   across the site. */
+html { scroll-behavior: smooth; }
 
 .post-entry-container {
     display: flex;
