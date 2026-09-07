@@ -2,7 +2,7 @@
 layout: post
 title: "SESSIONS WITH GESHE TENZIN DAMCHOE"
 date: 2026-09-04
-subtitle: "Sahityaa (Class 12)"
+subtitle: "Sahityaa Gaded (Class 12)"
 category: September 2026
 image: "1pgMeyLIqYBlX_W6L0r5ORGzDR2kT8JlU"
 ---
