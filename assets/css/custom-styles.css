@@ -1684,10 +1684,18 @@ html { /* scroll-behavior removed to prevent unwanted auto-scroll on page load *
     }
 
     .profile-toc-title {
-      font-size: 1.4rem;
+      /* !important needed: the global h2 rule (section 1 typography)
+         also uses !important with a much larger clamp()-based font-size
+         and its own margin-top/bottom. Without !important here, that
+         global rule wins (class selectors don't beat !important on a
+         plain element selector), causing "Categories" to render huge
+         and wrap to two lines in the narrow 240px sidebar. This bug
+         pre-dates the profiles.html CSS migration — it was present
+         in the original inline <style> block too, just never fixed. */
+      font-size: 1.4rem !important;
       font-weight: bold;
-      margin-top: 0;
-      margin-bottom: 1rem;
+      margin-top: 0 !important;
+      margin-bottom: 1rem !important;
       color: #2d3748;
       border-bottom: 2px solid #5f745f;
       padding-bottom: 0.5rem;
