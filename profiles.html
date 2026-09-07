@@ -267,7 +267,8 @@ subtitle: Select a profile to view more details
       name:     el.getAttribute('data-name'),
       url:      el.getAttribute('data-url'),
       role:     el.getAttribute('data-role'),
-      image:    el.getAttribute('data-image')
+      image:    el.getAttribute('data-image'),
+      imageDark: el.getAttribute('data-image-dark')
     }));
 
     /*
@@ -429,7 +430,8 @@ subtitle: Select a profile to view more details
 
           card.innerHTML = `
             <div class="profile-img-wrapper">
-              <img src="${p.image}" alt="${p.name}" loading="lazy">
+              <img src="${p.image}" alt="${p.name}" loading="lazy" class="profile-pic-light">
+              <img src="${p.imageDark}" alt="${p.name}" loading="lazy" class="profile-pic-dark">
             </div>
             <div class="profile-name">${p.name}</div>
             ${roleMarkup}
