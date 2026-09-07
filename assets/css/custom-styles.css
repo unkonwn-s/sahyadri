@@ -1675,30 +1675,31 @@ html { /* scroll-behavior removed to prevent unwanted auto-scroll on page load *
       top: 20px;
     }
 
+    /* Sage-green card matching the Newsletter/Activities TOC look
+       (.toc-card), instead of the previous plain white box. */
     .profile-toc-card {
-      background: #fff;
-      border: 1px solid #e2e8f0;
-      border-radius: 8px;
-      padding: 1.5rem;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      background: #BDCDC0;
+      border: none;
+      border-radius: 12px;
+      padding: 25px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     }
 
     .profile-toc-title {
       /* !important needed: the global h2 rule (section 1 typography)
          also uses !important with a much larger clamp()-based font-size
-         and its own margin-top/bottom. Without !important here, that
-         global rule wins (class selectors don't beat !important on a
-         plain element selector), causing "Categories" to render huge
-         and wrap to two lines in the narrow 240px sidebar. This bug
-         pre-dates the profiles.html CSS migration — it was present
-         in the original inline <style> block too, just never fixed. */
-      font-size: 1.4rem !important;
-      font-weight: bold;
-      margin-top: 0 !important;
-      margin-bottom: 1rem !important;
-      color: #2d3748;
-      border-bottom: 2px solid #5f745f;
-      padding-bottom: 0.5rem;
+         and its own margin-top/bottom — without !important here, that
+         global rule would win instead. Styling now matches the
+         Newsletter/Activities TOC title (.toc-title): Amatic SC font,
+         uppercase, dark underline. */
+      font-family: 'Amatic SC', cursive !important;
+      font-size: clamp(2rem, 1.5rem + 1.5vw, 3.5rem) !important;
+      font-weight: bold !important;
+      margin: 0 0 15px 0 !important;
+      color: #404040 !important;
+      border-bottom: 2px solid #000000;
+      padding-bottom: 10px;
+      text-transform: uppercase;
     }
 
     .profile-toc-list {
@@ -1715,10 +1716,15 @@ html { /* scroll-behavior removed to prevent unwanted auto-scroll on page load *
       Each TOC entry is a <button> (not a link) because clicking
       it swaps the visible panel in-place rather than navigating.
     */
+    /* Font-matched to the Newsletter/Activities TOC list (.toc-list a):
+       Amatic SC, bold, same dark color. */
     .profile-toc-list button {
       background: none;
       border: none;
-      font-size: 1.75rem;
+      font-family: 'Amatic SC', cursive !important;
+      font-weight: bold !important;
+      font-size: clamp(1.2rem, 0.8rem + 1vw, 2.2rem) !important;
+      color: #404040 !important;
       cursor: pointer;
       text-align: left;
       width: 100%;
@@ -1729,7 +1735,7 @@ html { /* scroll-behavior removed to prevent unwanted auto-scroll on page load *
     /* Active/hovered TOC button highlights green-grey */
     .profile-toc-list button:hover,
     .profile-toc-list button.active {
-      color: #5f745f;
+      color: #5f745f !important;
       font-weight: bold;
       text-decoration: underline;
     }
