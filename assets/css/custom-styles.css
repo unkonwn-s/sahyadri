@@ -2154,3 +2154,27 @@ html { scroll-behavior: smooth; }
     display: block;
     animation: fadeIn 0.4s ease;
 }
+
+
+/* ============================================================
+   34. LIGHT/DARK DEFAULT PROFILE PHOTO TOGGLE
+   Used on both the individual profile page (.profile-pic-light/
+   .profile-pic-dark) and the profiles grid (same classes inside
+   .profile-img-wrapper). Both images are always rendered in the
+   DOM; only one is shown at a time based on the .dark-mode class,
+   so switching the toggle updates instantly with no JS re-render
+   needed. Has no effect on profiles with a real photo set, since
+   both images resolve to the same URL in that case.
+   ============================================================ */
+
+.profile-pic-dark {
+    display: none;
+}
+
+.dark-mode .profile-pic-light {
+    display: none;
+}
+
+.dark-mode .profile-pic-dark {
+    display: block;
+}
