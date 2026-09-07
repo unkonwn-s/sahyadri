@@ -1944,14 +1944,18 @@ html { scroll-behavior: smooth; }
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 .dark-mode .profile-toc-title {
-    color: #e8f3df;
+    /* !important needed: the light-mode base rule also has !important
+       on color (added to match the Newsletter TOC's font/color styling),
+       so this override needs it too to actually win in dark mode. */
+    color: #e8f3df !important;
 }
 .dark-mode .profile-toc-list button {
-    color: #cfd8cc;
+    /* !important needed for the same reason as .profile-toc-title above */
+    color: #cfd8cc !important;
 }
 .dark-mode .profile-toc-list button:hover,
 .dark-mode .profile-toc-list button.active {
-    color: #ffffff;
+    color: #ffffff !important;
 }
 .dark-mode .profile-sub-nav-options {
     border-bottom-color: #444;
