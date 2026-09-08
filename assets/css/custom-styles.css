@@ -1015,6 +1015,12 @@ html { scroll-behavior: smooth; }
    19. PAGINATION BUTTONS (Previous Post / Next Post)
    ============================================================ */
 
+/* Small gap between the pagination row and the comment widget below it */
+.pagination.blog-pager,
+.pagination.main-pager {
+    margin-bottom: 30px;
+}
+
 .blog-pager .page-link,
 .main-pager .page-link {
     font-family: 'Poiret One', system-ui, sans-serif;
