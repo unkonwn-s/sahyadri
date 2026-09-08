@@ -12,7 +12,7 @@
 layout: base
 ---
 
-<div class="intro-header default-header-accent"></div>
+{% unless page.hide-header-accent %}<div class="intro-header default-header-accent"></div>{% endunless %}
 
 <main class="{% if page.full-width %}container-fluid{% else %}container-md{% endif %}">
 
