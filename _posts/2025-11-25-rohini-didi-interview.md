@@ -8,6 +8,7 @@ category: November 2025
 image: "1j2nUEqjoW5XM_AtTaKuq_6v11D8DGyak"
 ---
 
+
 We sat down with Rohini Didi at the dining hall and saw, up close, the quiet devotion our didis and dadas put into our lives every single day and night. Their care, presence, and stories are the heartbeat of our community. To celebrate them and the bonds they help nurture, the newsletter will share interviews with these remarkable staff members—reminding us that every teacher, student, and staff member is part of this shared journey. Here’s the interview.
 
  “When did you join Sahyadri? What made you do so?”
@@ -33,7 +34,9 @@ Didi: “One evening, as the children returned the milk cans, they saw us workin
 “That was such a heartwarming story! How has the school impacted you, and what are you most grateful for?”
 
 Didi: “I hardly know where to begin. The school has supported us in countless ways, and I have grown so much here. During the COVID pandemic, when many lost their jobs, the school stood by us financially and ensured we remained employed.
+
 Living with the children brings me immense joy—their happiness is mine. This job means everything, especially as the sole breadwinner. My husband has had a fractured hand for over three years and cannot work, and we cannot afford his surgery. I manage the household on my earnings, though it has been hard—I even had to temporarily withdraw one of my children from school.
+
 I worry about the future when I can no longer work. My heartfelt hope is that the school might offer a retirement pension or annual salary increases. It would ease our burdens and give us security. I trust the school will hear this with compassion.”
 
  “Thank you for sharing your story with such honesty. Your dedication and resilience are deeply appreciated. We hear your concerns and are grateful for all that you do for the school and its children.”
