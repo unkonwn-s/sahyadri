@@ -2,7 +2,8 @@
 layout: post
 title: "Personal Safety Programme"
 date: 2026-09-04
-subtitle: "Mansi Dutt"
+subtitle: "Mansi Dutt (Teacher)"
+profile: https://www.sahyadrischool.org/mansi-dutt/
 category: September 2026
 ---
 Students of Grades 4, 5 and 6 recently engaged with a Personal Safety Programme using age-appropriate learning resources developed by Arpan, an Indian non-profit organisation that works towards the prevention of child sexual abuse through education and awareness.
