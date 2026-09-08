@@ -848,11 +848,6 @@ html { scroll-behavior: smooth; }
 }
 
 /* --- Default layout empty header accent (default.html) --- */
-.default-header-accent {
-    height: 6px;
-    background: linear-gradient(90deg, #5d6d5a, #BDCDC0);
-}
-
 /* --- Post preview cards (home.html) --- */
 .post-preview-card {
     background-color: #ffffff;
