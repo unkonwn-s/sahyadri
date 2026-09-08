@@ -4,7 +4,7 @@ title: "SESSION WITH GESHE TENZIN DAMCHOE"
 date: 2026-06-24
 subtitle: "Hridyansh"
 subtitle2: "Snehamoy"
-category: June 2025
+category: June 2026
 image: "1pgMeyLIqYBlX_W6L0r5ORGzDR2kT8JlU"
 ---
 Seeing a Tibetan monk on the Sahyadri campus was an amazing surprise, and I couldn't help but wonder what brought him to our school. Later that day, he had a session during our library class. He spoke about happiness and asked us whether we prefer having physical or mental happiness. We thought for a moment and realized that the things that make us happy are usually only about physical happiness.
