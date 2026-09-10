@@ -2,7 +2,7 @@
 layout: post
 title: "MEDICAL OUTREACH"
 date: 2026-09-04
-subtitle: "Reshma Shah"
+subtitle: "Reshma Shah (Teacher)"
 profile-link: "https://www.sahyadrischool.org/dr-reshma-shah/"
 category: September 2026
 ---
