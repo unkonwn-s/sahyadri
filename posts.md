@@ -161,7 +161,7 @@ permalink: /posts/
               {% comment %} Render post only if it falls within current academic year dates {% endcomment %}
               {% if post_date >= academic_start_date and post_date <= academic_end_date %}
                 {% assign group_count = group_count | plus: 1 %}
-                <article class="post-preview">
+                <article class="post-preview post-preview-card">
                   <!-- Post Title -->
                   <a href="{{ post.url | relative_url }}" style="text-decoration: none;">
                     <h3 class="post-title">{{ post.title }}</h3>
