@@ -204,7 +204,7 @@ title: "Activities"
               {% if post_date >= academic_start_date and post_date <= academic_end_date %}
                 {% assign current_group_count = current_group_count | plus: 1 %}
 
-                <article class="post-preview">
+                <article class="post-preview post-preview-card">
 
                   <!-- Post title — links to the full activity page -->
                   <a href="{{ post.url | relative_url }}" style="text-decoration: none;">
