@@ -31,19 +31,6 @@ title: "Activities"
     pinned    (optional) — set to true to pin the post to the top of its category
 -->
 
-<style>
-  /* CRITICAL: Global image display rules — page-specific since making this
-     truly site-wide (in custom-styles.css) could affect other pages' image
-     requirements. Everything else previously here has been consolidated
-     into custom-styles.css section 26, shared with posts.md. */
-  img {
-    display: inline-block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    max-width: 100%;
-    height: auto;
-  }
-</style>
 
 <!--
   year_blocks: pipe-separated list of academic year tokens rendered as tabs.
