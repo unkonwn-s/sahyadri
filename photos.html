@@ -11,19 +11,10 @@ subtitle: Click on thumbnail to open the album
      by videos.html), .photos-album-grid/.photos-album-item (section: PHOTOS
      PAGE, renamed with a photos-album- prefix since the shared .album-grid/
      .album-item classes are used elsewhere for a slightly different sizing),
-     and .load-more-container/.btn-load-more/.hidden-item (already existed
-     as shared utility classes). Only .photos-page-container remains here
-     since it's used by no other page. -->
-<style>
-    .photos-page-container {
-        display: block;
-        width: 100%;
-        max-width: 1200px;
-        margin: 30px auto;
-        padding: 0 20px;
-        box-sizing: border-box;
-    }
-</style>
+     .load-more-container/.btn-load-more/.hidden-item (already existed as
+     shared utility classes), and .photos-page-container (section 8; the
+     stale flex/sidebar version of this rule left over from an old layout
+     has been replaced there with this page's current block/centered style). -->
 
 <!-- Main Page HTML Markup Structure -->
 <div class="photos-page-container">
