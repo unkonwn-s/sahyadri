@@ -352,6 +352,19 @@ html { scroll-behavior: smooth; }
     transition: transform 0.3s ease;
 }
 
+/* Moved from activities.md/posts.md's own inline <style> blocks (identical
+   in both). Scoped to .newsletter-container rather than a bare `img`
+   selector, since a truly global img rule here could affect other pages'
+   image requirements (videos/photos/kfi/profiles all have their own
+   deliberate image handling). */
+.newsletter-container img {
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    max-width: 100%;
+    height: auto;
+}
+
 .category-heading {
     font-family: 'Amatic SC', sans-serif !important;
     font-weight: bold !important;
@@ -468,16 +481,22 @@ html { scroll-behavior: smooth; }
    No upstream conflicts — no !important needed.
    ============================================================ */
 
+/* Moved from photos.html's own inline <style> block. Note: this replaces
+   an older, unrelated flex/sidebar version of this same selector (plus a
+   .photos-content rule) left over from a previous page redesign — that
+   version's markup (.photos-content, a TOC sidebar here) no longer exists
+   on this page, so it was dead code sharing a name with this current,
+   unrelated single-column block layout. */
 .photos-page-container {
-    display: flex;
-    gap: 40px;
-    align-items: flex-start;
-    margin-top: 30px;
+    display: block;
+    width: 100%;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
-.photos-content { flex: 1; }
 
 @media (max-width: 992px) {
-    .photos-page-container { flex-direction: column; }
     .toc-sidebar {
         position: relative;
         top: 0;
