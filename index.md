@@ -1,6 +1,14 @@
 ---
 # FILE: index.md
-# PURPOSE: Homepage. Uses 'home' layout — hero section + post feed listing.
+# PURPOSE: Homepage. Uses 'page' layout — welcome text only, no feed.
+# NOTE: _layouts/home.html (a generic post-feed/pagination template from
+# the original theme) is unused by this or any other page, and predates
+# the site's current custom Newsletter/Activities pages (posts.md,
+# activities.md) — its field names (post.thumbnail-img, post.cover-img,
+# etc.) don't match how posts here are actually authored (image,
+# image_id, subtitle/subtitle2), and it depends on the jekyll-paginate
+# plugin, which the Gemfile explicitly excludes. Not safe to switch this
+# page to layout: home without reworking that template first.
 layout: page
 title: Sahyadri Connect
 subtitle: 
