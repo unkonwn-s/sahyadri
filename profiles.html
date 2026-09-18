@@ -2,6 +2,7 @@
 layout: page
 title: Profiles
 subtitle: Select a profile to view more details
+full-width: true
 ---
 
 <!--
@@ -43,7 +44,14 @@ subtitle: Select a profile to view more details
   CATEGORY WEIGHTING:
     Categories are sorted by a numeric weight so that higher
     grades appear first (Teachers=12 … Pre-School=1).
-    See the Liquid weight-assignment block in <body>.
+    See the Liquid weight-assignment block further down this file.
+
+  LAYOUT WIDTH:
+    Uses the front-matter flag `full-width: true`, which page.html's
+    layout reads to swap in .container-fluid/.col instead of the
+    default .container-md/.col-xl-8 offset-xl-2 — giving this page
+    the full viewport width it needs for the two-column layout, via
+    the theme's own supported mechanism (no CSS override needed).
 
   DEPENDENCIES:
     • Jekyll / Liquid templating (server-side)
@@ -52,38 +60,6 @@ subtitle: Select a profile to view more details
     • No external JS libraries required
   ============================================================
 -->
-
-<style>
-  /* NOTE: All other page-specific CSS previously here has been moved to
-     assets/css/custom-styles.css (section: PROFILES PAGE — DYNAMIC UI),
-     with classes renamed to a profile- prefix to avoid colliding with
-     similarly-named classes used elsewhere (e.g. the newsletter TOC,
-     photos/videos sub-nav). The two rules below CANNOT be globalized:
-     they override the standard Bootstrap .container-md/.col-xl-8/.col-lg-10
-     classes that EVERY other page's layout wrapper also uses — moving
-     these to the global stylesheet would make every page on the site
-     full-width, since Jekyll has no per-page body class to scope them
-     to just this page. They must stay here, page-local. */
-/* ============================================================
-       1. LAYOUT OVERRIDES — Beautiful Jekyll Theme Reset
-       ============================================================
-       The theme's .container-md and column offset classes restrict
-       content width. These overrides force full-width rendering
-       so our two-column layout can use the full viewport.
-    ============================================================ */
-    .container-md {
-      max-width: 100% !important;
-      padding: 0 !important;
-    }
-
-    /* Remove the theme's default column padding/offsets for this page */
-    .col-xl-8.offset-xl-2,
-    .col-lg-10.offset-lg-1 {
-      max-width: 100% !important;
-      margin-left: 0 !important;
-      flex: 0 0 100% !important;
-    }
-</style>
 
   <!--
     ============================================================
