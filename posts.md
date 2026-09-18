@@ -8,21 +8,6 @@ title: "Newsletter"
 permalink: /posts/
 ---
 
-<!-- Page-specific CSS for Tabbed Navigation & Newsletter Layout -->
-<style>
-  /* CRITICAL: Global image display rules — page-specific since making this
-     truly site-wide (in custom-styles.css) could affect other pages' image
-     requirements. Everything else previously here has been consolidated
-     into custom-styles.css section 26, shared with activities.md. */
-  img {
-    display: inline-block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    max-width: 100%;
-    height: auto;
-  }
-</style>
-
 {% comment %}
   -----------------------------------------------------------------------------
   STEP 1: Determine Unique Academic Years
