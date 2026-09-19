@@ -2227,6 +2227,7 @@ html, body {
 #comments-section {
     --sc-line: var(--navbar-border-col, #BBC4B4);
     --sc-muted: #767268;
+    --sc-active-bg: color-mix(in srgb, var(--navbar-col) 12%, var(--page-col));
 
     /* Full-bleed: break out of the parent column (e.g. .col-lg-8) so this
        spans the entire screen width edge-to-edge, regardless of how
@@ -2262,11 +2263,38 @@ html, body {
     margin-right: auto;
 }
 
-#comments-section h3 {
+/* --- Heading row: title + count + sort dropdown --- */
+.sc-heading-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1em;
+    flex-wrap: wrap;
+    margin-bottom: 1.1em;
+}
+
+.sc-heading-row h3 {
     font-family: var(--header-font);
     font-size: 1.6em;
-    margin: 0 0 1.1em;
+    margin: 0;
     color: var(--text-col);
+}
+
+.sc-count {
+    font-size: 0.6em;
+    font-family: var(--body-font);
+    color: var(--sc-muted);
+    margin-left: 0.3em;
+}
+
+.sc-sort-select {
+    font-family: var(--body-font);
+    font-size: 0.9rem;
+    border: 1px solid var(--sc-line);
+    background-color: var(--page-col);
+    color: var(--text-col);
+    padding: 0.4em 0.6em;
+    border-radius: 4px;
 }
 
 /* --- Auth row --- */
@@ -2298,6 +2326,11 @@ html, body {
 .sc-btn:disabled {
     opacity: 0.5;
     cursor: default;
+}
+
+.sc-btn-small {
+    padding: 5px 14px;
+    font-size: 0.85rem;
 }
 
 .sc-btn-ghost {
@@ -2332,7 +2365,7 @@ html, body {
     margin-bottom: 2.5em;
 }
 
-#comments-textarea {
+.sc-textarea {
     width: 100%;
     box-sizing: border-box;
     font-family: var(--body-font);
@@ -2346,13 +2379,25 @@ html, body {
     min-height: 5.5em;
 }
 
-#comments-textarea:focus {
+.sc-textarea:focus {
     outline: none;
     border-color: var(--hover-col);
 }
 
+.sc-char-count {
+    display: block;
+    text-align: right;
+    font-size: 0.8em;
+    color: var(--sc-muted);
+    margin-top: 0.3em;
+}
+
+.sc-char-count.sc-near-limit {
+    color: #b3552f;
+}
+
 #comments-form .sc-btn {
-    margin-top: 0.75em;
+    margin-top: 0.6em;
 }
 
 /* --- Feed --- */
@@ -2370,11 +2415,18 @@ html, body {
     margin: 0;
 }
 
+.sc-comment-thread {
+    border-bottom: 1px solid var(--sc-line);
+    padding: 1.3em 0;
+}
+
+.sc-comment-thread:last-child {
+    border-bottom: none;
+}
+
 .sc-comment {
     display: flex;
     gap: 0.9em;
-    padding: 1.3em 0;
-    border-bottom: 1px solid var(--sc-line);
 }
 
 .sc-avatar {
@@ -2417,9 +2469,14 @@ html, body {
     color: var(--text-col);
 }
 
-.sc-comment-time {
+.sc-comment-time,
+.sc-edited-tag {
     font-size: 0.78em;
     color: var(--sc-muted);
+}
+
+.sc-edited-tag {
+    font-style: italic;
 }
 
 .sc-comment-text {
@@ -2431,10 +2488,125 @@ html, body {
     word-wrap: break-word;
 }
 
+.sc-comment-text.sc-deleted-text {
+    font-style: italic;
+    color: var(--sc-muted);
+}
+
+/* --- Actions row: like, reactions, reply, edit, delete --- */
+.sc-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.4em;
+    margin-top: 0.7em;
+}
+
+.sc-like-btn,
+.sc-emoji-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35em;
+    font-family: var(--body-font);
+    font-size: 0.85em;
+    background-color: var(--page-col);
+    border: 1px solid var(--sc-line);
+    border-radius: 999px;
+    padding: 0.3em 0.7em;
+    color: var(--sc-muted);
+    cursor: pointer;
+    line-height: 1;
+    transition: border-color 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+}
+
+.sc-like-btn:hover,
+.sc-emoji-btn:hover {
+    border-color: var(--hover-col);
+}
+
+.sc-like-btn.sc-active {
+    background-color: var(--sc-active-bg);
+    border-color: var(--hover-col);
+    color: var(--navbar-col);
+}
+
+.sc-emoji-btn.sc-active {
+    background-color: var(--sc-active-bg);
+    border-color: var(--hover-col);
+    color: var(--text-col);
+}
+
+.sc-emoji-btn .sc-emoji-count,
+.sc-like-btn .sc-like-count {
+    font-size: 0.9em;
+    font-variant-numeric: tabular-nums;
+}
+
+.sc-text-btn {
+    background: none;
+    border: none;
+    padding: 0.3em 0.2em;
+    font-family: var(--body-font);
+    font-size: 0.85em;
+    color: var(--sc-muted);
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.sc-text-btn:hover {
+    color: var(--text-col);
+}
+
+/* --- Replies --- */
+.sc-replies {
+    margin-left: 3.1em;
+    margin-top: 0.9em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.sc-replies .sc-comment {
+    padding-top: 0.2em;
+}
+
+/* --- Inline reply composer --- */
+.sc-reply-compose {
+    margin-top: 0.8em;
+}
+
+.sc-reply-compose textarea {
+    width: 100%;
+    box-sizing: border-box;
+    font-family: var(--body-font);
+    font-size: 0.9em;
+    color: var(--text-col);
+    background-color: var(--page-col);
+    border: 1px solid var(--sc-line);
+    padding: 0.6em;
+    min-height: 4em;
+    resize: vertical;
+}
+
+.sc-reply-compose textarea:focus {
+    outline: none;
+    border-color: var(--hover-col);
+}
+
+.sc-reply-compose-actions {
+    margin-top: 0.5em;
+    display: flex;
+    gap: 0.5em;
+}
+
 @media (max-width: 480px) {
     #comments-auth {
         flex-direction: column;
         align-items: flex-start;
+    }
+    .sc-replies {
+        margin-left: 1.6em;
     }
 }
 
@@ -2443,11 +2615,13 @@ html, body {
     color: #e0e0e0;
     --sc-line: #3a4a3a;
     --sc-muted: #9a9a9a;
+    --sc-active-bg: #2a3d2a;
     background-color: #1f231e;
     border-top-color: #3a4a3a;
 }
 
-.dark-mode #comments-section h3 {
+.dark-mode #comments-section h3,
+.dark-mode .sc-comment-name {
     color: #e8f3df;
 }
 
@@ -2469,14 +2643,12 @@ html, body {
     color: #e0e0e0 !important;
 }
 
-.dark-mode #comments-textarea {
+.dark-mode .sc-textarea,
+.dark-mode .sc-reply-compose textarea,
+.dark-mode .sc-sort-select {
     background-color: #1a1a1a;
     color: #e0e0e0;
     border-color: #3a4a3a;
-}
-
-.dark-mode .sc-comment-name {
-    color: #e8f3df;
 }
 
 .dark-mode .sc-comment-text {
@@ -2485,5 +2657,26 @@ html, body {
 
 .dark-mode .sc-avatar {
     background-color: #3a5a3a;
+}
+
+.dark-mode .sc-like-btn,
+.dark-mode .sc-emoji-btn {
+    background-color: #1a1a1a;
+    border-color: #3a4a3a;
+}
+
+.dark-mode .sc-like-btn.sc-active,
+.dark-mode .sc-emoji-btn.sc-active {
+    background-color: #2a3d2a;
+    border-color: #5a8a5a;
+    color: #e8f3df;
+}
+
+.dark-mode .sc-text-btn {
+    color: #9a9a9a;
+}
+
+.dark-mode .sc-text-btn:hover {
+    color: #e0e0e0;
 }
 
