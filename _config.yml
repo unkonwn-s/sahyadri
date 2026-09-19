@@ -145,7 +145,7 @@ kramdown:
 # Comments — provider selection
 # "elfsight" (default) or "firebase". See _includes/comments.html.
 # -----------------------------------------------------------------------------
-comments-provider: "elfsight"
+comments-provider: "firebase"
 
 # -----------------------------------------------------------------------------
 # Comments (Elfsight Comments widget)
