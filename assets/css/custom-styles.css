@@ -2215,13 +2215,25 @@ html { scroll-behavior: smooth; }
    button follows the same solid-fill pill pattern as .tag-btn.
    ============================================================ */
 
+/* 100vw can be slightly wider than the visible viewport when a vertical
+   scrollbar is present, which the #comments-section full-bleed below
+   would otherwise turn into an unwanted page-level horizontal scrollbar.
+   Scoped to html/body only -- doesn't affect any inner scrollable element
+   (e.g. .academic-tabs still scrolls horizontally on its own). */
+html, body {
+    overflow-x: hidden;
+}
+
 #comments-section {
     --sc-line: var(--navbar-border-col, #BBC4B4);
     --sc-muted: #767268;
 
     /* Full-bleed: break out of the parent column (e.g. .col-lg-8) so this
        spans the entire screen width edge-to-edge, regardless of how
-       narrow the content column around it is. */
+       narrow the content column around it is. Direct children are then
+       centered to a readable max-width below, so text doesn't stretch
+       edge-to-edge unreadably on wide screens -- this section is a full
+       width *band*, not full-width *text*. */
     width: 100vw;
     max-width: 100vw;
     position: relative;
@@ -2230,18 +2242,30 @@ html { scroll-behavior: smooth; }
     margin-left: -50vw;
     margin-right: -50vw;
     margin-top: 3em;
-    margin-bottom: 2em;
-    padding: 0 20px;
+    margin-bottom: 0;
+    padding: 3em clamp(20px, 6vw, 80px) 3.5em;
     box-sizing: border-box;
+
+    background-color: #f4f6f2; /* fallback for browsers without color-mix() */
+    background-color: color-mix(in srgb, var(--navbar-col) 6%, var(--page-col));
+    border-top: 1px solid var(--sc-line);
 
     font-family: var(--body-font);
     color: var(--text-col);
 }
 
+/* Center each direct child to a comfortable reading width within the
+   full-width band above. */
+#comments-section > * {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 #comments-section h3 {
     font-family: var(--header-font);
     font-size: 1.6em;
-    margin: 0 0 1em;
+    margin: 0 0 1.1em;
     color: var(--text-col);
 }
 
@@ -2417,15 +2441,14 @@ html { scroll-behavior: smooth; }
 /* --- Dark mode --- */
 .dark-mode #comments-section {
     color: #e0e0e0;
+    --sc-line: #3a4a3a;
+    --sc-muted: #9a9a9a;
+    background-color: #1f231e;
+    border-top-color: #3a4a3a;
 }
 
 .dark-mode #comments-section h3 {
     color: #e8f3df;
-}
-
-.dark-mode #comments-section {
-    --sc-line: #3a4a3a;
-    --sc-muted: #9a9a9a;
 }
 
 .dark-mode .sc-btn {
