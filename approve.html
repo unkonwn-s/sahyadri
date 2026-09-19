@@ -1,0 +1,209 @@
+---
+layout: null
+---
+<!-- FILE: approve.html — single-purpose comment moderation page, placed
+     at the repo root (same level as index.md). Reviews one comment (via
+     ?id=) and lets a signed-in moderator approve or reject it. Not a
+     dashboard, it only ever shows the one comment named in the link,
+     which is what firebase-comments.html's notifyModerator() emails out.
+     layout: null (like maintenance.html) since this is a standalone
+     utility page, not part of the site's normal nav/header/footer chrome,
+     and intentionally bypasses the maintenance-mode redirect (a moderator
+     needs to be able to approve comments even while the site itself is
+     in maintenance mode). Firebase config and the moderator email are
+     pulled from _config.yml, same as firebase-comments.html, rather than
+     duplicated here. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<title>Review comment — Sahyadri Connect</title>
+<style>
+  :root {
+    --sc-sage: #7C9473;
+    --sc-sage-dark: #5F7857;
+    --sc-ink: #2B2B28;
+    --sc-muted: #767268;
+    --sc-line: #E3E0D8;
+  }
+  body {
+    font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: #fafaf7;
+    color: var(--sc-ink);
+    margin: 0;
+    padding: 2em 1em;
+    display: flex;
+    justify-content: center;
+  }
+  .sc-card {
+    max-width: 520px;
+    width: 100%;
+    background: #fff;
+    border: 1px solid var(--sc-line);
+    padding: 2em;
+  }
+  h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 400;
+    font-size: 1.4em;
+    margin: 0 0 1em;
+  }
+  .sc-btn {
+    font-family: inherit;
+    font-size: 0.9em;
+    background: #fff;
+    color: var(--sc-ink);
+    border: 1px solid var(--sc-ink);
+    padding: 0.7em 1.5em;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  .sc-btn:hover { background: var(--sc-sage); border-color: var(--sc-sage); color: #fff; }
+  .sc-btn:disabled { opacity: 0.5; cursor: default; }
+  .sc-btn-approve { border-color: var(--sc-sage-dark); }
+  .sc-btn-approve:hover { background: var(--sc-sage-dark); border-color: var(--sc-sage-dark); }
+  .sc-btn-reject { color: #a33; border-color: #a33; }
+  .sc-btn-reject:hover { background: #a33; border-color: #a33; color: #fff; }
+  .sc-actions { display: flex; gap: 0.8em; margin-top: 1.5em; }
+  .sc-preview {
+    border: 1px solid var(--sc-line);
+    padding: 1em;
+    margin: 1em 0;
+    font-size: 0.95em;
+    line-height: 1.5;
+  }
+  .sc-preview .sc-meta { color: var(--sc-muted); font-size: 0.85em; margin-bottom: 0.5em; }
+  .sc-status { font-style: italic; color: var(--sc-muted); }
+  .sc-error { color: #a33; }
+  a { color: var(--sc-sage-dark); }
+</style>
+</head>
+<body>
+  <div class="sc-card">
+    <h1>Review comment</h1>
+    <div id="sc-app">
+      <p class="sc-status">Loading…</p>
+    </div>
+  </div>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
+    import {
+      getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged
+    } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
+    import {
+      getFirestore, doc, getDoc, updateDoc
+    } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
+
+    // Pulled from _config.yml, same as _includes/firebase-comments.html.
+    const firebaseConfig = {
+      apiKey: "{{ site.firebase-api-key }}",
+      authDomain: "{{ site.firebase-auth-domain }}",
+      projectId: "{{ site.firebase-project-id }}",
+      storageBucket: "{{ site.firebase-storage-bucket }}",
+      messagingSenderId: "{{ site.firebase-messaging-sender-id }}",
+      appId: "{{ site.firebase-app-id }}"
+    };
+
+    const MODERATOR_EMAIL = "{{ site.comments-moderator-email }}";
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+    const provider = new GoogleAuthProvider();
+
+    const appEl = document.getElementById("sc-app");
+    const params = new URLSearchParams(window.location.search);
+    const commentId = params.get("id");
+
+    if (!commentId) {
+      appEl.innerHTML = '<p class="sc-error">No comment specified. Open this page from the link in the notification email.</p>';
+    } else {
+      onAuthStateChanged(auth, (user) => {
+        if (!user) {
+          renderSignIn();
+        } else if (user.email !== MODERATOR_EMAIL) {
+          appEl.innerHTML = `<p class="sc-error">Signed in as ${escapeHtml(user.email)}, which isn't authorized to review comments.</p>`;
+        } else {
+          loadComment();
+        }
+      });
+    }
+
+    function renderSignIn() {
+      appEl.innerHTML = '<button class="sc-btn" id="sc-signin">Sign in with Google to review</button>';
+      document.getElementById("sc-signin").addEventListener("click", () => {
+        signInWithPopup(auth, provider).catch((err) => {
+          console.error(err);
+          appEl.innerHTML = '<p class="sc-error">Sign-in failed. Please try again.</p>';
+        });
+      });
+    }
+
+    async function loadComment() {
+      appEl.innerHTML = '<p class="sc-status">Loading comment…</p>';
+      try {
+        const snap = await getDoc(doc(db, "comments", commentId));
+        if (!snap.exists()) {
+          appEl.innerHTML = '<p class="sc-error">This comment no longer exists.</p>';
+          return;
+        }
+        const data = snap.data();
+        if (data.deleted) {
+          appEl.innerHTML = '<p class="sc-status">This comment has already been rejected/deleted.</p>';
+          return;
+        }
+        if (data.approved) {
+          appEl.innerHTML = '<p class="sc-status">This comment is already approved and live.</p>';
+          return;
+        }
+        renderReview(data);
+      } catch (err) {
+        console.error(err);
+        appEl.innerHTML = '<p class="sc-error">Could not load this comment.</p>';
+      }
+    }
+
+    function renderReview(data) {
+      const safeName = escapeHtml(data.name || "Anonymous");
+      const safeText = escapeHtml(data.text || "");
+      const safeUrl = escapeHtml(data.pageUrl || "");
+      appEl.innerHTML = `
+        <div class="sc-preview">
+          <div class="sc-meta"><strong>${safeName}</strong> on <a href="${safeUrl}" target="_blank" rel="noopener">${safeUrl}</a></div>
+          <div>${safeText}</div>
+        </div>
+        <div class="sc-actions">
+          <button class="sc-btn sc-btn-approve" id="sc-approve">✅ Approve</button>
+          <button class="sc-btn sc-btn-reject" id="sc-reject">🗑 Reject</button>
+        </div>
+      `;
+      document.getElementById("sc-approve").addEventListener("click", () => decide(true));
+      document.getElementById("sc-reject").addEventListener("click", () => decide(false));
+    }
+
+    async function decide(approve) {
+      appEl.querySelectorAll("button").forEach((b) => (b.disabled = true));
+      try {
+        if (approve) {
+          await updateDoc(doc(db, "comments", commentId), { approved: true });
+          appEl.innerHTML = '<p class="sc-status">✅ Approved — it\'s now live on the site.</p>';
+        } else {
+          await updateDoc(doc(db, "comments", commentId), { deleted: true });
+          appEl.innerHTML = '<p class="sc-status">🗑 Rejected — it will not be shown.</p>';
+        }
+      } catch (err) {
+        console.error(err);
+        appEl.innerHTML = '<p class="sc-error">Could not save your decision. Please try again.</p>';
+      }
+    }
+
+    function escapeHtml(str) {
+      const div = document.createElement("div");
+      div.textContent = str;
+      return div.innerHTML;
+    }
+  </script>
+</body>
+</html>
