@@ -10,7 +10,16 @@
      Moderation email notifications (comments-moderator-email /
      emailjs-*) are optional, if unset, new comments are still queued
      with approved:false but no notification email is sent; you'd need
-     to approve them manually in the Firestore console. -->
+     to approve them manually in the Firestore console (or via
+     approve.html once you have a comment id).
+     Visible comments come from two separate queries rather than one
+     query filtered client-side: a public query (approved:true) and, for
+     the signed-in viewer, a second query for just their own pending
+     comments. This matches what a Firestore security rule can actually
+     validate for a list query: a rule based on request.auth.uid ==
+     resource.data.uid (own-pending) or resource.data.approved == true
+     (public) is provably safe, unlike trusting the client to hide
+     unapproved comments from other viewers after a single broad read. -->
 {% if site.firebase-api-key and site.firebase-project-id %}
 
 <div id="comments-section">
@@ -86,7 +95,7 @@
   // Moderation email notification -- optional. If any of these are unset,
   // notifyModerator() below is a no-op (comments still queue as
   // approved:false either way; you'd just have to check the Firestore
-  // console manually instead of getting an email).
+  // console or approve.html manually instead of getting an email).
   const EMAILJS_SERVICE_ID = "{{ site.emailjs-service-id }}";
   const EMAILJS_TEMPLATE_ID = "{{ site.emailjs-template-id }}";
   const EMAILJS_PUBLIC_KEY = "{{ site.emailjs-public-key }}";
@@ -112,8 +121,11 @@
   const sortSelect = document.getElementById("comments-sort");
 
   let currentUser = null;
-  let latestDocs = null;
+  let latestDocs = null; // merged cache used by rendering -- combination of the two sources below
+  let latestApprovedDocs = [];
+  let latestOwnPendingDocs = [];
   let unsubscribeFeed = null;
+  let unsubscribeOwnPending = null;
 
   // --- Auth: login / logout ---
   loginBtn.addEventListener("click", () => {
@@ -138,6 +150,7 @@
       formEl.style.display = "none";
     }
     renderFeed();
+    subscribeOwnPending();
   });
 
   // --- Character counter on the main compose box ---
@@ -223,13 +236,20 @@
     }
   }
 
-  // --- Sorting: rebuild the query & re-subscribe ---
+  // --- Sorting: rebuild the PUBLIC query (approved comments only) & re-subscribe ---
+  // "approved" is now part of the query itself, not just the security rule -- this is what
+  // makes the read rule provably safe for Firestore to evaluate on a list query.
   function buildQuery(mode) {
     let orderClause;
     if (mode === "oldest") orderClause = orderBy("createdAt", "asc");
     else if (mode === "top") orderClause = orderBy("likeCount", "desc");
     else orderClause = orderBy("createdAt", "desc");
-    return query(collection(db, "comments"), where("pageUrl", "==", pageUrl), orderClause);
+    return query(
+      collection(db, "comments"),
+      where("pageUrl", "==", pageUrl),
+      where("approved", "==", true),
+      orderClause
+    );
   }
 
   function subscribeFeed(mode) {
@@ -243,8 +263,8 @@
       buildQuery(mode),
       (snapshot) => {
         loadingEl.style.display = "none";
-        latestDocs = snapshot.docs;
-        renderFeed();
+        latestApprovedDocs = snapshot.docs;
+        recomputeAndRender();
       },
       (err) => {
         console.error("Failed to load comments:", err);
@@ -255,42 +275,74 @@
     );
   }
 
+  // --- Separate query: just the signed-in viewer's own pending (not-yet-approved) comments ---
+  // Kept apart from the public query above for the same reason: a rule based purely on
+  // request.auth.uid == resource.data.uid (with no OR) is one Firestore can always validate.
+  function subscribeOwnPending() {
+    if (unsubscribeOwnPending) {
+      unsubscribeOwnPending();
+      unsubscribeOwnPending = null;
+    }
+    latestOwnPendingDocs = [];
+
+    if (!currentUser) {
+      recomputeAndRender();
+      return;
+    }
+
+    const q = query(
+      collection(db, "comments"),
+      where("pageUrl", "==", pageUrl),
+      where("uid", "==", currentUser.uid),
+      where("approved", "==", false)
+    );
+
+    unsubscribeOwnPending = onSnapshot(
+      q,
+      (snapshot) => {
+        latestOwnPendingDocs = snapshot.docs;
+        recomputeAndRender();
+      },
+      (err) => console.error("Failed to load your pending comments:", err)
+    );
+  }
+
+  function recomputeAndRender() {
+    const seen = new Set();
+    const merged = [];
+    for (const d of latestApprovedDocs) {
+      seen.add(d.id);
+      merged.push(d);
+    }
+    for (const d of latestOwnPendingDocs) {
+      if (!seen.has(d.id)) merged.push(d);
+    }
+    latestDocs = merged;
+    renderFeed();
+  }
+
   sortSelect.addEventListener("change", (e) => subscribeFeed(e.target.value));
   subscribeFeed("newest");
 
   // --- Rendering ---
-  // A comment is visible to the current viewer if it's approved, or if
-  // the current viewer is its author (so authors can see their own
-  // pending comment with the "awaiting approval" note, but nobody else
-  // can). Deleted comments always render their "removed" placeholder
-  // regardless of approval, since the placeholder carries no content.
-  function isVisible(docSnap) {
-    const data = docSnap.data();
-    if (data.deleted) return true;
-    if (data.approved) return true;
-    return !!(currentUser && currentUser.uid === data.uid);
-  }
-
   function renderFeed() {
     if (!latestDocs) return;
 
-    const visibleDocs = latestDocs.filter(isVisible);
-
-    const visibleCount = visibleDocs.filter((d) => !d.data().deleted).length;
+    const visibleCount = latestDocs.filter((d) => !d.data().deleted && d.data().approved).length;
     countEl.textContent = visibleCount > 0 ? ` (${visibleCount})` : "";
 
-    const topLevel = visibleDocs.filter((d) => !d.data().parentId);
+    const topLevel = latestDocs.filter((d) => !d.data().parentId);
 
     if (topLevel.length === 0) {
       feedEl.innerHTML = '<p class="sc-empty">No comments yet. Be the first to share your thoughts.</p>';
       return;
     }
 
-    feedEl.innerHTML = topLevel.map((d) => renderThread(d, visibleDocs)).join("");
+    feedEl.innerHTML = topLevel.map(renderThread).join("");
   }
 
-  function renderThread(docSnap, visibleDocs) {
-    const replies = visibleDocs
+  function renderThread(docSnap) {
+    const replies = latestDocs
       .filter((d) => d.data().parentId === docSnap.id)
       .sort((a, b) => (a.data().createdAt?.toMillis() || 0) - (b.data().createdAt?.toMillis() || 0));
 
