@@ -142,12 +142,35 @@ kramdown:
 
 
 # -----------------------------------------------------------------------------
+# Comments — provider selection
+# "elfsight" (default) or "firebase". See _includes/comments.html.
+# -----------------------------------------------------------------------------
+comments-provider: "elfsight"
+
+# -----------------------------------------------------------------------------
 # Comments (Elfsight Comments widget)
 # App ID extracted from the embed class "elfsight-app-<ID>" in your
 # Elfsight dashboard. This value is referenced via {{ site.elfsight-app-id }}
 # Leave blank or remove to disable the comment widget sitewide.
 # -----------------------------------------------------------------------------
 elfsight-app-id: "2959381d-e116-43d1-ae7c-2499b54d5bec"
+
+# -----------------------------------------------------------------------------
+# Comments (Firebase comments widget — alternative to Elfsight)
+# Google sign-in + Firestore, scoped per page URL. Only used when
+# comments-provider above is set to "firebase". Get these values from the
+# Firebase console: Project settings -> your web app -> SDK setup and
+# configuration. Requires the Firestore security rules from your setup
+# session to be published in the Firebase console (not something this repo
+# or this file can do) — do not leave Firestore in open "test mode" on a
+# real deployment, since students will be signing in with Google here.
+# -----------------------------------------------------------------------------
+firebase-api-key: "AIzaSyCJgBxE0_X7jwB5YSRfllwhT4loQcVkHNw"
+firebase-auth-domain: "comments-for-connect.firebaseapp.com"
+firebase-project-id: "comments-for-connect"
+firebase-storage-bucket: "comments-for-connect.firebasestorage.app"
+firebase-messaging-sender-id: "339085223290"
+firebase-app-id: "1:339085223290:web:3b3fb009e2a6796ca522c3"
 
 
 # -----------------------------------------------------------------------------
