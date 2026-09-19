@@ -90,7 +90,7 @@ layout: null
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
     import {
-      getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged
+      getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged
     } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
     import {
       getFirestore, doc, getDoc, updateDoc
@@ -112,6 +112,7 @@ layout: null
     const auth = getAuth(app);
     const db = getFirestore(app);
     const provider = new GoogleAuthProvider();
+    provider.setCustomParameters({ prompt: "select_account" });
 
     const appEl = document.getElementById("sc-app");
     const params = new URLSearchParams(window.location.search);
@@ -124,7 +125,14 @@ layout: null
         if (!user) {
           renderSignIn();
         } else if (user.email !== MODERATOR_EMAIL) {
-          appEl.innerHTML = `<p class="sc-error">Signed in as ${escapeHtml(user.email)}, which isn't authorized to review comments.</p>`;
+          appEl.innerHTML = `
+            <p class="sc-error">Signed in as ${escapeHtml(user.email)}, which isn't authorized to review comments.</p>
+            <button class="sc-btn" id="sc-switch">Sign out &amp; try another account</button>
+          `;
+          document.getElementById("sc-switch").addEventListener("click", async () => {
+            await signOut(auth);
+            renderSignIn();
+          });
         } else {
           loadComment();
         }
@@ -178,9 +186,14 @@ layout: null
           <button class="sc-btn sc-btn-approve" id="sc-approve">✅ Approve</button>
           <button class="sc-btn sc-btn-reject" id="sc-reject">🗑 Reject</button>
         </div>
+        <p style="margin-top:1em;"><button class="sc-btn" id="sc-switch" style="font-size:0.8em;padding:0.5em 1em;">Switch account</button></p>
       `;
       document.getElementById("sc-approve").addEventListener("click", () => decide(true));
       document.getElementById("sc-reject").addEventListener("click", () => decide(false));
+      document.getElementById("sc-switch").addEventListener("click", async () => {
+        await signOut(auth);
+        renderSignIn();
+      });
     }
 
     async function decide(approve) {
