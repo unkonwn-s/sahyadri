@@ -198,7 +198,7 @@
   }
 
   async function notifyModerator({ docId, authorName, authorEmail, text, isReply }) {
-    const consoleLink = `https://console.firebase.google.com/project/${firebaseConfig.projectId}/firestore/databases/-default-/data/~2Fcomments~2F${docId}`;
+    const consoleLink = `${window.location.origin}/approve.html?id=${docId}`;
     try {
       await fetch("https://api.emailjs.com/api/v1.0/email/send", {
         method: "POST",
