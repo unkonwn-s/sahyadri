@@ -19,16 +19,23 @@ layout: null
 <meta charset="UTF-8">
 <meta name="robots" content="noindex, nofollow">
 <title>Review comment — Sahyadri Connect</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&amp;family=Poiret+One&amp;display=swap" rel="stylesheet">
 <style>
+  /* Colors and fonts pulled from _config.yml / the theme, so this
+     standalone page (layout: null, no shared site CSS) still matches
+     the site's actual look rather than a separate placeholder palette. */
   :root {
-    --sc-sage: #7C9473;
-    --sc-sage-dark: #5F7857;
-    --sc-ink: #2B2B28;
+    --sc-ink: {{ site.text-col | default: "#3E3830" }};
     --sc-muted: #767268;
-    --sc-line: #E3E0D8;
+    --sc-line: {{ site.navbar-border-col | default: "#BBC4B4" }};
+    --sc-sage: {{ site.navbar-col | default: "#668571" }};
+    --sc-sage-dark: {{ site.hover-col | default: "#8FA186" }};
+    --sc-tan: {{ site.link-col | default: "#A67C52" }};
   }
   body {
-    font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-family: 'Poiret One', -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
     background: #fafaf7;
     color: var(--sc-ink);
     margin: 0;
@@ -41,33 +48,40 @@ layout: null
     width: 100%;
     background: #fff;
     border: 1px solid var(--sc-line);
+    border-top: 4px solid var(--sc-sage);
     padding: 2em;
   }
   h1 {
-    font-family: Georgia, "Times New Roman", serif;
-    font-weight: 400;
-    font-size: 1.4em;
-    margin: 0 0 1em;
+    font-family: 'Amatic SC', cursive, sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    font-size: 2.1em;
+    color: var(--sc-ink);
+    margin: 0 0 0.7em;
   }
   .sc-btn {
-    font-family: inherit;
-    font-size: 0.9em;
-    background: #fff;
-    color: var(--sc-ink);
-    border: 1px solid var(--sc-ink);
-    padding: 0.7em 1.5em;
+    display: inline-block;
+    font-family: 'Poiret One', inherit;
+    font-size: 0.95em;
+    background-color: var(--sc-sage);
+    color: #ffffff;
+    border: none;
+    border-radius: 20px;
+    padding: 0.7em 1.6em;
     cursor: pointer;
-    transition: background 0.15s ease, color 0.15s ease;
+    transition: background-color 0.15s ease;
   }
-  .sc-btn:hover { background: var(--sc-sage); border-color: var(--sc-sage); color: #fff; }
+  .sc-btn:hover { background-color: var(--sc-sage-dark); }
   .sc-btn:disabled { opacity: 0.5; cursor: default; }
-  .sc-btn-approve { border-color: var(--sc-sage-dark); }
-  .sc-btn-approve:hover { background: var(--sc-sage-dark); border-color: var(--sc-sage-dark); }
-  .sc-btn-reject { color: #a33; border-color: #a33; }
-  .sc-btn-reject:hover { background: #a33; border-color: #a33; color: #fff; }
-  .sc-actions { display: flex; gap: 0.8em; margin-top: 1.5em; }
+  .sc-btn-approve { background-color: var(--sc-sage-dark); }
+  .sc-btn-approve:hover { background-color: var(--sc-sage); }
+  .sc-btn-reject { background-color: #a33; }
+  .sc-btn-reject:hover { background-color: #832626; }
+  .sc-actions { display: flex; flex-wrap: wrap; gap: 0.8em; margin-top: 1.5em; }
   .sc-preview {
     border: 1px solid var(--sc-line);
+    border-radius: 4px;
     padding: 1em;
     margin: 1em 0;
     font-size: 0.95em;
@@ -76,7 +90,7 @@ layout: null
   .sc-preview .sc-meta { color: var(--sc-muted); font-size: 0.85em; margin-bottom: 0.5em; }
   .sc-status { font-style: italic; color: var(--sc-muted); }
   .sc-error { color: #a33; }
-  a { color: var(--sc-sage-dark); }
+  a { color: var(--sc-tan); }
 </style>
 </head>
 <body>
