@@ -172,6 +172,25 @@ firebase-storage-bucket: "comments-for-connect.firebasestorage.app"
 firebase-messaging-sender-id: "339085223290"
 firebase-app-id: "1:339085223290:web:3b3fb009e2a6796ca522c3"
 
+# -----------------------------------------------------------------------------
+# Comments moderation notifications (optional)
+# When a new comment is posted, it's saved with approved:false and hidden
+# from everyone but its author until a moderator approves it (in the
+# Firestore console). If the four values below are all set, an email is
+# also sent via EmailJS to comments-moderator-email with a link to
+# approve it. Leave any of them blank to skip the email -- comments still
+# queue for approval either way, you'd just need to check Firestore
+# manually instead of getting notified.
+# NOTE: these values (including the moderator email) end up in the
+# public JS shipped to every visitor's browser, same as firebase-api-key
+# above -- this is normal for a client-side EmailJS public key, but bear
+# it in mind for the moderator email address specifically.
+# -----------------------------------------------------------------------------
+emailjs-service-id: "service_bm8k6oi"
+emailjs-template-id: "template_4ajielr"
+emailjs-public-key: "_m8oNTLJbEdd0W7kc"
+comments-moderator-email: "archives@sahyadrischool.org"
+
 
 # -----------------------------------------------------------------------------
 # Default Layouts & Front Matter
