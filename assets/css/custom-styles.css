@@ -2229,19 +2229,19 @@ html, body {
     --sc-muted: #5b564c;
     --sc-active-bg: rgba(255, 255, 255, 0.55);
 
-    /* Full-bleed: break out of the parent column (e.g. .col-lg-8) so this
-       spans the entire screen width edge-to-edge, regardless of how
-       narrow the content column around it is. Direct children are then
-       centered to a readable max-width below, so text doesn't stretch
-       edge-to-edge unreadably on wide screens -- this section is a full
-       width *band*, not full-width *text*. */
-    width: 100vw;
-    max-width: 100vw;
+    /* Break out of the parent column (e.g. .col-lg-8) so this spans 80%
+       of the screen width, centered, regardless of how narrow the
+       content column around it is. Direct children are then centered
+       to a readable max-width below, so text doesn't stretch edge-to-
+       edge unreadably on wide screens -- this section is a wide *band*,
+       not full-width *text*. */
+    width: 80vw;
+    max-width: 80vw;
     position: relative;
     left: 50%;
     right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
+    margin-left: -40vw;
+    margin-right: -40vw;
     margin-top: 3em;
     margin-bottom: 0;
     padding: 3em clamp(20px, 6vw, 80px) 3.5em;
