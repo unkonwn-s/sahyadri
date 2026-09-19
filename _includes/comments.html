@@ -1,7 +1,15 @@
-<!-- FILE: _includes/comments.html — Renders the configured comment system (currently Elfsight only; Staticman was removed as it was never configured). -->
+<!-- FILE: _includes/comments.html — Renders the configured comment system.
+     site.comments-provider selects which one ("elfsight" or "firebase");
+     defaults to "elfsight" if unset, so existing behavior is unchanged.
+     (Staticman was removed as it was never configured.) -->
 {% if page.comments %}
-  <!-- Load Elfsight Comments widget (only if an App ID is configured) -->
-  {% if site.elfsight-app-id %}
-    {% include elfsight-comments.html %}
+  {% assign provider = site.comments-provider | default: "elfsight" %}
+  {% if provider == "firebase" %}
+    {% include firebase-comments.html %}
+  {% else %}
+    <!-- Load Elfsight Comments widget (only if an App ID is configured) -->
+    {% if site.elfsight-app-id %}
+      {% include elfsight-comments.html %}
+    {% endif %}
   {% endif %}
 {% endif %}
