@@ -2225,9 +2225,9 @@ html, body {
 }
 
 #comments-section {
-    --sc-line: var(--navbar-border-col, #BBC4B4);
-    --sc-muted: #767268;
-    --sc-active-bg: color-mix(in srgb, var(--navbar-col) 12%, var(--page-col));
+    --sc-line: rgba(62, 56, 48, 0.18);
+    --sc-muted: #5b564c;
+    --sc-active-bg: rgba(255, 255, 255, 0.55);
 
     /* Full-bleed: break out of the parent column (e.g. .col-lg-8) so this
        spans the entire screen width edge-to-edge, regardless of how
@@ -2247,12 +2247,14 @@ html, body {
     padding: 3em clamp(20px, 6vw, 80px) 3.5em;
     box-sizing: border-box;
 
-    background-color: #f4f6f2; /* fallback for browsers without color-mix() */
-    background-color: color-mix(in srgb, var(--navbar-col) 6%, var(--page-col));
-    border-top: 1px solid var(--sc-line);
+    /* Same green as the footer directly below, so the two bands read as
+       one continuous, clearly intentional section of the page rather
+       than a faint, washed-out patch of near-white. */
+    background-color: var(--footer-col, #B2C2AD);
+    border-top: 1px solid var(--navbar-border-col, #BBC4B4);
 
     font-family: var(--body-font);
-    color: var(--text-col);
+    color: var(--footer-text-col, var(--text-col));
 }
 
 /* Center each direct child to a comfortable reading width within the
@@ -2277,7 +2279,7 @@ html, body {
     font-family: var(--header-font);
     font-size: 1.6em;
     margin: 0;
-    color: var(--text-col);
+    color: var(--footer-text-col, var(--text-col));
 }
 
 .sc-count {
@@ -2288,13 +2290,27 @@ html, body {
 }
 
 .sc-sort-select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     font-family: var(--body-font);
     font-size: 0.9rem;
-    border: 1px solid var(--sc-line);
+    border: 1px solid rgba(62, 56, 48, 0.35);
     background-color: var(--page-col);
     color: var(--text-col);
-    padding: 0.4em 0.6em;
-    border-radius: 4px;
+    padding: 0.5em 2.2em 0.5em 1em;
+    border-radius: 20px;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%233E3830' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.9em center;
+    transition: border-color 0.15s ease;
+}
+
+.sc-sort-select:hover,
+.sc-sort-select:focus {
+    outline: none;
+    border-color: var(--navbar-col);
 }
 
 /* --- Auth row --- */
@@ -2612,11 +2628,11 @@ html, body {
 
 /* --- Dark mode --- */
 .dark-mode #comments-section {
-    color: #e0e0e0;
-    --sc-line: #3a4a3a;
+    color: #d5d5d5;
+    --sc-line: rgba(213, 213, 213, 0.2);
     --sc-muted: #9a9a9a;
     --sc-active-bg: #2a3d2a;
-    background-color: #1f231e;
+    background-color: #141713;
     border-top-color: #3a4a3a;
 }
 
@@ -2644,11 +2660,17 @@ html, body {
 }
 
 .dark-mode .sc-textarea,
-.dark-mode .sc-reply-compose textarea,
+.dark-mode .sc-reply-compose textarea {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    border-color: #3a4a3a;
+}
+
 .dark-mode .sc-sort-select {
     background-color: #1a1a1a;
     color: #e0e0e0;
     border-color: #3a4a3a;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%23e0e0e0' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
 }
 
 .dark-mode .sc-comment-text {
