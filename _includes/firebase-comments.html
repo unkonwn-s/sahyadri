@@ -1,0 +1,181 @@
+<!-- FILE: _includes/firebase-comments.html — Firebase-backed comments widget
+     (Google sign-in + Firestore, scoped to the current page URL).
+     page.comments is already checked by the parent comments.html include.
+     Requires firebase-project-id (and the other firebase-* config keys
+     below) to be set in _config.yml, or this include renders nothing. -->
+{% if site.firebase-api-key and site.firebase-project-id %}
+
+<div id="comments-section">
+  <h3>Comments</h3>
+
+  <div id="comments-auth">
+    <button id="comments-login-btn">Sign in with Google to comment</button>
+    <span id="comments-user-info" style="display:none;">
+      Signed in as <strong id="comments-user-name"></strong>
+      <button id="comments-logout-btn">Sign out</button>
+    </span>
+  </div>
+
+  <div id="comments-form" style="display:none; margin-top: 1em;">
+    <textarea id="comments-textarea" rows="4" style="width:100%;" placeholder="Add a comment..."></textarea>
+    <br>
+    <button id="comments-submit-btn">Post Comment</button>
+  </div>
+
+  <div id="comments-feed" style="margin-top: 1.5em;">
+    <p id="comments-loading">Loading comments...</p>
+  </div>
+</div>
+
+<!-- Firebase SDKs via CDN (v10 modular, loaded as ES modules — no build tools needed) -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
+  import {
+    getAuth,
+    GoogleAuthProvider,
+    signInWithPopup,
+    signOut,
+    onAuthStateChanged
+  } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
+  import {
+    getFirestore,
+    collection,
+    addDoc,
+    query,
+    where,
+    orderBy,
+    onSnapshot,
+    serverTimestamp
+  } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
+
+  // Pulled from _config.yml so the config lives in one place, same pattern
+  // as site.elfsight-app-id for the other comments provider.
+  const firebaseConfig = {
+    apiKey: "{{ site.firebase-api-key }}",
+    authDomain: "{{ site.firebase-auth-domain }}",
+    projectId: "{{ site.firebase-project-id }}",
+    storageBucket: "{{ site.firebase-storage-bucket }}",
+    messagingSenderId: "{{ site.firebase-messaging-sender-id }}",
+    appId: "{{ site.firebase-app-id }}"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const db = getFirestore(app);
+  const provider = new GoogleAuthProvider();
+
+  // Scope comments to the exact page they were posted on
+  const pageUrl = window.location.origin + window.location.pathname;
+
+  // --- DOM refs ---
+  const loginBtn = document.getElementById("comments-login-btn");
+  const logoutBtn = document.getElementById("comments-logout-btn");
+  const userInfo = document.getElementById("comments-user-info");
+  const userNameEl = document.getElementById("comments-user-name");
+  const formEl = document.getElementById("comments-form");
+  const textarea = document.getElementById("comments-textarea");
+  const submitBtn = document.getElementById("comments-submit-btn");
+  const feedEl = document.getElementById("comments-feed");
+  const loadingEl = document.getElementById("comments-loading");
+
+  let currentUser = null;
+
+  // --- Auth: login / logout ---
+  loginBtn.addEventListener("click", () => {
+    signInWithPopup(auth, provider).catch((err) => {
+      console.error("Sign-in failed:", err);
+      alert("Sign-in failed. Please try again.");
+    });
+  });
+
+  logoutBtn.addEventListener("click", () => {
+    signOut(auth);
+  });
+
+  onAuthStateChanged(auth, (user) => {
+    currentUser = user;
+    if (user) {
+      loginBtn.style.display = "none";
+      userInfo.style.display = "inline";
+      userNameEl.textContent = user.displayName || user.email;
+      formEl.style.display = "block";
+    } else {
+      loginBtn.style.display = "inline-block";
+      userInfo.style.display = "none";
+      formEl.style.display = "none";
+    }
+  });
+
+  // --- Post a new comment ---
+  submitBtn.addEventListener("click", async () => {
+    const text = textarea.value.trim();
+    if (!text || !currentUser) return;
+
+    submitBtn.disabled = true;
+    try {
+      await addDoc(collection(db, "comments"), {
+        text: text,
+        pageUrl: pageUrl,
+        uid: currentUser.uid,
+        name: currentUser.displayName || "Anonymous",
+        photoURL: currentUser.photoURL || null,
+        createdAt: serverTimestamp()
+      });
+      textarea.value = "";
+    } catch (err) {
+      console.error("Failed to post comment:", err);
+      alert("Could not post comment. Please try again.");
+    } finally {
+      submitBtn.disabled = false;
+    }
+  });
+
+  // --- Fetch + live-update comments for this page ---
+  const commentsQuery = query(
+    collection(db, "comments"),
+    where("pageUrl", "==", pageUrl),
+    orderBy("createdAt", "desc")
+  );
+
+  onSnapshot(
+    commentsQuery,
+    (snapshot) => {
+      loadingEl.style.display = "none";
+
+      if (snapshot.empty) {
+        feedEl.innerHTML = "<p>No comments yet. Be the first!</p>";
+        return;
+      }
+
+      const html = snapshot.docs.map((doc) => {
+        const data = doc.data();
+        const date = data.createdAt
+          ? data.createdAt.toDate().toLocaleString()
+          : "just now";
+        const safeName = escapeHtml(data.name || "Anonymous");
+        const safeText = escapeHtml(data.text || "");
+        return `
+          <div class="comment" style="border-bottom:1px solid #eee; padding:0.75em 0;">
+            <strong>${safeName}</strong>
+            <span style="color:#888; font-size:0.85em;"> — ${date}</span>
+            <p style="margin:0.3em 0 0;">${safeText}</p>
+          </div>
+        `;
+      }).join("");
+
+      feedEl.innerHTML = html;
+    },
+    (err) => {
+      console.error("Failed to load comments:", err);
+      loadingEl.textContent = "Could not load comments.";
+    }
+  );
+
+  // Basic escaping so comment text can't inject HTML
+  function escapeHtml(str) {
+    const div = document.createElement("div");
+    div.textContent = str;
+    return div.innerHTML;
+  }
+</script>
+{% endif %}
