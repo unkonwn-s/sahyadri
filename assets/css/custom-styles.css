@@ -1502,8 +1502,8 @@ html { scroll-behavior: smooth; }
 /* Highlights the matched search term inside visible post-preview cards,
    applied by yearSearchApplyHighlight() in the JS above. */
 mark.year-search-highlight {
-    background-color: #8FA186;
-    color: #ffffff;
+    background-color: #C5D6BE;
+    color: #000000;
     padding: 0 2px;
     border-radius: 2px;
 }
