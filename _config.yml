@@ -228,6 +228,7 @@ defaults:
 # -----------------------------------------------------------------------------
 exclude:
   - CHANGELOG.md
+  - CONTENT-GUIDE.md
   - Gemfile
   - Gemfile.lock
   - LICENSE
