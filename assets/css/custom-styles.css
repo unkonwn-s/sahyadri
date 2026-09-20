@@ -933,7 +933,7 @@ html { scroll-behavior: smooth; }
 }
 
 .dark-mode .toc-card {
-    background-color: #21391f !important;
+    background-color: #1f2a1f !important;
     color: #e0e0e0;
     box-shadow: 0 4px 15px rgba(0,0,0,0.4);
 }
@@ -1959,7 +1959,7 @@ html { scroll-behavior: smooth; }
 /* Dark mode — this is the fix that was silently ineffective before,
    since profiles.html's own inline .toc-card etc. was overriding it. */
 .dark-mode .profile-toc-card {
-    background: #21391f;
+    background: #1f2a1f;
     border-color: #444;
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
