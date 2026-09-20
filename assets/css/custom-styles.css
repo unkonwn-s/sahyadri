@@ -939,32 +939,32 @@ html { scroll-behavior: smooth; }
 }
 .dark-mode .toc-title,
 .dark-mode .toc-card h2.toc-title {
-    color: #e8f3df !important;
-    border-bottom-color: #5a6a56;
+    color: #9fd4a3 !important;
+    border-bottom-color: #6d9467;
 }
 .dark-mode .toc-list li {
-    color: #cfd8cc;
+    color: #a8c9a0;
 }
 .dark-mode .toc-list li:hover,
 .dark-mode .toc-list li.active {
-    color: #ffffff;
+    color: #c5ecc0;
 }
 .dark-mode .toc-list a {
-    color: #cfd8cc !important;
+    color: #a8c9a0 !important;
 }
 .dark-mode .toc-list a:hover {
-    color: #ffffff !important;
+    color: #c5ecc0 !important;
 }
 
 /* Profiles page TOC uses <button> elements instead of <a> links —
    these need their own color override since buttons don't inherit
    text color the way inline text does. */
 .dark-mode .toc-list button {
-    color: #cfd8cc !important;
+    color: #a8c9a0 !important;
 }
 .dark-mode .toc-list button:hover,
 .dark-mode .toc-list button.active {
-    color: #ffffff !important;
+    color: #c5ecc0 !important;
 }
 .dark-mode .post-preview-card,
 .dark-mode .ninad-card {
@@ -1967,15 +1967,15 @@ html { scroll-behavior: smooth; }
     /* !important needed: the light-mode base rule also has !important
        on color (added to match the Newsletter TOC's font/color styling),
        so this override needs it too to actually win in dark mode. */
-    color: #e8f3df !important;
+    color: #9fd4a3 !important;
 }
 .dark-mode .profile-toc-list button {
     /* !important needed for the same reason as .profile-toc-title above */
-    color: #cfd8cc !important;
+    color: #a8c9a0 !important;
 }
 .dark-mode .profile-toc-list button:hover,
 .dark-mode .profile-toc-list button.active {
-    color: #ffffff !important;
+    color: #c5ecc0 !important;
 }
 .dark-mode .profile-sub-nav-options {
     border-bottom-color: #444;
