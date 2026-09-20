@@ -280,6 +280,7 @@ permalink: /posts/
    * Hides individual .post-preview cards that don't match, and hides
    * entire .term-section category blocks if every card within them
    * gets filtered out. Shows a "no results" message when nothing matches.
+   * Also highlights the matched query text inside each visible card.
    */
   function clearYearSearch() {
     var input = document.getElementById('year-search-input');
@@ -287,6 +288,60 @@ permalink: /posts/
     input.value = '';
     filterYearSearch();
     input.focus();
+  }
+
+  // Caches each card's un-highlighted HTML so re-running the highlight on a
+  // new keystroke always starts clean, instead of nesting highlights inside
+  // previous highlights or leaking stale <mark> tags from a shorter query.
+  var yearSearchOriginalHtml = new WeakMap();
+
+  function yearSearchEscapeRegExp(str) {
+    return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  }
+
+  // Walks a card's DOM and wraps matches of `regex` inside text nodes only
+  // (never inside tags/attributes), so links like "Read More" or the
+  // author's profile link stay intact and clickable.
+  function yearSearchHighlightNode(node, regex) {
+    if (node.nodeType === Node.TEXT_NODE) {
+      var text = node.nodeValue;
+      regex.lastIndex = 0;
+      if (!regex.test(text)) return;
+      regex.lastIndex = 0;
+      var frag = document.createDocumentFragment();
+      var lastIndex = 0;
+      var match;
+      while ((match = regex.exec(text)) !== null) {
+        if (match.index > lastIndex) {
+          frag.appendChild(document.createTextNode(text.slice(lastIndex, match.index)));
+        }
+        var mark = document.createElement('mark');
+        mark.className = 'year-search-highlight';
+        mark.textContent = match[0];
+        frag.appendChild(mark);
+        lastIndex = match.index + match[0].length;
+        if (match[0].length === 0) regex.lastIndex++;
+      }
+      if (lastIndex < text.length) {
+        frag.appendChild(document.createTextNode(text.slice(lastIndex)));
+      }
+      node.parentNode.replaceChild(frag, node);
+    } else if (node.nodeType === Node.ELEMENT_NODE) {
+      if (node.tagName === 'SCRIPT' || node.tagName === 'STYLE') return;
+      Array.prototype.slice.call(node.childNodes).forEach(function (child) {
+        yearSearchHighlightNode(child, regex);
+      });
+    }
+  }
+
+  function yearSearchApplyHighlight(card, query) {
+    if (!yearSearchOriginalHtml.has(card)) {
+      yearSearchOriginalHtml.set(card, card.innerHTML);
+    }
+    card.innerHTML = yearSearchOriginalHtml.get(card);
+    if (!query) return;
+    var regex = new RegExp(yearSearchEscapeRegExp(query), 'gi');
+    yearSearchHighlightNode(card, regex);
   }
 
   function filterYearSearch() {
@@ -314,6 +369,7 @@ permalink: /posts/
         var matches = query === '' || text.indexOf(query) !== -1;
         card.style.display = matches ? '' : 'none';
         if (matches) sectionVisible++;
+        yearSearchApplyHighlight(card, matches ? query : '');
       });
 
       section.style.display = sectionVisible > 0 ? '' : 'none';
