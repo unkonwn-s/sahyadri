@@ -933,38 +933,38 @@ html { scroll-behavior: smooth; }
 }
 
 .dark-mode .toc-card {
-    background-color: #2a2f28 !important;
+    background-color: #21391f !important;
     color: #e0e0e0;
     box-shadow: 0 4px 15px rgba(0,0,0,0.4);
 }
 .dark-mode .toc-title,
 .dark-mode .toc-card h2.toc-title {
-    color: #9fd4a3 !important;
-    border-bottom-color: #6d9467;
+    color: #e8f3df !important;
+    border-bottom-color: #5a6a56;
 }
 .dark-mode .toc-list li {
-    color: #a8c9a0;
+    color: #cfd8cc;
 }
 .dark-mode .toc-list li:hover,
 .dark-mode .toc-list li.active {
-    color: #c5ecc0;
+    color: #ffffff;
 }
 .dark-mode .toc-list a {
-    color: #a8c9a0 !important;
+    color: #cfd8cc !important;
 }
 .dark-mode .toc-list a:hover {
-    color: #c5ecc0 !important;
+    color: #ffffff !important;
 }
 
 /* Profiles page TOC uses <button> elements instead of <a> links —
    these need their own color override since buttons don't inherit
    text color the way inline text does. */
 .dark-mode .toc-list button {
-    color: #a8c9a0 !important;
+    color: #cfd8cc !important;
 }
 .dark-mode .toc-list button:hover,
 .dark-mode .toc-list button.active {
-    color: #c5ecc0 !important;
+    color: #ffffff !important;
 }
 .dark-mode .post-preview-card,
 .dark-mode .ninad-card {
@@ -1959,7 +1959,7 @@ html { scroll-behavior: smooth; }
 /* Dark mode — this is the fix that was silently ineffective before,
    since profiles.html's own inline .toc-card etc. was overriding it. */
 .dark-mode .profile-toc-card {
-    background: #2a2f28;
+    background: #21391f;
     border-color: #444;
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
@@ -1967,15 +1967,15 @@ html { scroll-behavior: smooth; }
     /* !important needed: the light-mode base rule also has !important
        on color (added to match the Newsletter TOC's font/color styling),
        so this override needs it too to actually win in dark mode. */
-    color: #9fd4a3 !important;
+    color: #e8f3df !important;
 }
 .dark-mode .profile-toc-list button {
     /* !important needed for the same reason as .profile-toc-title above */
-    color: #a8c9a0 !important;
+    color: #cfd8cc !important;
 }
 .dark-mode .profile-toc-list button:hover,
 .dark-mode .profile-toc-list button.active {
-    color: #c5ecc0 !important;
+    color: #ffffff !important;
 }
 .dark-mode .profile-sub-nav-options {
     border-bottom-color: #444;
