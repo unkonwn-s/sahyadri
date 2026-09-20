@@ -2193,6 +2193,15 @@ mark.year-search-highlight {
     animation: fadeIn 0.4s ease;
 }
 
+/* Excerpt/caption text was already inheriting Montserrat from the
+   sitewide body/p/div rule (section 1) once that font was actually
+   loaded, but declaring it explicitly here matches how every other
+   page's text (.post-entry, .post-meta, etc.) is set, rather than
+   relying on inheritance alone. */
+.video-caption {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
 
 /* ============================================================
    34. LIGHT/DARK DEFAULT PROFILE PHOTO TOGGLE
