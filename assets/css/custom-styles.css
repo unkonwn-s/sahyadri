@@ -1499,6 +1499,20 @@ html { scroll-behavior: smooth; }
     box-shadow: 0 0 0 3px rgba(122, 150, 112, 0.2);
 }
 
+/* Highlights the matched search term inside visible post-preview cards,
+   applied by yearSearchApplyHighlight() in the JS above. */
+mark.year-search-highlight {
+    background-color: #fde68a;
+    color: #404040;
+    padding: 0 2px;
+    border-radius: 2px;
+}
+
+.dark-mode mark.year-search-highlight {
+    background-color: #6d9467;
+    color: #1a1a1a;
+}
+
 
 /* ============================================================
    28. TAG INDEX PAGE (tags.html)
