@@ -654,8 +654,6 @@ html { scroll-behavior: smooth; }
 .video-item figcaption {
     margin-top: 15px;
     text-align: center;
-    font-family: sans-serif;
-    font-weight: bold;
 }
 
 .video-caption a {
