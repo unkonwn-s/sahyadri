@@ -13,6 +13,6 @@ The students decided to share their skills with the rest of the students by way 
 
 Their presentation consisted of 5 pieces - Mukhda, Kaida, Rela, Tukda and Tihai. They started with a Mukhda, which is the start of any solo piece. It was followed by a ‘Kaida’, as the name suggests it is a long piece with many rules and regulations to follow while playing. Next was an interesting fast paced piece known as Rela, their skill and enjoyment was evident while playing. Thereafter, an array of different sounds were played like the te-te of the Syahi or the sharp chat-chat sounds of the Chati, which was delightful to listen to. Lastly, to conclude a cycle of the same notes were played thrice. Later, by talking to one of them, I found out that this was known as Tihai.
 
-This performance wasn't just a one day thing. According to Ekarth, “We prepared for a month, one hour twice a week and 30 - 45 mins almost every night." This month was a cherishable and extremely immersive journey for them. Additionally, this occasion also allowed for a stronger bond to forge between the two batches.
+This performance wasn't just a one-day thing. According to Ekaarth, “We prepared for a month, one hour twice a week and 30 - 45 mins almost every night." This month was a cherishable and extremely immersive journey for them. Additionally, this occasion also allowed for a stronger bond to forge between the two batches.
 
 As a viewer I enjoyed it a lot!
