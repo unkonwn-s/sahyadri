@@ -7,7 +7,7 @@ academic-year: "2026-27"
 profile-image: "1Otb_Bq13GTsupSVAahv5J8y_vIm6Dwu4"
 ---
 
-I joined Sahyadri School in 9th.
+I joined Sahyadri School in 9th grade.
 
 I enjoy engaging in physical games and am particularly interested in the arts. I appreciate having conversations with everyone here. In the past, I was a part of the Farewell Committee, and I also started a cooking club. I enjoy drawing and painting, and I even had an exhibition for my work.
 
