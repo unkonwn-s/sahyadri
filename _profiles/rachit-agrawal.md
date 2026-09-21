@@ -7,7 +7,7 @@ academic-year: "2026-27"
 profile-image: "1kP_nWx_LpG1FchVZC114Jf2_K39ylSzZ"
 ---
 
-I joined Sahyadri School in Grade 4(2019).
+I joined Sahyadri School in Grade 4 (2019).
 
 One thread runs through what I do: trying to make complex things feel human. In computer science, that's a research project on trust and reputation between AI agents, using poker as a testbed to study cooperation and deception. This work is now in preparation for publication. On stage, I've had the opportunity to take on lead roles in Vriksha, Anyaay, Rehearsal, and Twelve Angry Jurors, as well as host the school farewell. Off stage, I captain the handball team and edit for Tiwai Tales and Ninad '26. Through the outdoor programme, I've had the chance to trek to Bali Pass (16,000 ft) and Pandav Patthar (12,500 ft). Beyond the school calendar, I built Lifeline, a refugee-communications app that won the Hilltop Entrepreneur award.
 
