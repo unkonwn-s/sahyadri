@@ -2239,9 +2239,12 @@ mark.year-search-highlight {
 /* 100vw can be slightly wider than the visible viewport when a vertical
    scrollbar is present, which the #comments-section full-bleed below
    would otherwise turn into an unwanted page-level horizontal scrollbar.
-   Scoped to html/body only -- doesn't affect any inner scrollable element
-   (e.g. .academic-tabs still scrolls horizontally on its own). */
-html, body {
+   Scoped to html only (not body) -- setting overflow-x on body turns it
+   into a scroll container in its own right, which silently breaks
+   position: sticky for descendants like .toc-sidebar (the sticky
+   Editions/table-of-contents card). html alone is enough to suppress the
+   scrollbar without that side effect. */
+html {
     overflow-x: hidden;
 }
 
