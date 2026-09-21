@@ -17,6 +17,6 @@ Yadhu scored a breathtaking goal in the early minutes. The scoreboard stood stil
 
 After halftime both the teams were re-energized. For the first few minutes of the second half, not much was accomplished by either team. But, after breaking through the defense, Chaitanya from the Grades 11 and 12 team made a spectacular run and scored a goal. A short while later he was able to break past the defenders a second time and score yet another goal, making the score 3 - 1 in favour of the Grades 11 and 12 team. These two goals filled the Grades 11 and 12 team with confidence. 
 
-The Grades 9 and 10 team then bounced back, and following a series of passes to Jourden were able to score a goal. This goal turned out to be their last and the Grades 11 and 12 team emerged winners. 
+The Grades 9 and 10 team then bounced back and, following a series of passes to Jourden, were able to score a goal. This goal turned out to be their last and the Grades 11 and 12 team emerged winners. 
 
 Though the Grades 9 and 10 team lost, they had not only shown great sportsmanship and skill but had also played excellently throughout the entire match. All in all, this match taught us all the importance of team sports, and we all thoroughly enjoyed the match.
