@@ -7,7 +7,7 @@ academic-year: "2026-27"
 profile-image: "1yR_CPhO41983W9q_LUMDqLhJ50e97ZGq"
 ---
 
-I joined Sahyadri School in 9th.
+I joined Sahyadri School in 9th grade.
 
 I enjoy taking part in school activities and contributing to the community. During my time at Sahyadri, I have hosted several school assemblies and served as the anchor for the Dining Hall Committee, Landcare Committee, and School Bakery Committee. I also started the Public Speaking Club to help students build confidence in communication and create a space for sharing ideas.
 
