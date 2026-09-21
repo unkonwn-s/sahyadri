@@ -6,10 +6,10 @@ subtitle: "SAYANTAN SEN (Teacher)"
 category: September 2026
 ---
 Scope for session 1- 
-1. How does the media make us feel ? 
+1. How does the media make us feel?
 Help students explore the relationship between media and emotions by identifying how content creators influence their feelings and choices through rhetorical appeals (logos, ethos, and pathos).
 
-2. Why do content creators make media this way ? 
+2. Why do content creators make media this way?
 Every video, advertisement, and social media post is created with a specific purpose in mind: to persuade you to buy something, inform you about a topic, or simply entertain you. This lesson introduces students to the PIE framework (persuade, inform, entertain) as a tool for understanding why content creators make what they make. 
 
 Scope for session 2-
