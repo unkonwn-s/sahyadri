@@ -9,4 +9,4 @@ profile-image: "1PAVDD5Ukngjzp0kEQpeURFgMVKghL1ju"
 
 I joined Sahyadri School this year, 2026.
 
-I am an aspiring artist. I am deeply intrested in paleontology and paleoartistry, i have been sketching creating art for the last 14 years and will continue to do so.
+I am an aspiring artist. I am deeply interested in paleontology and paleoartistry, I have been sketching and creating art for the last 14 years and will continue to do so.
