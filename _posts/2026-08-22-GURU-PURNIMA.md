@@ -7,9 +7,9 @@ category: July 2026
 ---
 
 
-A few students from class 6 presented the assembly on the day of Guru Purnima. It is also called as Vyas Purnima because it was the day when Ved Vyas or Adi Guru finished narrating the Mahabharata.
+A few students from class 6 presented the assembly on the day of Guru Purnima. It is also called Vyas Purnima because it was the day when Ved Vyas or Adi Guru finished narrating the Mahabharata.
 
-On this day we decide to talk about Samartha Ramdas Swami and his accomplishments. He fled from his wedding ceremony at the age of 12 in the search of enlightenment. After 12 years of meditation and physical training he attained enlightenment at the age of 24. He wrote Dasbodh and Manache Shlok. He was the Spiritual Guru to Chhatrapati Shivaji Maharaj. 
+On this day we decide to talk about Samartha Ramdas Swami and his accomplishments. He fled from his wedding ceremony at the age of 12 in search of enlightenment. After 12 years of meditation and physical training he attained enlightenment at the age of 24. He wrote Dasbodh and Manache Shlok. He was the Spiritual Guru to Chhatrapati Shivaji Maharaj. 
 
 Out of 205 verses of Manache Shlok, we sang and explained 9 of them.
 
@@ -135,7 +135,7 @@ If one sincerely and persistently searches for the Truth, it is ultimately found
 
 When the mind, which is usually divided among countless thoughts and desires, becomes unified and focused, its many faults and weaknesses disappear. Even a person with limited intelligence or understanding becomes capable of true spiritual practice when the mind is disciplined. Such a person gradually gains wisdom (ज्ञान), detachment from worldly attachments (वैराग्य), and inner strength (सामर्थ्य). Samarth Ramdas ("Das") says that one who possesses unwavering faith and trust in the spiritual path ultimately attains liberation and experiences the bliss of freedom.
 
-We concluded the assembly with Samartha Ramdas Chaupadi. It is a very soothing bhajan. It is a player seeking mental strength and humility.
+We concluded the assembly with Samartha Ramdas Chaupadi. It is a very soothing bhajan. It is a prayer seeking mental strength and humility.
 
-Following is the link to the Samarha Ramdas Chaupadi. Listen to it in the early morning hours or before sleeping. It has a calming impact on the body and mind.
+Following is the link to the Samartha Ramdas Chaupadi. Listen to it in the early morning hours or before sleeping. It has a calming impact on the body and mind.
 
