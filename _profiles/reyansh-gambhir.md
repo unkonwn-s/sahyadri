@@ -7,7 +7,7 @@ academic-year: "2026-27"
 profile-image: "1IZ_37zodCHcSCnFocfJIRoL-YMOl-AVK"
 ---
 
-I joined Sahyadri School in 6th.
+I joined Sahyadri School in 6th grade.
 
 During my time here, I've taken part in numerous events. Most notably, I regularly perform as a percussionist and tabla player in our musical mornings, known as Geet Gunjan, where I've realized just how pivotal rhythm is to these sessions. Inspired by this, I started the Tabla Club, where I teach my peers to look beyond just playing along to songs. Because I highly value mental and physical well-being, I also participated in and facilitated the Fitness Club. While I explored other interests like the chess and weaving clubs, they unfortunately faded out due to low participation from others.
 
