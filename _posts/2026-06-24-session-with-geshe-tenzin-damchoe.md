@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "SESSION WITH GESHE TENZIN DAMCHOE"
-date: 2026-06-24
+date: 2026-06-25
 subtitle: "Hridyansh"
 subtitle2: "Snehamoy"
 category: June 2026
