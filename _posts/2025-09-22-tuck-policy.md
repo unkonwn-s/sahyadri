@@ -30,7 +30,7 @@ After much discussion, we worked together to come up with a solution that would:
 
 #### TIWAI TAWA
 
-* The frequency of Favourites like potato and banana chips has been increased.
+* The frequency of favourites like potato and banana chips has been increased.
 * More ‘masaledaar’ items have been added.
 * We are working on the introduction of items, and are open to suggestions from you all.
 * Approach any 11th grader with any doubts regarding this system.
