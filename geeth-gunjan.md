@@ -4,7 +4,7 @@
 # Google Drive thumbnail ID; needs the correct second document ID from the site owner.
 layout: page
 title: Geet Gunjan
-subtitle: Click thumbnail to download Geeth Gunjan
+subtitle: Click thumbnail to download Geet Gunjan
 permalink: /geeth
 ---
 <!-- Page-specific CSS previously here (pdf-grid-container, ninad-card,
