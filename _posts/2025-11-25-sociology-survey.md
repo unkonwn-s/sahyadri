@@ -12,10 +12,10 @@ At Sahyadri, despite our small numbers, we are a diverse community. This forms a
 
 Students pick a topic they’re curious about and start digging deeper by doing a literature review. Depending on the topic, we (Sociology students of grade eleven and I) then decided who our target audience was going to be — middle schoolers, high schoolers, senior students, teachers, and even support staff.
 
-Then, we sat together to draft the questionnaires. These brainstorming sessions really tested our critical thinking, reasoning, and patience. The biggest challenge was framing questions in a way that was simple yet creative. For example, instead of asking directly, “Are you a consumerist?”, we phrased it as “Which of the following things do you use regularly?” Each questionnaire had only about 6–8 questions, and even the options were thoughtfully chosen
+Then, we sat together to draft the questionnaires. These brainstorming sessions really tested our critical thinking, reasoning, and patience. The biggest challenge was framing questions in a way that was simple yet creative. For example, instead of asking directly, “Are you a consumerist?”, we phrased it as “Which of the following things do you use regularly?” Each questionnaire had only about 6–8 questions, and even the options were thoughtfully chosen.
 
 Before the questionnaires reached the respondents, they went through several rounds of feedback. Once the survey questions were ready, the surveyors began visiting classes during prep time. It was important to ensure the surveys were conducted in a calm environment in order for the respondents to be able to answer thoughtfully, with self-awareness and insight.
 
 After the surveys, surveyors face another detailed task — tallying. In a survey, a tally is a quick way to count and record responses by marking lines, usually grouped in sets of five, to track how many times each answer appears. We start by doing the tally manually on paper. This process often reveals patterns in the responses — some obvious, others surprisingly intriguing.
 
-The tally numbers are entered into Excel sheets and converted into a pie chart, line graph or bar graph, or maybe even a windrose diagram. Viola! That’s how we get colourful, easy and informative graphs for you!
+The tally numbers are entered into Excel sheets and converted into a pie chart, line graph or bar graph, or maybe even a windrose diagram. Voilà! That’s how we get colourful, easy and informative graphs for you!
