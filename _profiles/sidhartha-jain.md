@@ -13,7 +13,7 @@ Throughout my time here, I have been part of several enriching clubs—the Astro
 
 I have actively participated in major school festivals and projects. For the Grade 7 State Fest, I researched and displayed exhibits on Uttarakhand and Uttar Pradesh, and performed Bhangra dance as part of the celebration. The Mughal Fest allowed me to research and present on Mughal Weapons and Armory, and I modeled traditional clothing in a school assembly. I also helped organize a Mughal-themed dinner integrating our History curriculum with experiential learning.
 
-In Grade 8, my group designed a hydraulic crane model for the Science Fest. I have participated in the American Mathematical Competition (AMC-8) and contributed to English productions, including a Human Rights play and a Grade 10 performance of 'O'Captain, My Captain'—a remake of Dead Poets Society. In Grade 10, I performed a monologue as Duryodhan from the Mahabharata in Hindi.
+In Grade 8, my group designed a hydraulic crane model for the Science Fest. I have participated in the American Mathematical Competition (AMC-8) and contributed to English productions, including a Human Rights play and a Grade 10 performance of 'O Captain, My Captain'—a remake of Dead Poets Society. In Grade 10, I performed a monologue as Duryodhan from the Mahabharata in Hindi.
 
 As a Grade 9 Physical Education student, I assisted in organizing the Sports Fest and hosted the Class 10 and 12 farewell alongside my peers. I gave assemblies providing information on Cross Country and various sports events. Currently in Grade 11, I serve on the school student council's Sports Committee and am actively involved in a General Studies project exploring the interconnections between Law, Criminality, and Politics.
 
