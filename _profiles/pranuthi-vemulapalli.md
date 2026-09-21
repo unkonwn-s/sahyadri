@@ -6,7 +6,7 @@ date: 2026-07-15
 academic-year: "2026-27"
 ---
 
-I joined Sahyadri School in since 5th grade.
+I joined Sahyadri School since 5th grade.
 
 I have joined the Cards Club and Lettuce Cook Club. I am also a member of the Culture Committee.
 
