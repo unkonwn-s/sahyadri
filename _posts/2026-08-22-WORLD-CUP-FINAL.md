@@ -14,4 +14,4 @@ To our surprise, the school actually agreed to screen the final. Since the match
 
 The final between Spain and Argentina proved to be a boring one. Both teams created several chances, but E. Martinez's excellent goalkeeping kept the score at 0–0 until the end. The match went into extra time and remained goalless until the 106th minute, when Torres scored the winning goal to secure Spain’s second World Cup trophy. Even after being reduced to ten men following Enzo Fernández’s red card, Argentina fought until the very end. However, Spain had played brilliant football throughout and eventually lifted the trophy with a 1–0 victory.
 
-Every attack, save and near miss kept us awake and cheering. Watching the World Cup together would be a very unforgettable memory for all of us.
+Every attack, save, and near miss kept us awake and cheering. Watching the World Cup together was a very unforgettable memory for all of us.
