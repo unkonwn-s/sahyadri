@@ -3,7 +3,7 @@
 # PURPOSE: Ninad (school magazine/PDF archive) listing page — card grid of downloadable PDFs.
 layout: page
 title: Ninad
-subtitle: Click thumbnail to download ninad
+subtitle: Click thumbnail to download Ninad
 ---
 
 <!-- Page-specific CSS previously here (pdf-grid-container, ninad-card,
