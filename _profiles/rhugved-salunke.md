@@ -6,7 +6,7 @@ date: 2026-07-07
 academic-year: "2026-27"
 ---
 
-I joined Sahyadri School in 9th.
+I joined Sahyadri School in 9th grade.
 
 I am an active student who enjoys engaging with campus life and bringing people together, whether through creative pursuits, community initiatives, or collaborative events. Whether performing in a production of 12 Angry Men, helping run the Cooking Club, or organizing and hosting our Farewell event, I take pride in being part of a team and contributing to shared goals that bring people closer together.
 
