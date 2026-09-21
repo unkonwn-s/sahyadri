@@ -8,7 +8,7 @@ profile-image: "1sgnGGXFIvIgI8lj6Etv-do52H_rfQ0GD"
 ---
 
 
-I joined Sahyadri School in 4th.
+I joined Sahyadri School in 4th grade.
 
 I am a student at Sahyadri School (KFI) in India, deeply interested in how people remember and how the past continues to live within us through emotion, memory, and culture. What draws me is not just history as something that happened, but as something lived, felt, and carried forward through storytelling and visual culture.
 
