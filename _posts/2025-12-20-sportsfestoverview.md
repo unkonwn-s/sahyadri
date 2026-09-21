@@ -17,6 +17,6 @@ As the day came to an end, we witnessed exceptional performances in the cricket 
 
 Soon the sun set, and all of us returned to our dorms with aching legs, tired smiles, and hearts full of excitement. We look forward to more such days of sportsmanship, enthusiasm, and unforgettable memories in the fun-filled days ahead.
 
-On the second day, javelins were initially being thrown left and right. The PE students then taught the participants the correct way to go about.  The younger students tried their hand at javelins too. The entire school watched the senior boys' Discus and Shot Put events with avid interest. Students put in strong performances in events like Javelin Throw and Long Jump as well.
+On the second day, javelins were initially being thrown left and right. The PE students then taught the participants the correct way to go about it. The younger students tried their hand at javelins too. The entire school watched the senior boys' Discus and Shot Put events with avid interest. Students put in strong performances in events like Javelin Throw and Long Jump as well.
 
 Another exciting event was the Basketball match where Grades 11 and 12 faced each other. Both the teams kept everyone on their toes and the outgoing batch won with a small margin. 
