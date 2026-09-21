@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ‘Young Then, Young Still’
+title: "‘Young Then, Young Still’"
 date: 2025-09-22
 subtitle: "Savannah Shukla (Alumnus)"
 category: September 2025 
