@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "ASSEMBLY BY VEERARAGHAV SIR"
-date: 2026-09-04
+date: 2026-06-18
 subtitle: "Bhagyashree Patil (Teacher)"
-category: September 2026
+category: June 2026
 ---
 Mr. T.M.Veeraraghav, an Ex-NDTV, The Hindu, CNN IBC and Ex-Professor at The School of Modern Media at UPES (SoMM) in Dehradun visited the school early in this term. 
 
