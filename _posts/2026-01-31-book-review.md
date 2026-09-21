@@ -14,7 +14,7 @@ Author: Maryrose Wood
 
 Maryrose Wood is an American writer best known for children’s and young adult books. She wrote the popular series The Incorrigible Children of Ashton Place, which mixes mystery, humor, and adventure. Before becoming a novelist, she also worked as an actress and a songwriter.
 
-The Mysterious Howling is a clever, fast-paced story that blends mystery, humour, and a touch of absurdity in the best possible way. It features a memorable ensemble of characters such as the eccentric Lady and Lord Ashton, the observant and endearing protagonist Penelope Lumley and three absurd, wild children. 
+The Mysterious Howling is a clever, fast-paced story that blends mystery, humour, and a touch of absurdity in the best possible way. It features a memorable ensemble of characters such as the eccentric Lady and Lord Ashton, the observant and endearing protagonist Penelope Lumley, and three absurd, wild children. 
 
 The book follows Penelope Lumley, a young governess, who is tasked with caring for three unusual children living at the grand Ashton Place. As strange events begin to unfold, Penelope quickly realises that this household is anything but ordinary. 
 
