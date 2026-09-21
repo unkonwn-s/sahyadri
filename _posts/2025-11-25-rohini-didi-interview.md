@@ -15,11 +15,11 @@ We sat down with Rohini Didi at the dining hall and saw, up close, the quiet dev
 
 Didi: “I joined Sahyadri in 2009. Before that, I often saw women from my village returning home in uniforms. Curious, I asked them where they worked and came to know they were at Sahyadri, encouraging me to join too. Since then, I have been working in the dining hall and have really enjoyed it!”
 
-"How was your first day here? Was it difficult to adjust?”
+“How was your first day here? Was it difficult to adjust?”
 
 Didi: “Sure, my first day was overwhelming, but a month in, I was feeling right at home.”
 
-"Having been here for so long, have you noticed any changes in how things were back then compared to now? How much would you say this place has changed?”
+“Having been here for so long, have you noticed any changes in how things were back then compared to now? How much would you say this place has changed?”
 
 Didi: “Earlier, most students spoke Marathi, and we formed personal connections with many of them. Now, with greater diversity and fewer Marathi speakers, interactions are less frequent. Still, I don’t let language affect my relationships—I care for the whole community, teachers, students, and staff alike. That said, there’s definitely more room for us—Didis and students—to connect. Even now, this interview gives us a rare chance to just have a conversation.”
 
