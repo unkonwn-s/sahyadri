@@ -9,7 +9,7 @@ pinned: true
 
 Dear Sahyadrians,
 
-We are pleased to announce that the much-loved Tiwai Tales is back with a bang, bursting with new shades and flavours. As the new editorial team of Grade 11 students take over, we are going to be changing things a bit with this new format.
+We are pleased to announce that the much-loved Tiwai Tales is back with a bang, bursting with new shades and flavours. As the new editorial team of Grade 11 students takes over, we are going to be changing things a bit with this new format.
 
 First things first, the newsletter will now come in a new digital format. All the articles will be uploaded in real time on our website, as part of a new webpage ‘Sahyadri Connect’. So the wait until the end of the month is about to get a lot shorter! The new Tiwai Tales will make its way to the dorms too!
 
