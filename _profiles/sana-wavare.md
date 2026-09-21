@@ -7,7 +7,7 @@ academic-year: "2026-27"
 profile-image: "1v36eb5uKLLcwlRGHhAQWOrvOgQESGhqQ"
 ---
 
-I joined Sahyadri School in 11th.
+I joined Sahyadri School in 11th grade.
 
 Since joining the school in Grade 11, I have tried to be an active and dependable member of the community, taking every opportunity to contribute beyond the classroom. Each experience has challenged me in different ways and has helped me develop confidence, creativity, leadership, and a stronger sense of responsibility.
 
