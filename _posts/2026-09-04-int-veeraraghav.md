@@ -9,7 +9,7 @@ In June 2026, Riddhim and I had the opportunity to interview Mr. Veeraraghav, th
 
 Mr. Veeraraghav has a BA and MA in Economics; however, he wanted to work in a field that involved writing and communication. “I love exploring, travelling, and have an inclination towards understanding India’s politics,” he told us. Journalism gave him the chance to do all three. Through his work, he has travelled extensively across India and met people from various backgrounds.
 
-When we asked him what he had encountered during his career, his answer showed just how diverse his experiences have been. “I have faced the grassroot realities of India — riches, war, suffering, and much more.” He has covered the Gujarat riots, Hindu-Muslim conflicts in different parts of India, the war in Sri Lanka, and around 25 years’ worth of elections since 1999.
+When we asked him what he had encountered during his career, his answer showed just how diverse his experiences have been. “I have faced the grassroots realities of India — riches, war, suffering, and much more.” He has covered the Gujarat riots, Hindu-Muslim conflicts in different parts of India, the war in Sri Lanka, and around 25 years’ worth of elections since 1999.
 
 One of the stories that stood out was his coverage of the Cauvery conflict between Karnataka and Tamil Nadu. He interviewed farmers from both states and heard their respective sides of the dispute.
 
