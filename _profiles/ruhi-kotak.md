@@ -6,7 +6,7 @@ date: 2026-07-06
 academic-year: "2026-27"
 ---
 
-I joined Sahyadri School in iI have been here since 7th grade.
+I joined Sahyadri School. I have been here since 7th grade.
 
 Throughout all the years I have been here, there is always something or other to do. I have participated in all the plays done by the batch, from the SS Fest in 7th grade to the Mughal Fest in 8th grade, the Mahabharat play in 9th grade to the Carpe Diem play in 10th grade. Other than all of this, I have given a Bharatanatyam performance and have also played interschool tennis twice.
 
