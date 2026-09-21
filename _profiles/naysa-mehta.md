@@ -7,7 +7,7 @@ academic-year: "2026-27"
 profile-image: "1PBwqtXdNldgOxzUp39jpkzVaXhMpZ0I9"
 ---
 
-I joined Sahyadri School in 11th.
+I joined Sahyadri School in 11th grade.
 
 I have joined the Phoenix Club. As a member of the Culture Committee, I was responsible for hosting all the events organized by the committee during the academic year of 2025-2026. My team and I worked together to ensure the success of these events.
 
