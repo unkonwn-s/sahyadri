@@ -7,7 +7,7 @@ academic-year: "2026-27"
 profile-image: "1dhk2FPS96Ra9j2lXbdCa913TuKd6OvUR"
 ---
 
-I joined Sahyadri School in 6th.
+I joined Sahyadri School in 6th grade.
 
 I am usually a very extroverted individual. I have hosted a number of events, such as being the Master of Ceremonies at the farewell, and many others. I have been a part of the newsletter committee, the DH committee, and the Science Fest. Currently, I am a part of the Ninad team for the 2023-24 academic year. I have also been involved in organizing the alumni meet.
 
