@@ -4,6 +4,7 @@ title: "INFORMATION LITERACY WITH CLASS 7-8"
 date: 2026-09-04
 subtitle: "SAYANTAN SEN (Teacher)"
 category: September 2026
+tags: [workshop, academic]
 ---
 Scope for session 1- 
 1. How does the media make us feel?
