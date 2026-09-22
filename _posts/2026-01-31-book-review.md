@@ -5,6 +5,7 @@ date: 2026-01-31
 subtitle: "Aadya Tyagi (Grade 11)"
 category: January 2026
 image: "1zcJzXsM_YgORoAsHfOgiVZP84AAfVS8Q"
+tags: [literature]
 ---
 
 
