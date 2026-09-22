@@ -5,6 +5,7 @@ subtitle: Rose Jooby (Teacher)
 profile-link: https://www.sahyadrischool.org/jooby-rose/
 date: 2026-08-12
 category: August 2026
+tags: [welcome-orientation, student-life]
 ---
 
 
