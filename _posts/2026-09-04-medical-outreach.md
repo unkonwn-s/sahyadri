@@ -5,6 +5,7 @@ date: 2026-09-04
 subtitle: "Reshma Shah (Teacher)"
 profile-link: "https://www.sahyadrischool.org/dr-reshma-shah/"
 category: September 2026
+tags: [community-service]
 ---
 Story telling and music listening for the baby in womb 
 Prenatal medical outreach initiative at Primary Health Center, Wada.
