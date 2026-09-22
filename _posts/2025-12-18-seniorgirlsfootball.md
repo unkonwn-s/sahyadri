@@ -6,6 +6,7 @@ subtitle: "Ishita Pinnamaneni"
 subtitle2: "Prisha Shah (Grade 10)"
 category: December 2025
 image: "14QEQCTCEBaEAA-xplsd8YV4bQhTQoO1l"
+tags: [sports]
 ---
 
 It's a corner. Nayantara stands behind the ball, eyes fixed on the goal: Chick… Chick… BOOM! The ball soars in the air only to be perfectly cleared by Naina as it reaches the ground, and the ball is out once again.
