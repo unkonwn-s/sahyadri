@@ -5,6 +5,7 @@ date: 2025-12-28
 subtitle: "Kaeya Gautam (Grade 10)"
 category: December 2025
 image: "1nu-7OXmJYemVizUOQTa9ZCQ8Sa2O89va"
+tags: [sports]
 ---
 
 Every year, Cross Country is a highly anticipated event. Students look forward to breaking previously set records or going slowly and enjoying the scenery. Either way, it is a time bubbling with excitement. 
