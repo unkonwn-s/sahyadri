@@ -4,7 +4,7 @@ title: "‘Young Then, Young Still’"
 date: 2025-09-22
 subtitle: "Savannah Shukla (Alumnus)"
 category: September 2025 
-tags: [alumni, editorial]
+tags: [student-life, literature]
 ---
 
 
