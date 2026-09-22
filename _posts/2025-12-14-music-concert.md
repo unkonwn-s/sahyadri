@@ -6,6 +6,7 @@ subtitle: "Kavya Raikar"
 subtitle2: "Veda Agrawal (Grade 9)"
 category: December 2025
 image: "1DAmPoia6meQh4ZCohUU7LSQc7wZwFjNo"
+tags: [performing-arts, excursion]
 ---
 
 It was a hot, sunny afternoon on 14th December, 2025, when the music students of grades 9, 10 and 11 accompanied by Nikhil Sir, Vindhya Akka, and Sachin Sir, headed to the spectacular Savai Gandharva Bhimsen Mahotsav 2025, held at the Maharashtriya Mandal Kreeda Sankul in Pune. The music festival is the highlight of Pune’s cultural calendar. This year the festival not only featured a diverse lineup of veterans but also focused on emerging talent.
