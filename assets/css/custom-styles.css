@@ -406,7 +406,7 @@ html { scroll-behavior: smooth; }
     .toc-sidebar {
         flex: 0 0 20%;
         position: sticky;
-        top: 2vw;
+        top: 20px;
         max-height: calc(100vh - 80px);
         overflow-y: auto;
         margin-top: 2vw !important;
