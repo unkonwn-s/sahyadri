@@ -1514,30 +1514,23 @@ mark.year-search-highlight {
 
 /* ============================================================
    28. TAG INDEX PAGE (tags.html)
-   Previously had zero custom styling — tag pills used Bootstrap's
-   raw default blue (.btn-primary), clashing with the site's
-   sage-green theme even in light mode. Brought in line with the
-   rest of the site, with dark mode support added too.
+   Replaced the old row of tag pill buttons with a sticky TOC sidebar,
+   reusing the shared .toc-sidebar/.toc-card/.toc-title/.toc-list
+   classes from section 7 (same ones the Newsletter/Activities
+   "Editions" sidebar uses) rather than inventing a parallel set.
+   .tags-page-container/.tags-content mirror .newsletter-container/
+   .posts-list's role -- the flex layout wrapper and the content
+   column -- under page-specific names.
    ============================================================ */
 
-/* Tag pill buttons at the top, replacing Bootstrap's default blue */
-.tag-btn {
-    display: inline-block;
-    background-color: #5f745f !important;
-    color: #ffffff !important;
-    border: none !important;
-    border-radius: 20px;
-    padding: 6px 16px;
-    margin: 4px 6px 4px 0;
-    font-family: 'Poiret One', system-ui, sans-serif;
-    font-size: 0.9rem;
-    text-decoration: none !important;
-    transition: background-color 0.2s ease;
-}
-
-.tag-btn:hover {
-    background-color: #4a5c4a !important;
-    color: #ffffff !important;
+@media (min-width: 992px) {
+    .tags-page-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 5%;
+    }
+    .tags-content { flex: 0 0 75%; }
 }
 
 /* Section headings for each tag group, matching the site's category-heading style */
@@ -1583,14 +1576,6 @@ mark.year-search-highlight {
 }
 
 /* Dark mode */
-.dark-mode .tag-btn {
-    background-color: #3a5a3a !important;
-}
-
-.dark-mode .tag-btn:hover {
-    background-color: #4a6e4a !important;
-}
-
 .dark-mode .linked-section {
     color: #e8f3df;
     border-bottom-color: #8a6a78;
@@ -1611,6 +1596,7 @@ mark.year-search-highlight {
 .dark-mode .entry-date {
     color: #888;
 }
+
 
 
 /* ============================================================
