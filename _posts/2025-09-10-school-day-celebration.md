@@ -4,6 +4,7 @@ title: "School Day Celebration"
 date: 2025-09-10
 subtitle: "Maian Rangad (Grade 11)"
 category: September 2025
+tags: [student-life]
 ---
 
 Every year on the 10th of September, Sahyadri School celebrates its Founding Day, celebrating the time that has passed since the establishment of the school. This year is a special year for the school, as it is the 30th year since the founding of the institute. In these 30 years the school has changed remarkably, batches have come and gone, new infrastructure has been built and old ones torn down, teachers have joined and left, and the school is a different place than what it was 30 years ago. But one thing that has not changed since its beginning is the spirit of the school.
