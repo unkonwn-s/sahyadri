@@ -4,6 +4,7 @@ title: TENNIS CAMP
 subtitle: RUHI KOTAK (Class 11)
 category: August 2026
 date: 2026-08-22
+tags: [sports, workshop]
 ---
 A camp where many set off to escape the demands of a hectic schedule—some seeking stress relief, others simply looking for a little enjoyment. Here, all you need is yourself. A tennis racket is provided, along with a coach who is not only relaxed but also fair when it matters.
 
