@@ -19,8 +19,8 @@
       "src": "/favicon.ico"
     },
     {
-      "//": "High-resolution 512x512 icon for splash screens and app launcher graphics",
-      "src": "/assets/img/favicon-512.png"
+      "//": "Second icon entry -- previously pointed at a 512x512 PNG that was never actually added to assets/img/, which left this broken. Pointing at favicon.ico too until a real high-res icon exists.",
+      "src": "/favicon.ico"
     }
   ],
 
