@@ -6,6 +6,7 @@ subtitle: "Deepali Soundattikar (Teacher)"
 profile-link: https://www.sahyadrischool.org/deepali-soundattikar/
 category: July 2026
 image: "1XukqBRf-oObHVkI_duRJZQ9vHn4NKkIq"
+tags: [academic, workshop]
 ---
 
 Imagine a building with only stairs. A boy using a wheelchair cannot enter the building without help. The problem is not the boy—it is the design of the building. Architects realised that instead of making special changes later, they could design
