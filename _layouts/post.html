@@ -4,14 +4,15 @@
 # 'activities' collections (merged from separate post.html/events.html
 # templates to eliminate duplicate maintenance).
 # FEATURES:
-# - Back-navigation link and JS redirect target adapt automatically based
-#   on page.collection ('posts' -> /posts, 'activities' -> /activities).
+# - Back button always navigates via browser history (history.back()),
+#   falling back to page.collection's listing URL (/posts or /activities)
+#   if there's no history to go back to (e.g. a direct link, new tab).
 # - Author profile links (subtitle/subtitle2), with optional profile-link /
 #   profile-link2 overrides for external/manual URLs.
 # - Multi-image gallery, up to 5 images via image/image2..image5 (falls
 #   back to the legacy 'image_id' field name for older activity posts),
 #   with optional per-image alt text via image_alt/image2_alt..image5_alt.
-# - GitHub repository badges, article tags, prev/next pagination, comments.
+# - GitHub repository badges, article tags, comments.
 layout: base
 ---
 
@@ -176,25 +177,6 @@ layout: base
         </div>
       {% endif %}
 
-      <ul class="pagination blog-pager">
-        {% if page.previous.url %}
-          <li class="page-item previous">
-            <a class="page-link" href="{{ page.previous.url | relative_url }}" data-toggle="tooltip" data-placement="top" title="{{ page.previous.title | strip_html | xml_escape }}">
-              <i class="fas fa-arrow-left" alt="Previous Post"></i>
-              <span class="d-none d-sm-inline-block">Previous Post</span>
-            </a>
-          </li>
-        {% endif %}
-        {% if page.next.url %}
-          <li class="page-item next">
-            <a class="page-link" href="{{ page.next.url | relative_url }}" data-toggle="tooltip" data-placement="top" title="{{ page.next.title | strip_html | xml_escape }}">
-              <span class="d-none d-sm-inline-block">Next Post</span>
-              <i class="fas fa-arrow-right" alt="Next Post"></i>
-            </a>
-          </li>
-        {% endif %}
-      </ul>
-
       {% include comments.html %}
 
     </div>
@@ -202,36 +184,21 @@ layout: base
 
   <script>
     /**
-     * Handles back navigation clicks intelligently.
-     * Prevents back-and-forth bouncing between article pages by checking referrer history.
-     * back_url adapts to /posts or /activities depending on which collection this
-     * page belongs to (set via Liquid above and injected here as a literal string).
+     * Back button: always navigates via browser history, so it returns
+     * exactly where the visitor came from (preserving scroll position,
+     * open filters/search on the listing page, etc.) rather than always
+     * routing to the top of /posts or /activities.
+     * Falls back to back_url (the listing page) only when there's no
+     * history to go back to at all -- e.g. the post was opened directly
+     * from a shared link or a new tab, where history.back() would leave
+     * the site entirely or do nothing.
      */
     function handleBackNavigation() {
-      const referrer = document.referrer;
-      const backUrl = "{{ back_url | relative_url }}";
-
-      // No referrer present (e.g., direct URL paste or new tab) -> default to backUrl
-      if (!referrer) {
-        return true;
+      if (!document.referrer) {
+        return true; // no history to go back to -- use the href fallback
       }
 
-      let referrerPath;
-      try {
-        referrerPath = new URL(referrer).pathname;
-      } catch (e) {
-        // Fall back to default link if referrer URL is invalid/malformed
-        return true;
-      }
-
-      // If navigation originated from the listing feed itself, trigger browser back button
-      // to preserve feed scroll state. Otherwise, route directly to the feed.
-      if (referrerPath === backUrl || referrerPath === backUrl + '/') {
-        window.history.back();
-        return false;
-      }
-
-      window.location.href = backUrl;
+      window.history.back();
       return false;
     }
   </script>
