@@ -4,6 +4,7 @@ title: "WORLD CUP FINAL"
 date: 2026-08-11
 subtitle: "Shail Kshirsagar (Class 11)"
 category: August 2026
+tags: [sports, student-life]
 ---
 
 One of the most memorable moments leading up to the World Cup final was our attempt to convince the teachers to screen the match. One such moment came during our Culture class, when we had an activity where everyone wrote anonymous notes to the class. Surprisingly, many of us had written the same request: “Please screen the World Cup final.”
