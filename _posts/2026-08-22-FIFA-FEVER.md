@@ -4,6 +4,7 @@ title: "FIFA FEVER"
 date: 2026-07-21
 subtitle: "Reyansh Gambhir (Class 11)"
 category: July 2026
+tags: [sports, student-life]
 ---
 
 
