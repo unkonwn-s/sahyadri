@@ -4,6 +4,7 @@ title: "Guiding Graphs, A Sociological Survey"
 date: 2025-11-25
 subtitle: "Bhagyashree Patil (Teacher)"
 category: November 2025
+tags: [academic]
 ---
 
 Most subjects tell two stories — one from the textbooks and another from real life. Sociology is just the same; you can’t really learn it by sitting in a classroom alone. Talking to people, doing interviews, and carrying out surveys are some of the best ways to see how society actually works. Surveys, in particular, help us understand what people think and know about the systems and structures that shape our everyday lives.
