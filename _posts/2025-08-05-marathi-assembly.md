@@ -5,6 +5,7 @@ date: 2025-08-05
 subtitle: "Swara Bathe (Grade 11)"
 category: August 2025
 image: "1UvSe0jGCgAsGMwPJtmITVLhHkCaoXoTv"
+tags: [assembly, performing-arts]
 ---
 
 On 5th August, 2025, the children of classes 5 to 8 presented an assembly in which the children gave detailed and insightful information about Maharashtra’s cultural traditions through the medium of folk songs.
