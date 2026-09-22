@@ -5,6 +5,7 @@ date: 2025-08-16
 subtitle: "Aadya Tyagi (Grade 11)"
 category: August 2025
 image: "1FL6vNWqFNyBjUHCKzonI3e_OTaIUvWVt"
+tags: [literature, performing-arts]
 ---
 
 The Art and Literature Fest 2025 began on the day India celebrated her 79th Independence Day. The Independence Day Assembly opened with a heartfelt recitation of one of Rabindranath Tagore's poems, “Let My Country Awake” by Amrit and other literature students from Grades 11 and 12. Subsequently, Zoya performed a moving rendition of a poem from ‘Letters from Gaza’, which was followed by performances of Hindi translations of Nehru's iconic speech, ‘A Tryst With Destiny’, and Nelson Mandela's ‘I Am Prepared to Die’, by Shaurya and Prithvi from Grade 10. The assembly ended with a few Marathi songs and a Sanskrit chant by the junior classes.
