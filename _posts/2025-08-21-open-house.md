@@ -5,6 +5,7 @@ date: 2025-08-21
 subtitle: "Nishka Bhattar"
 subtitle2: "Siddhant Sen (Grade 7)"
 category: August 2025
+tags: [student-life]
 ---
 
 The Open House, conducted by Grade 8 students, was an engaging and interactive session on experiencing exclusion. During the session, we freely discussed our feelings and experiences of being in a new environment. We spoke about the challenges we face in our day-to-day lives on campus and skills such as emotional management, self-awareness, and time management, which are important skills for both school and life. 
