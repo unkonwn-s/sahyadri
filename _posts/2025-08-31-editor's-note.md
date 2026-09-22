@@ -5,6 +5,7 @@ date: 2025-08-31
 subtitle: "Rachit Agrawal (Grade 11)"
 category: August 2025
 pinned: true
+tags: [editorial]
 ---
 
 Dear Sahyadrians,
