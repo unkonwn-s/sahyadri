@@ -4,6 +4,7 @@ title: FOOTBALL CAMP
 subtitle: MAHI MEHTA (Class 11)
 category: August 2026
 date: 2026-08-22
+tags: [sports, workshop]
 ---
 For the past few years, football camp has been the most anticipated sport event in the monsoon term. This year, there was a considerable increase in the participation by both beginners and experienced players throughout all grades.
 
