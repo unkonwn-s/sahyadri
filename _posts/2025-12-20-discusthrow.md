@@ -5,6 +5,7 @@ date: 2025-12-20
 subtitle: "Riddhim Inamke (Grade 11)"
 category: December 2025
 image: "1aOJk246CLTgyirduLqIuPeJ_6Uh84kMK"
+tags: [sports]
 ---
 
 Like every year, this year too, along with other more popular throwing events – Medicine Ball, Shot Put, and Javelin Throw – we also had Discus Throw. Most of us have very little idea about it, leave alone knowing whether it takes place or not during the Sports Fest. I, for instance, learnt of its existence only in Grade 8 when I tried it out for the first time. It was only then that I realized how exhilarating throwing a mere metal disc can be. I have been a regular participant ever since. Trust me, it is in no way less cool than Shot Put or Javelin Throw, and it adds a finishing touch to our minor version of the Olympics. 
