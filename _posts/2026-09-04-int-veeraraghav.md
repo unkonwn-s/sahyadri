@@ -4,6 +4,7 @@ title: "INTERVIEW WITH VEERARAGHAV"
 date: 2026-06-18
 subtitle: "Swara Bathe (Class 12)"
 category: June 2026
+tags: [interview, guest-speaker]
 ---
 In June 2026, Riddhim and I had the opportunity to interview Mr. Veeraraghav, the Executive Editor at NDTV, a journalist who has spent multiple years reporting on politics and events across India. He has covered elections, conflicts, riots, and a wide range of such stories from across the country.
 
