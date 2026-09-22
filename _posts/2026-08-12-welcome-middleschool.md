@@ -5,6 +5,7 @@ subtitle: Kahaan Doshi (Class 8)
 subtitle2: Agasthya Timshina (Class 8)
 category: August 2026
 date: 2026-08-12
+tags: [welcome-orientation, student-life]
 ---
 Our welcome orientation was for both - the oldies and freshers. It was an icebreaker for us. We were given a tour of campus, a glimpse into our school life this year.
 
