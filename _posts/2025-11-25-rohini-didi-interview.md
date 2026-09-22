@@ -6,6 +6,7 @@ subtitle: "Ashrith Reddy"
 subtitle2: "Riddhim Inamke (Grade 11)"
 category: November 2025 
 image: "1j2nUEqjoW5XM_AtTaKuq_6v11D8DGyak"
+tags: [interview, student-life]
 ---
 
 
