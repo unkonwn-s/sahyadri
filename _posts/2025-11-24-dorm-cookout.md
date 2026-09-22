@@ -4,6 +4,7 @@ title: "Dorm Cookouts and Get-togethers"
 date: 2025-11-24
 subtitle: "Kanishka Chaudhary (Class 11)"
 category: November 2025
+tags: [student-life]
 ---
 
 You may be wondering what the terms ‘Dorm Cookout’ and ‘Dorm Get-together’ refer to. Let us look at these two activities separately.
