@@ -29,8 +29,8 @@ The site hosts:
 │   ├── page.html              # Standard content page (extends base)
 │   ├── post.html               # Individual newsletter/activity article page
 │   ├── profile.html            # Individual profile page
-│   ├── default.html, minimal.html, home.html  # From the theme; home.html is
-│   │                            unused (see note in index.md's own comment)
+│   ├── default.html            # Used by 404.html and profiles-directory.html
+│   ├── minimal.html             # From the theme; not currently used by any page
 ├── _includes/
 │   ├── head.html, header.html, nav.html, footer.html   # Shared page chrome
 │   ├── comments.html          # Router: picks Elfsight or Firebase (below)
@@ -198,7 +198,7 @@ bundle install
 bundle exec jekyll serve
 ```
 
-Then visit `http://localhost:4000`. Note: `jekyll-paginate` is **not** installed (see the Gemfile's own comment on version conflicts), so `_layouts/home.html` — a leftover from the theme, unused by any page — would need work before it could be wired up.
+Then visit `http://localhost:4000`. Note: `jekyll-paginate` is **not** installed (see the Gemfile's own comment on version conflicts) -- relevant if a paginated post-feed page is ever built, since that plugin isn't available here.
 
 ## Deployment
 
