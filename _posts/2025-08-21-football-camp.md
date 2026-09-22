@@ -5,6 +5,7 @@ date: 2025-08-21
 subtitle: "Aarav Mitra (Grade 12)"
 category: August 2025
 image: "1qeDyvcXeuqh4Dlj8msxS1z0gYjYjh6LA"
+tags: [sports, workshop]
 ---
 
 The football camp, held over two weeks in July, welcomed both boys and girls from the junior and senior school. Sessions were conducted during each group’s respective Games period, with the senior girls training in the mornings.
