@@ -332,25 +332,17 @@ a.navbar-brand:hover {
    across the site. */
 html { scroll-behavior: smooth; }
 
-.post-entry-container {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    align-items: flex-start;
-}
-
-.post-image {
-    width: 100%;
-    flex: 0 0 100%;
-}
-.post-image img {
-    width: 100%;
-    max-height: 500px;
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    transition: transform 0.3s ease;
-}
+/* .post-entry-container / .post-image / .post-image img used to be
+   defined here too, for an older vertical-stacked card design (full-
+   width image, flex-direction: column). That design was superseded by
+   the current side-by-side thumbnail layout (section "Post/activity
+   card elements" below), but this old block was never removed. Since
+   both blocks target the exact same class names with no extra scoping,
+   the browser was merging them: this block's flex-direction: column
+   was silently overriding the newer block's implicit row default even
+   on desktop, and its unique properties (max-height, transition) were
+   leaking into cards that were never designed to have them. Removed
+   entirely -- the later, complete definition is the only one needed. */
 
 /* Moved from activities.md/posts.md's own inline <style> blocks (identical
    in both). Scoped to .newsletter-container rather than a bare `img`
@@ -384,12 +376,15 @@ html { scroll-behavior: smooth; }
     text-decoration: none;
 }
 
-.back-navigation {
-    margin-top: 15px;
-    margin-bottom: 10px;
-}
+/* Consolidated from what used to be three separate .back-navigation
+   blocks scattered across this file (one setting margin-top: 15px that
+   a second, immediately-adjacent block silently overrode with
+   !important, plus a third far below re-overriding margin-bottom).
+   Kept only the properties that actually took effect. */
 .back-navigation {
     margin-top: 140px !important;
+    margin-bottom: 0.15rem;
+    display: block !important;
 }
 .back-navigation a {
     color: #735362;
@@ -829,10 +824,6 @@ html { scroll-behavior: smooth; }
 .post-container {
     padding-top: 40px;
     position: relative;
-}
-.back-navigation {
-    margin-bottom: 0.15rem;
-    display: block !important;
 }
 .post-subheading,
 .post-subtitle,
