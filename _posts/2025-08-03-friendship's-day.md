@@ -5,6 +5,7 @@ date: 2025-08-03
 subtitle: "Anvi Bharadwaj (Grade 9)"
 category: August 2025
 image: "1gTX0vXVVjQVDLM4v_3jBDD0r3bB3rkwC"
+tags: [student-life, festival]
 ---
 Friendship Day is one of the most anticipated events in Sahyadri. As every year, it was hosted by the Grade 9 students. They picked the nostalgic theme of ‘cartoons’, which reflected in the decor, activities, and menu of the event. 
 
