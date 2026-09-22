@@ -5,7 +5,7 @@ date: 2025-09-14
 subtitle: "Aarav Mitra (Grade 12)"
 category: September 2025
 image: "1C0It0wcKjTpTk_UStB_EyotO__Ks48cI"
-tags: [environment, community-service]
+tags: [community-service]
 ---
 
 On a quiet Sunday morning, when most of us would usually be catching up on sleep, a group of students from Grades 11 and 12, along with Sachin Sir and Sekhar Sir, decided to spend it differently; by giving back to the environment. At 6:15 a.m., the team set out for Shambhu Hill, a place close to Sahyadri that is home to the Shiv Shambho Mahadeo temple.
