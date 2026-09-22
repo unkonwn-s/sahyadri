@@ -6,7 +6,7 @@ subtitle: "Deepa More (Teacher)"
 profile-link: https://www.sahyadrischool.org/deepa-more/
 category: August 2025
 image: "1nMXxx7WPnw-Houk74Va_VevCGAwaVn-S"
-tags: [community-service, environment]
+tags: [community-service]
 ---
 
 We had an early start to the monsoons this year; the rains arrived in mid-May, a good two months in advance, and that too in heavy showers. While this helped turn the campus into a welcoming shade of green, it put a strain on the farmland preparation activities—both at the school side as well as at the village level. This is expected to impact the growth and yield of this year’s monsoon crops. 
