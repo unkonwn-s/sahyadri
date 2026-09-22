@@ -6,6 +6,7 @@ subtitle: "Reshma Shah (Teacher)"
 profile-link: https://www.sahyadrischool.org/dr-reshma-shah/
 category: August 2025
 image: "1_rwMHBbqkYLuPk2FXjp3y7YWQMOFuGFY"
+tags: [community-service]
 ---
 
 As part of the Medical Outreach, ASHA workers are being trained in prenatal best practices and overall well-being of expectant mothers at the village level under the ‘First 1000 days of life’ awareness initiative. 
