@@ -5,6 +5,7 @@ date: 2025-12-20
 subtitle: "Yuana Garg (Grade 10)"
 category: December 2025
 image: "1B96jIAgio5XPr_qAHgTjOxq2C41cskJA"
+tags: [sports]
 ---
 
 As the sun rose to the marching of our footsteps, the first day of the Sports Fest began with a bang. The day witnessed a field packed with energy, excitement, and the spirit of friendly competition.
