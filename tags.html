@@ -17,33 +17,42 @@ title: 'Tag Index'
 {% comment %} Step 2: Split the string into an array and sort the tag names alphabetically {% endcomment %}
 {%- assign tags_list = site_tags | split: ',' | sort -%}
 
-<!-- Top Navigation: Display tag button pills with post counts that anchor to each tag section below -->
-{%- for tag in tags_list -%}
-  <a href="#{{- tag -}}" class="btn btn-primary tag-btn">
-    <i class="fas fa-tag" aria-hidden="true"></i>&nbsp;{{- tag -}}&nbsp;({{ site.tags[tag].size }})
-  </a>
-{%- endfor -%}
+<div class="tags-page-container">
 
-<!-- Main Content Area: Grouped post lists for each tag -->
-<div id="full-tags-list">
-  {%- for tag in tags_list -%}
-  <!-- Tag Section Header (serves as the anchor target for top tag buttons) -->
-  <h2 id="{{- tag -}}" class="linked-section">
-    <i class="fas fa-tag" aria-hidden="true"></i>
-    &nbsp;{{- tag -}}&nbsp;({{ site.tags[tag].size }})
-  </h2>
+  <!-- Table of Contents Sidebar: one entry per tag, anchors to its section below -->
+  <aside class="toc-sidebar">
+    <nav class="toc-card">
+      <h2 class="toc-title">Tags</h2>
+      <ul class="toc-list">
+        {%- for tag in tags_list -%}
+          <li><a href="#{{- tag -}}">{{- tag -}} ({{ site.tags[tag].size }})</a></li>
+        {%- endfor -%}
+      </ul>
+    </nav>
+  </aside>
 
-  <!-- List of all blog posts associated with the current tag -->
-  <div class="post-list">
-    {%- for post in site.tags[tag] -%}
-    <div class="tag-entry">
-      <a href="{{ post.url | relative_url }}">{{- post.title | strip_html -}}</a>
-      <div class="entry-date">
-        <!-- Human-readable post date formatted using liquid date filters -->
-        <time datetime="{{- post.date | date_to_xmlschema -}}">{{- post.date | date: date_format -}}</time>
+  <!-- Main Content Area: Grouped post lists for each tag -->
+  <div id="full-tags-list" class="tags-content">
+    {%- for tag in tags_list -%}
+    <!-- Tag Section Header (serves as the anchor target for the sidebar links) -->
+    <h2 id="{{- tag -}}" class="linked-section">
+      <i class="fas fa-tag" aria-hidden="true"></i>
+      &nbsp;{{- tag -}}&nbsp;({{ site.tags[tag].size }})
+    </h2>
+
+    <!-- List of all blog posts associated with the current tag -->
+    <div class="post-list">
+      {%- for post in site.tags[tag] -%}
+      <div class="tag-entry">
+        <a href="{{ post.url | relative_url }}">{{- post.title | strip_html -}}</a>
+        <div class="entry-date">
+          <!-- Human-readable post date formatted using liquid date filters -->
+          <time datetime="{{- post.date | date_to_xmlschema -}}">{{- post.date | date: date_format -}}</time>
+        </div>
       </div>
+      {%- endfor -%}
     </div>
     {%- endfor -%}
   </div>
-  {%- endfor -%}
+
 </div>
