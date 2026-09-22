@@ -5,6 +5,7 @@ date: 2025-09-22
 subtitle: "Riddhim Inamke"
 subtitle2: "Aarush Badruka (Grade 11)"
 category: September 2025
+tags: [student-life]
 ---
 
 Over time, we noticed that the amount of personal packaged food, or “tuck,” being brought into school was increasing significantly. What started as occasional snacking slowly turned into something more complicated — tuck became a kind of “social currency,” especially among junior and middle-school students. This created subtle divisions and pressures within peer groups.
