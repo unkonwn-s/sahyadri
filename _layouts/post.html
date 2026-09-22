@@ -168,6 +168,11 @@ layout: base
         {{ content }}
       </div>
 
+      <!-- Temporarily disabled, tags are still set on every post's front
+           matter and /tags itself still works, this just stops the
+           per-post "Tags:" line from rendering. Remove the comment tag
+           pair wrapping the block below to restore it. -->
+      {% comment %}
       {% if page.tags.size > 0 %}
         <div class="blog-tags">
           <span>Tags:</span>
@@ -176,6 +181,7 @@ layout: base
           {% endfor %}
         </div>
       {% endif %}
+      {% endcomment %}
 
       {% include comments.html %}
 
