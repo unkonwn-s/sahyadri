@@ -4,6 +4,7 @@ title: "GURU PURNIMA"
 date: 2026-07-30
 subtitle: "Shourya Nikam (Class 6)"
 category: July 2026
+tags: [assembly, krishnamurti, festival]
 ---
 
 
