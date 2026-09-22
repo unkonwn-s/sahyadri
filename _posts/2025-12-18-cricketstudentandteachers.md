@@ -5,6 +5,7 @@ date: 2025-12-18
 subtitle: "Gatik Sirohia (Grade 9)"
 category: December 2025
 image: "1qhp8WR9AcW3GFTlJGEPoAqR_18YPU_RY"
+tags: [sports]
 ---
 
 The cricket match between the students and teachers was the highlight of the first day. After lunch all of us rushed to the venue. Spicy cucumbers and the sweet and cold sugarcane juice only added to the excitement. 
