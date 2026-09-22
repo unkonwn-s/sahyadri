@@ -4,7 +4,7 @@ title: WELCOME BACK TO THE SCHOOL - Junior School
 subtitle: Zara Srikrishnan (Class 6)
 category: August 2026
 date: 2026-08-12
-tags: [welcome-orientation, student-life]
+tags: [student-life]
 ---
 This year’s orientation was not how I imagined. It was definitely more enthusiastic and longer than last year. Now I don’t know what seniors did. But us juniors, we had a blast!!
 
