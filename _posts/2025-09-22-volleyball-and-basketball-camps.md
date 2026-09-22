@@ -5,6 +5,7 @@ date: 2025-09-22
 subtitle: "Rachit Agrawal"
 subtitle2: "Hemant Kamalia (Grade 11)"
 category: September 2025
+tags: [sports, workshop]
 ---
 
 Following Sahyadri tradition, the students of Grade 11 decided to take initiative and pass on what they have learned over the years. As soon as the monsoons gave us some relief, we organized a volleyball camp for girls of Grades 9 and 10, and a basketball camp for all the middle schoolers, both girls and boys.
