@@ -406,7 +406,12 @@ html { scroll-behavior: smooth; }
     .toc-sidebar {
         flex: 0 0 20%;
         position: sticky;
-        top: 20px;
+        /* The fixed navbar occupies ~5rem (80px) of vertical space (same
+           value .intro-header uses to clear it) -- top needed to be at
+           least that much, or the sidebar sticks to a point still hidden
+           behind the navbar. 90px = navbar clearance + a small visible
+           gap once stuck. */
+        top: 90px;
         max-height: calc(100vh - 80px);
         overflow-y: auto;
         margin-top: 2vw !important;
