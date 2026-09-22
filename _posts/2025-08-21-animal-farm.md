@@ -5,6 +5,7 @@ date: 2025-08-21
 subtitle: "Asha Karkal (Grade 8)"
 category: August 2025
 image: "1_pcGGsr5hO-oY-dvOHPhLIYXm3g3C1CB"
+tags: [academic, literature]
 ---
 
 We, the 8th graders, are reading a famous English novella called ‘Animal Farm’ in English class. The ideology around which the book is centred is aptly named ‘Animalism’.
