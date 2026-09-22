@@ -5,7 +5,7 @@ date: 2026-08-01
 subtitle: "Sachin Patil (Teacher)"
 profile-link: https://www.sahyadrischool.org/sachin-patil/
 category: August 2026
-tags: [workshop, wellness]
+tags: [workshop]
 ---
 
 SEE learning (Social, Emotional, and Ethical Learning) is a K-12 education program developed by Emory University in collaboration with His Holiness the Dalai Lama. With the intent to educate both the heart and the mind, the SEE Learning program provides a practical, science-backed approach to nurturing the whole child without any religious or methodical orientation. It equips educators with adaptable, easy-to-use lessons and ongoing professional development, focusing on essential life skills like focused attention, self-compassion, emotional resilience, trauma-related awareness, systems thinking, and ethical decision-making. These skills are structured across three interconnected areas—understanding oneself, understanding others, and understanding the broader community—through the lenses of awareness, compassion, and active engagement.
