@@ -1698,12 +1698,15 @@ mark.year-search-highlight {
       box-sizing: border-box;
     }
 
-    /* Sidebar stays visible while user scrolls through cards */
+    /* Sidebar stays visible while user scrolls through cards.
+       top: 90px = the fixed navbar's real clearance (~80px, same value
+       .intro-header uses elsewhere) plus a small visible gap -- matches
+       the same fix applied to .toc-sidebar (Newsletter/Activities/Tags). */
     .profile-toc-sidebar {
       width: 240px;
       flex-shrink: 0;
       position: sticky;
-      top: 20px;
+      top: 90px;
     }
 
     /* Sage-green card matching the Newsletter/Activities TOC look
