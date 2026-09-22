@@ -5,6 +5,7 @@ date: 2025-11-24
 subtitle: "Kaeya Gautam (Grade 10)"
 category: November 2025
 image: "1fSk5xqUB5RRN4TwnQsqUd0zAJos-gJxq"
+tags: [club-activity]
 ---
 
 
