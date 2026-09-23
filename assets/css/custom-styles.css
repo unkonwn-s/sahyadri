@@ -1529,6 +1529,13 @@ mark.year-search-highlight {
     scroll-margin-top: 80px;
 }
 
+/* A little extra breathing room below the "Articles by" heading
+   specifically on profile pages, without changing the shared
+   .linked-section spacing used by the Tags page too. */
+.profile-written-by .linked-section {
+    margin-bottom: 1.5rem;
+}
+
 /* Individual post rows under each tag */
 .tag-entry {
     display: flex;
