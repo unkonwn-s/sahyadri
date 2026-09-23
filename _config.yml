@@ -96,20 +96,33 @@ page-col: "#FFFFFF"
 text-col: "#3E3830"
 
 # Links
-link-col: "#A67C52"
+# link-col darkened from #A67C52 (3.73:1 on white, fails WCAG AA's 4.5:1
+# for normal text) to meet contrast while staying the same tan/brown hue.
+link-col: "#916c47"
 hover-col: "#8FA186"
 
 # Navigation bar
-navbar-col: "#668571"
+# navbar-col darkened from #668571 (2.82:1 against its own nav-link text,
+# fails WCAG AA) -- this single change also fixes navbar-brand (the site
+# title) and nav-link:hover, both of which use colors set directly in
+# custom-styles.css rather than the vars below.
+navbar-col: "#587362"
 navbar-hover-col: "#8FA186"
-navbar-text-col: "#D0DAC8"
+# navbar-text-col lightened from #D0DAC8 (3.60:1 against the new darker
+# navbar-col, still fails) -- used directly by dropdown menu items
+# (Resources/Information), which don't have their own color override
+# the way regular nav-links do.
+navbar-text-col: "#eff2ec"
 navbar-border-col: "#BBC4B4"
 
 # Footer
 footer-col: "#B2C2AD"
 footer-text-col: "#3E3830"
-footer-link-col: "#A67C52"
-footer-hover-col: "#668571"
+# footer-link-col/footer-hover-col darkened from #A67C52 (1.99:1) and
+# #668571 (2.17:1) against the footer background -- both badly failed
+# WCAG AA, footer links were genuinely hard to read.
+footer-link-col: "#614830"
+footer-hover-col: "#3e5144"
 
 
 # -----------------------------------------------------------------------------
