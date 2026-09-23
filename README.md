@@ -62,7 +62,9 @@ The site hosts:
 │                                site.tags is a posts-only feature, so a
 │                                tags: field added to an _activities file
 │                                would silently have no effect here.
-│                                Linked in the nav bar.
+│                                Not currently in the nav bar (removed
+│                                for now) — reachable via a direct link
+│                                or the "Tags:" line on a tagged post.
 ├── comms.md                   # Static "how to reach us" page
 ├── maintenance.html            # Maintenance-mode landing page (see below)
 ├── approve.html                # Comment moderation review page (see below)
