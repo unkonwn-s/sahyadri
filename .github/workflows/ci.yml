@@ -40,7 +40,7 @@ jobs:
       - name: Check for broken links (html-proofer)
         run: |
           set +e
-          bundle exec htmlproofer ./_site 2>&1 | tee /tmp/htmlproofer_output.txt
+          bundle exec ruby check_links.rb 2>&1 | tee /tmp/htmlproofer_output.txt
           status=${PIPESTATUS[0]}
           if [ "$status" -ne 0 ]; then
             while IFS= read -r line; do
