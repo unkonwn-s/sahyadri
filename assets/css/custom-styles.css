@@ -405,7 +405,16 @@ html { scroll-behavior: smooth; }
            value .intro-header uses to clear it) -- top needed to be at
            least that much, or the sidebar sticks to a point still hidden
            behind the navbar. 90px = navbar clearance + a small visible
-           gap once stuck. */
+           gap once stuck.
+
+           MAINTENANCE NOTE: .profile-toc-sidebar (Profiles page, further
+           down this file) is a SEPARATE implementation of the same idea
+           -- a static list of anchor links here vs. buttons the Profiles
+           page's JS builds and filters at runtime (see that page's own
+           doc comment for why). Nothing keeps these two in sync: this
+           top value, or any other sitewide layout change (navbar height,
+           spacing, colors) that should visually apply to both, has to be
+           changed in both places by hand. */
         top: 90px;
         max-height: calc(100vh - 80px);
         overflow-y: auto;
@@ -1685,7 +1694,11 @@ mark.year-search-highlight {
     /* Sidebar stays visible while user scrolls through cards.
        top: 90px = the fixed navbar's real clearance (~80px, same value
        .intro-header uses elsewhere) plus a small visible gap -- matches
-       the same fix applied to .toc-sidebar (Newsletter/Activities/Tags). */
+       the same fix applied to .toc-sidebar (Newsletter/Activities/Tags).
+
+       MAINTENANCE NOTE: .toc-sidebar (Newsletter/Activities/Tags, earlier
+       in this file) is a separate implementation of the same idea, kept
+       in sync only by hand -- see the matching note on that rule. */
     .profile-toc-sidebar {
       width: 240px;
       flex-shrink: 0;
