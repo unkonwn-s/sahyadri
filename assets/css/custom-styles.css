@@ -332,6 +332,20 @@ a.navbar-brand:hover {
    across the site. */
 html { scroll-behavior: smooth; }
 
+/* Accessibility: beautifuljekyll.css hardcodes --mid-col: #808080 (used
+   for .post-meta post-listing dates, among other things) with no
+   dark-mode variant. #808080 on white is 3.95:1, failing WCAG AA's
+   4.5:1 for normal text; the same color on the dark-mode background is
+   4.41:1, also just under. Overridden here (rather than editing the
+   theme file) since custom-styles.css loads after it, so these win the
+   cascade normally with no !important needed. */
+:root {
+    --mid-col: #757575;
+}
+.dark-mode {
+    --mid-col: #858585;
+}
+
 /* .post-entry-container / .post-image / .post-image img used to be
    defined here too, for an older vertical-stacked card design (full-
    width image, flex-direction: column). That design was superseded by
@@ -702,6 +716,14 @@ html { scroll-behavior: smooth; }
     transition: all 0.3s ease;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     outline: none;
+}
+/* Accessibility: outline: none above removed the default focus
+   indicator with no replacement -- a keyboard user tabbing to this
+   button previously got no visible indication of focus at all. Only
+   shows for real keyboard focus (:focus-visible), not mouse clicks. */
+.btn-load-more:focus-visible {
+    outline: 3px solid #8FA186;
+    outline-offset: 2px;
 }
 .btn-load-more:hover {
     background-color: #4a5748;
@@ -1260,6 +1282,14 @@ html { scroll-behavior: smooth; }
     border-bottom: 3px solid #5f745f;
 }
 
+/* Accessibility: outline: none above removed the default focus
+   indicator with no replacement -- a keyboard user tabbing through
+   the year tabs previously got no visible indication of focus. */
+.tab-link:focus-visible {
+    outline: 3px solid #8FA186;
+    outline-offset: 2px;
+}
+
 /* --- Year panels --- */
 .academic-panel {
     display: none;
@@ -1283,7 +1313,8 @@ html { scroll-behavior: smooth; }
 
 .post-subtitle a {
     font-family: inherit;
-    color: #7a9670;
+    /* Darkened from #7a9670 (3.27:1 on white, fails WCAG AA's 4.5:1) */
+    color: #617959;
     text-decoration: none;
 }
 
@@ -1568,7 +1599,8 @@ mark.year-search-highlight {
 
 .entry-date {
     flex-shrink: 0;
-    color: #a0aec0;
+    /* Darkened from #a0aec0 (2.26:1 on white, badly fails WCAG AA's 4.5:1) */
+    color: #5f7490;
     font-size: 0.85rem;
     font-style: italic;
 }
@@ -1673,6 +1705,15 @@ mark.year-search-highlight {
       font-weight: bold;
     }
 
+    /* Accessibility: these are now keyboard-focusable (role="button"
+       tabindex="0" added in profiles.html) -- gives them the same
+       custom focus ring as the other interactive controls on this
+       page, instead of relying on each browser's own default outline. */
+    .profile-sub-nav-list li:focus-visible {
+      outline: 3px solid #8FA186;
+      outline-offset: 2px;
+    }
+
 
     /* ============================================================
        4. TWO-COLUMN LAYOUT
@@ -1769,6 +1810,17 @@ mark.year-search-highlight {
       color: #5f745f !important;
       font-weight: bold;
       text-decoration: underline;
+    }
+
+    /* Accessibility: outline: none above removed the default focus
+       indicator with no replacement -- a keyboard user tabbing through
+       this category sidebar previously got no visible indication of
+       focus at all (the hover/active styles above only apply on mouse
+       hover or after a category is already selected, not while
+       simply tabbing through). */
+    .profile-toc-list button:focus-visible {
+      outline: 3px solid #8FA186;
+      outline-offset: 2px;
     }
 
     /* The right-hand content area grows to fill remaining space */
