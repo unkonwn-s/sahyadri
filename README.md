@@ -14,6 +14,7 @@ The site hosts:
 - **Krishnamurti / Weekly Excerpts** (`/kfi/`) — embedded videos and linked documents from Krishnamurti Foundation India
 - **Videos** (`/videos/`) and **Photos** (`/photos/`) — media galleries, also grouped by year
 - **Ninad** (`/ninad/`) and **Geet Gunjan** (`/geeth/`) — PDF archives of school magazines
+- A **Tag index** (`/tags/`) — every Newsletter post's tags, grouped and cross-linked; Activities aren't included (a Jekyll `site.tags` limitation, see below)
 - A **comments system** on posts, activities, and profile pages, with two interchangeable backends (see below)
 
 ## Project structure
@@ -54,8 +55,14 @@ The site hosts:
 │                                yet (permalink: /not_done_yet)
 ├── videos.html, photos.html, kfi.html   # Media gallery pages
 ├── ninad.md, geeth-gunjan.md   # PDF archive pages
-├── tags.html                  # Tag index (currently unused — no post or
-│                                activity sets a `tags:` field yet)
+├── tags.html                  # Tag index, grouped by tag with a sticky
+│                                TOC sidebar (same pattern as Newsletter/
+│                                Activities). Only site.tags (i.e. only
+│                                _posts) feeds this — Jekyll's built-in
+│                                site.tags is a posts-only feature, so a
+│                                tags: field added to an _activities file
+│                                would silently have no effect here.
+│                                Linked in the nav bar.
 ├── comms.md                   # Static "how to reach us" page
 ├── maintenance.html            # Maintenance-mode landing page (see below)
 ├── approve.html                # Comment moderation review page (see below)
@@ -126,6 +133,8 @@ Bio text in Markdown.
 ```
 
 `subtitle` should read `"Student (Class N)"` or a role like `"Teacher"` — `profiles.html`'s sorting logic looks for these substrings to group and order the directory.
+
+Nothing else needs to be added manually to get a profile listed in its own "Articles by" section — `_layouts/profile.html` runs the byline-matching logic (above) in reverse at build time: it slugifies this profile's own name and checks every post/activity's `subtitle`/`subtitle2` (and `profile-link`/`profile-link2`, for the manual-override cases) against it, then lists whatever matches, newest first. The section doesn't render at all if nothing matches.
 
 ### Images (Google Drive)
 
@@ -209,9 +218,9 @@ Deployment runs via a GitHub Actions workflow (`.github/workflows/ci.yml`) on ev
 - Fonts: **Amatic SC** (display headings), **Poiret One** (theme body/nav text), and **Montserrat** (post/article body text) — all loaded via Google Fonts in `_includes/head.html`.
 - Dark mode is a `.dark-mode` class toggled on `<body>`; most components have a corresponding `.dark-mode .component { ... }` override in `custom-styles.css` rather than CSS variables for dark-mode-specific colors.
 - All page-specific CSS lives in `assets/css/custom-styles.css`, organized into numbered sections (see the file's own comments) — the theme's own CSS files (`beautifuljekyll.css`, etc.) are left untouched.
+- **Sticky elements and the fixed navbar:** the site's navbar is `position: fixed`, and content elsewhere clears it with a `margin: 5rem` on `.intro-header`. Any `position: sticky` element needs a `top` value of at least that much (the site uses `90px`, navbar clearance plus a small visible gap) — a smaller value doesn't just look cramped, the element sticks to a point still partially hidden *behind* the navbar. There are two such sidebars on the site (`.toc-sidebar` for Newsletter/Activities/Tags, `.profile-toc-sidebar` for Profiles) that are separate implementations kept in sync only by hand — see the maintenance note on each in `custom-styles.css`.
 
 ## Known gaps
 
-- **`tags.html`** is fully functional but currently shows nothing — no post or activity sets a `tags:` front matter field yet.
 - **`geeth-gunjan.md`** has two PDF cards ("Original" and "English Transliterated") sharing the same thumbnail image; a comment in the file flags this as needing the correct second thumbnail's Google Drive file ID.
-- A handful of `_includes` files (`analytics.html`, `google_analytics.html`, `gtag.html`, `gtm_head.html`, `gtm_body.html`, `matomo.html`, `mathjax.html`) are theme-provided hooks not currently wired to real tracking IDs.
+- Analytics is confirmed active and tracking real traffic (a Google Analytics dashboard has shown live data), but none of the repo's own tracking `_includes` (`gtag.html`, `gtm_head.html`, `google_analytics.html`, `cloudflare_analytics.html`, `matomo.html`, `analytics.html`) have a config value set in `_config.yml` to fire them — so whatever's actually tracking is set up outside this repo (plausibly at the Cloudflare/DNS level, given the site is proxied through it), not through any of these dormant hooks. `mathjax.html` remains a separate, unused theme hook.
