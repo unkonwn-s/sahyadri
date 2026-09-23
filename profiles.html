@@ -95,13 +95,20 @@ full-width: true
       Renders one <li> per unique academic year.
       The most recent year gets class="active" on page load.
       onclick calls filterAcademicYear() to rebuild the grid.
+      Accessibility: role="button" + tabindex="0" + the keydown handler
+      make this reachable and activatable via keyboard (Tab, then Enter
+      or Space), previously a bare <li onclick> with none of these,
+      a keyboard-only user could not switch years at all.
     -->
     <nav class="profile-sub-nav-options">
       <ul class="profile-sub-nav-list" id="year-toc">
         {% for yr in unique_years %}
           <li
             {% if yr == latest_year %}class="active"{% endif %}
+            role="button"
+            tabindex="0"
             onclick="filterAcademicYear('{{ yr }}', this)"
+            onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();filterAcademicYear('{{ yr }}', this);}"
           >
             {{ yr }}
           </li>
