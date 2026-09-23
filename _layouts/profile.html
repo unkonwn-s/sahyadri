@@ -2,7 +2,9 @@
 # FILE: _layouts/profile.html
 # PURPOSE: Student/staff profile page template. Extends 'base'.
 # FEATURES: circular avatar image, name/title header, last-updated date,
-# back-navigation to /profiles.
+# back-navigation to /profiles, and a "Written by" list of every post/
+# activity crediting this profile (reverse lookup of the byline->profile
+# slug-matching logic used on posts.md/activities.md).
 # ==============================================================================
 # AUTHOR / MEMBER PROFILE LAYOUT TEMPLATE
 # ==============================================================================
@@ -77,6 +79,76 @@ layout: base
       <div class="profile-content">
         {{ content }}
       </div>
+
+      {% comment %}
+        "Written by" section: reverse lookup of posts/activities crediting
+        this profile. Mirrors the forward byline->profile slug-matching
+        logic used in posts.md/activities.md (split subtitle into
+        first+last word, downcase, hyphenate) run backwards against this
+        profile's own name, PLUS a direct check against profile-link/
+        profile-link2 overrides -- for the handful of bylines that didn't
+        cleanly slugify (a middle name, an unusual name order) and link
+        here manually instead. Rendered via a single {% raw %}{% capture %}{% endraw %}
+        rather than building a filtered array, since standard Jekyll
+        Liquid has no array-push filter to collect matches into as we go.
+      {% endcomment %}
+      {% assign profile_name_parts = page.title | split: " " %}
+      {% assign this_profile_slug = profile_name_parts[0] | downcase | append: "-" | append: profile_name_parts[1] | downcase %}
+      {% assign this_profile_url = page.url | relative_url %}
+      {% assign all_content = site.posts | concat: site.activities | sort: "date" | reverse %}
+
+      {% capture written_by_items %}
+        {% for item in all_content %}
+          {% assign matched = false %}
+
+          {% if item.subtitle %}
+            {% assign a1 = item.subtitle | split: " " %}
+            {% if a1.size > 1 %}
+              {% assign a1_slug = a1[0] | downcase | append: "-" | append: a1[1] | downcase %}
+              {% if a1_slug == this_profile_slug %}
+                {% assign matched = true %}
+              {% endif %}
+            {% endif %}
+          {% endif %}
+
+          {% if item.subtitle2 %}
+            {% assign a2 = item.subtitle2 | split: " " %}
+            {% if a2.size > 1 %}
+              {% assign a2_slug = a2[0] | downcase | append: "-" | append: a2[1] | downcase %}
+              {% if a2_slug == this_profile_slug %}
+                {% assign matched = true %}
+              {% endif %}
+            {% endif %}
+          {% endif %}
+
+          {% if item.profile-link and item.profile-link contains this_profile_url %}
+            {% assign matched = true %}
+          {% endif %}
+
+          {% if item.profile-link2 and item.profile-link2 contains this_profile_url %}
+            {% assign matched = true %}
+          {% endif %}
+
+          {% if matched %}
+            <div class="tag-entry">
+              <a href="{{ item.url | relative_url }}">{{ item.title | strip_html }}</a>
+              <div class="entry-date">
+                <time datetime="{{ item.date | date_to_xmlschema }}">{{ item.date | date: site.date_format }}</time>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      {% endcapture %}
+
+      {% if written_by_items contains "<div" %}
+        <hr class="my-4">
+        <div class="profile-written-by">
+          <h2 class="linked-section">Written by {{ page.title }}</h2>
+          <div class="post-list">
+            {{ written_by_items }}
+          </div>
+        </div>
+      {% endif %}
 
     </div>
   </div>
