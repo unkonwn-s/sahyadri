@@ -33,6 +33,7 @@ Article text in Markdown goes here.
 - **`category`** groups the post under a month heading on the Newsletter page (`/posts/`) — use `"Month YYYY"`, matching the existing convention.
 - **`image`** (optional) is a Google Drive file ID for the post's thumbnail. There's also `image2`–`image5` for a small gallery, and `pinned: true` to pin the post above others in its category.
 - Two authors: add `subtitle2` (and `profile-link2` if needed) the same way.
+- **`tags`** (optional) is a list, e.g. `tags: [sports, workshop]`. It shows as a "Tags:" line on the article and appears grouped on the Tag index page (`/tags/`) — only for Newsletter posts, though; this is a Jekyll limitation (`site.tags` only reads `_posts`), so adding `tags` to an Activity write-up won't show up there. There's no fixed list of allowed tags — reuse an existing one where it fits (check `/tags/` for what's already in use) rather than inventing near-duplicates.
 
 Nothing else needs updating — the Newsletter page automatically groups posts by academic year and category from what's already in `_posts/`.
 
@@ -76,6 +77,7 @@ Bio text in Markdown.
 
 - **`subtitle`** must read `"Student (Class N)"` (any class 6–12) or a role like `"Teacher"` or `"Pre-School"` — the Profiles directory page (`/profiles/`) uses this text to sort and group entries. Anything else will still show, just without a sensible sort position.
 - **`profile-image`** is optional; without one, a default placeholder photo is used.
+- The profile page automatically builds an "Articles by {name}" list at the bottom, pulling in every post/activity whose byline matches this person — nothing to add here for that to work, as long as the filename matches the byline the way posts already expect (see the Newsletter post section above).
 
 ---
 
