@@ -38,7 +38,16 @@ jobs:
           JEKYLL_ENV: production
 
       - name: Check for broken links (html-proofer)
-        run: bundle exec htmlproofer ./_site
+        run: |
+          set +e
+          bundle exec htmlproofer ./_site 2>&1 | tee /tmp/htmlproofer_output.txt
+          status=${PIPESTATUS[0]}
+          if [ "$status" -ne 0 ]; then
+            while IFS= read -r line; do
+              echo "::error::$line"
+            done < /tmp/htmlproofer_output.txt
+          fi
+          exit $status
 
       - uses: actions/upload-pages-artifact@v4
 
