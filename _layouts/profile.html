@@ -130,10 +130,12 @@ layout: base
           {% endif %}
 
           {% if matched %}
-            <li class="tag-entry">
-              <a href="{{ item.url | relative_url }}">{{ item.title | strip_html }}</a>
-              <div class="entry-date">
-                <time datetime="{{ item.date | date_to_xmlschema }}">{{ item.date | date: site.date_format }}</time>
+            <li>
+              <div class="tag-entry">
+                <a href="{{ item.url | relative_url }}">{{ item.title | strip_html }}</a>
+                <div class="entry-date">
+                  <time datetime="{{ item.date | date_to_xmlschema }}">{{ item.date | date: site.date_format }}</time>
+                </div>
               </div>
             </li>
           {% endif %}
