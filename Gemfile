@@ -33,6 +33,16 @@ end
 gem "wdm", "~> 0.1", platforms: [:mingw, :x64_mingw, :mswin]
 
 # ------------------------------------------------------------------------------
+# Link/HTML Checker (CI only)
+# Checks the built _site output for broken internal links, dead anchors, and
+# invalid HTML on every push, using the rules in .htmlproofer.yml (which
+# already existed here, tuned for this site's specific quirks -- JS-templated
+# image src attributes, external links disabled for CI reliability -- but was
+# never actually wired into the CI workflow until now).
+# ------------------------------------------------------------------------------
+gem "html-proofer", "~> 5.0"
+
+# ------------------------------------------------------------------------------
 # NOTE: The 'gemspec' directive (which pulled dependencies from
 # beautiful-jekyll-theme.gemspec) has been intentionally removed.
 # That gemspec declares its own runtime versions of jekyll, kramdown,
