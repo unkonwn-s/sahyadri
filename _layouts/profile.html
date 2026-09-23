@@ -2,7 +2,7 @@
 # FILE: _layouts/profile.html
 # PURPOSE: Student/staff profile page template. Extends 'base'.
 # FEATURES: circular avatar image, name/title header, last-updated date,
-# back-navigation to /profiles, and a "Written by" list of every post/
+# back-navigation to /profiles, and an "Articles by" list of every post/
 # activity crediting this profile (reverse lookup of the byline->profile
 # slug-matching logic used on posts.md/activities.md).
 # ==============================================================================
@@ -81,7 +81,7 @@ layout: base
       </div>
 
       {% comment %}
-        "Written by" section: reverse lookup of posts/activities crediting
+        "Articles by" section: reverse lookup of posts/activities crediting
         this profile. Mirrors the forward byline->profile slug-matching
         logic used in posts.md/activities.md (split subtitle into
         first+last word, downcase, hyphenate) run backwards against this
@@ -130,23 +130,23 @@ layout: base
           {% endif %}
 
           {% if matched %}
-            <div class="tag-entry">
+            <li class="tag-entry">
               <a href="{{ item.url | relative_url }}">{{ item.title | strip_html }}</a>
               <div class="entry-date">
                 <time datetime="{{ item.date | date_to_xmlschema }}">{{ item.date | date: site.date_format }}</time>
               </div>
-            </div>
+            </li>
           {% endif %}
         {% endfor %}
       {% endcapture %}
 
-      {% if written_by_items contains "<div" %}
+      {% if written_by_items contains "<li" %}
         <hr class="my-4">
         <div class="profile-written-by">
-          <h2 class="linked-section">Written by {{ page.title }}</h2>
-          <div class="post-list">
+          <h2 class="linked-section">Articles by {{ page.title }}</h2>
+          <ul class="post-list">
             {{ written_by_items }}
-          </div>
+          </ul>
         </div>
       {% endif %}
 
