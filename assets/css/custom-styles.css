@@ -2131,8 +2131,8 @@ mark.year-search-highlight {
 .videos-page-item {
     display: flex;
     flex-direction: column;
-    flex: 1 1 280px;
-    max-width: 340px;
+    flex: 1 1 360px;
+    max-width: 440px;
     margin: 0;
 }
 
