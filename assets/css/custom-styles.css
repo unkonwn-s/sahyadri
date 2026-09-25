@@ -512,8 +512,7 @@ html { scroll-behavior: smooth; }
    unrelated single-column block layout. */
 .photos-page-container {
     display: block;
-    width: 100%;
-    max-width: 1200px;
+    width: 85%;
     margin: 30px auto;
     padding: 0 20px;
     box-sizing: border-box;
@@ -2189,8 +2188,8 @@ mark.year-search-highlight {
 .photos-album-item {
     display: flex;
     flex-direction: column;
-    flex: 1 1 280px;
-    max-width: 340px;
+    flex: 1 1 360px;
+    max-width: 440px;
     margin: 0;
 }
 
