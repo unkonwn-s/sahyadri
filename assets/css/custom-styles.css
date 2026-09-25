@@ -2110,8 +2110,7 @@ mark.year-search-highlight {
 
 .videos-page-container {
     display: block;
-    width: 100%;
-    max-width: 1200px;
+    width: 85%;
     margin: 30px auto;
     padding: 0 20px;
     box-sizing: border-box;
