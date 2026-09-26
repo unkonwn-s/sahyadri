@@ -24,7 +24,7 @@ content:
       # the post's own `date` field (not today's date) so backfilling an
       # older post still gets the right filename.
       template: "{fields.date}-{primary}.md"
-      field: create
+      field: false
     view:
       fields: [title, subtitle, date, category, pinned]
       primary: title
@@ -113,7 +113,7 @@ content:
     format: yaml-frontmatter
     filename:
       template: "{fields.date}-{primary}.md"
-      field: create
+      field: false
     view:
       fields: [title, subtitle, date, category]
       primary: title
@@ -181,7 +181,7 @@ content:
       # match what a post's byline auto-link would generate, e.g.
       # "Aadya Tyagi" -> aadya-tyagi.md.
       template: "{primary}.md"
-      field: create
+      field: false
     view:
       fields: [title, subtitle, academic-year]
       primary: title
