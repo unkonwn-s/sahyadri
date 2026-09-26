@@ -33,11 +33,11 @@ subtitle: Click on the thumbnail to watch
         {%- for video in sorted_videos -%}
         {%- comment -%}
           Ordinal date computed inline here rather than via a shared
-          {% include %}, since calling an include repeatedly inside a
-          {% for %} loop trips a Liquid::StackLevelError ("Nesting too
-          deep") in this site's Liquid version -- a known quirk, not
-          true recursion. See _includes/ordinal-date.html's own comment
-          for the same logic used outside a loop context.
+          include, since calling an include repeatedly inside this loop
+          trips a Liquid StackLevelError ("Nesting too deep") on this
+          site's Liquid version -- a known quirk, not true recursion.
+          See _includes/ordinal-date.html's own comment for the same
+          logic used outside a loop context.
         {%- endcomment -%}
         {%- assign vday = video.date | date: "%-d" -%}
         {%- case vday -%}
