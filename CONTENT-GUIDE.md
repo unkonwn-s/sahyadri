@@ -83,41 +83,45 @@ Bio text in Markdown.
 
 ## Photos album
 
-**Easiest way:** use Pages CMS (see `CMS-GUIDE.md`) — the Photos collection there gives a proper "Add entry" form.
+**Easiest way:** use Pages CMS (see `CMS-GUIDE.md`) — the Photos collection there gives a proper "Add entry" form, identical to adding a Newsletter post.
 
-**By hand:** add an entry to `_data/photos.yml`:
+**By hand:** add a new file to `_photos/`, named `YYYY-MM-DD-a-short-slug.md` (matching the Newsletter post convention):
 
 ```yaml
-- drive_id: "FILE_ID_HERE"
-  album_link: "GOOGLE_PHOTOS_LINK"
-  title: "Event Name"
-  date: 2026-08-31
-  date_display: "31st August 2026"
+---
+title: "Event Name"
+drive_id: "FILE_ID_HERE"
+album_link: "GOOGLE_PHOTOS_LINK"
+date: 2026-08-31
+date_display: "31st August 2026"
+---
 ```
 
 - `drive_id` is the Google Drive file ID of the thumbnail (share settings as above).
 - `album_link` is the actual Google Photos album link (shared separately, viewable by anyone with the link) — this is what visitors land on when they click.
 - `date` is only used to sort albums newest-first — it's never shown on the site.
 - `date_display` is the exact text shown under the title. For a multi-day event, write it as a range: `"31st August – 1st September 2026"`.
-- Order in the file doesn't matter — `photos.html` sorts by `date` automatically at build time.
+- The filename doesn't need to be exact — `photos.html` sorts every entry by `date` automatically at build time regardless of file naming.
 
 ---
 
 ## Video
 
-**Easiest way:** use Pages CMS (see `CMS-GUIDE.md`) — the Videos collection there gives a proper "Add entry" form.
+**Easiest way:** use Pages CMS (see `CMS-GUIDE.md`) — the Videos collection there gives a proper "Add entry" form, identical to adding a Newsletter post.
 
-**By hand:** add an entry to `_data/videos.yml`:
+**By hand:** add a new file to `_videos/`, named `YYYY-MM-DD-a-short-slug.md`:
 
 ```yaml
-- youtube_id: "YOUTUBE_VIDEO_ID"
-  title: "Event Name"
-  date: 2026-09-04
+---
+title: "Event Name"
+youtube_id: "YOUTUBE_VIDEO_ID"
+date: 2026-09-04
+---
 ```
 
 - `youtube_id` is the 11-character ID from the video's URL (`youtube.com/watch?v=`**`THIS_PART`**).
 - `videos.html` generates the "DDth Month YYYY" caption automatically from `date` — no need to write it out yourself.
-- Order in the file doesn't matter — sorted newest-first automatically at build time.
+- The filename doesn't need to be exact — sorted newest-first automatically at build time regardless of file naming.
 
 ---
 
