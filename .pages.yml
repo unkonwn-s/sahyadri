@@ -253,6 +253,44 @@ content:
         required: true
         description: "Used to sort the video newest-first and to build its caption date automatically."
 
+  - name: photos
+    label: Photos
+    type: file
+    path: _data/photos.yml
+    format: yaml
+    list: true
+    view:
+      fields: [title, date]
+      primary: title
+      sort: [date, title]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        type: string
+        required: true
+        description: "The album/event name, e.g. \"Independence Day\"."
+      - name: drive_id
+        label: Thumbnail image (Google Drive file ID)
+        type: string
+        required: true
+        description: "Paste just the file ID from the Drive sharing link (the long string between /d/ and /view), not the full URL. The file must be shared as \"Anyone with the link can view.\""
+      - name: album_link
+        label: Google Photos album link
+        type: string
+        required: true
+        description: "The actual album URL visitors land on when they click the thumbnail."
+      - name: date
+        type: date
+        required: true
+        description: "The album's start date. Only used to sort albums newest-first -- not shown on the site."
+      - name: date_display
+        label: Date shown on the site
+        type: string
+        required: true
+        description: "The exact text shown under the album title, e.g. \"15th August 2026\" or, for a multi-day event, \"31st August – 1st September 2026\"."
+
 settings:
   commit:
     templates:
