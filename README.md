@@ -25,6 +25,16 @@ The site hosts:
 ├── _posts/                  # Newsletter articles (one file per post)
 ├── _activities/             # Activity/workshop write-ups
 ├── _profiles/                # One file per student/teacher profile
+├── _videos/                   # One file per video (output: false — no
+│                                individual pages, just enumerable via
+│                                site.videos for videos.html to loop over)
+├── _photos/                   # One file per photo album (output: false,
+│                                same reasoning as _videos/)
+├── _data/
+│   └── kfi.yml                # All Krishnamurti/Weekly Excerpts entries
+│                                in one file (unlike Videos/Photos, this
+│                                one wasn't split into individual files —
+│                                see .pages.yml's own top comment for why)
 ├── _layouts/
 │   ├── base.html             # <html>/<head>/<body> shell every page extends
 │   ├── page.html              # Standard content page (extends base)
@@ -53,7 +63,9 @@ The site hosts:
 ├── profiles.html             # Profiles directory (dynamic year/category UI)
 ├── profiles-directory.html   # Fallback page for authors without a profile
 │                                yet (permalink: /not_done_yet)
-├── videos.html, photos.html, kfi.html   # Media gallery pages
+├── videos.html                 # Loops over _videos/ (site.videos)
+├── photos.html                 # Loops over _photos/ (site.photos)
+├── kfi.html                    # Loops over _data/kfi.yml (site.data.kfi)
 ├── ninad.md, geeth-gunjan.md   # PDF archive pages
 ├── tags.html                  # Tag index, grouped by tag with a sticky
 │                                TOC sidebar (same pattern as Newsletter/
@@ -200,7 +212,7 @@ This unlocks browsing for the rest of that browser tab's session (via `sessionSt
 | `firebase-*` (six keys) | Firebase project config for the custom comments widget |
 | `emailjs-*`, `comments-moderator-email` | Optional moderation email notifications |
 | `defaults` | Per-collection layout/front-matter defaults (posts/activities get `layout: post`; profiles get `layout: profile`; everything else gets `layout: page`) |
-| `collections` | Registers `posts`, `activities`, `profiles` as output collections with their permalink patterns |
+| `collections` | Registers `posts`, `activities`, `profiles` with `output: true` (each gets individual pages) and `videos`, `photos` with `output: false` (enumerable via `site.videos`/`site.photos`, but no individual pages — they only ever appear as grid items) |
 
 ## Local development
 
