@@ -512,10 +512,18 @@ html { scroll-behavior: smooth; }
    unrelated single-column block layout. */
 .photos-page-container {
     display: block;
-    width: 85%;
+    width: 100%;
     margin: 30px auto;
     padding: 0 20px;
     box-sizing: border-box;
+}
+
+/* 85% width only applies on desktop -- on mobile this would throw
+   away 15% of an already-narrow screen for no benefit. */
+@media (min-width: 992px) {
+    .photos-page-container {
+        width: 85%;
+    }
 }
 
 @media (max-width: 992px) {
@@ -2109,10 +2117,18 @@ mark.year-search-highlight {
 
 .videos-page-container {
     display: block;
-    width: 85%;
+    width: 100%;
     margin: 30px auto;
     padding: 0 20px;
     box-sizing: border-box;
+}
+
+/* 85% width only applies on desktop -- on mobile this would throw
+   away 15% of an already-narrow screen for no benefit. */
+@media (min-width: 992px) {
+    .videos-page-container {
+        width: 85%;
+    }
 }
 
 /* Switched from CSS Grid to Flexbox: Grid's auto-fill tracks
