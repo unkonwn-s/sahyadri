@@ -5,7 +5,10 @@
 # looped and sorted newest-first here via Liquid, rather than being
 # hardcoded as individual <figure> blocks. This lets Pages CMS (see
 # .pages.yml) offer a real "Add entry" form for new videos instead of
-# requiring someone to hand-edit this file's HTML.
+# requiring someone to hand-edit this file's HTML. The DDth Month YYYY
+# date formatting is computed inline in the loop below rather than via
+# a shared include (calling an include repeatedly inside a for loop
+# trips a Liquid nesting-depth bug on this site's Liquid version).
 layout: page
 title: Videos
 subtitle: Click on the thumbnail to watch
@@ -28,11 +31,30 @@ subtitle: Click on the thumbnail to watch
 
 {%- assign sorted_videos = site.data.videos | sort: "date" | reverse -%}
         {%- for video in sorted_videos -%}
+        {%- comment -%}
+          Ordinal date computed inline here rather than via a shared
+          {% include %}, since calling an include repeatedly inside a
+          {% for %} loop trips a Liquid::StackLevelError ("Nesting too
+          deep") in this site's Liquid version -- a known quirk, not
+          true recursion. See _includes/ordinal-date.html's own comment
+          for the same logic used outside a loop context.
+        {%- endcomment -%}
+        {%- assign vday = video.date | date: "%-d" -%}
+        {%- case vday -%}
+          {%- when '1' or '21' or '31' -%}
+            {%- assign vsuffix = 'st' -%}
+          {%- when '2' or '22' -%}
+            {%- assign vsuffix = 'nd' -%}
+          {%- when '3' or '23' -%}
+            {%- assign vsuffix = 'rd' -%}
+          {%- else -%}
+            {%- assign vsuffix = 'th' -%}
+        {%- endcase -%}
         <figure class="videos-page-item">
             <div class="videos-page-wrapper" onclick="loadVideo(this)" data-video="{{ video.youtube_id }}">
                 <img src="https://img.youtube.com/vi/{{ video.youtube_id }}/hqdefault.jpg" alt="{{ video.title | escape }}">
             </div>
-            <figcaption>{{ video.title }}, {% include ordinal-date.html date=video.date %}</figcaption>
+            <figcaption>{{ video.title }}, {{ vday }}{{ vsuffix }} {{ video.date | date: "%B %Y" }}</figcaption>
         </figure>
         {%- endfor -%}
 
