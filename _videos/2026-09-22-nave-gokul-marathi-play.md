@@ -1,5 +1,5 @@
 ---
-title: Nave Gokul - Marathi Play by Grade 6 and 7
+title: Nave Gokul - Marathi Play
 youtube_id: EmWkhfHV3sY
 date: 2026-09-22
 ---
