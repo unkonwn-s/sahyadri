@@ -2,6 +2,15 @@
 # FILE: kfi.html
 # PURPOSE: 'Weekly Excerpts' page — Krishnamurti Foundation India video/excerpt listings,
 # tabbed by academic year. Custom inline JS handles tab switching (see switchAcademicYear()).
+# Entries come from _data/kfi.yml (year/date/youtube_id/links per entry),
+# looped and sorted newest-first within each year here via Liquid,
+# rather than being hardcoded as individual <figure> blocks. This lets
+# Pages CMS (see .pages.yml) offer a real "Add entry" form for new
+# excerpts instead of requiring someone to hand-edit this file's HTML.
+# The year tabs themselves (year_blocks/default_active_year just below)
+# are NOT auto-computed from the data -- unlike Videos/Photos, adding a
+# new academic year's worth of content still needs a one-line manual
+# addition there.
 layout: page
 title: "Weekly Excerpts"
 permalink: /kfi/
@@ -42,123 +51,26 @@ permalink: /kfi/
 
 <!-- Main Media Grid Layout Container -->
 <div class="video-grid">
-
-    <!-- Document Link Item (2025) - Light Unto Oneself -->
-    <figure class="video-item" data-year="2025">
-        <figcaption class="video-caption">
-            Excerpt - <a href="https://drive.google.com/file/d/1CRp8Jbd8_oGXVa951jxcnQKQAcePBPxd/view?usp=sharing" target="_blank">Light Unto Oneself</a>, 
-            Published on - Dec 13, 2025
-        </figcaption>
-    </figure>
-    
-    <!-- Document Link Item (2025) - On Education -->
-    <figure class="video-item" data-year="2025">
-        <figcaption class="video-caption">
-            Excerpt - <a href="https://drive.google.com/file/d/1k9yyx9aGJ-aGxygMPTJ1tfpP2D4wWVds/view?usp=sharing" target="_blank">On Education</a>, 
-            Published on - Dec 6, 2025
-        </figcaption>
-    </figure>
-
-    <!-- Embedded Video Card (2025) - Freedom and Authority -->
-    <figure class="video-item" data-year="2025">
-        <div class="video-wrapper" onclick="loadVideo(this)" data-video="wm0lN9K8GNc">
-            <img src="https://img.youtube.com/vi/wm0lN9K8GNc/hqdefault.jpg" class="thumbnail" alt="Freedom and Authority">
+{%- assign sorted_kfi = site.data.kfi | sort: "date" | reverse -%}
+{%- for entry in sorted_kfi -%}
+{%- comment -%}
+  Document-only entries (no youtube_id) use a comma before "Published
+  on" so the caption flows as one line; video entries use a line break
+  since the thumbnail above already takes visual space. Matches the
+  distinction in the original hand-written HTML this replaced.
+{%- endcomment -%}
+    <figure class="video-item" data-year="{{ entry.year }}">
+        {%- if entry.youtube_id -%}
+        <div class="video-wrapper" onclick="loadVideo(this)" data-video="{{ entry.youtube_id }}">
+            <img src="https://img.youtube.com/vi/{{ entry.youtube_id }}/hqdefault.jpg" class="thumbnail" alt="{{ entry.links.first.text | escape }}">
         </div>
+        {%- endif -%}
         <figcaption class="video-caption">
-            Excerpt - <a href="https://www.youtube.com/watch?v=nS_YJ9m4XGg" target="_blank">Freedom &amp; Authority</a>, 
-            <a href="https://www.youtube.com/watch?v=hdjl3fkeEfA&amp;list=PLz6qDr1232zSl1tdmcKZ62aJR7kJvkEIO" target="_blank">Playlist on Authority</a><br>
-            Published on - Sep 12, 2025
+            Excerpt - {%- for link in entry.links -%}<a href="{{ link.url }}" target="_blank">{{ link.text }}</a>{%- unless forloop.last -%}, {%- endunless -%}{%- endfor -%}{%- if entry.youtube_id -%}<br>{%- else -%},{%- endif %}
+            Published on - {{ entry.date | date: "%b %-d, %Y" }}
         </figcaption>
     </figure>
-
-    <!-- Embedded Video Card (2025) - On Authority / Ambition -->
-    <figure class="video-item" data-year="2025">
-        <div class="video-wrapper" onclick="loadVideo(this)" data-video="fHEZXF6uR1U">
-            <img src="https://img.youtube.com/vi/fHEZXF6uR1U/hqdefault.jpg" class="thumbnail" alt="On Authority">
-        </div>
-        <figcaption class="video-caption">
-            Excerpt - <a href="https://drive.google.com/file/d/1wrY36iq6db35O6NA3Ur6Q2qC5493i4nT/view" target="_blank">On Ambition</a><br>
-            Published on - Aug 30, 2025
-        </figcaption>
-    </figure>
-
-    <!-- Embedded Video Card (2025) - On Love -->
-    <figure class="video-item" data-year="2025">
-        <div class="video-wrapper" onclick="loadVideo(this)" data-video="ztLEMnrEE2s">
-            <img src="https://img.youtube.com/vi/ztLEMnrEE2s/hqdefault.jpg" class="thumbnail" alt="On Love">
-        </div>
-        <figcaption class="video-caption">
-            Excerpt - <a href="https://drive.google.com/file/d/1ePDu0a0aPkn55thwAkZVQW6M68S4V6_i/view?usp=drive_link" target="_blank">On Love</a><br>
-            Published on - Aug 22, 2025
-        </figcaption>
-    </figure>
-
-    <!-- Embedded Video Card (2025) - Fear and Compassion -->
-    <figure class="video-item" data-year="2025">
-        <div class="video-wrapper" onclick="loadVideo(this)" data-video="ztlt1GeA_nQ">
-            <img src="https://img.youtube.com/vi/ztlt1GeA_nQ/hqdefault.jpg" class="thumbnail" alt="On Love">
-        </div>
-        <figcaption class="video-caption">
-            Excerpt - <a href="https://drive.google.com/file/d/1-P5oOWqtufPozRCWN2WsSTo9krNx_QRC/view" target="_blank">Fear and Compassion</a><br>
-            Published on - Aug 22, 2025
-        </figcaption>
-    </figure>
-
-    <!-- Embedded Video Card (2025) - Art of Listening, Looking and Learning -->
-    <figure class="video-item" data-year="2025">
-        <div class="video-wrapper" onclick="loadVideo(this)" data-video="Ke32Z2KkS6w">
-            <img src="https://img.youtube.com/vi/Ke32Z2KkS6w/hqdefault.jpg" class="thumbnail" alt="Art of Listening, Looking and Learning">
-        </div>
-        <figcaption class="video-caption">
-            Excerpt - <a href="https://journal.kfionline.org/issue-4/the-arts-of-listening-looking-and-learning" target="_blank">Art of Listening, Looking and Learning </a>, 
-            <br>
-            Published on - Aug 8, 2025
-        </figcaption>
-    </figure>
-
-    <!-- Embedded Video Card (2025) - Freedom and Discipline -->
-    <figure class="video-item" data-year="2025">
-        <div class="video-wrapper" onclick="loadVideo(this)" data-video="f-3wSP0Au8o">
-            <img src="https://img.youtube.com/vi/f-3wSP0Au8o/hqdefault.jpg" class="thumbnail" alt="Freedom and Discipline">
-        </div>
-        <figcaption class="video-caption">
-            Excerpt - <a href="https://docs.google.com/document/d/1doNEuiwZzAHul9JZGApYg9zOadnFaGqdq062YBBDsvY/view" target="_blank">Freedom and Discipline</a>, 
-            <br>
-            Published on - Aug 1, 2025
-        </figcaption>
-    </figure>
-
-    <!-- Embedded Video Card (2025) - The Function of a Parent -->
-    <figure class="video-item" data-year="2025">
-        <div class="video-wrapper" onclick="loadVideo(this)" data-video="ZQGdEvhZl1U">
-            <img src="https://img.youtube.com/vi/ZQGdEvhZl1U/hqdefault.jpg" class="thumbnail" alt="The Function of a Parent">
-        </div>
-        <figcaption class="video-caption">
-            Excerpt - <a href="https://drive.google.com/file/d/1HSnf_oklqeGRheO3vIHJsVfC95vTgrtL/view" target="_blank">The Function of a Parent</a>, 
-            <br>
-            Published on - July 25, 2025
-        </figcaption>
-    </figure>
-
-    <!-- Embedded Video Card (2025) - Total Development of a Child and Parent -->
-    <figure class="video-item" data-year="2025">
-        <div class="video-wrapper" onclick="loadVideo(this)" data-video="5lJRtT4P4ps">
-            <img src="https://img.youtube.com/vi/5lJRtT4P4ps/hqdefault.jpg" class="thumbnail" alt="Total Development of a Child and Parent">
-        </div>
-        <figcaption class="video-caption">
-            Excerpt - <a href="https://drive.google.com/file/d/1-QtHmDQ6J5kf19EQtw_yVNtu7dgWVQ08/view" target="_blank">Total Development of a Child and Parent</a>, 
-            <br>
-            Published on - July 18, 2025
-        </figcaption>
-    </figure>
-    
-    <!-- Placeholder Item (2026) for Future Additions -->
-    <figure class="video-item" data-year="2026">
-        <figcaption class="video-caption">
-            Excerpt - Future 2026 Placeholder Video Link
-        </figcaption>
-    </figure>
-
+{%- endfor -%}
 </div> 
 
 <!-- Component Stylesheet: Tab Layout, Grid Display, and Media Animations -->
