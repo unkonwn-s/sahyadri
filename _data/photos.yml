@@ -1,0 +1,246 @@
+# _data/photos.yml — Photo album entries for photos.html
+# Each entry: drive_id (Google Drive file ID of the thumbnail image,
+# shared as "Anyone with the link can view"), album_link (the actual
+# Google Photos album URL visitors land on), title, date (the album's
+# start date, used only for sorting -- not displayed), and
+# date_display (the exact caption text shown, since some albums span
+# a date range with inconsistent formatting that isn't worth trying
+# to auto-generate from a single date field).
+# Order in this file doesn't matter -- photos.html sorts by date
+# (newest first) at render time.
+
+- drive_id: "14ctiKM_tkzkuzFdA6U0KYc-EsjmVrLyd"
+  album_link: "https://photos.app.goo.gl/R1iVwfWivNoQ9E268"
+  title: "Class 8 Excursion"
+  date: 2026-08-31
+  date_display: "31st August – 1st September 2026"
+- drive_id: "1lQrl-V_0kfwrI3QZD2sfYwd_TKr2Hzx0"
+  album_link: "https://photos.app.goo.gl/ngnhkEp9B8ihmK5J6"
+  title: "Independence day"
+  date: 2026-08-15
+  date_display: "15th August 2026"
+- drive_id: "1xY2Q4y-wAz4-j3ltyTGSAD6MCiU8fasY"
+  album_link: "https://photos.app.goo.gl/wfwxWDMcWAZeYz478"
+  title: "Friendship day"
+  date: 2026-08-02
+  date_display: "2nd August 2026"
+- drive_id: "1R546fyHvw4HoUbw0L5viBj6QCMAdb2aN"
+  album_link: "https://photos.app.goo.gl/WXa132d8AqsUUpAJ7"
+  title: "Class Hike"
+  date: 2026-07-16
+  date_display: "16th July 2026"
+- drive_id: "1PMxtsiONua9W5MBq10hEKHdSCNn2emS4"
+  album_link: "https://photos.app.goo.gl/W81manjibAFGTrqm8"
+  title: "Fresher's Hike"
+  date: 2026-06-28
+  date_display: "28th June 2026"
+- drive_id: "1otqEB8mDcZMal0fKTouASQ1bdteN4xrc"
+  album_link: "https://photos.app.goo.gl/PSWYNWKRqFPMzH2VA"
+  title: "Class 11 Outing"
+  date: 2026-03-08
+  date_display: "7-8th March 2026"
+- drive_id: "1HYj9hp-Jn-sgqGegdO2vnSHnQDs2mU7_"
+  album_link: "https://photos.app.goo.gl/YhEDh6Us1ZTUtZvZ9"
+  title: "Science Festival"
+  date: 2026-02-28
+  date_display: "28th February 2026"
+- drive_id: "1Zz_ySvcDxsvQBkIJtn-rxWF0PBZWA-LV"
+  album_link: "https://photos.app.goo.gl/1K4hNNmUzMSvca3b9"
+  title: "Class 9 Excursion"
+  date: 2026-02-20
+  date_display: "20th - 28th February 2026"
+- drive_id: "1mTy3z5yRftuTfOURZBHSsu_FPMPsIDdg"
+  album_link: "https://photos.app.goo.gl/G1BU5r2r9W7ok9WZ9"
+  title: "Block Print Workshop"
+  date: 2026-02-19
+  date_display: "19th February 2026"
+- drive_id: "171ISh6Aw2K7UgtaVtWghYinKMDte0hBO"
+  album_link: "https://photos.app.goo.gl/ZSNu7ExswBp55ptx9"
+  title: "Assembly by Arvind Gupta"
+  date: 2026-02-14
+  date_display: "14th February 2026"
+- drive_id: "1LGNp2tw28snxY7hEBbPVrg-9_YeLPp3E"
+  album_link: "https://photos.app.goo.gl/d4gcKSvQP32v4o5d9"
+  title: "Class 7 Excursion"
+  date: 2026-01-31
+  date_display: "31st January - 4th February 2026"
+- drive_id: "1G59BdeLhBG-1RheJjWTIM8anQIyZw5DQ"
+  album_link: "https://photos.app.goo.gl/pddu5WQFVjJthbsi8"
+  title: "Class 5 Excursion"
+  date: 2026-01-30
+  date_display: "30th January - 3rd February 2026"
+- drive_id: "1ZgG5xMCJNe-bvss3-DVtI5zcc9WeTvou"
+  album_link: "https://photos.app.goo.gl/fSdwu28bXREiGtwA8"
+  title: "Republic Day"
+  date: 2026-01-26
+  date_display: "26th January 2026"
+- drive_id: "1hNZTWCvmAMdZYNiHcZqkHQMJYJJEKSkm"
+  album_link: "https://photos.app.goo.gl/WNwER6eE7QyhuiLk9"
+  title: "Farewell"
+  date: 2026-01-10
+  date_display: "10th January 2026"
+- drive_id: "13Yl1QgH6zNQzq-90dhoqokaEL3ItzLOd"
+  album_link: "https://photos.app.goo.gl/aDzyTzR9bmJAMWXQ6"
+  title: "Rock Climbing"
+  date: 2026-01-03
+  date_display: "3rd January 2026"
+- drive_id: "1bojacDer81RubZlv4wvuOu9Y4SeG8Xjl"
+  album_link: "https://photos.app.goo.gl/ZidC6WX7wPkuEpzs5"
+  title: "New Year's Eve"
+  date: 2025-12-31
+  date_display: "31st December 2025"
+- drive_id: "1BDqc3dhfbOYhcrgw7T5Z24JidP7a4RY8"
+  album_link: "https://photos.app.goo.gl/wvkeU313o8RfR5ep9"
+  title: "Cross Country"
+  date: 2025-12-28
+  date_display: "28th December 2025"
+- drive_id: "1Z29qT4BlPIbkA8fmRWw_4EltWCdQNn80"
+  album_link: "https://photos.app.goo.gl/rxQrY2RppHsWNvfx7"
+  title: "Christmas Eve"
+  date: 2025-12-24
+  date_display: "24th December 2025"
+- drive_id: "1e6m_UN0it34JDqlm_8hBlJkPsYmm0SiU"
+  album_link: "https://photos.app.goo.gl/bwGBKG8qj5xrKZ9V7"
+  title: "Alumni Meet"
+  date: 2025-12-22
+  date_display: "22nd December 2025"
+- drive_id: "12iL9ucuwor0r-pIL3uPkLBw3UyzNKxkj"
+  album_link: "https://photos.app.goo.gl/1PjCH7Edh2fRZyrp6"
+  title: "Sports Fest"
+  date: 2025-12-18
+  date_display: "18th - 20th December 2025"
+- drive_id: "12wb-l7N-2bvFuJbe8iR5Kzy_9HzK4NEI"
+  album_link: "https://photos.app.goo.gl/Wj8dzXwmCLQsmbxo6"
+  title: "Vocals Assembly"
+  date: 2025-12-06
+  date_display: "6th December 2025"
+- drive_id: "1okOZZbEcGBDfA220VIhEyDmvuwNYzLNU"
+  album_link: "https://photos.app.goo.gl/mvTzcAxGXeFKbpQe7"
+  title: "Class Hikes"
+  date: 2025-11-29
+  date_display: "29th November 2025"
+- drive_id: "11B8VCZi-_PPt-f071v1eRgQ1Xzj3DOdE"
+  album_link: "https://photos.app.goo.gl/tM94xk7S3ueJtgAQA"
+  title: "Class 11 Excursion"
+  date: 2025-10-06
+  date_display: "6th - 16th October 2025"
+- drive_id: "1IJ75xC1P4wtomc-RH8bfCuVlJVXvJeyD"
+  album_link: "https://photos.app.goo.gl/8kw6udpDfTUadsTy7"
+  title: "Musical Eve"
+  date: 2025-10-04
+  date_display: "4th October 2025"
+- drive_id: "1NZVueIGNld7kwWorsV9zSW5U35O13T8k"
+  album_link: "https://photos.app.goo.gl/J6cd9JquxsreVfFXA"
+  title: "Dasara Celebration"
+  date: 2025-09-30
+  date_display: "30th September 2025"
+- drive_id: "1p4zoCPR60ZgBqNfRkkMFHfkiMYjjljLr"
+  album_link: "https://photos.app.goo.gl/gx5hmiHaqb8cW7Jc7"
+  title: "Football Interschool"
+  date: 2025-09-21
+  date_display: "21st September 2025"
+- drive_id: "1JMaswyjNoDx88alLtoyrbAwVTkkogtx5"
+  album_link: "https://photos.app.goo.gl/idmaJcExwsYfCMHC7"
+  title: "Mohiniyattam Performance"
+  date: 2025-09-10
+  date_display: "10th September 2025"
+- drive_id: "1UUo_B2XKhzxTe8_omyV61zBxnf3WgNuW"
+  album_link: "https://photos.app.goo.gl/jG9yNydYFc53kjtn7"
+  title: "Shambhu Hill Cleanup"
+  date: 2025-09-07
+  date_display: "7th September 2025"
+- drive_id: "1urmT_GNcsd6BWYj_hgIU7pe0HSsfOsYa"
+  album_link: "https://photos.app.goo.gl/9jKRdrguZ2XUfqw98"
+  title: "Art-Lit Fest"
+  date: 2025-08-15
+  date_display: "15th August - 2nd September 2025"
+- drive_id: "1rTsJvZ-gpEjFDEVX7KZuV8LuGe2pCmky"
+  album_link: "https://photos.app.goo.gl/rHX7XvHLkTFT7DpU9"
+  title: "Class 10 Play"
+  date: 2025-08-30
+  date_display: "30th August 2025"
+- drive_id: "1o6XfgO-h7vur36F7FtVcMtzQt8OzGMlF"
+  album_link: "https://photos.app.goo.gl/7mP9Gj1Vo1hL5wQj6"
+  title: "Sitar Performance by Grade 12"
+  date: 2025-08-23
+  date_display: "23rd August 2025"
+- drive_id: "1jeHvOmeZJWYBNfJeNURy7q7V_YewJ5TH"
+  album_link: "https://photos.app.goo.gl/KkaGCTUMH7G91h5U8"
+  title: "Independence Day"
+  date: 2025-08-15
+  date_display: "15th August 2025"
+- drive_id: "15tKFbt9EPik6dzx1o3UkvD1W8wlTk9oK"
+  album_link: "https://photos.app.goo.gl/qTY9YaWSbbtSQ53X8"
+  title: "Football Tournament"
+  date: 2025-08-04
+  date_display: "4th - 14th August 2025"
+- drive_id: "113XGgjNPTNOMa3581f7hYs1GQdFs1WXF"
+  album_link: "https://photos.app.goo.gl/aPPp2vU2Bq3W7D8n6"
+  title: "Classical Dance by Grade 10"
+  date: 2025-08-13
+  date_display: "13th August 2025"
+- drive_id: "13E1W0ClQMevQHSLbhBYtojVGErbVnZJr"
+  album_link: "https://photos.app.goo.gl/UuzNhJ5ozZnBNtkaA"
+  title: "Jaltarang Performance"
+  date: 2025-08-09
+  date_display: "9th August 2025"
+- drive_id: "13GyjdActqCFUY_zhzkEFeKHI4HTT7cKE"
+  album_link: "https://photos.app.goo.gl/Zf19een2dJYSEU2G6"
+  title: "Marathi Folk Assembly"
+  date: 2025-08-05
+  date_display: "5th August 2025"
+- drive_id: "114PFXKCsE9e08uNGnqKzCItWqzjhdoO3"
+  album_link: "https://photos.app.goo.gl/9fimQ9ofu192VKsX6"
+  title: "Friendship Day"
+  date: 2025-08-03
+  date_display: "3rd August 2025"
+- drive_id: "1nDKrSTVWImwtesaR5JkbPfIhs_xtGWhB"
+  album_link: "https://photos.app.goo.gl/7Ky62kou2pkiaNuB6"
+  title: "Open House"
+  date: 2025-08-02
+  date_display: "2nd August 2025"
+- drive_id: "1ecHlfoNYtzST2aauf1UIBIEu7a1Q4j4a"
+  album_link: "https://photos.app.goo.gl/ZyAb9GaoMawP7nAV6"
+  title: "Marathi Assembly"
+  date: 2025-07-31
+  date_display: "31st July 2025"
+- drive_id: "1km5neTjYaAyB3LMsUmYNm8mGZVH7Jxab"
+  album_link: "https://photos.app.goo.gl/R47DSbRJFRMW6Smp7"
+  title: "English Literature Assembly"
+  date: 2025-07-26
+  date_display: "26th July 2025"
+- drive_id: "1lwohLhNVMO62-_izDJ1xFrPzpmXi9Mos"
+  album_link: "https://photos.app.goo.gl/LDTpzvieTjLrdBePA"
+  title: "Class 11 Play"
+  date: 2025-07-26
+  date_display: "26th July 2025"
+- drive_id: "1k5XHahPucJnC1ywM9oqO9RJT2pjkCguu"
+  album_link: "https://photos.app.goo.gl/FAdcmM2EiDJKWkuN9"
+  title: "Freshers Eve"
+  date: 2025-07-12
+  date_display: "12th July 2025"
+- drive_id: "1ZWX7E2dSd43AtRewR5OqWFvLka7sYeSS"
+  album_link: "https://photos.app.goo.gl/4fRzVAUo91mMGa22A"
+  title: "Dorm Hikes"
+  date: 2025-07-06
+  date_display: "6th July 2025"
+- drive_id: "1R_s0wMDIHMtPrDes8eleK6hOJMw-6VnD"
+  album_link: "https://photos.app.goo.gl/pGjGYDcSqCQ3YMtf9"
+  title: "Freshers Hikes"
+  date: 2025-06-29
+  date_display: "29th June 2025"
+- drive_id: "18LX9BmNb8TXVrnmeQEjORfotZdDNOX3P"
+  album_link: "https://photos.app.goo.gl/6Yko8iC9rHzwZH6q9"
+  title: "Tansen Play"
+  date: 2025-06-28
+  date_display: "28th June 2025"
+- drive_id: "1nC5YJJNLYBc4zxXzBq8k0ngQoDDxe-ab"
+  album_link: "https://photos.app.goo.gl/RYUUcB9gw6FD3XEK8"
+  title: "Book Festival"
+  date: 2025-06-16
+  date_display: "16th - 19th June 2025"
+- drive_id: "1sGuH_5CL_bcUcaHTs02IWHs8A-12qY2g"
+  album_link: "https://photos.app.goo.gl/ESnz8wG8Lbm8x1qw5"
+  title: "Environment Day"
+  date: 2025-06-12
+  date_display: "12th - 13th June 2025"
