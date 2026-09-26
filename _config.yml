@@ -29,7 +29,7 @@ description: "A window into life at Sahyadri School — newsletters, activities,
 # prevents casual visitors from stumbling onto the bypass, not a
 # determined person reading the source.
 # -----------------------------------------------------------------------------
-maintenance-mode: false
+maintenance-mode: true
 maintenance-bypass-key: "sahyadri-preview-2026"
 
 # -----------------------------------------------------------------------------
@@ -276,6 +276,17 @@ collections:
   profiles:
     output: true
     permalink: /profiles/:title/
+
+  # output: false -- these don't need their own individual pages, they're
+  # just enumerable via site.videos/site.photos for videos.html/photos.html
+  # to loop over. One file per entry (matching posts/activities/profiles)
+  # instead of a single shared _data/*.yml file, so Pages CMS gives the
+  # exact same "Add entry" experience as it does for those collections.
+  videos:
+    output: false
+
+  photos:
+    output: false
 
 # Rebuilt: 2026-08-20T09:48:06.035326
 
