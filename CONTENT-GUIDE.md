@@ -123,11 +123,28 @@ Bio text in Markdown.
 
 ## Krishnamurti / Weekly Excerpts (`kfi.html`)
 
-This page is more involved than the others: entries are grouped by year using a *manually maintained* list (unlike Videos/Photos, which compute years automatically), and there are two different entry types.
+**Easiest way:** use Pages CMS (see `CMS-GUIDE.md`) — the KFI collection there gives a proper "Add entry" form, including for entries with more than one link.
+
+**By hand:** add an entry to `_data/kfi.yml`:
+
+```yaml
+- year: "2025"
+  date: 2026-01-15
+  youtube_id: "YOUTUBE_VIDEO_ID"   # omit this line entirely for a document-only entry
+  links:
+  - text: "Excerpt Title"
+    url: "https://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID"
+```
+
+- `year` must exactly match one of the tabs already defined near the top of `kfi.html` (the `year_blocks` Liquid variable) — unlike Videos/Photos, this is **not** computed automatically from the date.
+- `youtube_id` is only for entries with an embedded video. Leave it out entirely for a document-only entry (e.g. a linked PDF transcript with no video).
+- `links` is a list — most entries have just one (the excerpt's own title/link), but some entries link a video's related document or a separate playlist as a second item.
+- `date` builds the "Published on" caption automatically and sorts entries newest-first within their year.
+- Order in the file doesn't matter — sorted automatically at build time.
 
 ### Adding a new academic year tab
 
-Near the top of the file:
+This part still needs a manual edit, near the top of `kfi.html`:
 
 ```liquid
 {% assign year_blocks = "2025" | split: "|" %}
@@ -135,34 +152,6 @@ Near the top of the file:
 ```
 
 To add 2026 as a new tab, change the first line to `"2025|2026"` and update `default_active_year` to `"2026"` if the new year should be the one shown by default.
-
-### Adding an embedded YouTube video
-
-```html
-<figure class="video-item" data-year="2025">
-    <div class="video-wrapper" onclick="loadVideo(this)" data-video="YOUTUBE_VIDEO_ID">
-        <img src="https://img.youtube.com/vi/YOUTUBE_VIDEO_ID/hqdefault.jpg" class="thumbnail" alt="Excerpt Title">
-    </div>
-    <figcaption class="video-caption">
-        Excerpt - <a href="https://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID" target="_blank">Excerpt Title</a>,
-        Published on - Mon DD, YYYY
-    </figcaption>
-</figure>
-```
-
-### Adding a document link (no video, just a linked PDF/Drive file)
-
-```html
-<figure class="video-item" data-year="2025">
-    <figcaption class="video-caption">
-        Excerpt - <a href="https://drive.google.com/file/d/FILE_ID/view?usp=sharing" target="_blank">Excerpt Title</a>,
-        Published on - Mon DD, YYYY
-    </figcaption>
-</figure>
-```
-
-- `data-year` must match one of the values in `year_blocks` above — this is how entries get grouped, unlike Videos/Photos' automatic date parsing.
-- Add new entries at the top of their year's block for newest-first order.
 
 ---
 
