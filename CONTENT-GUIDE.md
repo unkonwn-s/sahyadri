@@ -83,38 +83,41 @@ Bio text in Markdown.
 
 ## Photos album
 
-**File:** `photos.html`. There's a template comment right above the entries in the file — copy this pattern:
+**Easiest way:** use Pages CMS (see `CMS-GUIDE.md`) — the Photos collection there gives a proper "Add entry" form.
 
-```html
-<figure class="photos-album-item" data-img="FILE_ID_HERE">
-    <a href="GOOGLE_PHOTOS_LINK" target="_blank">
-        <img src="" alt="EVENT NAME">
-    </a>
-    <figcaption>Event Name, DDth Month YYYY</figcaption>
-</figure>
+**By hand:** add an entry to `_data/photos.yml`:
+
+```yaml
+- drive_id: "FILE_ID_HERE"
+  album_link: "GOOGLE_PHOTOS_LINK"
+  title: "Event Name"
+  date: 2026-08-31
+  date_display: "31st August 2026"
 ```
 
-- `data-img` is the Google Drive file ID of the thumbnail (share settings as above).
-- `href` is the actual Google Photos album link (shared separately, viewable by anyone with the link) — this is what visitors land on when they click.
-- **Add the new album at the top of the list**, so it stays in newest-first order — the year/month tabs are generated automatically from the date in each `figcaption`, but the order *within* a tab follows the order the `<figure>` elements appear in the file, so newest-first placement is a manual convention, not something the code enforces.
+- `drive_id` is the Google Drive file ID of the thumbnail (share settings as above).
+- `album_link` is the actual Google Photos album link (shared separately, viewable by anyone with the link) — this is what visitors land on when they click.
+- `date` is only used to sort albums newest-first — it's never shown on the site.
+- `date_display` is the exact text shown under the title. For a multi-day event, write it as a range: `"31st August – 1st September 2026"`.
+- Order in the file doesn't matter — `photos.html` sorts by `date` automatically at build time.
 
 ---
 
 ## Video
 
-**File:** `videos.html`.
+**Easiest way:** use Pages CMS (see `CMS-GUIDE.md`) — the Videos collection there gives a proper "Add entry" form.
 
-```html
-<figure class="videos-page-item">
-    <div class="videos-page-wrapper" onclick="loadVideo(this)" data-video="YOUTUBE_VIDEO_ID">
-        <img src="https://img.youtube.com/vi/YOUTUBE_VIDEO_ID/hqdefault.jpg" alt="Event Name">
-    </div>
-    <figcaption>Event Name, DDth Month YYYY</figcaption>
-</figure>
+**By hand:** add an entry to `_data/videos.yml`:
+
+```yaml
+- youtube_id: "YOUTUBE_VIDEO_ID"
+  title: "Event Name"
+  date: 2026-09-04
 ```
 
-- `YOUTUBE_VIDEO_ID` is the 11-character ID from the video's URL (`youtube.com/watch?v=`**`THIS_PART`**), used in both `data-video` and the thumbnail `src` — keep them identical.
-- Like Photos, the year tabs are computed automatically from the date in the caption, but **add new entries at the top** to keep newest-first order within a year.
+- `youtube_id` is the 11-character ID from the video's URL (`youtube.com/watch?v=`**`THIS_PART`**).
+- `videos.html` generates the "DDth Month YYYY" caption automatically from `date` — no need to write it out yourself.
+- Order in the file doesn't matter — sorted newest-first automatically at build time.
 
 ---
 
