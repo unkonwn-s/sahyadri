@@ -1,13 +1,16 @@
 ---
 # FILE: videos.html
 # PURPOSE: Video gallery page — grid of YouTube thumbnails that open a lightbox player on click.
-# Entries come from _data/videos.yml (youtube_id/title/date per video),
-# looped and sorted newest-first here via Liquid, rather than being
-# hardcoded as individual <figure> blocks. This lets Pages CMS (see
-# .pages.yml) offer a real "Add entry" form for new videos instead of
-# requiring someone to hand-edit this file's HTML. The DDth Month YYYY
-# date formatting is computed inline in the loop below rather than via
-# a shared include (calling an include repeatedly inside a for loop
+# Entries come from the _videos/ collection (one file per video, front
+# matter: title/youtube_id/date; output: false in _config.yml so no
+# individual page gets generated per entry), looped and sorted
+# newest-first here via Liquid, rather than being hardcoded as
+# individual <figure> blocks. One file per entry (rather than a single
+# shared _data/videos.yml list) matches how Posts/Activities/Profiles
+# work, so Pages CMS (see .pages.yml) gives the exact same "Add entry"
+# experience for a new video as it does for a new post. The DDth Month
+# YYYY date formatting is computed inline in the loop below rather than
+# via a shared include (calling an include repeatedly inside a for loop
 # trips a Liquid nesting-depth bug on this site's Liquid version).
 layout: page
 title: Videos
@@ -29,7 +32,7 @@ subtitle: Click on the thumbnail to watch
     <!-- Grid Container holding all YouTube Video Items -->
     <div class="videos-page-grid" id="videoGrid">
 
-{%- assign sorted_videos = site.data.videos | sort: "date" | reverse -%}
+{%- assign sorted_videos = site.videos | sort: "date" | reverse -%}
         {%- for video in sorted_videos -%}
         {%- comment -%}
           Ordinal date computed inline here rather than via a shared
