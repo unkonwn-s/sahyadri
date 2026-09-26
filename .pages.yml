@@ -1,11 +1,16 @@
 # .pages.yml — Pages CMS configuration for Sahyadri Connect
 #
-# Covers the three content types with the most fiddly YAML front matter:
-# Newsletter posts, Activities, and Profiles. Videos, Photos, and KFI are
-# deliberately left out — they're single HTML files with repeated <figure>
-# blocks rather than one-file-per-entry Jekyll collections, so they don't
-# fit this "list of files" editing model without a lot more custom work.
-# See CONTENT-GUIDE.md for how to add those by hand in the meantime.
+# Covers Newsletter Posts, Activities, and Profiles (the most fiddly YAML
+# front matter), plus Videos and Photos (each a type: file, list: true
+# collection reading _data/videos.yml / _data/photos.yml -- those data
+# files were split out of videos.html/photos.html specifically so this
+# config could offer a real form for them instead of hand-edited HTML).
+#
+# KFI (kfi.html) is the one page still left out: it mixes two different
+# entry shapes (embedded videos and plain document links) in one file
+# with a manually-maintained year-tab list, which doesn't fit this
+# "list of files" editing model without more custom work. See
+# CONTENT-GUIDE.md for how to add a KFI entry by hand in the meantime.
 #
 # No `media:` key is defined on purpose — every image on this site is a
 # Google Drive file ID pasted as plain text (see each field's description
