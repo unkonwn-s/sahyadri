@@ -33,7 +33,16 @@ jobs:
       - uses: actions/configure-pages@v5
 
       - name: Build with Jekyll
-        run: bundle exec jekyll build
+        run: |
+          set +e
+          bundle exec jekyll build 2>&1 | tee /tmp/jekyll_output.txt
+          status=${PIPESTATUS[0]}
+          if [ "$status" -ne 0 ]; then
+            while IFS= read -r line; do
+              echo "::error::$line"
+            done < /tmp/jekyll_output.txt
+          fi
+          exit $status
         env:
           JEKYLL_ENV: production
 
