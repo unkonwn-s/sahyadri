@@ -1,0 +1,233 @@
+# .pages.yml — Pages CMS configuration for Sahyadri Connect
+#
+# Covers the three content types with the most fiddly YAML front matter:
+# Newsletter posts, Activities, and Profiles. Videos, Photos, and KFI are
+# deliberately left out — they're single HTML files with repeated <figure>
+# blocks rather than one-file-per-entry Jekyll collections, so they don't
+# fit this "list of files" editing model without a lot more custom work.
+# See CONTENT-GUIDE.md for how to add those by hand in the meantime.
+#
+# No `media:` key is defined on purpose — every image on this site is a
+# Google Drive file ID pasted as plain text (see each field's description
+# below), not an uploaded file, so there's nothing for Pages CMS to store
+# in a media folder.
+
+content:
+
+  - name: posts
+    label: Newsletter Posts
+    type: collection
+    path: _posts
+    format: yaml-frontmatter
+    filename:
+      # Matches this site's YYYY-MM-DD-slug.md convention exactly, using
+      # the post's own `date` field (not today's date) so backfilling an
+      # older post still gets the right filename.
+      template: "{fields.date}-{primary}.md"
+      field: create
+    view:
+      fields: [title, subtitle, date, category, pinned]
+      primary: title
+      sort: [date, title]
+      search: [title, subtitle, subtitle2, category]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        type: string
+        required: true
+
+      - name: date
+        type: date
+        required: true
+        description: "The date this was actually posted/happened — also used to build the filename and to group it under the right month on the Newsletter page."
+
+      - name: subtitle
+        label: Byline (author)
+        type: string
+        description: 'Full name, e.g. "Aadya Tyagi (Class 12)" or "Swati Gautam (Teacher)". If a matching profile exists under Profiles, this name automatically links to it.'
+
+      - name: subtitle2
+        label: Byline (second author, optional)
+        type: string
+
+      - name: profile-link
+        label: Profile link override (optional)
+        type: string
+        description: "Only needed if the byline above has a middle name or unusual format that won't auto-match a profile. Paste the full profile URL here instead."
+
+      - name: profile-link2
+        label: Profile link override for second author (optional)
+        type: string
+
+      - name: category
+        type: string
+        required: true
+        description: 'The month this post belongs under on the Newsletter page, e.g. "September 2026". Must match this exact "Month YYYY" format.'
+        pattern:
+          regex: '^(January|February|March|April|May|June|July|August|September|October|November|December) \d{4}$'
+          message: 'Must be "Month YYYY", e.g. "September 2026".'
+
+      - name: image
+        label: Thumbnail image (Google Drive file ID)
+        type: string
+        description: "Paste just the file ID from the Drive sharing link (the long string between /d/ and /view), not the full URL. The file must be shared as \"Anyone with the link can view.\""
+
+      - name: image2
+        label: Gallery image 2 (Google Drive file ID, optional)
+        type: string
+      - name: image3
+        label: Gallery image 3 (Google Drive file ID, optional)
+        type: string
+      - name: image4
+        label: Gallery image 4 (Google Drive file ID, optional)
+        type: string
+      - name: image5
+        label: Gallery image 5 (Google Drive file ID, optional)
+        type: string
+
+      - name: tags
+        type: select
+        list: true
+        description: "Pick from the existing tags rather than typing new ones, to keep /tags/ tidy. Only affects Newsletter posts — tagging an Activity has no visible effect (a Jekyll limitation, see README.md)."
+        options:
+          values: [academic, assembly, community-service, festival, interview, literature, performing-arts, sports, student-life, workshop]
+
+      - name: pinned
+        type: boolean
+        default: false
+        description: "If true, pins this post above the others in its category on the Newsletter page."
+
+      - name: body
+        label: Article text
+        type: rich-text
+        options:
+          format: markdown
+          media: false
+
+  - name: activities
+    label: Activities
+    type: collection
+    path: _activities
+    format: yaml-frontmatter
+    filename:
+      template: "{fields.date}-{primary}.md"
+      field: create
+    view:
+      fields: [title, subtitle, date, category]
+      primary: title
+      sort: [date, title]
+      search: [title, subtitle, subtitle2, category]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        type: string
+        required: true
+      - name: date
+        type: date
+        required: true
+      - name: subtitle
+        label: Byline (author)
+        type: string
+        description: 'Full name, e.g. "Sayantan Sen (Founder, Digital Safety India)". Auto-links to a matching profile the same way Newsletter posts do.'
+      - name: subtitle2
+        label: Byline (second author, optional)
+        type: string
+      - name: profile-link
+        label: Profile link override (optional)
+        type: string
+      - name: profile-link2
+        label: Profile link override for second author (optional)
+        type: string
+      - name: category
+        type: string
+        required: true
+        description: "Groups this write-up on the Activities page — usually just the activity's own name."
+      - name: image
+        label: Thumbnail image (Google Drive file ID)
+        type: string
+      - name: image2
+        type: string
+        label: Gallery image 2 (Google Drive file ID, optional)
+      - name: image3
+        type: string
+        label: Gallery image 3 (Google Drive file ID, optional)
+      - name: image4
+        type: string
+        label: Gallery image 4 (Google Drive file ID, optional)
+      - name: image5
+        type: string
+        label: Gallery image 5 (Google Drive file ID, optional)
+      - name: pinned
+        type: boolean
+        default: false
+      - name: body
+        label: Write-up text
+        type: rich-text
+        options:
+          format: markdown
+          media: false
+
+  - name: profiles
+    label: Profiles
+    type: collection
+    path: _profiles
+    format: yaml-frontmatter
+    filename:
+      # Profiles are named by the person's own name, not a date -- must
+      # match what a post's byline auto-link would generate, e.g.
+      # "Aadya Tyagi" -> aadya-tyagi.md.
+      template: "{primary}.md"
+      field: create
+    view:
+      fields: [title, subtitle, academic-year]
+      primary: title
+      sort: [title, academic-year]
+      search: [title, subtitle]
+    fields:
+      - name: title
+        label: Full name
+        type: string
+        required: true
+        description: "e.g. \"Aadya Tyagi\" — this becomes the filename, so it must match how this person's name is written in post bylines for the auto-link to work."
+
+      - name: subtitle
+        label: Role
+        type: string
+        required: true
+        pattern:
+          regex: '^(Student \(Class (6|7|8|9|10|11|12)\)|Teacher|Pre-School)$'
+          message: 'Must be exactly "Student (Class N)" (N = 6-12), "Teacher", or "Pre-School" -- the Profiles directory page sorts and groups by this exact text.'
+
+      - name: date
+        type: date
+        required: true
+
+      - name: academic-year
+        type: string
+        required: true
+        pattern:
+          regex: '^\d{4}-\d{2}$'
+          message: 'Must be in "YYYY-YY" format, e.g. "2026-27".'
+
+      - name: profile-image
+        label: Profile photo (Google Drive file ID, optional)
+        type: string
+        description: "Leave blank to use the default placeholder photo."
+
+      - name: body
+        label: Bio
+        type: rich-text
+        options:
+          format: markdown
+          media: false
+
+settings:
+  commit:
+    templates:
+      create: "Add {name} entry via Pages CMS: {path}"
+      update: "Update {name} entry via Pages CMS: {path}"
+      delete: "Delete {name} entry via Pages CMS: {path}"
