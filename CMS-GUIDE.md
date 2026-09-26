@@ -15,7 +15,7 @@ If you don't have a GitHub account yet, you'll need to create one first (free, a
 1. Go to [app.pagescms.org](https://app.pagescms.org)
 2. Sign in with your GitHub account
 3. Select the **sahyadri** repository
-4. You'll see three sections in the sidebar: **Newsletter Posts**, **Activities**, and **Profiles**
+4. You'll see six sections in the sidebar: **Newsletter Posts**, **Activities**, **Profiles**, **Videos**, **Photos**, and **Krishnamurti / Weekly Excerpts**
 
 ## Adding a Newsletter post or Activity
 
@@ -75,9 +75,14 @@ Click **Videos** or **Photos** in the sidebar → **Add entry**, same as above.
 - **Videos**: needs a title, the YouTube video ID (the part after `v=` in the video's URL), and a date. The caption date is generated automatically — you don't need to type it out.
 - **Photos**: needs a title, the thumbnail's Google Drive file ID (same process as any other image field — see "Adding images" above), the actual Google Photos album link, a date (used only for sorting), and the exact date text to display. For an event spanning several days, write that last one as a range yourself, e.g. "31st August – 1st September 2026" — this is the one field the form won't generate for you.
 
-## What you can't do here
+## Adding a Krishnamurti / Weekly Excerpt
 
-The **Krishnamurti/Weekly Excerpts page** works differently and isn't editable through this tool — ask whoever manages the GitHub side to add those, or see `CONTENT-GUIDE.md` if you want to try it yourself.
+Click **Krishnamurti / Weekly Excerpts** in the sidebar → **Add entry**.
+
+- **Year** must exactly match one of the year tabs already shown on the live page (e.g. "2025") — if you're adding the very first entry for a brand-new academic year, ask whoever manages the GitHub side to add that year's tab first, since that one step still needs a manual edit.
+- **YouTube video ID** — leave blank for a document-only entry (e.g. just a linked PDF), no video needed.
+- **Links** — usually just one (the excerpt's own title and link), but you can add a second if this excerpt has, say, both a video and a separate related document or playlist.
+- **Date** builds the "Published on" text automatically and sorts the entry into the right place.
 
 ## If something looks wrong after publishing
 
