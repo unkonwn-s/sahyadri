@@ -1,10 +1,18 @@
 # .pages.yml — Pages CMS configuration for Sahyadri Connect
 #
-# Covers Newsletter Posts, Activities, Profiles, Videos, Photos, and KFI
-# (Krishnamurti/Weekly Excerpts) -- each collection reading from its own
-# _data/*.yml file (split out of the corresponding page's HTML
-# specifically so this config could offer a real "Add entry" form
-# instead of requiring someone to hand-edit that page's HTML directly).
+# Covers Newsletter Posts, Activities, Profiles, Videos, and Photos --
+# all five as type: collection (one file per entry, exactly like Posts),
+# so every one of them gives the identical "Add entry" experience: click
+# in, fill the form, save. Videos/Photos used to be a single shared
+# _data/*.yml file each; both were split into their own _videos/_photos
+# collections specifically so the CMS could treat them the same as
+# everything else instead of a special-cased list-in-one-file editor.
+#
+# KFI (Krishnamurti/Weekly Excerpts) is still type: file/list: true,
+# reading _data/kfi.yml -- it mixes two different entry shapes (embedded
+# videos and plain document links, some entries with more than one
+# link), which doesn't map cleanly onto a single flat front-matter
+# schema the way Videos/Photos now do.
 #
 # No `media:` key is defined on purpose — every image on this site is a
 # Google Drive file ID pasted as plain text (see each field's description
@@ -226,10 +234,14 @@ content:
 
   - name: videos
     label: Videos
-    type: file
-    path: _data/videos.yml
-    format: yaml
-    list: true
+    type: collection
+    path: _videos
+    format: yaml-frontmatter
+    filename:
+      # Matches _posts' convention: filename built from the entry's own
+      # date field, not today's date, and hidden from the editor.
+      template: "{fields.date}-{primary}.md"
+      field: false
     view:
       fields: [title, date]
       primary: title
@@ -254,10 +266,12 @@ content:
 
   - name: photos
     label: Photos
-    type: file
-    path: _data/photos.yml
-    format: yaml
-    list: true
+    type: collection
+    path: _photos
+    format: yaml-frontmatter
+    filename:
+      template: "{fields.date}-{primary}.md"
+      field: false
     view:
       fields: [title, date]
       primary: title
