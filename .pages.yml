@@ -225,6 +225,34 @@ content:
           format: markdown
           media: false
 
+  - name: videos
+    label: Videos
+    type: file
+    path: _data/videos.yml
+    format: yaml
+    list: true
+    view:
+      fields: [title, date]
+      primary: title
+      sort: [date, title]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        type: string
+        required: true
+        description: "Also used as the video's alt text and part of its caption on the Videos page."
+      - name: youtube_id
+        label: YouTube video ID
+        type: string
+        required: true
+        description: "The 11-character ID from the video's URL, e.g. the part after v= in youtube.com/watch?v=THIS_PART."
+      - name: date
+        type: date
+        required: true
+        description: "Used to sort the video newest-first and to build its caption date automatically."
+
 settings:
   commit:
     templates:
