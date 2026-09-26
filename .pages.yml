@@ -1,16 +1,10 @@
 # .pages.yml — Pages CMS configuration for Sahyadri Connect
 #
-# Covers Newsletter Posts, Activities, and Profiles (the most fiddly YAML
-# front matter), plus Videos and Photos (each a type: file, list: true
-# collection reading _data/videos.yml / _data/photos.yml -- those data
-# files were split out of videos.html/photos.html specifically so this
-# config could offer a real form for them instead of hand-edited HTML).
-#
-# KFI (kfi.html) is the one page still left out: it mixes two different
-# entry shapes (embedded videos and plain document links) in one file
-# with a manually-maintained year-tab list, which doesn't fit this
-# "list of files" editing model without more custom work. See
-# CONTENT-GUIDE.md for how to add a KFI entry by hand in the meantime.
+# Covers Newsletter Posts, Activities, Profiles, Videos, Photos, and KFI
+# (Krishnamurti/Weekly Excerpts) -- each collection reading from its own
+# _data/*.yml file (split out of the corresponding page's HTML
+# specifically so this config could offer a real "Add entry" form
+# instead of requiring someone to hand-edit that page's HTML directly).
 #
 # No `media:` key is defined on purpose — every image on this site is a
 # Google Drive file ID pasted as plain text (see each field's description
@@ -295,6 +289,48 @@ content:
         type: string
         required: true
         description: "The exact text shown under the album title, e.g. \"15th August 2026\" or, for a multi-day event, \"31st August – 1st September 2026\"."
+
+  - name: kfi
+    label: Krishnamurti / Weekly Excerpts
+    type: file
+    path: _data/kfi.yml
+    format: yaml
+    list: true
+    view:
+      fields: [year, date, youtube_id]
+      primary: date
+      sort: [date, year]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: year
+        type: string
+        required: true
+        description: "Must exactly match one of the year tabs already defined near the top of kfi.html (the year_blocks Liquid variable). Adding a brand-new academic year still needs a one-line manual edit there first -- this is not auto-computed the way Videos/Photos are."
+      - name: date
+        type: date
+        required: true
+        description: "Used to sort entries newest-first within their year, and to build the \"Published on\" caption text automatically."
+      - name: youtube_id
+        label: YouTube video ID (optional)
+        type: string
+        description: "The 11-character ID from the video's URL. Leave blank for a document-only entry with no embedded video (e.g. a linked PDF transcript)."
+      - name: links
+        type: object
+        list:
+          min: 1
+        description: "One or more linked items shown in the caption -- most entries have just one (the excerpt's title/link), but some link both a video's related document and a separate playlist, for example."
+        fields:
+          - name: text
+            label: Link text
+            type: string
+            required: true
+            description: "The excerpt's title, shown as the clickable link text."
+          - name: url
+            type: string
+            required: true
+            description: "A Google Drive/Docs link, a YouTube link, or any other URL relevant to this excerpt."
 
 settings:
   commit:
