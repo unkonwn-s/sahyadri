@@ -68,9 +68,16 @@ If a photo doesn't show up on the live site after publishing, the most common re
 6. **Bio** — a short write-up about the person
 7. Click **Save**
 
+## Adding a Video or Photo album
+
+Click **Videos** or **Photos** in the sidebar → **Add entry**, same as above.
+
+- **Videos**: needs a title, the YouTube video ID (the part after `v=` in the video's URL), and a date. The caption date is generated automatically — you don't need to type it out.
+- **Photos**: needs a title, the thumbnail's Google Drive file ID (same process as any other image field — see "Adding images" above), the actual Google Photos album link, a date (used only for sorting), and the exact date text to display. For an event spanning several days, write that last one as a range yourself, e.g. "31st August – 1st September 2026" — this is the one field the form won't generate for you.
+
 ## What you can't do here
 
-This CMS only covers Newsletter Posts, Activities, and Profiles. **Videos, Photos, and the Krishnamurti/Weekly Excerpts page work differently** and aren't editable through this tool — ask whoever manages the GitHub side to add those, or see `CONTENT-GUIDE.md` if you want to try it yourself.
+The **Krishnamurti/Weekly Excerpts page** works differently and isn't editable through this tool — ask whoever manages the GitHub side to add those, or see `CONTENT-GUIDE.md` if you want to try it yourself.
 
 ## If something looks wrong after publishing
 
