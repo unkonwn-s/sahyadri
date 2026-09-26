@@ -1,12 +1,15 @@
 ---
 # FILE: photos.html
 # PURPOSE: Photo gallery page — year/album selector with lightbox-style image grid.
-# Entries come from _data/photos.yml (drive_id/album_link/title/date/
-# date_display per album), looped and sorted newest-first here via
-# Liquid, rather than being hardcoded as individual <figure> blocks.
-# This lets Pages CMS (see .pages.yml) offer a real "Add entry" form
-# for new albums instead of requiring someone to hand-edit this file's
-# HTML. See CONTENT-GUIDE.md for how to add an album either way.
+# Entries come from the _photos/ collection (one file per album, front
+# matter: title/drive_id/album_link/date/date_display; output: false in
+# _config.yml so no individual page gets generated per entry), looped
+# and sorted newest-first here via Liquid, rather than being hardcoded
+# as individual <figure> blocks. One file per entry (rather than a
+# single shared _data/photos.yml list) matches how Posts/Activities/
+# Profiles work, so Pages CMS (see .pages.yml) gives the exact same
+# "Add entry" experience for a new album as it does for a new post.
+# See CONTENT-GUIDE.md for how to add an album either way.
 layout: page
 title: Photos
 subtitle: Click on thumbnail to open the album
@@ -33,7 +36,7 @@ subtitle: Click on thumbnail to open the album
     <!-- Main Album Grid Container -->
     <div class="photos-album-grid" id="main-grid">
 
-        {%- assign sorted_photos = site.data.photos | sort: "date" | reverse -%}
+        {%- assign sorted_photos = site.photos | sort: "date" | reverse -%}
         {%- for album in sorted_photos -%}
         <figure class="photos-album-item" data-img="{{ album.drive_id }}">
             <a href="{{ album.album_link }}" target="_blank">
